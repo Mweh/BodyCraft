@@ -12,6 +12,7 @@ struct BodyCraftApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            // TODO:
         }
     }
 }
