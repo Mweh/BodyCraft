@@ -11,7 +11,8 @@ import SwiftUI
 struct BodyCraftApp: App {
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            SplashScreenView()
+                .preferredColorScheme(.dark)
         }
     }
 }
