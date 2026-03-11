@@ -4,17 +4,24 @@ struct UserProfile: Codable {
     var name: String = ""
     var age: String = ""
     var gender: String = ""
-    var height: String = ""       // cm
-    var weight: String = ""       // kg
+    var height: String = ""
+
+    /// Current weight (updated by the Edit modal in Home)
+    var weight: String = ""       // kg (current — updated by Edit modal)
+
     var goal: String = ""
     var activityLevel: String = ""
     var fitnessLevel: String = ""
-    var bodyFat: Double = 20.0    // %
+    var bodyFat: Double = 20.0    // % (current — updated by Edit modal)
     var sessionsPerWeek: Int = 3
     var durationPerSession: String = ""
     var equipment: String = ""
 
-    // ── Computed: current values ───────────────────────────────────────────
+    // ── Baseline (set once at onboarding, never touched afterwards) ────────
+    var startingWeight: String = ""
+    var startingBodyFat: Double = 0.0
+
+    // ── Computed: current readings ─────────────────────────────────────────
     var bmiValue: Double {
         guard let h = Double(height), let w = Double(weight), h > 0 else { return 0 }
         return w / ((h / 100) * (h / 100))
@@ -31,15 +38,12 @@ struct UserProfile: Codable {
     }
 
     // ── Computed: targets ──────────────────────────────────────────────────
-    /// Target body fat %: 10% for men, 18% for women (fitness category floor)
     var targetBodyFat: Double {
         gender.lowercased() == "female" ? 18.0 : 10.0
     }
 
-    /// Target BMI: 22.0 (centre of the healthy 18.5–24.9 range)
     var targetBMI: Double { 22.0 }
 
-    /// Target weight derived from target BMI and current height
     var targetWeight: Double {
         guard let h = Double(height), h > 0 else { return 0 }
         let hm = h / 100
@@ -53,22 +57,46 @@ struct UserProfile: Codable {
     var targetBodyFatString: String { String(format: "%.0f%%", targetBodyFat) }
     var targetBMIString: String     { String(format: "%.1f", targetBMI) }
 
-    // ── Computed: progress (0.0 – 1.0) ────────────────────────────────────
-    /// How far body fat has moved from start toward target (clamped 0–1)
+    // ── Computed: real progress (0.0 – 1.0) ───────────────────────────────
+    // Formula: how much of the gap (starting → target) has been closed.
+    // Direction-aware: works for both loss and gain goals.
+
     var bodyFatProgress: Double {
-        // We store the onboarding value as starting point.
-        // Progress = how much of the gap we've closed. At start → 0.0.
-        // Since we don't track history yet, this stays 0 until the user
-        // logs updates. For now, return 0 so we start fresh.
-        return 0.0
+        // If no separate baseline recorded yet, use current as start → 0%
+        let start  = startingBodyFat > 0 ? startingBodyFat : bodyFat
+        let target = targetBodyFat
+        guard abs(start - target) > 0.01 else { return 1.0 }
+        let p = (start - bodyFat) / (start - target)
+        return min(max(p, 0.0), 1.0)
     }
 
-    var weightProgress: Double { 0.0 }
-    var bmiProgress:    Double { 0.0 }
+    var weightProgress: Double {
+        let startStr = startingWeight.isEmpty ? weight : startingWeight
+        guard let startW   = Double(startStr),
+              let currentW = Double(weight),
+              targetWeight > 0,
+              abs(startW - targetWeight) > 0.01
+        else { return 0.0 }
+        let p = (startW - currentW) / (startW - targetWeight)
+        return min(max(p, 0.0), 1.0)
+    }
 
-    /// Overall average progress across the three goals
+    var bmiProgress: Double {
+        let startStr = startingWeight.isEmpty ? weight : startingWeight
+        guard let startW   = Double(startStr),
+              let currentW = Double(weight),
+              let h        = Double(height), h > 0,
+              abs(startW - targetWeight) > 0.01
+        else { return 0.0 }
+        let hm  = h / 100
+        let startBMI   = startW   / (hm * hm)
+        let currentBMI = currentW / (hm * hm)
+        guard abs(startBMI - targetBMI) > 0.01 else { return 1.0 }
+        let p = (startBMI - currentBMI) / (startBMI - targetBMI)
+        return min(max(p, 0.0), 1.0)
+    }
+
     var overallGoalProgress: Double {
         (bodyFatProgress + weightProgress + bmiProgress) / 3.0
     }
 }
-

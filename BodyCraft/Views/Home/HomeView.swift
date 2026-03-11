@@ -19,6 +19,9 @@ struct HomeView: View {
         ("Fri", false), ("Sat", false), ("Sun", false)
     ]
 
+    // Edit sheet state
+    @State private var showingGoalEdit = false
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -157,7 +160,7 @@ struct HomeView: View {
                         .padding(.horizontal)
 
                         // ── Body Goals ────────────────────────────────────
-                        BodyGoalsSection(profile: profile)
+                        BodyGoalsSection(profile: profile, onEdit: { showingGoalEdit = true })
                             .padding(.horizontal)
 
                         Spacer().frame(height: 100)
@@ -166,6 +169,10 @@ struct HomeView: View {
                 }
             }
             .navigationBarHidden(true)
+            // Native iOS modal sheet
+            .sheet(isPresented: $showingGoalEdit) {
+                UpdateGoalsSheet(profileStore: profileStore)
+            }
         }
     }
 }
@@ -174,25 +181,33 @@ struct HomeView: View {
 
 struct BodyGoalsSection: View {
     let profile: UserProfile
+    var onEdit: () -> Void
 
     private var overallProgress: Double { profile.overallGoalProgress }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
 
-            // Header
+            // Header row
             HStack {
                 Image(systemName: "target").foregroundColor(.green)
                 Text("Body Goals")
                     .fontWeight(.semibold).foregroundColor(.white)
                 Spacer()
-                Text(overallProgress == 0 ? "Just started 🚀" : "\(Int(overallProgress * 100))%")
-                    .foregroundColor(overallProgress == 0 ? AppTheme.secondaryText : .green)
-                    .fontWeight(.bold)
+
+                // Native iOS Edit button (replaces "Just started")
+                Button(action: onEdit) {
+                    HStack(spacing: 4) {
+                        Image(systemName: "pencil")
+                        Text("Edit")
+                    }
                     .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(AppTheme.primary)
+                }
             }
 
-            // Overall progress bar (starts at 0)
+            // Overall progress bar
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 4)
@@ -202,7 +217,6 @@ struct BodyGoalsSection: View {
                             LinearGradient(colors: [.green, .cyan],
                                            startPoint: .leading, endPoint: .trailing)
                         )
-                        // minimum 4pt so bar is always visible even at 0%
                         .frame(width: max(4, geo.size.width * CGFloat(overallProgress)), height: 8)
                         .animation(.spring(), value: overallProgress)
                 }
@@ -237,13 +251,13 @@ struct BodyGoalsSection: View {
                 )
             }
 
-            // Auto-calculated target explanation strip
+            // Auto-calculated target explanation
             if !profile.height.isEmpty && !profile.weight.isEmpty {
                 HStack(alignment: .top, spacing: 8) {
                     Image(systemName: "sparkles")
                         .foregroundColor(AppTheme.primary)
                         .font(.caption)
-                    Text("Targets auto-calculated: BMI 22.0 · Body Fat \(profile.targetBodyFatString) · Weight \(profile.targetWeightString)")
+                    Text("Targets: BMI 22.0 · Body Fat \(profile.targetBodyFatString) · Weight \(profile.targetWeightString)")
                         .font(.caption2)
                         .foregroundColor(AppTheme.secondaryText)
                         .lineSpacing(3)
@@ -259,6 +273,199 @@ struct BodyGoalsSection: View {
     }
 }
 
+// MARK: - Update Goals Sheet (modal)
+
+struct UpdateGoalsSheet: View {
+    let profileStore: UserProfileStore
+    @Environment(\.dismiss) private var dismiss
+
+    @State private var weightInput: String = ""
+    @State private var bodyFatInput: Double = 20.0
+
+    private var profile: UserProfile { profileStore.profile }
+
+    // Live BMI preview from the edited weight
+    private var previewBMI: String {
+        guard let h = Double(profile.height), h > 0,
+              let w = Double(weightInput) else { return "—" }
+        let bmi = w / ((h / 100) * (h / 100))
+        return String(format: "%.1f", bmi)
+    }
+
+    private var bmiCategory: String {
+        guard let val = Double(previewBMI) else { return "" }
+        switch val {
+        case ..<18.5: return "Underweight"
+        case ..<25.0: return "Normal ✓"
+        case ..<30.0: return "Overweight"
+        default:      return "Obese"
+        }
+    }
+
+    private var bmiColor: Color {
+        guard let val = Double(previewBMI) else { return .white }
+        switch val {
+        case 18.5..<25.0: return .green
+        case 25.0..<30.0: return .orange
+        default:           return .red
+        }
+    }
+
+    var body: some View {
+        NavigationView {
+            ZStack {
+                AppTheme.background.ignoresSafeArea()
+
+                ScrollView {
+                    VStack(spacing: 24) {
+
+                        // ── Description ───────────────────────────────────
+                        Text("Update your current body stats. BMI is calculated automatically from your weight and saved height.")
+                            .font(.subheadline)
+                            .foregroundColor(AppTheme.secondaryText)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal)
+                            .padding(.top, 8)
+
+                        // ── Weight Input ──────────────────────────────────
+                        VStack(alignment: .leading, spacing: 10) {
+                            Label("Current Weight", systemImage: "scalemass")
+                                .foregroundColor(.white)
+                                .fontWeight(.semibold)
+
+                            HStack {
+                                TextField("e.g. 80", text: $weightInput)
+                                    .keyboardType(.decimalPad)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(AppTheme.background)
+                                    .cornerRadius(12)
+
+                                Text("kg")
+                                    .foregroundColor(AppTheme.secondaryText)
+                                    .font(.title3)
+                            }
+                        }
+                        .padding()
+                        .background(AppTheme.surface)
+                        .cornerRadius(16)
+                        .padding(.horizontal)
+
+                        // ── Body Fat Slider ───────────────────────────────
+                        VStack(alignment: .leading, spacing: 12) {
+                            Label("Current Body Fat", systemImage: "percent")
+                                .foregroundColor(.white)
+                                .fontWeight(.semibold)
+
+                            HStack {
+                                Text(String(format: "%.0f%%", bodyFatInput))
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .frame(width: 56, alignment: .leading)
+
+                                Slider(value: $bodyFatInput, in: 5...45, step: 1)
+                                    .accentColor(BodyFatCategory.category(for: bodyFatInput).color)
+                            }
+
+                            // Category badge
+                            Text(BodyFatCategory.category(for: bodyFatInput).label)
+                                .font(.caption)
+                                .fontWeight(.semibold)
+                                .foregroundColor(BodyFatCategory.category(for: bodyFatInput).color)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 4)
+                                .background(BodyFatCategory.category(for: bodyFatInput).color.opacity(0.15))
+                                .clipShape(Capsule())
+                        }
+                        .padding()
+                        .background(AppTheme.surface)
+                        .cornerRadius(16)
+                        .padding(.horizontal)
+
+                        // ── Live BMI Preview ──────────────────────────────
+                        if !weightInput.isEmpty {
+                            HStack(spacing: 16) {
+                                VStack(spacing: 4) {
+                                    Text("BMI Preview")
+                                        .font(.caption)
+                                        .foregroundColor(AppTheme.secondaryText)
+                                    Text(previewBMI)
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.white)
+                                    Text(bmiCategory)
+                                        .font(.caption)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(bmiColor)
+                                }
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(AppTheme.surface)
+                                .cornerRadius(14)
+
+                                VStack(spacing: 4) {
+                                    Text("Target BMI")
+                                        .font(.caption)
+                                        .foregroundColor(AppTheme.secondaryText)
+                                    Text("22.0")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.white)
+                                    Text("Healthy ✓")
+                                        .font(.caption)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.green)
+                                }
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(AppTheme.surface)
+                                .cornerRadius(14)
+                            }
+                            .padding(.horizontal)
+                        }
+
+                        Spacer().frame(height: 20)
+                    }
+                }
+            }
+            .navigationTitle("Update Body Stats")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") { dismiss() }
+                        .foregroundColor(AppTheme.secondaryText)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Save") {
+                        saveUpdates()
+                        dismiss()
+                    }
+                    .fontWeight(.semibold)
+                    .foregroundColor(AppTheme.primary)
+                    .disabled(weightInput.isEmpty)
+                }
+            }
+        }
+        .onAppear {
+            // Pre-fill with current values
+            weightInput = profile.weight
+            bodyFatInput = profile.bodyFat
+        }
+    }
+
+    private func saveUpdates() {
+        profileStore.update { p in
+            if !weightInput.isEmpty {
+                p.weight = weightInput
+            }
+            p.bodyFat = bodyFatInput
+        }
+    }
+}
+
 // MARK: - BodyGoalCard
 
 struct BodyGoalCard: View {
@@ -266,7 +473,7 @@ struct BodyGoalCard: View {
     let title: String
     let current: String
     let target: String
-    let progress: Double   // 0.0–1.0
+    let progress: Double
     let color: Color
 
     var body: some View {
@@ -278,7 +485,6 @@ struct BodyGoalCard: View {
                 .background(color.opacity(0.15))
                 .clipShape(Circle())
 
-            // Ring progress indicator
             ZStack {
                 Circle()
                     .stroke(color.opacity(0.15), lineWidth: 4)

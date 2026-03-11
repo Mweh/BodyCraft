@@ -99,7 +99,9 @@ struct OnboardingCoordinatorView: View {
                                 bodyFat: bodyFat,
                                 sessionsPerWeek: Int(sessionsPerWeek),
                                 durationPerSession: durationPerSession,
-                                equipment: equipment
+                                equipment: equipment,
+                                startingWeight: weight,      // baseline — never changes
+                                startingBodyFat: bodyFat     // baseline — never changes
                             ))
                             hasCompletedOnboarding = true
                         }
