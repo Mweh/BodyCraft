@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hkK8hGAcSnW7",
+    "name": "Chest Dip",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/w39q9vcRo1.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/CP2CaYqLpw.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/w39q9vcRo1.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/CaKITU8FgL.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/Gzy6Jdf7sH.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "CHEST"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "PECTORALIS MAJOR STERNAL HEAD"
+    ],
+    "secondaryMuscles": [
+      "ANTERIOR DELTOID",
+      "LATISSIMUS DORSI",
+      "TRICEPS BRACHII",
+      "PECTORALIS MAJOR CLAVICULAR HEAD",
+      "LEVATOR SCAPULAE"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/P973giu/41n2hkK8hGAcSnW7__Chest-Dip_Chest.mp4",
+    "keywords": [
+      "Bodyweight Chest Exercise",
+      "Chest Dip Workout",
+      "Home Chest Exercise",
+      "Bodyweight Dip Training",
+      "Chest Strengthening Exercise",
+      "No Equipment Chest Workout",
+      "Bodyweight Pectoral Exercise",
+      "Dip Exercise for Chest",
+      "Bodyweight Chest Muscle Training",
+      "Chest Dip Bodyweight Technique"
+    ],
+    "overview": "The Chest Dip is a powerful exercise that primarily targets the pectoralis muscles, triceps, and the front shoulders, helping to build strength and definition in these areas. It is suitable for individuals at an intermediate or advanced fitness level who are aiming to enhance their upper body strength and muscular endurance. People might choose this exercise as it not only improves muscle tone, but also boosts overall body stability and functional fitness.",
+    "instructions": [
+      "Lean your body forward to put emphasis on the chest muscles and bend your knees, crossing your ankles behind you to maintain balance.",
+      "Slowly lower your body by bending your elbows until you reach a point where your elbows are at a 90-degree angle and your chest is level with the bars.",
+      "Pause for a moment at the bottom of the movement, then push yourself back up to the starting position, extending your arms fully but without locking your elbows.",
+      "Repeat this process for the desired number of repetitions, ensuring to keep your body leaned forward throughout the exercise to maintain focus on the chest muscles."
+    ],
+    "exerciseTips": [
+      "Avoid Locking Your Elbows: One common mistake people make while performing chest dips is locking their elbows at the top of the movement. This can put unnecessary strain on the joints and potentially lead to injury. Instead, keep a slight bend in your elbows even at the top of the movement to keep the tension on your muscles.",
+      "Control Your Movement: Don't use momentum to perform the exercise. This is a common mistake and can lead to injury and diminished results. Instead, control your movement up and down, ensuring that your muscles are doing the"
+    ],
+    "variations": [
+      "Incline Chest Dips: This is done by leaning forward during the dip, which puts more emphasis on the lower part of the chest.",
+      "Weighted Chest Dips: For those who want to increase the challenge, they can perform chest dips with additional weight attached to their body.",
+      "Assisted Chest Dips: Beginners or those who find regular chest dips too challenging can use an assisted dip machine or resistance bands for support.",
+      "Single Bar Chest Dips: This variation is performed on a single bar, requiring more balance and coordination, and it targets the chest muscles from a different angle."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hPzSsXwreE7i",
+      "exr_41n2hUzFPApY5zwb",
+      "exr_41n2hdLfF9dHBLHy",
+      "exr_41n2hx5zVXJDShQ2",
+      "exr_41n2hqB4ZJMWpazz",
+      "exr_41n2hGxB1ZfLNwLw",
+      "exr_41n2hi8qy7h7GFNb",
+      "exr_41n2hgUZtHcvgD3D",
+      "exr_41n2hTzEBhiNd3Q3",
+      "exr_41n2hUKc7JPrtJQj"
+    ]
+  }
+}

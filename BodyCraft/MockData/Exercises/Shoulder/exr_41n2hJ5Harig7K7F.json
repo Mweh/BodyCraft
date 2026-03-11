@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hJ5Harig7K7F",
+    "name": "Seated Shoulder Flexor Depresor Retractor Stretch",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/FIQG6bbnXn.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/4QUZR5lukj.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/FIQG6bbnXn.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/f70a7A8SUs.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/X59S4zxaPP.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "SHOULDERS"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "ANTERIOR DELTOID"
+    ],
+    "secondaryMuscles": [
+      "LATISSIMUS DORSI",
+      "PECTORALIS MAJOR CLAVICULAR HEAD"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/10MB3gH/41n2hJ5Harig7K7F__Seated-Shoulder-Flexor-Depresor-Retractor-Stretch_.mp4",
+    "keywords": [
+      "Bodyweight Shoulder Exercise",
+      "Shoulder Flexor Depressor Stretch",
+      "Seated Shoulder Stretch",
+      "Bodyweight Shoulder Flexor Workout",
+      "Shoulder Retractor Stretching Exercise",
+      "Seated Shoulder Depressor Exercise",
+      "Bodyweight Exercise for Shoulder Strength",
+      "Shoulder Flexor Depressor Retractor Stretch",
+      "Seated Bodyweight Shoulder Workout",
+      "Shoulder Stretching with Body Weight"
+    ],
+    "overview": "The Seated Shoulder Flexor Depresor Retractor Stretch is an effective exercise designed to increase flexibility and strength in the shoulder muscles, particularly targeting the flexors, depressors, and retractors. It's an ideal workout for individuals who engage in sports or activities that heavily involve the shoulders, or for those seeking to improve their posture and alleviate shoulder tension. Incorporating this stretch into your fitness routine can help enhance your shoulder mobility, reduce the risk of injury, and improve overall upper body function.",
+    "instructions": [
+      "Extend your right arm straight out in front of you at shoulder height, keeping your palm facing down.",
+      "Gently pull your right arm across your body using your left hand, applying light pressure until you feel a stretch in your shoulder.",
+      "Hold this position for about 20 to 30 seconds, making sure to breathe deeply throughout the stretch.",
+      "Release the stretch and repeat the same steps on the other side with your left arm."
+    ],
+    "exerciseTips": [
+      "Controlled Movements: Execute each movement slowly and with control. Avoid jerky or rapid movements which can strain the muscles. This is a common mistake many people make. Remember, the effectiveness of this stretch comes from control, not speed.",
+      "Correct Arm Position: Your arms should be at a 90-degree angle with your palms facing down. Avoid overextending your arms or bending them too much as this can lead to injury and reduce the effectiveness of the stretch.",
+      "Engage Your Shoulder Muscles: When performing the stretch, make sure to engage your shoulder muscles. This means actively pulling your shoulders down and back. A common mistake is to merely move the arms without engaging"
+    ],
+    "variations": [
+      "The Lying Down Shoulder Flexor Depressor Retractor Stretch is another variation where you lay flat on your back on a mat or bench, providing a different angle and potentially deeper stretch.",
+      "The Wall-Assisted Shoulder Flexor Depressor Retractor Stretch involves using a wall to assist in the stretch, allowing you to control the intensity more easily.",
+      "The Resistance Band Shoulder Flexor Depressor Retractor Stretch involves using a resistance band to provide additional tension and challenge to the stretch.",
+      "The Yoga Ball Shoulder Flexor Depressor Retractor Stretch is a variation where you use a yoga ball to support your lower body, which can help to engage your core and improve balance while performing the stretch."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hJMRS54dX9Rq",
+      "exr_41n2hLKcEkhgXXyG",
+      "exr_41n2hs3T9az2xtLA",
+      "exr_41n2hxinkM7tji1V",
+      "exr_41n2hQCADNRtNUsd",
+      "exr_41n2hNFiUexScHJg",
+      "exr_41n2hbdtPzZGdBY2",
+      "exr_41n2hkNcw21w6rge",
+      "exr_41n2hf2kb8XiuDaw",
+      "exr_41n2hKJev7eAA6xk"
+    ]
+  }
+}

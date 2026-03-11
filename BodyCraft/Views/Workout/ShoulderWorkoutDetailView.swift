@@ -1,19 +1,19 @@
 import SwiftUI
 import Combine
 
-struct PushDayWorkoutDetailView: View {
+struct ShoulderWorkoutDetailView: View {
     @Environment(\.dismiss) private var dismiss
     var onDismiss: (() -> Void)? = nil
-    @StateObject private var vm = ChestExerciseListViewModel()
+    @StateObject private var vm = ShoulderExerciseListViewModel()
     @State private var selectedExercise: ExerciseSearchItem?
     
-    // Using the same image URL as the banner
-    let imageURL = "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3ZWlnaHQlMjB0cmFpbmluZyUyMHdvcmtvdXR8ZW58MXx8fHwxNzcyODU5MDIzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    // Using the same image URL as the banner for Shoulder & Arms Sculptor
+    let imageURL = "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
             AppTheme.background
-
+            
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
                     ZStack(alignment: .bottomLeading) {
@@ -30,29 +30,29 @@ struct PushDayWorkoutDetailView: View {
                                     .frame(height: 220)
                             }
                         }
-
+                        
                         LinearGradient(
                             colors: [Color.black.opacity(0.05), Color.black.opacity(0.75), AppTheme.background],
                             startPoint: .top,
                             endPoint: .bottom
                         )
                         .frame(height: 220)
-
+                        
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("Push Day - Chest & Triceps")
+                            Text("Shoulder & Arms Sculptor")
                                 .font(.title3)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-
+                            
                             HStack(spacing: 14) {
-                                Label("50 min", systemImage: "timer")
-                                Label("380 kcal", systemImage: "flame")
-                                Text("Intermediate")
+                                Label("45 min", systemImage: "timer")
+                                Label("320 kcal", systemImage: "flame")
+                                Text("Beginner")
                                     .font(.caption)
                                     .fontWeight(.medium)
                                     .padding(.horizontal, 10)
                                     .padding(.vertical, 4)
-                                    .background(Color.blue)
+                                    .background(Color.orange)
                                     .clipShape(Capsule())
                             }
                             .font(.caption)
@@ -62,16 +62,16 @@ struct PushDayWorkoutDetailView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .frame(height: 220)
                     }
-
-                    ChestExerciseListView(vm: vm) { exercise in
+                    
+                    ShoulderExerciseListView(vm: vm) { exercise in
                         selectedExercise = exercise
                     }
-                        .padding(.horizontal, 16)
-                        .padding(.top, 16)
-                        .padding(.bottom, 16)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 16)
+                    .padding(.bottom, 16)
                 }
             }
-
+            
             Button(action: {
                 if let onDismiss {
                     onDismiss()
@@ -95,84 +95,37 @@ struct PushDayWorkoutDetailView: View {
     }
 }
 
-// Reusable Component for maintainability
-struct ExerciseRowView: View {
-    let title: String
-    let target: String
-    let sets: String
-    let reps: String
-    let rest: String
-    let instruction: String
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Text(title)
-                    .font(.headline)
-                    .foregroundColor(.white)
-                Spacer()
-                Text(target)
-                    .font(.caption)
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 4)
-                    .background(Color.white.opacity(0.05)) // Subtle background for tags
-                    .foregroundColor(AppTheme.secondaryText)
-                    .clipShape(Capsule())
-            }
-            
-            HStack(spacing: 16) {
-                Text(sets)
-                Text(reps)
-                Text(rest)
-            }
-            .font(.subheadline)
-            .foregroundColor(AppTheme.secondaryText)
-            
-            Text(instruction)
-                .font(.subheadline)
-                .foregroundColor(AppTheme.secondaryText.opacity(0.8))
-        }
-        .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(AppTheme.surface)
-        .cornerRadius(16)
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(Color.white.opacity(0.05), lineWidth: 1)
-        )
-    }
-}
-
-// MARK: - Local JSON-backed Chest Exercise List
+// MARK: - Local JSON-backed Shoulder Exercise List
 
 @MainActor
-final class ChestExerciseListViewModel: ObservableObject {
+final class ShoulderExerciseListViewModel: ObservableObject {
     @Published var items: [ExerciseSearchItem] = []
-
+    
     init() {
         loadFromBundle()
     }
-
+    
     private func loadFromBundle() {
-        guard let url = Bundle.main.url(forResource: "chest_exercises", withExtension: "json") else {
+        guard let url = Bundle.main.url(forResource: "shoulder_exercises", withExtension: "json") else {
             items = []
             return
         }
-
+        
         do {
             let data = try Data(contentsOf: url)
             let decoded = try JSONDecoder().decode(ExerciseSearchResponse.self, from: data)
             items = decoded.data
         } catch {
+            print("Failed reading shoulder mock data: \(error)")
             items = []
         }
     }
 }
 
-struct ChestExerciseListView: View {
-    @ObservedObject var vm: ChestExerciseListViewModel
+struct ShoulderExerciseListView: View {
+    @ObservedObject var vm: ShoulderExerciseListViewModel
     let onSelect: (ExerciseSearchItem) -> Void
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
@@ -180,7 +133,7 @@ struct ChestExerciseListView: View {
                     .font(.headline)
                     .foregroundColor(.white)
                 Spacer()
-                Text("Chest (Offline Data)")
+                Text("Shoulder (Offline Data)")
                     .font(.caption)
                     .foregroundColor(AppTheme.secondaryText)
                     .padding(.horizontal, 10)
@@ -188,18 +141,18 @@ struct ChestExerciseListView: View {
                     .background(Color.white.opacity(0.06))
                     .clipShape(Capsule())
             }
-
+            
             if vm.items.isEmpty {
                 Text("No exercises available.")
                     .font(.subheadline)
                     .foregroundColor(AppTheme.secondaryText)
             } else {
-                LazyVStack(spacing: 12) { 
+                LazyVStack(spacing: 12) {
                     ForEach(vm.items) { item in
                         Button {
                             onSelect(item)
                         } label: {
-                            ChestExerciseRow(item: item)
+                            ShoulderExerciseRow(item: item)
                         }
                         .buttonStyle(.plain)
                     }
@@ -209,15 +162,15 @@ struct ChestExerciseListView: View {
     }
 }
 
-struct ChestExerciseRow: View {
+struct ShoulderExerciseRow: View {
     let item: ExerciseSearchItem
-
+    
     var body: some View {
         HStack(spacing: 12) {
             ZStack {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
                     .fill(Color.white.opacity(0.06))
-
+                
                 if let url = item.imageUrl {
                     AsyncImage(url: url) { phase in
                         if let image = phase.image {
@@ -236,18 +189,18 @@ struct ChestExerciseRow: View {
                 }
             }
             .frame(width: 56, height: 56)
-
+            
             VStack(alignment: .leading, spacing: 4) {
                 Text(item.name.trimmingCharacters(in: .whitespacesAndNewlines))
                     .font(.headline)
                     .foregroundColor(.white)
                     .lineLimit(2)
-
-                Text("Chest")
+                
+                Text("Shoulder")
                     .font(.caption)
                     .foregroundColor(AppTheme.secondaryText)
             }
-
+            
             Spacer()
         }
         .padding(14)
@@ -256,8 +209,8 @@ struct ChestExerciseRow: View {
     }
 }
 
-struct PushDayWorkoutDetailView_Previews: PreviewProvider {
+struct ShoulderWorkoutDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PushDayWorkoutDetailView()
+        ShoulderWorkoutDetailView()
     }
 }

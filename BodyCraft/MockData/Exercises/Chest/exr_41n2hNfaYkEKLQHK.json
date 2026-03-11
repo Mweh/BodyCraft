@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hNfaYkEKLQHK",
+    "name": "Elevanted Push-Up",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/6ZttyVFvT1.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/FQTLQCrxEP.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/6ZttyVFvT1.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/OdtdUzFMUh.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/PP1zA78TdO.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "CHEST"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "PECTORALIS MAJOR STERNAL HEAD"
+    ],
+    "secondaryMuscles": [
+      "ANTERIOR DELTOID",
+      "PECTORALIS MAJOR CLAVICULAR HEAD"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/cf8jOJT/41n2hNfaYkEKLQHK__Elevanted-Push-Up_Chest.mp4",
+    "keywords": [
+      "Elevated Push-Up workout",
+      "Bodyweight chest exercises",
+      "Elevated Push-Up for chest",
+      "Push-Up variations",
+      "Bodyweight fitness routines",
+      "Home workouts for chest",
+      "Push-Up exercises at home",
+      "Advanced push-up techniques",
+      "Upper body strength exercises",
+      "Bodyweight chest strengthening."
+    ],
+    "overview": "The Elevated Push-Up is an advanced upper body exercise that targets the chest, shoulders, triceps, and core muscles, enhancing strength and endurance. It's suitable for individuals who already have a basic fitness level and are looking to intensify their workout routine. Someone would want to do this exercise to challenge their strength, improve muscle tone, and boost overall body stability.",
+    "instructions": [
+      "Extend your legs behind you, with your toes on the ground, so your body is in a straight line from your head to your heels.",
+      "Lower your body towards the elevated surface by bending your elbows until your chest nearly touches the surface.",
+      "Push your body back up to the starting position by straightening your arms, making sure to keep your body straight and your core engaged throughout the movement.",
+      "Repeat the exercise for your desired number of repetitions, ensuring to maintain proper form throughout."
+    ],
+    "exerciseTips": [
+      "Maintain Core Stability: Engage your core throughout the entire movement. This will help to maintain proper form and protect your lower back. Mistake to avoid: Do not let your hips sag or your back arch during the exercise, as this can lead to lower back injuries.",
+      "Controlled Movement: Lower your body until your chest nearly touches the bench. Push your body back up to the starting position. Make sure to perform this movement in a controlled manner to avoid injury and to maximize the effectiveness of the exercise. Mistake to avoid: Do not drop your body quickly or bounce at the"
+    ],
+    "variations": [
+      "The Diamond Push-Up is another variation, where you bring your hands together to form a diamond shape, targeting more of your triceps.",
+      "The Wide Grip Push-Up is a variation where you place your hands wider than shoulder-width apart, emphasizing your chest muscles.",
+      "Another variation is the Spiderman Push-Up, where you bring your knee to your elbow during each rep, engaging your core.",
+      "Lastly, the One-Arm Push-Up is a challenging variation where you perform the exercise with only one arm, greatly increasing the difficulty and engaging your core more."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hdLLrfSoZkD5",
+      "exr_41n2hqpz42LwLYmo",
+      "exr_41n2hyiA6KFP7oe8",
+      "exr_41n2hoJYuUCusuPF",
+      "exr_41n2hMTuWaJXqDCa",
+      "exr_41n2hjCykucuGqBS",
+      "exr_41n2hV79fHH3H9ML",
+      "exr_41n2hVnfNMgATize",
+      "exr_41n2hnVUkTqJLuPx",
+      "exr_41n2hrUhCsCRC2yN"
+    ]
+  }
+}

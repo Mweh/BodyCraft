@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hTkfLWpc57BQ",
+    "name": "Body-Up",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/wOyxNsN3Px.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/a86HuyLxHg.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/wOyxNsN3Px.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/alLwi0Yte1.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/M5Yn8ATEe8.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "SHOULDERS"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "TRICEPS BRACHII"
+    ],
+    "secondaryMuscles": [
+      "PECTORALIS MAJOR CLAVICULAR HEAD",
+      "PECTORALIS MAJOR STERNAL HEAD",
+      "ANTERIOR DELTOID"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/0PJuibX/41n2hTkfLWpc57BQ__Body-Up_Upper-Arms_.mp4",
+    "keywords": [
+      "Body-Up exercise",
+      "Body weight shoulder workout",
+      "Body-Up shoulder strengthening",
+      "No-equipment shoulder exercise",
+      "Body-Up workout routine",
+      "Body weight exercise for shoulders",
+      "At-home Body-Up exercise",
+      "Body-Up for shoulder muscles",
+      "Shoulder targeting Body-Up workout",
+      "Body-Up bodyweight exercise"
+    ],
+    "overview": "Body-Up is a comprehensive exercise that focuses on strengthening the upper body, including the arms, shoulders, and core. It's ideal for individuals of all fitness levels who want to improve their upper body strength, stability, and flexibility. People would want to do this exercise as it not only enhances physical strength and endurance but also helps in improving posture, reducing the risk of injury, and boosting overall fitness performance.",
+    "instructions": [
+      "Keeping your body straight and core engaged, lower your chest towards the floor as if you are performing a push-up.",
+      "Push your body upwards while simultaneously tucking your knees towards your chest, and roll back onto your sit bones, lifting your hips high into the air and reaching your feet towards the ceiling.",
+      "Slowly roll back down to the starting position, extending your legs back onto the elevated surface and returning to the plank position.",
+      "Repeat the sequence for the desired number of repetitions, remembering to keep your core engaged and maintain control throughout the movement."
+    ],
+    "exerciseTips": [
+      "Controlled Movements: Avoid rushing through the exercise. Each movement should be controlled and deliberate. A common mistake is to perform the exercise too quickly, which can lead to poor form and potential injury. Instead, focus on the quality of each rep, not the quantity.",
+      "Engage Your Core: It's crucial to keep your core engaged throughout the entire exercise to get the most out of it. This not only helps to strengthen your core muscles but also provides stability and support for your spine.",
+      "Warm Up: Before starting the Body-Up exercise, ensure you have warmed up your body properly. This helps to prepare your muscles and"
+    ],
+    "variations": [
+      "Another variation is the Body-Up with a knee tuck, where you bring your knees to your chest at the top of the movement.",
+      "The Single-Arm Body-Up is a challenging variation where you perform the exercise using one arm at a time.",
+      "The Body-Up with a leg lift involves lifting one leg in the air while performing the movement, engaging your lower body as well.",
+      "Lastly, the Weighted Body-Up adds a weight vest or a dumbbell held between your feet to increase resistance and make the exercise more challenging."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2huuprSiT8a4A",
+      "exr_41n2hS8mkyrdha9y",
+      "exr_41n2hURN2ofY1AJi",
+      "exr_41n2hHQ28ukYfNsb",
+      "exr_41n2hMGtN6djnJN9",
+      "exr_41n2hojv75Cwc8NX",
+      "exr_41n2hUAUX9HCHxV5",
+      "exr_41n2hdz6xxcm89XV",
+      "exr_41n2hJ8bWGnC4cyM",
+      "exr_41n2ho6LufLqwS6m"
+    ]
+  }
+}

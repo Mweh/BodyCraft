@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "data": [
+    {
+      "exerciseId": "exr_41n2hkK8hGAcSnW7",
+      "name": "Chest Dip",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/w39q9vcRo1.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hxnFMotsXTj3",
+      "name": "Bench Press",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/A8OLBqBa26.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hXXpvbykPY3q",
+      "name": "Incline Push-up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/CnQLzYUncF.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hNXJadYcfjnd",
+      "name": "Push-up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/cuG10rd4ea.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hGUso7JFmuYR",
+      "name": "Decline Push-Up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/Fw2auG2NBK.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hUBVSgXaKhau",
+      "name": "Standing Arms Circling",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/2rCXHeJmIA.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hKZmyYXB2UL4",
+      "name": "Elbows Back Stretch",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/ZBbn7b0eVR.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hmvGdVRvvnNY",
+      "name": "Pike Push Up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/NPtWT9FuRZ.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hQeNyCnt3uFh",
+      "name": "Back Pec Stretch",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/11TGBvhnYQ.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hNfaYkEKLQHK",
+      "name": "Elevanted Push-Up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/6ZttyVFvT1.jpg"
+    }
+  ]
+}
