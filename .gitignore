@@ -1,57 +1,102 @@
+# ========================
 # Xcode
-#
-# Build generated
+# ========================
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
+
+# Build output
 build/
 DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
 
-# Xcode user data
-*.xcworkspace
-!default.xcworkspace
+# Xcode user-specific files
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
 xcuserdata/
-*.xcuserstate
-*.xcscmblueprint
 
-# Xcode project user settings
-*.xcodeproj/project.xcworkspace/
-*.xcodeproj/xcuserdata/
+# Xcode Schemes (only commit shared schemes)
+*.xcscheme
 
+# ========================
 # Swift Package Manager
+# ========================
 .build/
 .swiftpm/
+*.resolved
+Packages/
 
+# ========================
 # CocoaPods
+# ========================
 Pods/
 Podfile.lock
 
+# ========================
 # Carthage
+# ========================
 Carthage/Build/
+Carthage/Checkouts/
 
-# Fastlane
+# ========================
+# fastlane
+# ========================
 fastlane/report.xml
 fastlane/Preview.html
-fastlane/screenshots
-fastlane/test_output
+fastlane/screenshots/**/*.png
+fastlane/test_output/
 
+# ========================
+# Sensitive / Secrets
+# ========================
+*.pem
+*.p12
+*.mobileprovision
+GoogleService-Info.plist
+Secrets.swift
+Config.xcconfig
+.env
+
+# ========================
 # macOS
+# ========================
 .DS_Store
 .AppleDouble
 .LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DocumentRevisions-V100
+.TemporaryItems
+.VolumeIcon.icns
 
-# Logs
-*.log
+# ========================
+# Instruments & Profiling
+# ========================
+*.trace
 
-# Temporary files
+# ========================
+# Test results
+# ========================
+*.xcresult
+
+# ========================
+# Misc
+# ========================
 *.swp
-*.tmp
-*.temp
-
-# Archives
-*.xcarchive
-
-# Playgrounds
-timeline.xctimeline
-playground.xcworkspace
-
-# Test / Coverage
-*.xccovreport
-*.xccovarchive
+*.bak
+*~
