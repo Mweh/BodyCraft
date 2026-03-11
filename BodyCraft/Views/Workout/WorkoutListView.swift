@@ -31,7 +31,7 @@ struct WorkoutListView: View {
 
     let filters = ["All", "Chest", "Back", "Shoulders", "Legs", "Arms"]
 
-    @State private var workouts: [WorkoutModel] = [
+    let workouts: [WorkoutModel] = [
         WorkoutModel(
             title: "Push Day - Chest & Triceps",
             duration: "50 min", calories: "380 kcal", level: "Intermediate", exercises: 6,
@@ -121,58 +121,19 @@ struct WorkoutListView: View {
                     }
                     .padding(.bottom, 20)
 
-                    List {
-                        ForEach(workouts) { workout in
-                            NavigationLink {
-                                WorkoutDetailSheet(workout: workout)
-                            } label: {
-                                WorkoutCardView(workout: workout)
-                            }
-                            .buttonStyle(.plain)
-                            .listRowInsets(EdgeInsets())
-                            .listRowBackground(Color.clear)
-                            .listRowSeparator(.hidden)
-                            .padding(.bottom, 16)
-                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                if workout.level == "Custom" {
-                                    Button(role: .destructive) {
-                                        if let index = workouts.firstIndex(where: { $0.id == workout.id }) {
-                                            workouts.remove(at: index)
-                                        }
-                                    } label: {
-                                        Label("Delete", systemImage: "trash")
-                                    }
+                    ScrollView {
+                        VStack(spacing: 16) {
+                            ForEach(workouts) { workout in
+                                NavigationLink {
+                                    WorkoutDetailSheet(workout: workout)
+                                } label: {
+                                    WorkoutCardView(workout: workout)
                                 }
+                                .buttonStyle(.plain)
                             }
+                            Spacer().frame(height: 100)
                         }
-                        
-                        Color.clear.frame(height: 100)
-                            .listRowInsets(EdgeInsets())
-                            .listRowBackground(Color.clear)
-                            .listRowSeparator(.hidden)
-                    }
-                    .listStyle(.plain)
-                    .padding(.horizontal)
-                    .scrollContentBackground(.hidden)
-                }
-                
-                // Floating Action Button
-                VStack {
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        NavigationLink(destination: CreateWorkoutView(workouts: $workouts)) {
-                            Image(systemName: "plus")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .frame(width: 60, height: 60)
-                                .background(AppTheme.primary)
-                                .clipShape(Circle())
-                                .shadow(color: AppTheme.primary.opacity(0.4), radius: 10, x: 0, y: 5)
-                        }
-                        .padding(.trailing, 20)
-                        .padding(.bottom, 20)
+                        .padding(.horizontal)
                     }
                 }
             }
