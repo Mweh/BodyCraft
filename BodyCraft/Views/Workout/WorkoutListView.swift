@@ -129,10 +129,9 @@ struct WorkoutListView: View {
                                 WorkoutCardView(workout: workout)
                             }
                             .buttonStyle(.plain)
-                            .listRowInsets(EdgeInsets())
+                            .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                             .listRowBackground(Color.clear)
                             .listRowSeparator(.hidden)
-                            .padding(.bottom, 16)
                             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                 if workout.level == "Custom" {
                                     Button(role: .destructive) {
@@ -152,7 +151,6 @@ struct WorkoutListView: View {
                             .listRowSeparator(.hidden)
                     }
                     .listStyle(.plain)
-                    .padding(.horizontal)
                     .scrollContentBackground(.hidden)
                 }
                 
