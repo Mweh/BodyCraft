@@ -209,6 +209,7 @@ struct SummaryStepView: View {
     let gender: String
     let height: String
     let weight: String
+    let bodyFat: Double
     let frequency: Int
     let duration: String
     let equipment: String
@@ -240,6 +241,7 @@ struct SummaryStepView: View {
                     SummaryRow(title: "Gender", value: gender)
                     SummaryRow(title: "Height", value: "\(height) cm")
                     SummaryRow(title: "Weight", value: "\(weight) kg")
+                    SummaryRow(title: "Body Fat", value: String(format: "%.0f%%", bodyFat))
                     SummaryRow(title: "Frequency", value: "\(frequency)x per week")
                     SummaryRow(title: "Duration", value: duration)
                     SummaryRow(title: "Equipment", value: equipment)
