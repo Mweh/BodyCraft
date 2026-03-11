@@ -10,10 +10,14 @@ import SwiftUI
 
 @main
 struct BodyCraftApp: App {
+    @StateObject private var profileStore = UserProfileStore()
+
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
+                .environmentObject(profileStore)
                 .preferredColorScheme(.dark)
         }
     }
 }
+
