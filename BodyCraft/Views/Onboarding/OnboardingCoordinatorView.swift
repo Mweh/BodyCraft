@@ -2,9 +2,11 @@ import SwiftUI
 
 struct OnboardingCoordinatorView: View {
     @Binding var hasCompletedOnboarding: Bool
+    @EnvironmentObject var profileStore: UserProfileStore
     @State private var currentStep = 0
     
     // Shared State for onboarding data
+    @State private var name = ""
     @State private var goal = "Build Muscle"
     @State private var activityLevel = "Sedentary"
     @State private var fitnessLevel = "Beginner"
@@ -73,6 +75,20 @@ struct OnboardingCoordinatorView: View {
                     EquipmentStepView(selectedEquipment: $equipment, nextAction: { currentStep += 1 })
                 case 8:
                     SummaryStepView(goal: goal, activity: activityLevel, fitness: fitnessLevel, age: age, gender: gender, height: height, weight: weight, frequency: Int(sessionsPerWeek), duration: durationPerSession, equipment: equipment, finishAction: {
+                        // Save all onboarding data to persistent store
+                        profileStore.save(UserProfile(
+                            name: name.isEmpty ? gender : name,
+                            age: age,
+                            gender: gender,
+                            height: height,
+                            weight: weight,
+                            goal: goal,
+                            activityLevel: activityLevel,
+                            fitnessLevel: fitnessLevel,
+                            sessionsPerWeek: Int(sessionsPerWeek),
+                            durationPerSession: durationPerSession,
+                            equipment: equipment
+                        ))
                         hasCompletedOnboarding = true
                     })
                 default:
@@ -85,3 +101,4 @@ struct OnboardingCoordinatorView: View {
         }
     }
 }
+
