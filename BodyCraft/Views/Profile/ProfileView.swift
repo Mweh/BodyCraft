@@ -123,7 +123,10 @@ struct ProfileView: View {
                                     )
                                 }
                                 HStack(spacing: 12) {
-                                    StaticStatCard(title: "Age", value: profile.age.isEmpty ? "—" : "\(profile.age) yr")
+                                    StaticStatCard(
+                                        title: "Body Fat",
+                                        value: profile.bodyFat == 0 ? "—" : String(format: "%.0f%%", profile.bodyFat)
+                                    )
                                     StaticStatCard(title: "BMI", value: profile.bmi)
                                 }
                             }
