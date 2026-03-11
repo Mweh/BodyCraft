@@ -5,9 +5,21 @@ struct WorkoutListView: View {
     let filters = ["All", "Chest", "Back", "Shoulders", "Legs"]
     
     let workouts = [
-        WorkoutModel(title: "Push Day - Chest & Triceps", duration: "50 min", calories: "380 kcal", level: "Intermediate", exercises: 6, tagColor: .cyan),
-        WorkoutModel(title: "Pull Day - Back & Biceps", duration: "55 min", calories: "400 kcal", level: "Intermediate", exercises: 6, tagColor: .blue),
-        WorkoutModel(title: "Leg Day - Quads & Glutes", duration: "60 min", calories: "500 kcal", level: "Advanced", exercises: 6, tagColor: .red)
+        WorkoutModel(
+            title: "Push Day - Chest & Triceps",
+            duration: "50 min", calories: "380 kcal", level: "Intermediate", exercises: 6, tagColor: .cyan,
+            imageURL: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3ZWlnaHQlMjB0cmFpbmluZyUyMHdvcmtvdXR8ZW58MXx8fHwxNzcyODU5MDIzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        ),
+        WorkoutModel(
+            title: "Pull Day - Back & Biceps", 
+            duration: "55 min", calories: "400 kcal", level: "Intermediate", exercises: 6, tagColor: .blue,
+            imageURL: "https://images.unsplash.com/photo-1759300642292-ffe3cb347548?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdW1iYmVsbCUyMGJpY2VwJTIwY3VybCUyMGV4ZXJjaXNlfGVufDF8fHx8MTc3Mjg1OTAyNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            
+            ),
+        WorkoutModel(title: "Leg Day - Quads & Glutes", 
+        duration: "60 min", calories: "500 kcal", level: "Advanced", exercises: 6, tagColor: .red,
+        imageURL: "https://images.unsplash.com/photo-1770026136877-8ddf98cd6500?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXJiZWxsJTIwc3F1YXQlMjBneW0lMjBleGVyY2lzZXxlbnwxfHx8fDE3NzI3NzI1OTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        )
     ]
     
     var body: some View {
@@ -84,6 +96,7 @@ struct WorkoutModel: Identifiable {
     let level: String
     let exercises: Int
     let tagColor: Color
+    var imageURL: String? = nil
 }
 
 struct WorkoutCardView: View {
@@ -91,10 +104,36 @@ struct WorkoutCardView: View {
     
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            // Placeholder Image Background
-            Rectangle()
-                .fill(LinearGradient(colors: [workout.tagColor.opacity(0.3), AppTheme.surface], startPoint: .top, endPoint: .bottom))
-                .frame(height: 180)
+            // Background Image
+            if let urlString = workout.imageURL, let url = URL(string: urlString) {
+                AsyncImage(url: url) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 180)
+                            .clipped()
+                    } else if phase.error != nil {
+                        // Error placeholder
+                        Rectangle()
+                            .fill(LinearGradient(colors: [workout.tagColor.opacity(0.3), AppTheme.surface], startPoint: .top, endPoint: .bottom))
+                            .frame(height: 180)
+                    } else {
+                        // Loading state
+                        ZStack {
+                            Rectangle()
+                                .fill(AppTheme.surface)
+                                .frame(height: 180)
+                            ProgressView()
+                        }
+                    }
+                }
+            } else {
+                // Placeholder Image Background
+                Rectangle()
+                    .fill(LinearGradient(colors: [workout.tagColor.opacity(0.3), AppTheme.surface], startPoint: .top, endPoint: .bottom))
+                    .frame(height: 180)
+            }
             
             VStack {
                 HStack {
