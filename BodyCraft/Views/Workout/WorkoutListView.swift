@@ -28,7 +28,6 @@ struct WorkoutModel: Identifiable {
 
 struct WorkoutListView: View {
     @State private var selectedFilter = "All"
-    @State private var selectedWorkout: WorkoutModel? = nil
 
     let filters = ["All", "Chest", "Back", "Shoulders", "Legs", "Arms"]
 
@@ -92,7 +91,7 @@ struct WorkoutListView: View {
     ]
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 AppTheme.background.ignoresSafeArea()
 
@@ -124,16 +123,15 @@ struct WorkoutListView: View {
 
                     List {
                         ForEach(workouts) { workout in
-                            ZStack {
+                            NavigationLink {
+                                WorkoutDetailSheet(workout: workout)
+                            } label: {
                                 WorkoutCardView(workout: workout)
-                                    .onTapGesture {
-                                        selectedWorkout = workout
-                                    }
                             }
-                            .listRowInsets(EdgeInsets())
+                            .buttonStyle(.plain)
+                            .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                             .listRowBackground(Color.clear)
                             .listRowSeparator(.hidden)
-                            .padding(.bottom, 16)
                             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                 if workout.level == "Custom" {
                                     Button(role: .destructive) {
@@ -153,7 +151,6 @@ struct WorkoutListView: View {
                             .listRowSeparator(.hidden)
                     }
                     .listStyle(.plain)
-                    .padding(.horizontal)
                     .scrollContentBackground(.hidden)
                 }
                 
@@ -178,11 +175,6 @@ struct WorkoutListView: View {
                 }
             }
             .navigationBarHidden(true)
-        }
-        .sheet(item: $selectedWorkout) { workout in
-            WorkoutDetailSheet(workout: workout)
-                .presentationDetents([.large])
-                .presentationDragIndicator(.visible)
         }
     }
 }
