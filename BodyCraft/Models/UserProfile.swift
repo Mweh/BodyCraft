@@ -21,6 +21,13 @@ struct UserProfile: Codable {
     var startingWeight: String = ""
     var startingBodyFat: Double = 0.0
 
+    // ── Goal preset ────────────────────────────────────────────────────────
+    /// "Current" | "Cutting" | "Bulking" | "Manual"
+    var goalPreset: String = "Current"
+    /// Only used when goalPreset == "Manual"
+    var customTargetWeight: String = ""
+    var customTargetBodyFat: Double = 0.0
+
     // ── Computed: current readings ─────────────────────────────────────────
     var bmiValue: Double {
         guard let h = Double(height), let w = Double(weight), h > 0 else { return 0 }
@@ -37,14 +44,26 @@ struct UserProfile: Codable {
         return letters.isEmpty ? "?" : letters.joined()
     }
 
-    // ── Computed: targets ──────────────────────────────────────────────────
+    // ── Computed: targets (depend on chosen preset) ───────────────────────
     var targetBodyFat: Double {
-        gender.lowercased() == "female" ? 18.0 : 10.0
+        switch goalPreset {
+        case "Cutting":  return gender.lowercased() == "female" ? 15.0 : 8.0
+        case "Bulking":  return gender.lowercased() == "female" ? 22.0 : 15.0
+        case "Manual":   return customTargetBodyFat > 0 ? customTargetBodyFat : (gender.lowercased() == "female" ? 18.0 : 10.0)
+        default:         return gender.lowercased() == "female" ? 18.0 : 10.0   // "Current"
+        }
     }
 
-    var targetBMI: Double { 22.0 }
+    var targetBMI: Double {
+        switch goalPreset {
+        case "Cutting": return 20.5
+        case "Bulking": return 24.0
+        default:        return 22.0
+        }
+    }
 
     var targetWeight: Double {
+        if goalPreset == "Manual", let w = Double(customTargetWeight), w > 0 { return w }
         guard let h = Double(height), h > 0 else { return 0 }
         let hm = h / 100
         return targetBMI * hm * hm
