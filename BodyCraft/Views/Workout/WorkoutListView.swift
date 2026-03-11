@@ -28,7 +28,6 @@ struct WorkoutModel: Identifiable {
 
 struct WorkoutListView: View {
     @State private var selectedFilter = "All"
-    @State private var selectedWorkout: WorkoutModel? = nil
 
     let filters = ["All", "Chest", "Back", "Shoulders", "Legs", "Arms"]
 
@@ -92,7 +91,7 @@ struct WorkoutListView: View {
     ]
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 AppTheme.background.ignoresSafeArea()
 
@@ -125,10 +124,12 @@ struct WorkoutListView: View {
                     ScrollView {
                         VStack(spacing: 16) {
                             ForEach(workouts) { workout in
-                                WorkoutCardView(workout: workout)
-                                    .onTapGesture {
-                                        selectedWorkout = workout
-                                    }
+                                NavigationLink {
+                                    WorkoutDetailSheet(workout: workout)
+                                } label: {
+                                    WorkoutCardView(workout: workout)
+                                }
+                                .buttonStyle(.plain)
                             }
                             Spacer().frame(height: 100)
                         }
@@ -137,11 +138,6 @@ struct WorkoutListView: View {
                 }
             }
             .navigationBarHidden(true)
-        }
-        .sheet(item: $selectedWorkout) { workout in
-            WorkoutDetailSheet(workout: workout)
-                .presentationDetents([.large])
-                .presentationDragIndicator(.visible)
         }
     }
 }
