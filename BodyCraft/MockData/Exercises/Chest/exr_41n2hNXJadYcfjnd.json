@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hNXJadYcfjnd",
+    "name": "Push-up",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/cuG10rd4ea.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/ZVZe7lmc7O.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/cuG10rd4ea.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/6LcxUaf0CU.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/IoEuhBCISH.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "CHEST"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "PECTORALIS MAJOR STERNAL HEAD"
+    ],
+    "secondaryMuscles": [
+      "TRICEPS BRACHII",
+      "ANTERIOR DELTOID",
+      "PECTORALIS MAJOR CLAVICULAR HEAD"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/G8ZH9KB/41n2hNXJadYcfjnd__Push-up-m_Chest.mp4",
+    "keywords": [
+      "Chest workout at home",
+      "Bodyweight exercises for chest",
+      "Push-up variations",
+      "How to do a push-up",
+      "Benefits of push-ups",
+      "Push-up technique",
+      "Upper body bodyweight exercises",
+      "Strengthening chest muscles",
+      "Bodyweight chest workout",
+      "Home workouts for chest."
+    ],
+    "overview": "Push-ups are a versatile exercise that strengthens the chest, shoulders, triceps, and core muscles, making it beneficial for virtually everyone, regardless of fitness level. It's an ideal exercise for those looking to improve upper body strength and endurance without the need for any equipment. Individuals would want to incorporate push-ups into their routine as they can be done anywhere, anytime, and can be modified to suit different fitness levels, making it a practical and efficient workout option.",
+    "instructions": [
+      "Lower your body until your chest is close to the floor, keeping your back straight and your elbows close to your body.",
+      "Push your body up, extending your arms fully but without locking your elbows, while maintaining your body in a straight line.",
+      "Pause for a moment at the top of the push-up.",
+      "Lower your body back down to the starting position, ensuring you don't drop your body too quickly, and repeat the exercise."
+    ],
+    "exerciseTips": [
+      "Hand Position: Your hands should be shoulder-width apart, directly under your shoulders. Placing your hands too wide apart can put excessive strain on your shoulders and elbows, while placing them too close can limit your range of motion and the effectiveness of the exercise.",
+      "Full Range of Motion: To get the most out of your push-ups, make sure you're using a full range of motion. This means lowering your body until your chest almost touches the floor, then pushing back up to the original position. Half push-ups don't engage your muscles to their full potential.",
+      "Controlled Movement: Avoid the common mistake of rushing through your push-ups. Instead, control your movement on the way down and the way up"
+    ],
+    "variations": [
+      "Diamond Push-up: This type of push-up targets the triceps and involves placing your hands close together under your chest so your thumbs and index fingers touch, forming a diamond shape.",
+      "Wide Grip Push-up: In this variation, you position your hands wider than shoulder-width apart to focus more on the chest muscles.",
+      "Decline Push-up: For this push-up, you place your feet on an elevated surface like a bench or step, increasing the amount of body weight you have to lift and making the exercise more challenging.",
+      "Spiderman Push-up: This advanced push-up variation involves bringing your knee to your elbow on each rep, which adds a core and hip flexor challenge to the traditional push-up."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hWgAAtQeA3Lh",
+      "exr_41n2hXXpvbykPY3q",
+      "exr_41n2hqap5cDijntQ",
+      "exr_41n2hxyrhMyqxuQd",
+      "exr_41n2hxzbkoomfKi7",
+      "exr_41n2hZhRR2KnBSyJ",
+      "exr_41n2hKRhDs61Yc6i",
+      "exr_41n2hupUV49WrM5J",
+      "exr_41n2hd5CNeDNYVyN",
+      "exr_41n2hpqATXAghbPT"
+    ]
+  }
+}

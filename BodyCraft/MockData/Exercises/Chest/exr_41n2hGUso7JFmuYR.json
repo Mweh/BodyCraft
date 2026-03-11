@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hGUso7JFmuYR",
+    "name": "Decline Push-Up",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/Fw2auG2NBK.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/NTHPZEhSmZ.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/Fw2auG2NBK.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/wK7DPaa3VV.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/gQvZ6BMiYO.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "CHEST"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "PECTORALIS MAJOR CLAVICULAR HEAD",
+      "PECTORALIS MAJOR STERNAL HEAD"
+    ],
+    "secondaryMuscles": [
+      "ANTERIOR DELTOID",
+      "TRICEPS BRACHII"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/diH7Mj2/41n2hGUso7JFmuYR__Decline-Push-Up_Chest_.mp4",
+    "keywords": [
+      "Decline Push-Up workout",
+      "Body weight chest exercises",
+      "Decline Push-Up technique",
+      "How to do Decline Push-Ups",
+      "Home workouts for chest",
+      "Bodyweight exercises for pectorals",
+      "Decline Push-Up benefits",
+      "Decline Push-Up for chest strength",
+      "Improving chest muscles with Decline Push-Up",
+      "No-equipment chest workout"
+    ],
+    "overview": "The Decline Push-Up is a challenging upper body exercise that targets the chest, shoulders, triceps, and core muscles. It's particularly beneficial for individuals seeking to intensify their workout and enhance upper body strength. By performing this exercise, individuals can improve muscle definition, particularly in the lower chest, and increase overall body stability.",
+    "instructions": [
+      "Walk your feet up onto the bench or step, keeping your body straight from your head to your heels, this will be your starting position.",
+      "Lower your body towards the ground while keeping your elbows close to your body until your chest nearly touches the floor.",
+      "Push your body up back to the starting position by fully extending your arms, while maintaining your body straight.",
+      "Repeat the process for the desired number of repetitions, ensuring to keep your core tight and back flat throughout the exercise."
+    ],
+    "exerciseTips": [
+      "Maintain Core Stability: Engage your core throughout the entire exercise. This will help maintain your body alignment and reduce the risk of lower back injuries. A common mistake is to let the hips sag or the back arch excessively, which can strain the spine.",
+      "Controlled Movements: Lower your body towards the ground in a controlled manner until your chest nearly touches the floor. Push your body back up to the starting position as forcefully as you can. Avoid the mistake of rushing the movement or using momentum to lift yourself up, as this can lead to poor form and reduced effectiveness of the exercise.",
+      "El"
+    ],
+    "variations": [
+      "Wide Grip Decline Push-Up: This version requires you to place your hands wider than shoulder-width apart on a raised platform, focusing more on the outer part of your chest.",
+      "Close Grip Decline Push-Up: In this variation, your hands are placed closer together on an elevated surface, targeting the triceps and the inner chest muscles.",
+      "Single Leg Decline Push-Up: This involves lifting one leg off the ground while performing the push-up on a decline, increasing the challenge to your core and balance.",
+      "Decline Push-Up with Rotation: After each push-up on a decline, you rotate your body and extend one arm towards the ceiling. This works your chest, triceps, and shoulders, while also engaging your core."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hgpsLEy9h2cM",
+      "exr_41n2hVVjksUqMkeS",
+      "exr_41n2hKNAJK7irMJY",
+      "exr_41n2hZQ1yPVGNnWW",
+      "exr_41n2hgKXPDR2U3u9",
+      "exr_41n2hYZ6LrFfUzLw",
+      "exr_41n2hkDh1eLdSnRD",
+      "exr_41n2hodp8w3N4wZK",
+      "exr_41n2hd89iAhXkFyS",
+      "exr_41n2hkZrRztT4UyV"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hw4iksLYXESz",
+    "name": "Seated Shoulder Flexor Depresor Retractor Stretch Bent Knee",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/DbYTA0rvWJ.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/DbYTA0rvWJ.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/DbYTA0rvWJ.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/DbYTA0rvWJ.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/DbYTA0rvWJ.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["SHOULDERS"],
+    "exerciseType": "STRETCH",
+    "targetMuscles": ["ANTERIOR DELTOID"],
+    "secondaryMuscles": ["PECTORALIS MAJOR"],
+    "videoUrl": "",
+    "keywords": ["shoulder stretch", "seated stretch", "bent knee"],
+    "overview": "A seated stretch targeting the shoulder flexors and retractors while keeping the knees bent.",
+    "instructions": [
+      "Sit on the floor with your knees bent and feet flat on the ground.",
+      "Place your hands behind you with fingers pointing away from your body.",
+      "Slowly lean back and slide your hips forward until you feel a stretch in your shoulders and chest.",
+      "Hold the stretch for 15-30 seconds, then return to the starting position."
+    ],
+    "exerciseTips": [
+      "Keep your chest up and avoid rounding your back.",
+      "Breathe deeply and relax into the stretch."
+    ],
+    "variations": [],
+    "relatedExerciseIds": ["exr_41n2hJ5Harig7K7F"]
+  }
+}

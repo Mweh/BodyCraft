@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hjuGpcex14w7",
+    "name": "Lateral Raise",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/qODXfaAVcz.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/KSfBbHaAyy.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/qODXfaAVcz.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/R2OCQ86LT7.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/0DpQPdVNe3.jpg"
+    },
+    "equipments": [
+      "DUMBBELL"
+    ],
+    "bodyParts": [
+      "SHOULDERS"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "LATERAL DELTOID"
+    ],
+    "secondaryMuscles": [
+      "SERRATUS ANTERIOR",
+      "ANTERIOR DELTOID"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/j3qqj9g/41n2hjuGpcex14w7__Dumbbell-Lateral-Raise_shoulder_.mp4",
+    "keywords": [
+      "Dumbbell Lateral Raise",
+      "Shoulder Strengthening Exercises",
+      "Dumbbell Exercises for Shoulders",
+      "Lateral Raise Workout",
+      "Shoulder Muscle Building Exercises",
+      "Dumbbell Shoulder Raise",
+      "Lateral Dumbbell Raise Technique",
+      "Shoulder Toning Exercises with Dumbbells",
+      "How to do Lateral Raises",
+      "Dumbbell Lateral Lifts."
+    ],
+    "overview": "The Lateral Raise is a strength training exercise that primarily targets the deltoids, helping to build shoulder width and definition. It's suitable for individuals at any fitness level, from beginners to advanced athletes, looking to improve upper body strength and posture. People may want to incorporate Lateral Raises into their routine to enhance shoulder stability, promote balanced muscle development, and improve daily functional movements.",
+    "instructions": [
+      "Keeping your torso stationary, lift the dumbbells to your side with a slight bend on the elbow and the hands slightly tilted forward as if pouring water in a glass. Continue to lift them until they are at shoulder level.",
+      "Pause for a second at the top of the movement, then slowly lower the weights back down to the starting position.",
+      "Repeat this movement for the desired number of repetitions.",
+      "Remember to keep your spine neutral and your movements controlled throughout the exercise, avoiding any swinging or jerking."
+    ],
+    "exerciseTips": [
+      "Avoid Using Momentum: Avoid using momentum to swing the weights up, as this can lead to injury and reduces the effectiveness of the exercise. Instead, lift and lower the weights in a controlled manner, focusing on the muscles you're trying to work.",
+      "Choose the Right Weight: Using too heavy weights can lead to poor form and potential injuries. Start with lighter weights and gradually increase as your strength improves. Remember, the goal is not to lift the heaviest weight, but to perform the exercise correctly and safely.",
+      "Focus on the Shoulders: The lateral raise primarily targets the shoulder muscles, specifically the"
+    ],
+    "variations": [
+      "Seated Lateral Raise: This variation requires you to be seated on a bench, which can help to isolate the shoulder muscles and reduce the ability to use momentum to lift the weights.",
+      "Incline Lateral Raise: In this variation, you lay chest-down on an incline bench, which changes the angle of the movement and targets different parts of the shoulder muscles.",
+      "Bent Over Lateral Raise: This variation involves bending over at the waist and lifting the weights from this position, which targets the rear deltoids rather than the side deltoids.",
+      "One Arm Cable Lateral Raise: This variation involves using a cable machine, which provides a more consistent level of resistance throughout the movement compared to free weights."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hZEg1rmRm1PB",
+      "exr_41n2hu1bys73zUm3",
+      "exr_41n2hHaYg4ghZQ43",
+      "exr_41n2hKYnH7M4tn7q",
+      "exr_41n2hK768qYUUAUY",
+      "exr_41n2hwPpWZTb5DAo",
+      "exr_41n2hGgiPBtmRKnH",
+      "exr_41n2hunNDBzrz6Qa",
+      "exr_41n2hTpsBxw21tfa",
+      "exr_41n2hpiQMNx9ujHc"
+    ]
+  }
+}

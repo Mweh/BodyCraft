@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hUBVSgXaKhau",
+    "name": "Standing Arms Circling ",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/2rCXHeJmIA.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/MUfEwXLzId.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/2rCXHeJmIA.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/QOcZE3sFEQ.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/kX4ZqOIrR0.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "CHEST",
+      "SHOULDERS"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "POSTERIOR DELTOID",
+      "SERRATUS ANTE"
+    ],
+    "secondaryMuscles": [],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/6kAxe37/41n2hUBVSgXaKhau__Standing-Arms-Circling-(female)_Shoulders.mp4",
+    "keywords": [
+      "Bodyweight exercise for chest and shoulders",
+      "Standing Arms Circling workout",
+      "Chest strengthening exercises",
+      "Shoulder workout with body weight",
+      "No-equipment chest workout",
+      "Bodyweight shoulder exercise",
+      "Standing Arms Circling technique",
+      "Home workout for chest and shoulders",
+      "Exercise to improve shoulder strength",
+      "Bodyweight chest and shoulder workout"
+    ],
+    "overview": "Standing Arms Circling is a simple yet effective exercise that improves upper body strength, enhances flexibility, and promotes better posture. It is suitable for individuals of all fitness levels, including beginners, as it requires no equipment and can be done anywhere. People might want to do this exercise to warm up before a workout, relieve tension in the shoulders and neck, or improve their overall body coordination and balance.",
+    "instructions": [
+      "Start to slowly make circles with your arms, keeping them straight at all times.",
+      "Start with small circles and gradually increase the size of the circles.",
+      "After doing this for about 30 seconds, reverse the direction of your circles.",
+      "Continue this exercise for a desired amount of time or repetitions, then slowly lower your arms to your sides to finish."
+    ],
+    "exerciseTips": [
+      "Controlled Movements: When circling your arms, make sure to use slow, controlled movements. Avoid rushing the exercise or using momentum to swing your arms around, as this can lead to injury and won't effectively work your muscles. The slower and more controlled the movement, the better the muscle engagement.",
+      "Range of Motion: Aim for the largest range of motion that you can comfortably achieve. This means trying to draw as big a circle as possible with your arms. A common mistake is to make small, quick circles, but this doesn't fully engage the shoulder muscles and reduces the effectiveness of the exercise."
+    ],
+    "variations": [
+      "The One-Arm Circle is a variation where you circle only one arm at a time, focusing on the movement and control of a single arm, which can help in improving your coordination.",
+      "The Weighted Arms Circling involves holding small weights in your hands while performing the exercise, adding resistance to strengthen your shoulders and arms.",
+      "The Alternating Arms Circling is another variation where you alternate circling your arms forward and backward, which can help improve your range of motion.",
+      "The High-Speed Arms Circling is a more challenging variation where you perform the arm circles at a faster pace, which can help increase your heart rate and burn more calories."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2huXeEFSaqo4G",
+      "exr_41n2hw4iksLYXESz",
+      "exr_41n2hSq88Ni3KCny",
+      "exr_41n2hynD9srC1kY7",
+      "exr_41n2hUhKDUkxTh4E",
+      "exr_41n2hTYChGwN78Ah",
+      "exr_41n2hVnfNMgATize",
+      "exr_41n2hnVUkTqJLuPx",
+      "exr_41n2hrUhCsCRC2yN",
+      "exr_41n2hsYtmx1fi2H4"
+    ]
+  }
+}
