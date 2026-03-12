@@ -34,12 +34,17 @@ struct BodyMeasurementsStepView: View {
                 Label("Height", systemImage: "ruler")
                     .foregroundColor(.white)
                 HStack {
-                    TextField("180", text: $height)
-                        .keyboardType(.decimalPad)
-                        .padding()
-                        .background(AppTheme.surface)
-                        .cornerRadius(12)
-                        .foregroundColor(.white)
+                    Picker("Height", selection: $height) {
+                        ForEach(100..<250) { i in
+                            Text("\(i)").tag("\(i)")
+                        }
+                    }
+                    .pickerStyle(.wheel)
+                    .frame(height: 100)
+                    .background(AppTheme.surface)
+                    .cornerRadius(12)
+                    .clipped()
+                    
                     Text("cm")
                         .foregroundColor(AppTheme.secondaryText)
                 }
@@ -49,12 +54,17 @@ struct BodyMeasurementsStepView: View {
                 Label("Weight", systemImage: "scalemass")
                     .foregroundColor(.white)
                 HStack {
-                    TextField("85", text: $weight)
-                        .keyboardType(.decimalPad)
-                        .padding()
-                        .background(AppTheme.surface)
-                        .cornerRadius(12)
-                        .foregroundColor(.white)
+                    Picker("Weight", selection: $weight) {
+                        ForEach(30..<200) { i in
+                            Text("\(i)").tag("\(i)")
+                        }
+                    }
+                    .pickerStyle(.wheel)
+                    .frame(height: 100)
+                    .background(AppTheme.surface)
+                    .cornerRadius(12)
+                    .clipped()
+                    
                     Text("kg")
                         .foregroundColor(AppTheme.secondaryText)
                 }
@@ -242,8 +252,6 @@ struct SummaryStepView: View {
                     SummaryRow(title: "Height", value: "\(height) cm")
                     SummaryRow(title: "Weight", value: "\(weight) kg")
                     SummaryRow(title: "Body Fat", value: String(format: "%.0f%%", bodyFat))
-                    SummaryRow(title: "Frequency", value: "\(frequency)x per week")
-                    SummaryRow(title: "Duration", value: duration)
                     SummaryRow(title: "Equipment", value: equipment)
                 }
                 .padding()

@@ -19,7 +19,7 @@ struct OnboardingCoordinatorView: View {
     @State private var durationPerSession = "45 min"
     @State private var equipment = "No Equipment"
 
-    private let totalSteps = 10
+    private let totalSteps = 9
 
     @State private var isLoadingTarget = false
     @State private var errorMessage: String? = nil
@@ -47,12 +47,6 @@ struct OnboardingCoordinatorView: View {
                             .font(.footnote)
 
                         Spacer()
-
-                        Button("Skip") {
-                            hasCompletedOnboarding = true
-                        }
-                        .foregroundColor(AppTheme.secondaryText)
-                        .font(.footnote)
                     }
                     .padding(.horizontal)
 
@@ -105,10 +99,8 @@ struct OnboardingCoordinatorView: View {
                     case 6:
                         BodyFatStepView(bodyFat: $bodyFat, nextAction: { currentStep += 1 })
                     case 7:
-                        WorkoutPreferencesStepView(sessions: $sessionsPerWeek, duration: $durationPerSession, nextAction: { currentStep += 1 })
-                    case 8:
                         EquipmentStepView(selectedEquipment: $equipment, nextAction: { currentStep += 1 })
-                    case 9:
+                    case 8:
                         SummaryStepView(
                             goal: goal, activity: activityLevel, fitness: fitnessLevel,
                             age: age, gender: gender, height: height, weight: weight,

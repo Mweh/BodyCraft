@@ -8,7 +8,7 @@ struct BodyFatStepView: View {
 
     // Range limits
     private let minFat: Double = 5
-    private let maxFat: Double = 45
+    private let maxFat: Double = 30
 
     private var category: BodyFatCategory {
         BodyFatCategory.category(for: bodyFat)
@@ -34,15 +34,10 @@ struct BodyFatStepView: View {
                     .animation(.spring(response: 0.4), value: category.id)
 
                 VStack(alignment: .leading, spacing: 6) {
-                    HStack(spacing: 0) {
-                        Text(String(format: "%.0f", bodyFat))
-                            .font(.system(size: 38, weight: .bold, design: .rounded))
-                            .foregroundColor(.white)
-                            .contentTransition(.numericText())
-                        Text("%")
-                            .font(.title2).fontWeight(.bold).foregroundColor(.white)
-                            .padding(.top, 4)
-                    }
+                    Text(category.rangeLabel)
+                        .font(.system(size: 38, weight: .bold, design: .rounded))
+                        .foregroundColor(.white)
+                        .contentTransition(.numericText())
                     Text(category.label)
                         .font(.subheadline).fontWeight(.semibold)
                         .foregroundColor(category.color)
@@ -67,13 +62,13 @@ struct BodyFatStepView: View {
 
             // ── Slider ─────────────────────────────────────────────────────
             VStack(spacing: 8) {
-                Slider(value: $bodyFat, in: minFat...maxFat, step: 1)
+                Slider(value: $bodyFat, in: minFat...maxFat, step: 5)
                     .accentColor(category.color)
 
                 HStack {
                     Text("5%")
                     Spacer()
-                    Text("45%")
+                    Text("30%+")
                 }
                 .font(.caption2)
                 .foregroundColor(AppTheme.secondaryText)
@@ -185,15 +180,15 @@ enum BodyFatCategory: String, CaseIterable, Identifiable {
         }
     }
 
-    /// Fraction of 40% total range (5–45) each category occupies
+    /// Fraction of each category width (equal 1/6 for 6 steps)
     var widthFraction: CGFloat {
         switch self {
-        case .essential:    return 5.0 / 40.0
-        case .athletic:     return 5.0 / 40.0
-        case .fitness:      return 5.0 / 40.0
-        case .average:      return 5.0 / 40.0
-        case .aboveAverage: return 5.0 / 40.0
-        case .obese:        return 15.0 / 40.0
+        case .essential:    return 1.0 / 6.0
+        case .athletic:     return 1.0 / 6.0
+        case .fitness:      return 1.0 / 6.0
+        case .average:      return 1.0 / 6.0
+        case .aboveAverage: return 1.0 / 6.0
+        case .obese:        return 1.0 / 6.0
         }
     }
 }

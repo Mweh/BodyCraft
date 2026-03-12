@@ -107,6 +107,14 @@ struct AboutYouStepView: View {
                 HStack {
                     TextField("Age", text: $age)
                         .keyboardType(.numberPad)
+                        .onChange(of: age) { newValue in
+                            let filtered = newValue.filter { $0.isNumber }
+                            if filtered.count > 2 {
+                                age = String(filtered.prefix(2))
+                            } else if age != filtered {
+                                age = filtered
+                            }
+                        }
                         .padding()
                         .background(AppTheme.surface)
                         .cornerRadius(12)
