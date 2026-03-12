@@ -26,7 +26,8 @@ class AIWorkoutGeneratorService {
         activityLevel: String,
         goal: String,
         experience: String,
-        workoutDays: Int
+        workoutDays: Int,
+        equipment: String
     ) async throws -> AIWorkoutResponse {
         
         guard let apiKey = apiKey, !apiKey.isEmpty else {
@@ -50,6 +51,7 @@ class AIWorkoutGeneratorService {
         - Fitness Goal: \(goal)
         - Experience: \(experience)
         - Available workout days: \(workoutDays) days per week
+        - Available Equipment: \(equipment)
         
         CONSTRAINTS:
         1. You MUST return ONLY valid JSON matching the exact schema provided below. Do not include markdown formatting like ```json.

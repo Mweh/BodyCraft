@@ -27,21 +27,23 @@ final class PhoneWatchBridge: NSObject, WCSessionDelegate, ObservableObject {
         let idx = max(0, min(todayNumber - 1, plan.weeklyWorkoutPlan.count - 1))
         let day = plan.weeklyWorkoutPlan[idx]
 
-        // Map exercises — break apart to help the type-checker
-        var watchExercises: [WatchExercise] = []
-        for ex in day.exercises {
-            let repsInt = Int(ex.reps.components(separatedBy: CharacterSet.decimalDigits.inverted).first ?? "10") ?? 10
-            let durationMin = Double(ex.sets * repsInt) * 0.03
-            let _ = Int(durationMin * 5.0 * 75.0 / 200.0 * 60)   // estimated kcal per exercise (unused here)
-            watchExercises.append(WatchExercise(id: ex.id, name: ex.name, sets: ex.sets, reps: ex.reps, category: day.focus))
-        }
+        // Use current profile for weight-adjusted calorie estimation
+        let profile = UserProfileStore.shared.profile
+        let weightKg = Double(profile.weight) ?? 75.0
 
-        // Estimate total calories separately
+        // Map exercises
+        var watchExercises: [WatchExercise] = []
         var totalKcal = 0
+        
         for ex in day.exercises {
-            let repsInt = Int(ex.reps.components(separatedBy: CharacterSet.decimalDigits.inverted).first ?? "10") ?? 10
-            let durationMin = Double(ex.sets * repsInt) * 0.03
-            totalKcal += Int(durationMin * 5.0 * 75.0 / 200.0 * 60)
+            // Estimate kcal based on METs (roughly 5 for strength) and weight
+            // Formula: kcal = MET * weight_kg * duration_hours
+            // Estimating 3 minutes (0.05 hr) per set inclusive of rest
+            let exerciseDurationHrs = Double(ex.sets) * 0.05
+            let kcal = Int(5.0 * weightKg * exerciseDurationHrs)
+            
+            totalKcal += kcal
+            watchExercises.append(WatchExercise(id: ex.id, name: ex.name, sets: ex.sets, reps: ex.reps, category: day.focus))
         }
 
         let payload = WatchWorkoutPayload(
@@ -57,13 +59,13 @@ final class PhoneWatchBridge: NSObject, WCSessionDelegate, ObservableObject {
     private func sendPayloadToWatch(_ payload: WatchWorkoutPayload) {
         guard let data = try? JSONEncoder().encode(payload) else { return }
         let dict: [String: Any] = ["workoutPayload": data]
+        
+        // Reliability: Always update application context so it's available even if app isn't reachable
+        updateContext(dict)
+        
         let session = WCSession.default
         if session.isReachable {
-            session.sendMessage(dict, replyHandler: nil) { [weak self] _ in
-                self?.updateContext(dict)
-            }
-        } else {
-            updateContext(dict)
+            session.sendMessage(dict, replyHandler: nil, errorHandler: nil)
         }
     }
 

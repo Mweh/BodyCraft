@@ -159,28 +159,7 @@ struct OnboardingCoordinatorView: View {
         errorMessage = nil
         
         do {
-            let plan: AIWorkoutResponse
-            
-            if AIWorkoutGeneratorService.shared.apiKey == nil || AIWorkoutGeneratorService.shared.apiKey!.isEmpty {
-                plan = try await AIWorkoutGeneratorService.shared.mockWorkoutPlan()
-            } else {
-                plan = try await AIWorkoutGeneratorService.shared.generateWorkoutPlan(
-                    age: Int(age) ?? 25,
-                    gender: gender,
-                    heightCm: Int(height) ?? 175,
-                    weightKg: Int(weight) ?? 75,
-//                    bodyFat: bodyFat,
-                    activityLevel: activityLevel,
-                    goal: goal,
-                    experience: fitnessLevel,
-                    workoutDays: Int(sessionsPerWeek)
-                )
-            }
-            
-            let encoder = JSONEncoder()
-            if let encodedData = try? encoder.encode(plan) {
-                savedWorkoutPlanData = encodedData
-            }
+            try await WorkoutRepository.shared.regeneratePlan(for: profileStore.profile)
             
             await MainActor.run {
                 hasCompletedOnboarding = true

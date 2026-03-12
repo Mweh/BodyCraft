@@ -35,49 +35,133 @@ struct WorkoutRootView: View {
                     health.startWorkout()
                     withAnimation {
                         phase = .active
-                        selectedTab = 0
+                        selectedTab = 1 // Start on Metrics
                     }
                 })
 
             case .active:
                 TabView(selection: $selectedTab) {
-                    // Screen 2: Current Exercise
-                    let exercises = sync.workoutPayload?.exercises ?? []
-                    if !exercises.isEmpty && currentExerciseIndex < exercises.count {
-                        ExerciseProgressView(
-                            exercise: exercises[currentExerciseIndex],
-                            exerciseIndex: currentExerciseIndex,
-                            totalExercises: exercises.count,
-                            onCompleteExercise: {
-                                currentExerciseIndex += 1
-                                if currentExerciseIndex >= exercises.count {
-                                    finishWorkout()
-                                }
-                            }
-                        )
+                    // Page 1: Exercises
+                    exerciseListView
                         .tag(0)
-                    } else {
-                        // Fallback fallback
-                        VStack {
-                            Text("Free Workout")
-                            Button("End") { finishWorkout() }
-                        }
-                        .tag(0)
-                    }
 
-                    // Screen 3: Workout Controls
-                    LiveMetricsView(
-                        onResume: { selectedTab = 0 },
-                        onEnd: { finishWorkout() }
-                    )
-                    .tag(1)
+                    // Page 2: Metrics (Main Glance)
+                    mainMetricsView
+                        .tag(1)
+
+                    // Page 3: Controls
+                    controlsView
+                        .tag(2)
                 }
+                .tabViewStyle(.page)
 
             case .summary:
                 SummaryView(onDismiss: {
                     withAnimation { phase = .today }
                 })
             }
+        }
+    }
+
+    // MARK: - Active Workout Subviews
+
+    private var exerciseListView: some View {
+        let exercises = sync.workoutPayload?.exercises ?? []
+        return VStack(spacing: 0) {
+            if !exercises.isEmpty && currentExerciseIndex < exercises.count {
+                ExerciseProgressView(
+                    exercise: exercises[currentExerciseIndex],
+                    exerciseIndex: currentExerciseIndex,
+                    totalExercises: exercises.count,
+                    onCompleteExercise: {
+                        withAnimation {
+                            currentExerciseIndex += 1
+                            if currentExerciseIndex >= exercises.count {
+                                finishWorkout()
+                            } else {
+                                selectedTab = 1 // Snap back to metrics after completion
+                            }
+                        }
+                    }
+                )
+            } else {
+                Text("Loading...").foregroundColor(.secondary)
+            }
+        }
+    }
+
+    private var mainMetricsView: some View {
+        VStack(spacing: 4) {
+            Text("ACTIVE BURN")
+                .font(.system(size: 10, weight: .bold))
+                .foregroundColor(.green.opacity(0.8))
+            
+            HStack(alignment: .firstTextBaseline, spacing: 2) {
+                Text("\(Int(health.activeEnergyBurned))")
+                    .font(.system(size: 54, weight: .black, design: .rounded))
+                    .foregroundColor(.white)
+                Text("kcal")
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundColor(.green)
+            }
+            .padding(.vertical, -4)
+
+            HStack(spacing: 16) {
+                MetricWidget(icon: "heart.fill", color: .red, 
+                             value: "\(Int(health.heartRate))", unit: "BPM")
+                MetricWidget(icon: "clock.fill", color: .blue, 
+                             value: formattedDuration(health.workoutDuration), unit: "")
+            }
+            .padding(.top, 4)
+            
+            if let payload = sync.workoutPayload {
+                Text(payload.title)
+                    .font(.system(size: 10))
+                    .foregroundColor(.secondary)
+                    .lineLimit(1)
+                    .padding(.top, 8)
+            }
+        }
+    }
+
+    private var controlsView: some View {
+        VStack(spacing: 12) {
+            Text(health.isWorkoutPaused ? "PAUSED" : "WORKOUT")
+                .font(.system(size: 10, weight: .bold))
+                .foregroundColor(health.isWorkoutPaused ? .yellow : .green)
+
+            HStack(spacing: 20) {
+                // Pause/Resume
+                Button(action: {
+                    if health.isWorkoutActive { health.pauseWorkout() }
+                    else { health.resumeWorkout(); selectedTab = 1 }
+                }) {
+                    ZStack {
+                        Circle().fill(health.isWorkoutPaused ? Color.green : Color.yellow)
+                        Image(systemName: health.isWorkoutPaused ? "play.fill" : "pause.fill")
+                            .font(.title2)
+                            .foregroundColor(.black)
+                    }
+                }
+                .buttonStyle(.plain)
+                .frame(width: 60, height: 60)
+
+                // Stop
+                Button(action: finishWorkout) {
+                    ZStack {
+                        Circle().fill(Color.red)
+                        Image(systemName: "xmark")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                    }
+                }
+                .buttonStyle(.plain)
+                .frame(width: 60, height: 60)
+            }
+            
+            Text("Hold to lock")
+                .font(.system(size: 9))
+                .foregroundColor(.secondary)
         }
     }
 
@@ -92,6 +176,37 @@ struct WorkoutRootView: View {
             phase = .summary
         }
     }
+
+    private func formattedDuration(_ t: TimeInterval) -> String {
+        let m = Int(t) / 60
+        let s = Int(t) % 60
+        return String(format: "%02d:%02d", m, s)
+    }
+}
+
+// MARK: - Reusable UI Components
+
+struct MetricWidget: View {
+    let icon: String
+    let color: Color
+    let value: String
+    let unit: String
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            Image(systemName: icon)
+                .font(.system(size: 12))
+                .foregroundColor(color)
+                .padding(.bottom, 2)
+            Text(value)
+                .font(.system(size: 18, weight: .bold, design: .rounded))
+            if !unit.isEmpty {
+                Text(unit)
+                    .font(.system(size: 8, weight: .bold))
+                    .foregroundColor(.secondary)
+            }
+        }
+    }
 }
 
 // MARK: - Screen 1: Today's Workout
@@ -100,59 +215,44 @@ struct TodayView: View {
     let onStart: () -> Void
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 10) {
-                if let payload = sync.workoutPayload {
-                    HStack {
-                        Image(systemName: "sparkles")
-                            .foregroundColor(.purple)
+        VStack(spacing: 0) {
+            if let payload = sync.workoutPayload {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 12) {
                         Text(payload.title)
-                            .font(.headline)
-                            .foregroundColor(.white)
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(.green)
                             .lineLimit(2)
-                    }
 
-                    HStack(spacing: 8) {
-                        StatBadge(icon: "list.bullet",
-                                  value: "\(payload.exercises.count)",
-                                  label: "Ex.")
-                        StatBadge(icon: "flame.fill",
-                                  value: "\(payload.totalExpectedCalories)",
-                                  label: "kcal")
-                    }
+                        HStack(spacing: 8) {
+                            StatBadge(icon: "list.bullet", value: "\(payload.exercises.count)", label: "EXERCISES")
+                            StatBadge(icon: "flame.fill", value: "\(payload.totalExpectedCalories)", label: "EST. KCAL")
+                        }
 
-                    Button(action: onStart) {
-                        Text("Start Workout")
-                            .font(.headline)
+                        Button(action: onStart) {
+                            HStack {
+                                Text("GO")
+                                Image(systemName: "play.fill")
+                            }
+                            .font(.system(size: 18, weight: .black))
                             .frame(maxWidth: .infinity)
+                            .frame(height: 50)
+                            .background(Color.green)
+                            .cornerRadius(12)
+                            .foregroundColor(.black)
+                        }
+                        .buttonStyle(.plain)
+                        .padding(.top, 4)
                     }
-                    .buttonStyle(.borderedProminent)
-                    .tint(.green)
-                    .padding(.top, 4)
-
-                } else {
-                    // Problem 4: Non-blocking fetching UI
-                    VStack(spacing: 12) {
-                        ProgressView()
-                            .tint(.green)
-                        Text("Fetching Plan...")
-                            .font(.caption2)
-                            .foregroundColor(.secondary)
-                        
-                        Button("Sync") { sync.requestWorkoutFromPhone() }
-                            .buttonStyle(.bordered)
-                            .tint(.secondary)
-                            .controlSize(.mini)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.top, 40)
+                    .padding(.horizontal, 8)
                 }
-            }
-            .padding(.horizontal, 4)
-        }
-        .onAppear {
-            if sync.workoutPayload == nil {
-                sync.requestWorkoutFromPhone()
+            } else {
+                VStack(spacing: 12) {
+                    ProgressView().tint(.green)
+                    Text("Syncing Plan...").font(.caption2).foregroundColor(.secondary)
+                    Button("Retry") { sync.requestWorkoutFromPhone() }
+                        .controlSize(.mini)
+                }
             }
         }
     }
@@ -163,12 +263,14 @@ private struct StatBadge: View {
     let value: String
     let label: String
     var body: some View {
-        VStack(spacing: 2) {
-            Image(systemName: icon).font(.caption).foregroundColor(.green)
-            Text(value).font(.headline).foregroundColor(.white)
-            Text(label).font(.system(size: 9)).foregroundColor(.secondary)
+        VStack(alignment: .leading, spacing: 2) {
+            HStack(spacing: 4) {
+                Image(systemName: icon).font(.system(size: 10)).foregroundColor(.green)
+                Text(label).font(.system(size: 8, weight: .bold)).foregroundColor(.secondary)
+            }
+            Text(value).font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(8)
         .background(Color.white.opacity(0.08))
         .cornerRadius(10)
@@ -186,147 +288,104 @@ struct ExerciseProgressView: View {
     @State private var completedSets: Set<Int> = []
 
     var body: some View {
-        VStack(spacing: 8) {
-            Text("\(exerciseIndex + 1) / \(totalExercises)")
-                .font(.caption2)
-                .foregroundColor(.secondary)
+        VStack(spacing: 6) {
+            HStack {
+                Text("EXERCISE \(exerciseIndex + 1)/\(totalExercises)")
+                    .font(.system(size: 10, weight: .bold))
+                    .foregroundColor(.secondary)
+                Spacer()
+                Text("\(completedSets.count)/\(exercise.sets) SETS")
+                    .font(.system(size: 10, weight: .bold))
+                    .foregroundColor(.green)
+            }
+            .padding(.horizontal, 4)
 
-            Text(exercise.name)
-                .font(.headline)
+            Text(exercise.name.uppercased())
+                .font(.system(size: 15, weight: .black))
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
+                .frame(height: 40)
 
-            Text("\(exercise.sets) sets × \(exercise.reps)")
-                .font(.caption)
-                .foregroundColor(.green)
-
-            HStack(spacing: 8) {
+            HStack(spacing: 6) {
                 ForEach(0..<exercise.sets, id: \.self) { setIdx in
                     let done = completedSets.contains(setIdx)
                     Button(action: { tapSet(setIdx) }) {
                         ZStack {
                             Circle()
-                                .fill(done ? Color.green : Color.white.opacity(0.1))
-                                .frame(width: 32, height: 32)
-                            Text("\(setIdx + 1)")
-                                .font(.caption)
-                                .fontWeight(.bold)
-                                .foregroundColor(done ? .white : .secondary)
+                                .stroke(done ? Color.green : Color.white.opacity(0.2), lineWidth: 2)
+                                .background(Circle().fill(done ? Color.green.opacity(0.2) : Color.clear))
+                            
+                            if done {
+                                Image(systemName: "checkmark")
+                                    .font(.system(size: 12, weight: .bold))
+                                    .foregroundColor(.green)
+                            } else {
+                                Text("\(setIdx + 1)")
+                                    .font(.system(size: 12, weight: .bold))
+                                    .foregroundColor(.white.opacity(0.6))
+                            }
                         }
                     }
                     .buttonStyle(.plain)
+                    .frame(width: 32, height: 32)
                 }
             }
             .padding(.vertical, 4)
 
+            Text(exercise.reps)
+                .font(.system(size: 12, weight: .bold))
+                .foregroundColor(.green)
+
             Button(action: onCompleteExercise) {
-                Text(exerciseIndex + 1 < totalExercises ? "Next Exercise" : "Finish")
-                    .fontWeight(.bold)
+                Text(exerciseIndex + 1 < totalExercises ? "NEXT" : "FINISH")
+                    .font(.system(size: 14, weight: .black))
                     .frame(maxWidth: .infinity)
+                    .frame(height: 36)
+                    .background(completedSets.count >= exercise.sets ? Color.green : Color.white.opacity(0.1))
+                    .cornerRadius(10)
+                    .foregroundColor(completedSets.count >= exercise.sets ? .black : .white)
             }
-            .buttonStyle(.borderedProminent)
-            .tint(completedSets.count >= exercise.sets ? .green : .blue)
+            .buttonStyle(.plain)
             .padding(.top, 4)
         }
         .padding(.horizontal, 4)
         .onReceive(NotificationCenter.default.publisher(for: .watchCheckboxSync)) { note in
-            // Handle remote sync from iPhone
-            if let exerciseIdStr = note.userInfo?["exerciseId"] as? String,
-               exerciseIdStr == exercise.id.uuidString,
-               let isChecked = note.userInfo?["isChecked"] as? Bool {
-                
-                // If the iPhone message includes a specific setIndex, use it
-                if let setIdx = note.userInfo?["setIndex"] as? Int {
-                    if isChecked { completedSets.insert(setIdx) }
-                    else { completedSets.remove(setIdx) }
-                } else {
-                    // Fallback: If no set index (e.g. legacy sync), toggle first available or all
-                    if isChecked { 
-                        for i in 0..<exercise.sets { completedSets.insert(i) }
-                    } else {
-                        completedSets.removeAll()
-                    }
-                }
+            handleSync(note: note)
+        }
+    }
+    
+    private func handleSync(note: Notification) {
+        if let exerciseIdStr = note.userInfo?["exerciseId"] as? String,
+           exerciseIdStr == exercise.id.uuidString,
+           let isChecked = note.userInfo?["isChecked"] as? Bool {
+            
+            if let setIdx = note.userInfo?["setIndex"] as? Int {
+                if isChecked { completedSets.insert(setIdx) }
+                else { completedSets.remove(setIdx) }
+            } else {
+                if isChecked { for i in 0..<exercise.sets { completedSets.insert(i) } }
+                else { completedSets.removeAll() }
             }
         }
     }
 
     private func tapSet(_ idx: Int) {
         WKInterfaceDevice.current().play(.click)
-        if completedSets.contains(idx) {
-            completedSets.remove(idx)
-            sync.sendCheckboxUpdate(exerciseId: exercise.id, setIndex: idx, isChecked: false)
-        } else {
-            completedSets.insert(idx)
-            sync.sendCheckboxUpdate(exerciseId: exercise.id, setIndex: idx, isChecked: true)
+        withAnimation(.spring()) {
+            if completedSets.contains(idx) {
+                completedSets.remove(idx)
+                sync.sendCheckboxUpdate(exerciseId: exercise.id, setIndex: idx, isChecked: false)
+            } else {
+                completedSets.insert(idx)
+                sync.sendCheckboxUpdate(exerciseId: exercise.id, setIndex: idx, isChecked: true)
+            }
         }
     }
 }
 
-// MARK: - Screen 3: Live Metrics (Pause / End)
-struct LiveMetricsView: View {
-    @EnvironmentObject var health: HealthStoreManager
-    let onResume: () -> Void
-    let onEnd: () -> Void
-
-    var body: some View {
-        VStack(spacing: 12) {
-            Text(formattedDuration(health.workoutDuration))
-                .font(.system(size: 28, weight: .bold, design: .rounded))
-                .foregroundColor(.white)
-
-            HStack(spacing: 20) {
-                VStack {
-                    Image(systemName: "flame.fill").foregroundColor(.orange)
-                    Text(String(format: "%.0f", health.activeEnergyBurned))
-                        .font(.headline)
-                }
-                VStack {
-                    Image(systemName: "heart.fill").foregroundColor(.red)
-                    Text(String(format: "%.0f", health.heartRate))
-                        .font(.headline)
-                }
-            }
-
-            HStack(spacing: 14) {
-                Button(action: {
-                    if health.isWorkoutActive { health.pauseWorkout() }
-                    else if health.isWorkoutPaused { health.resumeWorkout(); onResume() }
-                }) {
-                    Image(systemName: health.isWorkoutActive ? "pause.fill" : "play.fill")
-                        .font(.title3)
-                        .frame(width: 44, height: 44)
-                        .background(Color.yellow)
-                        .clipShape(Circle())
-                        .foregroundColor(.black)
-                }
-                .buttonStyle(.plain)
-
-                Button(action: onEnd) {
-                    Image(systemName: "xmark")
-                        .font(.title3)
-                        .frame(width: 44, height: 44)
-                        .background(Color.red)
-                        .clipShape(Circle())
-                        .foregroundColor(.white)
-                }
-                .buttonStyle(.plain)
-            }
-            .padding(.top, 4)
-            
-            Text(health.isWorkoutPaused ? "Paused" : "Active")
-                .font(.caption2)
-                .foregroundColor(health.isWorkoutPaused ? .yellow : .green)
-        }
-    }
-
-    private func formattedDuration(_ t: TimeInterval) -> String {
-        let m = Int(t) / 60
-        let s = Int(t) % 60
-        return String(format: "%02d:%02d", m, s)
-    }
-}
+// MARK: - Screen 3: Live Metrics (PAUSE/END)
+// (Removed separate struct as it's now integrated as 'controlsView' and 'mainMetricsView' tabs)
 
 // MARK: - Summary
 struct SummaryView: View {
@@ -335,30 +394,51 @@ struct SummaryView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 10) {
-                Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 40))
+            VStack(spacing: 8) {
+                ZStack {
+                    Circle().fill(Color.green.opacity(0.1)).frame(width: 60, height: 60)
+                    Image(systemName: "checkmark.seal.fill")
+                        .font(.system(size: 40))
+                        .foregroundColor(.green)
+                }
+
+                Text("WORKOUT COMPLETE")
+                    .font(.system(size: 12, weight: .black))
                     .foregroundColor(.green)
 
-                Text("Done!")
-                    .font(.headline)
+                VStack(spacing: 0) {
+                    SummaryRow(icon: "flame.fill", color: .orange, label: "CALORIES",
+                               value: "\(Int(health.activeEnergyBurned)) kcal")
+                    Divider().background(Color.white.opacity(0.1)).padding(.vertical, 8)
+                    SummaryRow(icon: "clock.fill", color: .blue, label: "DURATION",
+                               value: formattedDuration(health.workoutDuration))
+                }
+                .padding()
+                .background(Color.white.opacity(0.05))
+                .cornerRadius(15)
 
-                SummaryRow(icon: "flame.fill", color: .orange, label: "Burned",
-                           value: String(format: "%.0f kcal", health.activeEnergyBurned))
-                SummaryRow(icon: "clock.fill", color: .blue, label: "Duration",
-                           value: formattedDuration(health.workoutDuration))
-
-                Button("Dismiss", action: onDismiss)
-                    .buttonStyle(.borderedProminent)
-                    .tint(.green)
-                    .padding(.top, 6)
+                Button(action: onDismiss) {
+                    Text("DONE")
+                        .font(.system(size: 14, weight: .bold))
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 44)
+                        .background(Color.green)
+                        .cornerRadius(12)
+                        .foregroundColor(.black)
+                }
+                .buttonStyle(.plain)
+                .padding(.top, 4)
             }
         }
     }
 
     private func formattedDuration(_ t: TimeInterval) -> String {
-        let m = Int(t) / 60
+        let h = Int(t) / 3600
+        let m = (Int(t) % 3600) / 60
         let s = Int(t) % 60
+        if h > 0 {
+            return String(format: "%d:%02d:%02d", h, m, s)
+        }
         return String(format: "%02d:%02d", m, s)
     }
 }
@@ -370,10 +450,12 @@ private struct SummaryRow: View {
     let value: String
     var body: some View {
         HStack {
-            Image(systemName: icon).foregroundColor(color)
-            Text(label).foregroundColor(.secondary).font(.caption)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(label).font(.system(size: 9, weight: .bold)).foregroundColor(.secondary)
+                Text(value).font(.system(size: 16, weight: .bold, design: .rounded)).foregroundColor(.white)
+            }
             Spacer()
-            Text(value).fontWeight(.semibold).font(.caption)
+            Image(systemName: icon).font(.title3).foregroundColor(color)
         }
     }
 }

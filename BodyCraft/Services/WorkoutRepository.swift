@@ -38,6 +38,34 @@ final class WorkoutRepository: ObservableObject {
         }
     }
     
+    func regeneratePlan(for profile: UserProfile) async throws {
+        let plan: AIWorkoutResponse
+        
+        let generator = AIWorkoutGeneratorService.shared
+        
+        if generator.apiKey == nil || generator.apiKey!.isEmpty {
+            plan = try await generator.mockWorkoutPlan()
+        } else {
+            plan = try await generator.generateWorkoutPlan(
+                age: Int(profile.age) ?? 25,
+                gender: profile.gender,
+                heightCm: Int(profile.height) ?? 175,
+                weightKg: Int(profile.weight) ?? 75,
+                activityLevel: profile.activityLevel,
+                goal: profile.goal,
+                experience: profile.fitnessLevel,
+                workoutDays: profile.sessionsPerWeek,
+                equipment: profile.equipment
+            )
+        }
+        
+        await MainActor.run {
+            savePlan(plan)
+            // Push to watch after successful save
+            PhoneWatchBridge.shared.pushTodaysWorkoutToWatch()
+        }
+    }
+    
     /// Returns the DayWorkout model mapped from the AI plan for a specific day number (1...7)
     func workout(for dayNumber: Int) -> DayWorkout? {
         guard let plan = currentPlan else { return nil }
