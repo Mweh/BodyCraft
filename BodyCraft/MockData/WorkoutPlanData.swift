@@ -53,8 +53,12 @@ enum WorkoutPlanData {
         ])
     ]
 
+
     /// Returns the DayWorkout for a given day number (1…7).
     static func workout(for day: Int) -> DayWorkout? {
         weeklyPlan.first { $0.id == day }
     }
 }
+
+
+
