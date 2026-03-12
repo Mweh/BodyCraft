@@ -5,6 +5,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var profileStore:  UserProfileStore
     @EnvironmentObject var streakStore:   WorkoutStreakStore
+    @EnvironmentObject var dashboardVM:   DashboardViewModel
 
     private var profile: UserProfile { profileStore.profile }
 
@@ -23,22 +24,6 @@ struct HomeView: View {
     @State private var showingGoalPreset  = false   // Edit button → preset modal
     @State private var showingUpdateStats = false   // Update Progress button
     @State private var expandedDay: Int?  = nil     // Which day's exercises are expanded
-
-    @AppStorage("savedWorkoutPlanData") private var savedWorkoutPlanData: Data = Data()
-    
-    var aiWorkoutPlan: AIWorkoutResponse? {
-        if savedWorkoutPlanData.isEmpty { return nil }
-        let decoder = JSONDecoder()
-        return try? decoder.decode(AIWorkoutResponse.self, from: savedWorkoutPlanData)
-    }
-    
-    var dailyCalorieTarget: Int {
-        aiWorkoutPlan?.dailyCalories ?? 600
-    }
-    
-    var nextWorkoutFocus: String {
-        aiWorkoutPlan?.weeklyWorkoutPlan.first?.focus ?? "Create your personalized workout plan"
-    }
     
     var body: some View {
         NavigationView {
@@ -74,43 +59,55 @@ struct HomeView: View {
                             streakStore:    streakStore
                         )
                         
-                        // Calories Burned
+                        // ── Daily Nutrition & Burn ────────────────────────
                         VStack(alignment: .leading, spacing: 16) {
                             HStack {
                                 Image(systemName: "flame.fill").foregroundColor(.orange)
                                     .padding(8).background(AppTheme.surface)
                                     .clipShape(RoundedRectangle(cornerRadius: 8))
+                                Text("Nutrition & Activity")
+                                    .font(.headline).foregroundColor(.white)
                                 Spacer()
                             }
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Calories intake target")
-                                    .foregroundColor(AppTheme.secondaryText)
-                                HStack(alignment: .lastTextBaseline, spacing: 4) {
-                                    Text("\(dailyCalorieTarget)")
-                                        .font(.system(size: 40, weight: .bold))
-                                        .foregroundColor(.white)
-                                    Text("kcal by AI")
-                                        .foregroundColor(AppTheme.secondaryText)
+                            
+                            HStack(spacing: 20) {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("Daily Target")
+                                        .font(.caption).foregroundColor(AppTheme.secondaryText)
+                                    Text("\(dashboardVM.dailyCalorieTarget) kcal")
+                                        .font(.headline).foregroundColor(.white)
+                                }
+                                
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("Workout Burn")
+                                        .font(.caption).foregroundColor(AppTheme.secondaryText)
+                                    Text("\(dashboardVM.workoutBurn) kcal")
+                                        .font(.headline).foregroundColor(.orange)
+                                }
+                                
+                                Spacer()
+                                
+                                VStack(alignment: .trailing, spacing: 4) {
+                                    Text("Net Target")
+                                        .font(.caption).foregroundColor(AppTheme.secondaryText)
+                                    Text("\(dashboardVM.netTarget)")
+                                        .font(.subheadline).bold().foregroundColor(.green)
+                                    + Text(" kcal").font(.caption).foregroundColor(.green)
                                 }
                             }
-                            VStack(spacing: 8) {
-                                HStack {
-                                    Text("Daily goal calculated based on profile")
-                                    Spacer()
+                            
+                            GeometryReader { geo in
+                                let progressRatio = dashboardVM.dailyCalorieTarget > 0 ? min(1.0, CGFloat(dashboardVM.netTarget) / CGFloat(dashboardVM.dailyCalorieTarget)) : 0.0
+                                ZStack(alignment: .leading) {
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .fill(AppTheme.background)
+                                        .frame(height: 8)
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .fill(Color.green)
+                                        .frame(width: geo.size.width * progressRatio, height: 8)
                                 }
-                                .font(.caption).foregroundColor(AppTheme.secondaryText)
-                                GeometryReader { geo in
-                                    ZStack(alignment: .leading) {
-                                        RoundedRectangle(cornerRadius: 4)
-                                            .fill(AppTheme.background)
-                                            .frame(height: 8)
-                                        RoundedRectangle(cornerRadius: 4)
-                                            .fill(Color.green)
-                                            .frame(width: geo.size.width * (Double(dailyCalorieTarget) > 0 ? (486.0 / Double(dailyCalorieTarget)) : 0.8), height: 8)
-                                    }
-                                }
-                                .frame(height: 8)
                             }
+                            .frame(height: 8)
                         }
                         .padding().background(AppTheme.surface).cornerRadius(16).padding(.horizontal)
 
@@ -650,7 +647,7 @@ struct StreakCard: View {
 
             // ── Expanded Exercise List ──────────────────────────────
             if let day = expandedDay,
-               let workout = WorkoutPlanData.workout(for: day) {
+               let workout = DashboardViewModel.shared.workout(for: day) {
 
                 VStack(alignment: .leading, spacing: 0) {
 
@@ -797,5 +794,6 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
             .environmentObject(UserProfileStore())
             .environmentObject(WorkoutStreakStore())
+            .environmentObject(DashboardViewModel.shared)
     }
 }

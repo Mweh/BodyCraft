@@ -41,13 +41,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		59F38B1F2F62689A002B22D9 /* Exceptions for "BodyCraft" folder in "BodyCraft" target */ = {
+		59F38B1F2F62689A002B22D9 /* Exceptions for "BodyCraft" folder in "KoalaFit" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				MockData/Exercises/Back/exr_41n2hQeNyCnt3uFh.json,
-				MockData/Exercises/Chest/exr_41n2hKZmyYXB2UL4.json,
 			);
-			target = 9F890AE12F5FA45500484454 /* BodyCraft */;
+			target = 9F890AE12F5FA45500484454 /* KoalaFit */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -55,7 +54,7 @@
 		9F890AE42F5FA45500484454 /* BodyCraft */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				59F38B1F2F62689A002B22D9 /* Exceptions for "BodyCraft" folder in "BodyCraft" target */,
+				59F38B1F2F62689A002B22D9 /* Exceptions for "BodyCraft" folder in "KoalaFit" target */,
 			);
 			path = BodyCraft;
 			sourceTree = "<group>";

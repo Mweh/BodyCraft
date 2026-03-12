@@ -2,6 +2,8 @@ import Foundation
 import Combine
 
 class UserProfileStore: ObservableObject {
+    static let shared = UserProfileStore()
+    
     @Published private(set) var profile: UserProfile = UserProfile()
 
     private let key = "userProfile"

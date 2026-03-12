@@ -6,6 +6,7 @@ import Combine
 /// Persists which exercises have been completed per day (1–7).
 /// A day is considered "complete" when every exercise in that day is ticked.
 final class WorkoutStreakStore: ObservableObject {
+    static let shared = WorkoutStreakStore()
 
     // completedExercises[dayNumber] = Set of completed exercise UUIDs
     @Published private(set) var completedExercises: [Int: Set<String>] = [:]
@@ -57,7 +58,7 @@ final class WorkoutStreakStore: ObservableObject {
     }
 
     func isDayCompleted(day: Int) -> Bool {
-        guard let workout = WorkoutPlanData.workout(for: day) else { return false }
+        guard let workout = WorkoutRepository.shared.workout(for: day) else { return false }
         guard !workout.exercises.isEmpty else { return false }
         let checked = completedExercises[day] ?? []
         return workout.exercises.allSatisfy { checked.contains($0.id.uuidString) }

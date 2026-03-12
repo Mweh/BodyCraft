@@ -17,7 +17,7 @@ struct AIWorkoutResponse: Codable {
 }
 
 struct WorkoutDay: Codable, Identifiable {
-    var id: UUID { UUID() }
+    var id: UUID = UUID()
     let day: String
     let focus: String
     let exercises: [ExerciseAI]
@@ -28,7 +28,7 @@ struct WorkoutDay: Codable, Identifiable {
 }
 
 struct ExerciseAI: Codable, Identifiable {
-    var id: UUID { UUID() }
+    var id: UUID = UUID()
     let name: String
     let sets: Int
     let reps: String

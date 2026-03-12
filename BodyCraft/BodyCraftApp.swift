@@ -55,9 +55,10 @@ class DebugMenuManager {
 
 @main
 struct BodyCraftApp: App {
-    @StateObject private var profileStore   = UserProfileStore()
-    @StateObject private var streakStore    = WorkoutStreakStore()
+    @StateObject private var profileStore   = UserProfileStore.shared
+    @StateObject private var streakStore    = WorkoutStreakStore.shared
     @StateObject private var nutritionStore = NutritionStore()
+    @StateObject private var dashboardVM    = DashboardViewModel.shared
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
@@ -66,6 +67,7 @@ struct BodyCraftApp: App {
             SplashScreenView()
                 .environmentObject(profileStore)
                 .environmentObject(streakStore)
+                .environmentObject(dashboardVM)
                 .environmentObject(nutritionStore)
                 .preferredColorScheme(.dark)
         }
