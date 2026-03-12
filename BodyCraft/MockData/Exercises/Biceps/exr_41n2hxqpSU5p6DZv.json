@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hxqpSU5p6DZv",
+    "name": "Biceps Leg Concentration Curl",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/YXSxsv8zit.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/4IzceQy0QK.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/YXSxsv8zit.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/3y1CP2AOsK.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/Tugci6SdX4.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BICEPS", "UPPER ARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["BICEPS BRACHII"],
+    "secondaryMuscles": ["BRACHIORADIALIS", "BRACHIALIS"],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/kaolGLQ/41n2hxqpSU5p6DZv__Biceps-Leg-Concentration-Curl_Upper-Arms.mp4",
+    "keywords": [
+      "Biceps Leg Concentration Curl",
+      "Bodyweight Bicep Exercise",
+      "Upper Arm Toning Exercise",
+      "Bodyweight Concentration Curl",
+      "Leg Bicep Curl",
+      "Home Workout for Biceps",
+      "Bicep Strengthening Exercise",
+      "Bodyweight Upper Arm Exercise",
+      "No Equipment Bicep Workout",
+      "Concentration Curl for Biceps"
+    ],
+    "overview": "The Biceps Leg Concentration Curl is an effective exercise that targets and strengthens the biceps and forearms, contributing to improved arm definition and muscular endurance. This exercise is ideal for both beginners and advanced fitness enthusiasts as it can be easily modified to match individual strength levels. People may choose to incorporate this exercise into their routine to enhance upper body strength, improve muscle tone, and potentially boost overall athletic performance.",
+    "instructions": [
+      "Position your elbow on the inside of your thigh, close to your knee, with your arm fully extended.",
+      "Slowly curl the dumbbell up towards your chest, keeping your elbow stable and ensuring the movement is only happening in your forearm.",
+      "Hold the position for a second, feeling the tension in your biceps.",
+      "Lower the dumbbell back down to the starting position, making sure to keep the movement controlled. Repeat the exercise for your desired number of repetitions and then switch to the other arm."
+    ],
+    "exerciseTips": [
+      "Maintain Control: Avoid using momentum to lift the weight. This is a common mistake that can lead to injury and reduces the effectiveness of the exercise. Keep your movements slow and controlled, focusing on the muscle contraction and relaxation.",
+      "Full Range of Motion: To get the most out of this exercise, ensure you're using a full range of motion. This means lowering the weight all the way down until your arm is fully extended, then curling it back up as far as it will comfortably go.",
+      "Avoid Elbow Movement: Your elbow should remain stationary throughout the exercise. If your elbow is moving, it"
+    ],
+    "variations": [
+      "Hammer Curls: In this variation, you hold the dumbbells with palms facing your torso, which targets the brachialis, a muscle that lies underneath the biceps brachii.",
+      "Preacher Curls: This variation uses a preacher bench to isolate the biceps. You rest your arms on the sloping part of the bench and curl the weight up towards your shoulders.",
+      "Standing Resistance Band Bicep Curls: For this variation, you step on the center of a resistance band and curl up, providing constant tension on the biceps.",
+      "Incline Dumbbell Curls: In this variation, you sit on an incline bench and perform dumbbell curls, which increases the range of motion and targets the"
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hc2VrB8ofxrW",
+      "exr_41n2hzAMXkkQQ5T2",
+      "exr_41n2htBQBchhJEFn",
+      "exr_41n2hx6oyEujP1B6",
+      "exr_41n2hXKdB9ktSASg",
+      "exr_41n2hydnNUJygyFB",
+      "exr_41n2hjVXxKoYuDdn",
+      "exr_41n2hPMH1qxsumQn",
+      "exr_41n2hiL123KPcmn4",
+      "exr_41n2hk4JPVrcJyX6"
+    ]
+  }
+}

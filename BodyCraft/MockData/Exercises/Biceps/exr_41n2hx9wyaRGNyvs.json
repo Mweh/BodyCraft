@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hx9wyaRGNyvs",
+    "name": "Lying Double Legs Hammer Curl with Towel",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/Ud1cn07ovG.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/d3LdLqReWe.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/Ud1cn07ovG.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/u1XTu49A6a.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/oggvdExTUB.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BICEPS", "UPPER ARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["BRACHIORADIALIS"],
+    "secondaryMuscles": ["BICEPS BRACHII", "BRACHIALIS"],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/YsHpZKk/41n2hx9wyaRGNyvs__Lying-Double-Legs-Hammer-Curl-with-Towel_Upper-Arms.mp4",
+    "keywords": [
+      "Bodyweight Bicep Exercise",
+      "Double Legs Hammer Curl",
+      "Towel Workout for Arms",
+      "Upper Arm Strengthening Exercise",
+      "Bicep Curl with Towel",
+      "Home Workout for Biceps",
+      "Bodyweight Exercise for Upper Arms",
+      "Lying Double Legs Curl",
+      "Towel Exercise for Arm Muscles",
+      "Bicep Curl Bodyweight Exercise"
+    ],
+    "overview": "The Lying Double Legs Hammer Curl with Towel is an innovative exercise that targets your biceps, forearms, and core muscles, contributing to improved strength and muscle definition. It is ideal for fitness enthusiasts of all levels, whether beginners or advanced, as it can be easily adjusted to match individual fitness levels. People would want to do this exercise as it not only enhances upper body strength, but also promotes better balance and stability, all without the need for traditional gym equipment.",
+    "instructions": [
+      "Bend your knees and lift both legs off the floor, then loop the towel under your feet, holding one end of the towel in each hand.",
+      "Keep your elbows close to your body and pull the towel towards your chest, curling your legs up as you do so, similar to a hammer curl with your legs.",
+      "Pause for a moment at the top of the movement, then slowly lower your legs back down to the starting position, keeping tension in the towel.",
+      "Repeat this exercise for the desired number of repetitions, ensuring to maintain proper form throughout."
+    ],
+    "exerciseTips": [
+      "Controlled Movement: When performing the curl, bend your knees and pull them towards your chest using the towel, then slowly extend them back out. The key is to control the movement both when pulling and extending your legs. Avoid rushing the movement or using momentum to swing your legs, as this can lead to injury and reduces the effectiveness of the exercise.",
+      "Engage Your Core: Keep your abs and glutes engaged throughout the exercise. This will not only help to stabilize your body but also enhances the workout by working your core muscles.",
+      "Breathing Technique: One common mistake is holding your breath during the exercise. For maximum benefit, breathe out as you pull your knees towards your chest and"
+    ],
+    "variations": [
+      "Seated Double Legs Hammer Curl with Towel: Instead of lying down, perform the exercise while seated on a bench or chair, which can help target different muscles and improve balance.",
+      "Single Leg Hammer Curl with Towel: This variation involves performing the exercise with one leg at a time, which can help isolate and focus on individual muscles.",
+      "Lying Double Legs Hammer Curl with Dumbbells: Instead of using a towel, dumbbells can be used to add more weight and resistance to the exercise.",
+      "Lying Double Legs Hammer Curl with Ankle Weights: By wearing ankle weights, you can increase the resistance and challenge of the exercise without needing to hold onto anything."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hZhFUtzgC7rr",
+      "exr_41n2hqjVS3nwBoyr",
+      "exr_41n2htFvaTrfjDmH",
+      "exr_41n2hx1R1S1FwekB",
+      "exr_41n2hda9jbk8Lxa3",
+      "exr_41n2hiziHx8dMBHe",
+      "exr_41n2hcNkZZm6p8Y7",
+      "exr_41n2hvSXvLenPGSK",
+      "exr_41n2hooPUinUwiha",
+      "exr_41n2hkmX9cd8AFWj"
+    ]
+  }
+}

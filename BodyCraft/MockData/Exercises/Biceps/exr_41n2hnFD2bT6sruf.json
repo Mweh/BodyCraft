@@ -1,0 +1,61 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hnFD2bT6sruf",
+    "name": "Sliding Floor Bridge Curl on Towel",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/f1c1Qr2316.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/tg5iRb5vqI.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/f1c1Qr2316.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/yRdFp3h136.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/yafdTGWoVU.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["HAMSTRINGS", "THIGHS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["GLUTEUS MAXIMUS", "HAMSTRINGS", "RECTUS ABDOMINIS"],
+    "secondaryMuscles": [],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/UintDRh/41n2hnFD2bT6sruf__Sliding-Floor-Bridge-Curl-on-Towel_Thighs.mp4",
+    "keywords": [
+      "Body weight hamstring exercise",
+      "Sliding floor bridge curl",
+      "Towel workout for thighs",
+      "Hamstring strengthening exercises",
+      "Bodyweight thigh workout",
+      "Home workout for hamstrings",
+      "No-equipment hamstring exercises",
+      "Sliding bridge curl on towel",
+      "Floor exercises for thigh toning",
+      "Bodyweight exercises for strong hamstrings."
+    ],
+    "overview": "The Sliding Floor Bridge Curl on Towel is a dynamic exercise that primarily targets the hamstrings, glutes, and core, providing an effective way to strengthen and tone these areas. This exercise is suitable for individuals of all fitness levels who wish to improve their lower body strength, stability, and flexibility. People would want to perform this exercise because it not only enhances muscle tone and definition, but also improves overall balance and posture, contributing to better physical performance in day-to-day activities and sports.",
+    "instructions": [
+      "Push your hips upward into a bridge position, keeping your upper back and shoulders on the ground, and your hands by your sides.",
+      "Slowly slide your feet away from your body using the towel, extending your legs fully while keeping your hips elevated.",
+      "After fully extending your legs, slowly pull your feet back towards your body, using your hamstrings and glutes to pull while maintaining the bridge position.",
+      "Lower your hips back to the floor to complete one repetition, then repeat this process for the desired number of repetitions."
+    ],
+    "exerciseTips": [
+      "Engage Your Core: Before you start the exercise, make sure to engage your core. This means tightening your abdominal muscles as if you were about to be punched in the stomach. This will help to stabilize your body and protect your lower back during the exercise. A common mistake is to let the stomach relax, which can lead to lower back strain.",
+      "Smooth Movement: The movement should be slow and controlled. As you slide your feet away from your body, your hips should lower"
+    ],
+    "variations": [
+      "Sliding Floor Bridge Curl on Towel with Resistance Band: Adding a resistance band to the exercise can increase the intensity and work the muscles harder.",
+      "Sliding Floor Bridge Curl on Towel with Weighted Ankles: You can add ankle weights to increase the difficulty level and enhance muscle toning and strength.",
+      "Sliding Floor Bridge Curl on Towel with Stability Ball: Instead of a towel, use a stability ball for this variation. This will not only engage your hamstrings but also improve your balance and stability.",
+      "Sliding Floor Bridge Curl on Towel with Elevated Feet: Elevating your feet during the exercise will increase the intensity, making it more challenging and effective for your glutes and hamstrings."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hUfJFhaZRgFX",
+      "exr_41n2hgVcPtubq7WG",
+      "exr_41n2hkW7vE9HqgsA",
+      "exr_41n2hafnkNsM1R2r",
+      "exr_41n2hcDXFbtWCcbq",
+      "exr_41n2hNESNATNVCRT",
+      "exr_41n2hHDfNuArHGsS",
+      "exr_41n2hUPXsbLtFeCg",
+      "exr_41n2hntozfG4DqUv",
+      "exr_41n2hMvDESriFPoM"
+    ]
+  }
+}

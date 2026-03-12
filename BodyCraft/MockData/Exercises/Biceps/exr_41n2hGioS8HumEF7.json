@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hGioS8HumEF7",
+    "name": "Hammer Curl",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/kCGgHyMFzA.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/2KROa3h5vY.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/kCGgHyMFzA.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/TzjO2VHWmi.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/qlW6cPerzJ.jpg"
+    },
+    "equipments": ["CABLE"],
+    "bodyParts": ["FOREARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["BRACHIORADIALIS"],
+    "secondaryMuscles": ["BICEPS BRACHII", "BRACHIALIS"],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/nuYT8c2/41n2hGioS8HumEF7__Cable-Hammer-Curl-(with-rope)-(male)_Forearms_.mp4",
+    "keywords": [
+      "Cable Hammer Curl workout",
+      "Forearm strengthening exercises",
+      "Hammer Curl with Cable technique",
+      "Cable exercises for arm muscles",
+      "How to do Hammer Curl with Cable",
+      "Forearm workout with Cable",
+      "Gym exercises for stronger forearms",
+      "Cable Hammer Curl tutorial",
+      "Guides for Cable Hammer Curl",
+      "Effective forearm exercises with Cable"
+    ],
+    "overview": "The Hammer Curl is a strength-building exercise primarily targeting the biceps and brachialis muscles, as well as engaging the forearms. It's suitable for anyone looking to enhance their upper arm strength and muscular definition, from beginners to advanced fitness enthusiasts. Individuals may want to incorporate Hammer Curls into their routine for improved grip strength, enhanced arm aesthetics, and better performance in sports or activities that require strong and stable arms.",
+    "instructions": [
+      "Keep your upper arms stationary, exhale and curl the weights while contracting your biceps. Continue to raise the weights until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a brief pause as you squeeze your biceps.",
+      "Inhale and slowly begin to lower the dumbbells back to the starting position.",
+      "Make sure to keep your elbows close to your torso at all times.",
+      "Repeat this movement for the recommended amount of repetitions."
+    ],
+    "exerciseTips": [
+      "Avoid Swinging: A common mistake is to use momentum to lift the weights, often by swinging the arms or twisting the torso. This not only reduces the effectiveness of the exercise but also increases the risk of injury. To avoid this, focus on performing the exercise slowly and with control.",
+      "Breathe Correctly: Breathing correctly is essential for any exercise, including the Hammer Curl. Exhale as you lift the dumbbells and inhale as you lower them. This will help to maintain your blood pressure and prevent dizziness.",
+      "Choose Appropriate Weight: Using weights"
+    ],
+    "variations": [
+      "Incline Hammer Curls: In this variation, you perform the exercise on an incline bench. This position puts more emphasis on the long head of the biceps and also involves the brachialis, a muscle of the upper arm.",
+      "Cross Body Hammer Curl: Instead of curling the dumbbell straight up, in this variation you curl the weight across your body towards your opposite shoulder, which can help to target different parts of the bicep and forearm.",
+      "Hammer Curl with Resistance Bands: This variation uses resistance bands instead of dumbbells. The bands provide a different type of resistance that can help to improve muscle strength and endurance.",
+      "Alternating Hammer Curl: In this variation, instead of lifting both weights at the same time, you"
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hjsJAQhrSu8d",
+      "exr_41n2hiekmwTAx8Ds",
+      "exr_41n2hNRFWtZnM8hg",
+      "exr_41n2hbEdsMoWMeae",
+      "exr_41n2hSEUt9EACNZN",
+      "exr_41n2hQA8XziTqymn",
+      "exr_41n2hRJ1LjZ4nvWG",
+      "exr_41n2hx5PJWQvDpde",
+      "exr_41n2hJTSUbwYs3E2",
+      "exr_41n2hgCHNgtVLHna"
+    ]
+  }
+}

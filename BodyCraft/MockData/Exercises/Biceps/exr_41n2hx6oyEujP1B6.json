@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hx6oyEujP1B6",
+    "name": "Two Legs Reverse Biceps Curl with Towel ",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/JxwkNMNgXK.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/EgzDjmD1Tz.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/JxwkNMNgXK.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/Mx9mtVg4cR.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/jVL2ukbeyl.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BICEPS", "UPPER ARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["BICEPS BRACHII"],
+    "secondaryMuscles": ["BRACHIORADIALIS", "BRACHIALIS"],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/UBucvJE/41n2hx6oyEujP1B6__Two-Legs-Reverse-Biceps-Curl-with-Towel-(VERSION-2).mp4",
+    "keywords": [
+      "Bodyweight bicep exercises",
+      "Towel reverse curl workout",
+      "Upper arm strengthening exercises",
+      "No-equipment bicep workouts",
+      "Two legs bicep curls",
+      "Bodyweight exercises for upper arms",
+      "Bicep curl variations",
+      "Towel bicep curl technique",
+      "Home workouts for biceps",
+      "Bodyweight bicep curl with towel."
+    ],
+    "overview": "The Two Legs Reverse Biceps Curl with Towel is an innovative strength-training exercise that targets the biceps, forearms, and grip strength. It's an ideal choice for athletes, fitness enthusiasts, or anyone looking to enhance their upper body strength and endurance. Incorporating this exercise into your routine can improve your lifting capabilities, enhance muscle tone, and provide a unique challenge to your regular arm workouts.",
+    "instructions": [
+      "Extend your arms fully in front of you at chest level, making sure the towel is taut between your hands.",
+      "Slowly curl your arms towards your chest while keeping your elbows stationary, pulling the towel as if you were trying to bend it in half, this will engage your biceps.",
+      "Hold this position for a few seconds to maximize muscle contraction, then slowly extend your arms back to the starting position.",
+      "Repeat this movement for the desired amount of repetitions, ensuring to keep the towel taut and your movements controlled throughout the exercise."
+    ],
+    "exerciseTips": [
+      "Controlled Movement: Avoid using momentum or swinging your arms to lift the towel. Instead, focus on using your biceps to pull the towel towards your chest. This controlled movement will ensure that your muscles are properly engaged, leading to more effective results.",
+      "Breathing Technique: Proper breathing is crucial for any exercise. Inhale as you lower the towel and exhale as you curl it up. This will help maintain your energy levels and ensure that your muscles receive enough oxygen.",
+      "Consistent Tension: Keep the towel taut throughout the exercise. This constant resistance will engage your biceps throughout the entire movement,"
+    ],
+    "variations": [
+      "Single Leg Reverse Biceps Curl with Towel: This variation adds a balance challenge by lifting one foot off the ground while performing the curl.",
+      "Two Legs Reverse Biceps Curl with Dumbbells: Instead of a towel, this variation uses dumbbells to add weight and increase the intensity of the exercise.",
+      "Two Legs Reverse Biceps Curl with Barbell: This variation uses a barbell instead of a towel, which allows for heavier weights and increased muscle activation.",
+      "Two Legs Reverse Biceps Curl with Kettlebell: This variation replaces the towel with a kettlebell, which can help improve grip strength and add an extra challenge to the exercise."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2htBQBchhJEFn",
+      "exr_41n2hxqpSU5p6DZv",
+      "exr_41n2hc2VrB8ofxrW",
+      "exr_41n2hzAMXkkQQ5T2",
+      "exr_41n2hXKdB9ktSASg",
+      "exr_41n2hydnNUJygyFB",
+      "exr_41n2hjVXxKoYuDdn",
+      "exr_41n2hnsmztLyuhYf",
+      "exr_41n2heHYiGDFgyGD",
+      "exr_41n2hK1AGZocF2Wb"
+    ]
+  }
+}
