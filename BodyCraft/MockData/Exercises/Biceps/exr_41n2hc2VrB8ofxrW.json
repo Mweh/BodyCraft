@@ -10,11 +10,21 @@
       "720p": "https://cdn.exercisedb.dev/media/w/images/chULhAvT2i.jpg",
       "1080p": "https://cdn.exercisedb.dev/media/w/images/lwA4sCsHx0.jpg"
     },
-    "equipments": ["BODY WEIGHT"],
-    "bodyParts": ["BICEPS", "UPPER ARMS"],
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "BICEPS",
+      "UPPER ARMS"
+    ],
     "exerciseType": "STRENGTH",
-    "targetMuscles": ["BICEPS BRACHII"],
-    "secondaryMuscles": ["BRACHIALIS", "BRACHIORADIALIS"],
+    "targetMuscles": [
+      "BICEPS BRACHII"
+    ],
+    "secondaryMuscles": [
+      "BRACHIALIS",
+      "BRACHIORADIALIS"
+    ],
     "videoUrl": "https://cdn.exercisedb.dev/w/videos/Z80fRjW/41n2hc2VrB8ofxrW__Lying-Double-Legs-Biceps-Curl-with-Towel_Upper-Arms.mp4",
     "keywords": [
       "Bodyweight Biceps Exercise",

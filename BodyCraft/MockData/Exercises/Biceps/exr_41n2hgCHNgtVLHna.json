@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hgCHNgtVLHna",
+    "name": "Cross Body Hammer Curl",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/6vI4gkByYk.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/DzlHgyrmUQ.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/6vI4gkByYk.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/Dnfo0vow7p.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/OEeQZgYX6A.jpg"
+    },
+    "equipments": ["DUMBBELL"],
+    "bodyParts": ["FOREARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["BRACHIORADIALIS"],
+    "secondaryMuscles": ["BICEPS BRACHII", "BRACHIALIS"],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/a0XElzR/41n2hgCHNgtVLHna__Dumbbell-Cross-Body-Hammer-Curl_Forearms.mp4",
+    "keywords": [
+      "Dumbbell Cross Body Hammer Curl",
+      "Forearm strengthening exercises",
+      "Dumbbell exercises for arms",
+      "Cross Body Hammer Curl technique",
+      "How to do Cross Body Hammer Curl",
+      "Bicep and forearm workouts",
+      "Dumbbell Hammer Curl variations",
+      "Cross Body Dumbbell Curl",
+      "Arm workouts with Dumbbells",
+      "Effective forearm exercises with Dumbbells"
+    ],
+    "overview": "The Cross Body Hammer Curl is a strength-building exercise that targets the biceps, brachialis, and brachioradialis muscles, enhancing muscle tone and improving upper body strength. This exercise is ideal for fitness enthusiasts of all levels, from beginners to advanced, as it helps to balance muscle development and maintain joint health. Individuals would want to perform this exercise to increase arm strength, improve muscular endurance, and achieve a well-rounded, aesthetic upper body physique.",
+    "instructions": [
+      "While keeping your upper arm stationary, use your biceps to curl the weight until the dumbbells are at shoulder level. Do this while keeping your palms facing your torso.",
+      "Hold the contracted position for a brief moment as you squeeze your biceps.",
+      "Slowly begin to bring the dumbbells back to the starting position.",
+      "Repeat the same steps for the desired amount of repetitions and then switch arms."
+    ],
+    "exerciseTips": [
+      "Controlled Movements: When you curl the weight, do so in a smooth and controlled manner. Avoid jerky movements or using momentum to lift the weight. This not only reduces the effectiveness of the exercise but also increases the risk of injury.",
+      "Avoid Overloading: It can be tempting to use heavy weights to accelerate results, but it's crucial to choose a weight that allows you to perform the exercise with the correct form. Using too heavy weights can lead to improper form and potential injuries.",
+      "Breathing Technique: Proper breathing is essential for this exercise. Exhale as you curl the weight towards your shoulder, and inh"
+    ],
+    "variations": [
+      "The Seated Hammer Curl: This variation is performed while seated, which helps to isolate the biceps and reduce the chance of using other muscles to lift the weight.",
+      "The Incline Hammer Curl: In this variation, you perform the exercise while lying on an incline bench, which changes the angle of the movement and targets different parts of the biceps.",
+      "The Cable Hammer Curl: This variation uses a cable machine, providing constant tension throughout the movement and increasing the challenge to your biceps.",
+      "The Resistance Band Hammer Curl: This variation uses a resistance band instead of weights, making it a great option for home workouts or for those who don't have access to traditional gym equipment."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hp8WixVgSVLf",
+      "exr_41n2hNedYychbXJN",
+      "exr_41n2htjo43QhLc3y",
+      "exr_41n2hJvLtb9PDPYc",
+      "exr_41n2hcbHjfQRzA16",
+      "exr_41n2hMw2iJBfyXAC",
+      "exr_41n2hrsJ6rJhYmZT",
+      "exr_41n2hdvTsoAzSwg4",
+      "exr_41n2hGxxmwfZC3Vc",
+      "exr_41n2huxuMAirPh7a"
+    ]
+  }
+}

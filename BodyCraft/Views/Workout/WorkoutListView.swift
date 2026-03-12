@@ -28,10 +28,13 @@ struct WorkoutModel: Identifiable {
 
 struct WorkoutListView: View {
     @State private var selectedFilter = "All"
+    @State private var selectedWorkout: WorkoutModel? = nil
+    
+    @AppStorage("savedWorkoutPlanData") private var savedWorkoutPlanData: Data = Data()
 
     let filters = ["All", "Chest", "Back", "Shoulders", "Legs", "Arms"]
 
-    @State private var workouts: [WorkoutModel] = [
+    let defaultWorkouts: [WorkoutModel] = [
         WorkoutModel(
             title: "Push Day - Chest & Triceps",
             duration: "50 min", calories: "380 kcal", level: "Intermediate", exercises: 6,
@@ -89,7 +92,9 @@ struct WorkoutListView: View {
             ]
         )
     ]
-
+    
+    @State private var workouts: [WorkoutModel] = []
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -97,12 +102,13 @@ struct WorkoutListView: View {
 
                 VStack(alignment: .leading, spacing: 0) {
 
+
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Workouts")
                             .font(.largeTitle)
                             .bold()
                             .foregroundColor(.white)
-                        Text("Training programs for your aesthetic body")
+                        Text("Training programs powered by AI")
                             .foregroundColor(AppTheme.secondaryText)
                     }
                     .padding()
@@ -175,6 +181,45 @@ struct WorkoutListView: View {
                 }
             }
             .navigationBarHidden(true)
+        }
+        .onAppear {
+            loadWorkouts()
+        }
+        .onChange(of: savedWorkoutPlanData) { _ in
+            loadWorkouts()
+        }
+    }
+    
+    // Compute workouts based on AI or fallback to default
+    private func loadWorkouts() {
+        if !savedWorkoutPlanData.isEmpty,
+           let aiWorkoutPlan = try? JSONDecoder().decode(AIWorkoutResponse.self, from: savedWorkoutPlanData) {
+            
+            workouts = aiWorkoutPlan.weeklyWorkoutPlan.map { aiDay in
+                let uiExercises = aiDay.exercises.map { aiEx in
+                    ExerciseModel(
+                        name: aiEx.name,
+                        muscleGroup: aiDay.focus,
+                        sets: aiEx.sets,
+                        reps: aiEx.reps,
+                        rest: aiEx.restSeconds,
+                        tip: "AI optimized intensity"
+                    )
+                }
+                
+                return WorkoutModel(
+                    title: "\(aiDay.day): \(aiDay.focus)",
+                    duration: "\(uiExercises.count * 8) min",
+                    calories: "AI Target",
+                    level: "Personalized", // Custom tag
+                    exercises: uiExercises.count,
+                    tagColor: .purple,
+                    imageURL: nil,
+                    exerciseList: uiExercises
+                )
+            }
+        } else {
+            workouts = defaultWorkouts
         }
     }
 }

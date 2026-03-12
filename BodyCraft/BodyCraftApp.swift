@@ -8,11 +8,58 @@
 
 import SwiftUI
 
+#if DEBUG
+import FLEX
+#endif
+
+// MARK: - AppDelegate for Debug Tools
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+    ) -> Bool {
+
+        #if DEBUG
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            FLEXManager.shared.showExplorer()
+            DebugMenuManager.registerResetOnboardingAction()
+        }
+        #endif
+
+        return true
+    }
+}
+
+// MARK: - Custom Debug Utilities
+#if DEBUG
+class DebugMenuManager {
+    static func registerResetOnboardingAction() {
+        FLEXManager.shared.registerGlobalEntry(
+            withName: "🔥 Reset Onboarding State",
+            viewControllerFutureBlock: {
+                UserDefaults.standard.set(false, forKey: "hasCompletedOnboarding")
+                UserDefaults.standard.removeObject(forKey: "savedWorkoutPlanData")
+
+                let alert = UIAlertController(
+                    title: "Onboarding Reset",
+                    message: "Restart the app to view the onboarding flow.",
+                    preferredStyle: .alert
+                )
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                return alert
+            }
+        )
+    }
+}
+#endif
+
 @main
 struct BodyCraftApp: App {
-    @StateObject private var profileStore    = UserProfileStore()
-    @StateObject private var streakStore     = WorkoutStreakStore()
-    @StateObject private var nutritionStore  = NutritionStore()
+    @StateObject private var profileStore   = UserProfileStore()
+    @StateObject private var streakStore    = WorkoutStreakStore()
+    @StateObject private var nutritionStore = NutritionStore()
+
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {
@@ -24,4 +71,3 @@ struct BodyCraftApp: App {
         }
     }
 }
-

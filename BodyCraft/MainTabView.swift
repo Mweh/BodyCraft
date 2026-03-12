@@ -24,12 +24,12 @@ struct MainTabView: View {
                     }
                     .tag(1)
                 
-                ProgressDashboardView()
-                    .tabItem {
-                        Image(systemName: "chart.line.uptrend.xyaxis")
-                        Text("Progress")
-                    }
-                    .tag(2)
+//                ProgressDashboardView()
+//                    .tabItem {
+//                        Image(systemName: "chart.line.uptrend.xyaxis")
+//                        Text("Progress")
+//                    }
+//                    .tag(2)
                 
                 NutritionSummaryView()
                     .tabItem {
