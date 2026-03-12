@@ -1,9 +1,9 @@
 import SwiftUI
+import PhotosUI
 
 struct ProfileView: View {
     @EnvironmentObject var profileStore: UserProfileStore
-    @State private var currentPhase = "Cutting"
-    let phases = ["Cutting", "Bulking", "Maintain"]
+    @State private var showEditSheet = false
 
     private var profile: UserProfile { profileStore.profile }
 
@@ -18,28 +18,50 @@ struct ProfileView: View {
                         // ── User Header ───────────────────────────────────
                         HStack(spacing: 16) {
                             ZStack(alignment: .bottomTrailing) {
-                                Circle()
-                                    .fill(AppTheme.primary)
-                                    .frame(width: 80, height: 80)
-                                    .overlay(
-                                        Text(profile.initials.isEmpty ? "?" : profile.initials)
-                                            .font(.title)
-                                            .foregroundColor(.white)
-                                            .bold()
-                                    )
+                                // Photo
+                                Group {
+                                    if let data = profile.photoData,
+                                       let uiImage = UIImage(data: data) {
+                                        Image(uiImage: uiImage)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 80, height: 80)
+                                            .clipShape(Circle())
+                                    } else {
+                                        Circle()
+                                            .fill(AppTheme.primary)
+                                            .frame(width: 80, height: 80)
+                                            .overlay(
+                                                Text(profile.initials.isEmpty ? "?" : profile.initials)
+                                                    .font(.title)
+                                                    .foregroundColor(.white)
+                                                    .bold()
+                                            )
+                                    }
+                                }
 
-                                Circle()
-                                    .fill(AppTheme.surface)
-                                    .frame(width: 24, height: 24)
-                                    .overlay(Image(systemName: "pencil").font(.caption2).foregroundColor(.white))
-                                    .offset(x: 4, y: 4)
+                                // Edit badge
+                                Button(action: { showEditSheet = true }) {
+                                    Circle()
+                                        .fill(AppTheme.primary)
+                                        .frame(width: 24, height: 24)
+                                        .overlay(Image(systemName: "pencil").font(.caption2).foregroundColor(.white))
+                                }
+                                .offset(x: 4, y: 4)
                             }
 
                             VStack(alignment: .leading, spacing: 4) {
-                                Text(profile.name.isEmpty ? "Your Name" : profile.name)
-                                    .font(.title2)
-                                    .bold()
-                                    .foregroundColor(.white)
+                                Button(action: { showEditSheet = true }) {
+                                    HStack(spacing: 6) {
+                                        Text(profile.name.isEmpty ? "Your Name" : profile.name)
+                                            .font(.title2)
+                                            .bold()
+                                            .foregroundColor(.white)
+                                        Image(systemName: "pencil")
+                                            .font(.caption)
+                                            .foregroundColor(AppTheme.secondaryText)
+                                    }
+                                }
 
                                 Text(profile.goal.isEmpty ? "Aesthetic Body Journey" : profile.goal)
                                     .font(.subheadline)
@@ -64,44 +86,6 @@ struct ProfileView: View {
                             StatBox(icon: "calendar", value: "0", label: "Days", iconColor: AppTheme.primary)
                             StatBox(icon: "figure.run", value: "0", label: "Workouts", iconColor: .cyan)
                             StatBox(icon: "flame", value: "0", label: "Calories", iconColor: .orange)
-                            StatBox(icon: "chart.line.uptrend.xyaxis", value: "0", label: "PRs", iconColor: .green)
-                        }
-                        .padding(.horizontal)
-
-                        // ── Current Goal Phase ────────────────────────────
-                        VStack(alignment: .leading, spacing: 16) {
-                            Text("Current Goal")
-                                .font(.headline)
-                                .foregroundColor(.white)
-
-                            HStack(spacing: 0) {
-                                ForEach(phases, id: \.self) { phase in
-                                    Button(action: { currentPhase = phase }) {
-                                        Text(phase)
-                                            .font(.subheadline)
-                                            .fontWeight(.medium)
-                                            .padding(.vertical, 12)
-                                            .frame(maxWidth: .infinity)
-                                            .background(currentPhase == phase ? AppTheme.primary : AppTheme.surface)
-                                            .foregroundColor(currentPhase == phase ? .white : AppTheme.secondaryText)
-                                    }
-                                }
-                            }
-                            .clipShape(Capsule())
-
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text("Phase: \(currentPhase)")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                Text(phaseDescription(for: currentPhase))
-                                    .font(.subheadline)
-                                    .foregroundColor(AppTheme.secondaryText)
-                                    .lineSpacing(4)
-                            }
-                            .padding()
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(AppTheme.surface)
-                            .cornerRadius(16)
                         }
                         .padding(.horizontal)
 
@@ -170,15 +154,112 @@ struct ProfileView: View {
                 }
             }
             .navigationBarHidden(true)
+            .sheet(isPresented: $showEditSheet) {
+                EditProfileSheet(isPresented: $showEditSheet)
+                    .environmentObject(profileStore)
+            }
         }
     }
+}
 
-    func phaseDescription(for phase: String) -> String {
-        switch phase {
-        case "Cutting": return "Caloric deficit of 300-500 kcal to reduce body fat while preserving muscle mass.\nTarget: 12% body fat."
-        case "Bulking": return "Caloric surplus of 300-500 kcal combined with progressive overload to build muscle mass."
-        case "Maintain": return "Eating at maintenance calories to hold current muscle mass and body fat percentage."
-        default: return ""
+// MARK: - Edit Profile Sheet
+
+struct EditProfileSheet: View {
+    @EnvironmentObject var profileStore: UserProfileStore
+    @Binding var isPresented: Bool
+
+    @State private var name: String = ""
+    @State private var selectedItem: PhotosPickerItem? = nil
+    @State private var selectedImageData: Data? = nil
+
+    var body: some View {
+        NavigationView {
+            ZStack {
+                AppTheme.background.ignoresSafeArea()
+
+                VStack(spacing: 32) {
+
+                    // Photo picker
+                    PhotosPicker(selection: $selectedItem, matching: .images) {
+                        ZStack(alignment: .bottomTrailing) {
+                            Group {
+                                if let data = selectedImageData ?? profileStore.profile.photoData,
+                                   let uiImage = UIImage(data: data) {
+                                    Image(uiImage: uiImage)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Circle())
+                                } else {
+                                    Circle()
+                                        .fill(AppTheme.primary)
+                                        .frame(width: 100, height: 100)
+                                        .overlay(
+                                            Text(profileStore.profile.initials.isEmpty ? "?" : profileStore.profile.initials)
+                                                .font(.largeTitle)
+                                                .foregroundColor(.white)
+                                                .bold()
+                                        )
+                                }
+                            }
+
+                            Circle()
+                                .fill(AppTheme.primary)
+                                .frame(width: 30, height: 30)
+                                .overlay(Image(systemName: "camera.fill").font(.caption).foregroundColor(.white))
+                                .offset(x: 4, y: 4)
+                        }
+                    }
+                    .onChange(of: selectedItem) { newItem in
+                        Task {
+                            if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                selectedImageData = data
+                            }
+                        }
+                    }
+
+                    // Name field
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Name")
+                            .font(.subheadline)
+                            .foregroundColor(AppTheme.secondaryText)
+
+                        TextField("Enter your name", text: $name)
+                            .font(.body)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(AppTheme.surface)
+                            .cornerRadius(12)
+                            .accentColor(AppTheme.primary)
+                    }
+                    .padding(.horizontal)
+
+                    Spacer()
+                }
+                .padding(.top, 24)
+            }
+            .navigationTitle("Edit Profile")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { isPresented = false }
+                        .foregroundColor(AppTheme.secondaryText)
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") {
+                        profileStore.update { p in
+                            if !name.isEmpty { p.name = name }
+                            if let data = selectedImageData { p.photoData = data }
+                        }
+                        isPresented = false
+                    }
+                    .foregroundColor(AppTheme.primary)
+                    .bold()
+                }
+            }
+            .onAppear {
+                name = profileStore.profile.name
+            }
         }
     }
 }

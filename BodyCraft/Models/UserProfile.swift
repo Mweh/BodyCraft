@@ -16,6 +16,7 @@ struct UserProfile: Codable {
     var sessionsPerWeek: Int = 3
     var durationPerSession: String = ""
     var equipment: String = ""
+    var photoData: Data? = nil
 
     // ── Baseline (set once at onboarding, never touched afterwards) ────────
     var startingWeight: String = ""
