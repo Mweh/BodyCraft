@@ -93,46 +93,15 @@ struct WorkoutListView: View {
         )
     ]
     
-    // Compute workouts based on AI or fallback to default
-    var workouts: [WorkoutModel] {
-        if !savedWorkoutPlanData.isEmpty,
-           let aiWorkoutPlan = try? JSONDecoder().decode(AIWorkoutResponse.self, from: savedWorkoutPlanData) {
-            
-            return aiWorkoutPlan.weeklyWorkoutPlan.map { aiDay in
-                // Convert AI Exercise to local UI ExerciseModel
-                let uiExercises = aiDay.exercises.map { aiEx in
-                    ExerciseModel(
-                        name: aiEx.name,
-                        muscleGroup: aiDay.focus,
-                        sets: aiEx.sets,
-                        reps: aiEx.reps,
-                        rest: aiEx.restSeconds,
-                        tip: "AI optimized intensity"
-                    )
-                }
-                
-                return WorkoutModel(
-                    title: "\(aiDay.day): \(aiDay.focus)",
-                    duration: "\(uiExercises.count * 8) min", // rough estimate
-                    calories: "AI Target",
-                    level: "Personalized", // Custom tag
-                    exercises: uiExercises.count,
-                    tagColor: .purple,
-                    imageURL: nil, // We'll fallback to the default gradient design
-                    exerciseList: uiExercises
-                )
-            }
-        }
-        
-        return defaultWorkouts
-    }
-
+    @State private var workouts: [WorkoutModel] = []
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 AppTheme.background.ignoresSafeArea()
 
                 VStack(alignment: .leading, spacing: 0) {
+
 
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Workouts")
@@ -212,6 +181,45 @@ struct WorkoutListView: View {
                 }
             }
             .navigationBarHidden(true)
+        }
+        .onAppear {
+            loadWorkouts()
+        }
+        .onChange(of: savedWorkoutPlanData) { _ in
+            loadWorkouts()
+        }
+    }
+    
+    // Compute workouts based on AI or fallback to default
+    private func loadWorkouts() {
+        if !savedWorkoutPlanData.isEmpty,
+           let aiWorkoutPlan = try? JSONDecoder().decode(AIWorkoutResponse.self, from: savedWorkoutPlanData) {
+            
+            workouts = aiWorkoutPlan.weeklyWorkoutPlan.map { aiDay in
+                let uiExercises = aiDay.exercises.map { aiEx in
+                    ExerciseModel(
+                        name: aiEx.name,
+                        muscleGroup: aiDay.focus,
+                        sets: aiEx.sets,
+                        reps: aiEx.reps,
+                        rest: aiEx.restSeconds,
+                        tip: "AI optimized intensity"
+                    )
+                }
+                
+                return WorkoutModel(
+                    title: "\(aiDay.day): \(aiDay.focus)",
+                    duration: "\(uiExercises.count * 8) min",
+                    calories: "AI Target",
+                    level: "Personalized", // Custom tag
+                    exercises: uiExercises.count,
+                    tagColor: .purple,
+                    imageURL: nil,
+                    exerciseList: uiExercises
+                )
+            }
+        } else {
+            workouts = defaultWorkouts
         }
     }
 }

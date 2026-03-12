@@ -20,14 +20,14 @@ struct WorkoutDay: Codable, Identifiable {
     var id: UUID { UUID() }
     let day: String
     let focus: String
-    let exercises: [Exercise]
+    let exercises: [ExerciseAI]
     
     enum CodingKeys: String, CodingKey {
         case day, focus, exercises
     }
 }
 
-struct Exercise: Codable, Identifiable {
+struct ExerciseAI: Codable, Identifiable {
     var id: UUID { UUID() }
     let name: String
     let sets: Int

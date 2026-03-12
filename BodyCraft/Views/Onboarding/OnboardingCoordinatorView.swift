@@ -164,7 +164,7 @@ struct OnboardingCoordinatorView: View {
                     gender: gender,
                     heightCm: Int(height) ?? 175,
                     weightKg: Int(weight) ?? 75,
-                    bodyFat: bodyFat,
+//                    bodyFat: bodyFat,
                     activityLevel: activityLevel,
                     goal: goal,
                     experience: fitnessLevel,
