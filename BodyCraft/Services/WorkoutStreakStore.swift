@@ -36,6 +36,20 @@ final class WorkoutStreakStore: ObservableObject {
             self.startDate = now
             UserDefaults.standard.set(now.timeIntervalSince1970, forKey: "workout_streak_start_date")
         }
+
+        setupNotificationListeners()
+    }
+
+    private func setupNotificationListeners() {
+        NotificationCenter.default.addObserver(forName: .watchCheckboxSync, object: nil, queue: .main) { [weak self] note in
+            guard let userInfo = note.userInfo,
+                  let idStr = userInfo["exerciseId"] as? String,
+                  let id = UUID(uuidString: idStr),
+                  let isChecked = userInfo["isChecked"] as? Bool else { return }
+            
+            let day = self?.currentDayNumber ?? 1
+            self?.updateCompletionExternally(day: day, exerciseId: id, isChecked: isChecked)
+        }
     }
 
     // MARK: - Public API
@@ -64,17 +78,35 @@ final class WorkoutStreakStore: ObservableObject {
         return workout.exercises.allSatisfy { checked.contains($0.id.uuidString) }
     }
 
-    func toggle(day: Int, exercise: Exercise) {
+    func toggle(day: Int, exerciseId: UUID) {
         // Cannot check exercises for future days
         guard day <= currentDayNumber else { return }
         
         var set = completedExercises[day] ?? []
-        if set.contains(exercise.id.uuidString) {
-            set.remove(exercise.id.uuidString)
+        let isNowChecked: Bool
+        if set.contains(exerciseId.uuidString) {
+            set.remove(exerciseId.uuidString)
+            isNowChecked = false
         } else {
-            set.insert(exercise.id.uuidString)
+            set.insert(exerciseId.uuidString)
+            isNowChecked = true
         }
         // Force UI update
+        self.completedExercises[day] = set
+        save()
+        
+        // Problem 3: Push update to Watch in real-time
+        PhoneWatchBridge.shared.sendCheckboxUpdate(exerciseId: exerciseId, isChecked: isNowChecked)
+    }
+
+    /// Internal method to update state from remote sources (Watch)
+    private func updateCompletionExternally(day: Int, exerciseId: UUID, isChecked: Bool) {
+        var set = completedExercises[day] ?? []
+        if isChecked {
+            set.insert(exerciseId.uuidString)
+        } else {
+            set.remove(exerciseId.uuidString)
+        }
         self.completedExercises[day] = set
         save()
     }

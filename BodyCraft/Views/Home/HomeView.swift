@@ -680,7 +680,7 @@ struct StreakCard: View {
                             exercise: exercise,
                             isChecked: streakStore.isExerciseCompleted(day: day, exerciseId: exercise.id),
                             isDisabled: isFutureDay,
-                            onToggle: { streakStore.toggle(day: day, exercise: exercise) }
+                            onToggle: { streakStore.toggle(day: day, exerciseId: exercise.id) }
                         )
                     }
                 }

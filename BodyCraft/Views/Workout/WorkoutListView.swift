@@ -3,13 +3,23 @@ import SwiftUI
 // MARK: - Models
 
 struct ExerciseModel: Identifiable {
-    let id = UUID()
+    let id: UUID
     let name: String
     let muscleGroup: String
     let sets: Int
     let reps: String
     let rest: Int
     var tip: String? = nil
+
+    init(id: UUID = UUID(), name: String, muscleGroup: String, sets: Int, reps: String, rest: Int, tip: String? = nil) {
+        self.id = id
+        self.name = name
+        self.muscleGroup = muscleGroup
+        self.sets = sets
+        self.reps = reps
+        self.rest = rest
+        self.tip = tip
+    }
 }
 
 struct WorkoutModel: Identifiable {
@@ -230,6 +240,7 @@ struct WorkoutListView: View {
             workouts = aiWorkoutPlan.weeklyWorkoutPlan.map { aiDay in
                 let uiExercises = aiDay.exercises.map { aiEx in
                     ExerciseModel(
+                        id: aiEx.id,
                         name: aiEx.name,
                         muscleGroup: aiDay.focus,
                         sets: aiEx.sets,

@@ -76,6 +76,9 @@ struct BodyCraftApp: App {
     @StateObject private var nutritionStore = NutritionStore()
     @StateObject private var dashboardVM    = DashboardViewModel.shared
 
+    // Activates WCSession and pushes workout plan to Watch on launch
+    private let watchBridge = PhoneWatchBridge.shared
+
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
