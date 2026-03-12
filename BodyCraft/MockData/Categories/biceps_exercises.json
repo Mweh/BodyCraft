@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "data": [
+    {
+      "exerciseId": "exr_41n2hc2VrB8ofxrW",
+      "name": "Lying Double Legs Biceps Curl with Towel",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/sGKkXKxdYy.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hx6oyEujP1B6",
+      "name": "Two Legs Reverse Biceps Curl with Towel",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/JxwkNMNgXK.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hGioS8HumEF7",
+      "name": "Hammer Curl",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/kCGgHyMFzA.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hxqpSU5p6DZv",
+      "name": "Biceps Leg Concentration Curl",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/YXSxsv8zit.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hzAMXkkQQ5T2",
+      "name": "Inverted Chin Curl with Bent Knee between Chairs",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/bQqmNEEdBJ.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hx9wyaRGNyvs",
+      "name": "Lying Double Legs Hammer Curl with Towel",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/Ud1cn07ovG.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hgCHNgtVLHna",
+      "name": "Cross Body Hammer Curl",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/6vI4gkByYk.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hqjVS3nwBoyr",
+      "name": "Two Legs Hammer Curl with Towel",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/FSiUO8Qvgu.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hnFD2bT6sruf",
+      "name": "Sliding Floor Bridge Curl on Towel",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/f1c1Qr2316.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hd6SThQhAdnZ",
+      "name": "Chin-ups",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/TLX9vGr1dx.jpg"
+    }
+  ]
+}
