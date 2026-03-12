@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hc2VrB8ofxrW",
+    "name": "Lying Double Legs Biceps Curl with Towel",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/sGKkXKxdYy.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/jBEnhOxreg.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/sGKkXKxdYy.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/chULhAvT2i.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/lwA4sCsHx0.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "BICEPS",
+      "UPPER ARMS"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "BICEPS BRACHII"
+    ],
+    "secondaryMuscles": [
+      "BRACHIALIS",
+      "BRACHIORADIALIS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/Z80fRjW/41n2hc2VrB8ofxrW__Lying-Double-Legs-Biceps-Curl-with-Towel_Upper-Arms.mp4",
+    "keywords": [
+      "Bodyweight Biceps Exercise",
+      "Towel Biceps Curl",
+      "Lying Double Legs Curl",
+      "Upper Arms Bodyweight Workout",
+      "Biceps Curl with Towel",
+      "Home Biceps Exercise",
+      "No Equipment Upper Arms Workout",
+      "Bodyweight Biceps Curl",
+      "Lying Legs Biceps Curl",
+      "Towel Exercise for Upper Arms."
+    ],
+    "overview": "The Lying Double Legs Biceps Curl with Towel is a versatile exercise that targets the biceps, abs, and leg muscles, offering a comprehensive workout in a single move. It is ideal for individuals of all fitness levels who want to improve their muscle strength, flexibility, and balance. People might choose this exercise for its convenience, as it requires minimal equipment - just a towel, and can be done at home, making it great for those with busy schedules or limited access to a gym.",
+    "instructions": [
+      "Next, extend your arms above your head, keeping the towel taut. Your palms should be facing forward.",
+      "Now, pull the towel towards your forehead by bending your elbows, while keeping your upper arms stationary. Ensure your elbows are close to your head and perpendicular to the floor. This is your starting position.",
+      "Inhale and slowly lower the towel back to the starting position above your head, while keeping your arms extended and the towel taut.",
+      "Exhale as you curl your arms, pulling the towel back towards your forehead. This completes one rep. Repeat the exercise for your desired number of repetitions."
+    ],
+    "exerciseTips": [
+      "Controlled Movements: As you pull the towel towards you, bending your knees, ensure your movements are slow and controlled. This will not only help you maintain balance but also maximize muscle engagement. Avoid jerky or quick movements, which can lead to injury.",
+      "Engage Your Core: While the primary focus is on your biceps, don't forget to engage your core. This will provide stability and support, preventing unnecessary pressure on your back.",
+      "Avoid Overstretching: When extending your legs, avoid pushing them to a point where your back arches off the floor. This common mistake can put undue stress on your lower back and reduce the effectiveness of the exercise.",
+      "Consistent Breathing: Breathe out as"
+    ],
+    "variations": [
+      "Seated Bicep Curl with Dumbbells: Sit on a bench with your feet flat on the ground, hold a dumbbell in each hand and curl them towards your shoulders.",
+      "Hammer Curl with Dumbbells: Similar to the seated bicep curl, but you keep your palms facing each other throughout the movement, working different parts of the bicep.",
+      "Incline Dumbbell Curl: Lie on an incline bench with a dumbbell in each hand, palms facing forward, and curl the weights while keeping your elbows stationary.",
+      "Concentration Curl: Sit on a bench with your feet wide, lean forward slightly, and curl a dumbbell between your legs, focusing on the contraction and extension of the bicep muscle."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hzAMXkkQQ5T2",
+      "exr_41n2hxqpSU5p6DZv",
+      "exr_41n2htBQBchhJEFn",
+      "exr_41n2hx6oyEujP1B6",
+      "exr_41n2hXKdB9ktSASg",
+      "exr_41n2hydnNUJygyFB",
+      "exr_41n2hjVXxKoYuDdn",
+      "exr_41n2hPMH1qxsumQn",
+      "exr_41n2hiL123KPcmn4",
+      "exr_41n2hk4JPVrcJyX6"
+    ]
+  }
+}

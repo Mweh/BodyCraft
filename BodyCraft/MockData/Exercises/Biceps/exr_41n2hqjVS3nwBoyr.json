@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hqjVS3nwBoyr",
+    "name": "Two Legs Hammer Curl with Towel ",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/FSiUO8Qvgu.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/5ZE7tamFzj.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/FSiUO8Qvgu.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/elqnv5OZfF.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/dzxc5MYYwU.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BICEPS", "UPPER ARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["BRACHIORADIALIS"],
+    "secondaryMuscles": ["BRACHIALIS", "BICEPS BRACHII"],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/z4Dufyo/41n2hqjVS3nwBoyr__Two-Legs-Hammer-Curl-with-Towel-(VERSION-2).mp4",
+    "keywords": [
+      "Bodyweight Hammer Curl Exercise",
+      "Two Legs Hammer Curl Workout",
+      "Biceps Strengthening Exercise",
+      "Upper Arms Bodyweight Workout",
+      "Towel Hammer Curl Routine",
+      "Home Workout for Biceps",
+      "Bodyweight Exercise for Upper Arms",
+      "Towel Grip Hammer Curl",
+      "Two Legs Bicep Curl with Towel",
+      "Bodyweight Arm Strengthening Exercise"
+    ],
+    "overview": "The Two Legs Hammer Curl with Towel is a versatile strength-training exercise that targets the biceps, forearms, and grip strength, providing a comprehensive upper body workout. It's ideal for athletes, fitness enthusiasts, or anyone looking to improve their upper body strength and endurance. By incorporating this exercise into your routine, you can enhance muscle tone, improve grip strength for daily tasks, and add variety to your workout, reducing monotony.",
+    "instructions": [
+      "Place a dumbbell or any weighted object in the center of the towel and hold it securely.",
+      "Keeping your elbows close to your body, slowly lift the weighted towel towards your chest by bending your elbows.",
+      "Once your hands reach chest level, pause for a moment, then slowly lower the towel back down to the starting position.",
+      "Repeat this motion for your desired number of repetitions, ensuring to maintain control and proper form throughout the exercise."
+    ],
+    "exerciseTips": [
+      "Controlled Movement: When you curl the towel upwards towards your shoulders, make sure to do it in a controlled manner. Do not use your back or shoulders to lift the weight; your biceps should do all the work. Jerky movements can cause harm and reduce the effectiveness of the exercise.",
+      "Full Range of Motion: To get the maximum benefit from the Two Legs Hammer Curl with Towel, ensure you're using a full range of motion. Lower the towel all the way down before curling it back up. Not using the full range of motion can limit the growth and strength of your biceps.",
+      "Breathing Technique"
+    ],
+    "variations": [
+      "Seated Hammer Curl with Towel: In this variation, you perform the exercise while seated on a bench or chair, which can help isolate the biceps and forearms and reduce the involvement of other muscles.",
+      "Incline Hammer Curl with Towel: This variation is performed while lying on an incline bench, which changes the angle of the exercise and targets different parts of the biceps and forearms.",
+      "Hammer Curl with Resistance Band and Towel: This variation involves using a resistance band instead of a dumbbell, which provides a different type of resistance and can help improve muscular endurance.",
+      "Alternating Hammer Curl with Towel: In this variation, instead of curling both arms at the same time, you alternate between arms. This can help focus on the form and contraction"
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hZhFUtzgC7rr",
+      "exr_41n2hx9wyaRGNyvs",
+      "exr_41n2htFvaTrfjDmH",
+      "exr_41n2hx1R1S1FwekB",
+      "exr_41n2hda9jbk8Lxa3",
+      "exr_41n2hiziHx8dMBHe",
+      "exr_41n2hdSwhx3s3MM7",
+      "exr_41n2hkmX9cd8AFWj",
+      "exr_41n2hooPUinUwiha",
+      "exr_41n2hvSXvLenPGSK"
+    ]
+  }
+}

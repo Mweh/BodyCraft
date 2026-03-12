@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hzAMXkkQQ5T2",
+    "name": "Inverted Chin Curl with Bent Knee between Chairs",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/bQqmNEEdBJ.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/IhadTeiAtb.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/bQqmNEEdBJ.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/o1maaitMwk.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/bKRidhmXZS.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "BICEPS",
+      "UPPER ARMS"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "BICEPS BRACHII"
+    ],
+    "secondaryMuscles": [
+      "BRACHIORADIALIS",
+      "BRACHIALIS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/mamUGZp/41n2hzAMXkkQQ5T2__Inverted-Chin-Curl-with-Bent-Knee-between-Chairs_Upper-Arms.mp4",
+    "keywords": [
+      "Bodyweight Bicep Exercise",
+      "Inverted Chin Curl Workout",
+      "Bent Knee Bodyweight Exercise",
+      "Upper Arm Bodyweight Training",
+      "Chair Bicep Exercise",
+      "Inverted Chin Curl with Bent Knee Technique",
+      "Bodyweight Upper Arm Workout",
+      "Home Bicep Exercise",
+      "Chair-Based Upper Arm Workout",
+      "Inverted Chin Curl Bodyweight Exercise"
+    ],
+    "overview": "The Inverted Chin Curl with Bent Knee between Chairs is a dynamic exercise that targets the upper body, specifically strengthening the arms, shoulders, and core muscles. It is ideal for fitness enthusiasts of all levels who are looking to improve their upper body strength and stability. People may want to perform this exercise as it not only enhances muscle tone and posture, but also increases functional fitness, making daily activities easier to perform.",
+    "instructions": [
+      "Sit down on the floor between the chairs and place your hands on the seat edges, fingers pointing towards your feet, and bend your knees so that your feet are flat on the floor.",
+      "Push down on the chairs and lift your body off the ground, keeping your elbows bent and your shoulders down, away from your ears.",
+      "Slowly lower your body by bending your elbows until your upper arms are parallel to the floor, keeping your back straight and your core engaged.",
+      "Push yourself back up to the starting position by straightening your arms, ensuring to keep your body straight and your core engaged throughout the movement. Repeat this exercise for the desired number of repetitions."
+    ],
+    "exerciseTips": [
+      "Engage Your Core: Before you start the curl, engage your core muscles. This not only helps to protect your lower back but also ensures that the focus of the exercise remains on your upper body. A common mistake is to neglect the core and rely on momentum to lift the body, which can lead to injuries and less effective workouts.",
+      "Controlled Movements: Ensure that your movements are slow and controlled. Avoid the common mistake of jerking or using momentum to lift your body. Instead, use your arm and shoulder strength to pull your chin over the chairs. Lower yourself back down with the same controlled motion."
+    ],
+    "variations": [
+      "Inverted Chin Curl with Ankle Weights between Chairs: In this variation, you would wear ankle weights to add more resistance to the exercise, thereby increasing the challenge and intensity.",
+      "Inverted Chin Curl with Resistance Bands between Chairs: For this variation, you would use resistance bands around your feet or knees to add an extra layer of challenge to the exercise, working your muscles harder.",
+      "Single Leg Inverted Chin Curl between Chairs: In this version, you perform the exercise with one leg lifted off the ground, increasing the difficulty and engaging your core and leg muscles more.",
+      "Inverted Chin Curl with Stability Ball between Chairs: This variation involves placing a stability ball between your knees or ankles, which helps to engage your inner thigh muscles and increases the overall challenge of the exercise."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hc2VrB8ofxrW",
+      "exr_41n2hxqpSU5p6DZv",
+      "exr_41n2htBQBchhJEFn",
+      "exr_41n2hx6oyEujP1B6",
+      "exr_41n2hXKdB9ktSASg",
+      "exr_41n2hydnNUJygyFB",
+      "exr_41n2hjVXxKoYuDdn",
+      "exr_41n2hPMH1qxsumQn",
+      "exr_41n2hiL123KPcmn4",
+      "exr_41n2hk4JPVrcJyX6"
+    ]
+  }
+}
