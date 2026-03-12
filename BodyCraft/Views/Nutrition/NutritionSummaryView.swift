@@ -3,12 +3,35 @@ import SwiftUI
 struct NutritionSummaryView: View {
     @State private var showingScanner = false
     
-    // Mock Data based on UI
+    @AppStorage("savedWorkoutPlanData") private var savedWorkoutPlanData: Data = Data()
+    
+    // Compute target calories from AI or fallback 
+    var targetCalories: Double {
+        if !savedWorkoutPlanData.isEmpty,
+           let aiWorkoutPlan = try? JSONDecoder().decode(AIWorkoutResponse.self, from: savedWorkoutPlanData) {
+            return Double(aiWorkoutPlan.dailyCalories)
+        }
+        return 2200.0
+    }
+    
+    // Dynamic macro calculations based on 30% Protein / 40% Carbs / 30% Fat for general aesthetics
+    var proteinTarget: Double {
+        (targetCalories * 0.30) / 4.0
+    }
+    
+    var carbsTarget: Double {
+        (targetCalories * 0.40) / 4.0
+    }
+    
+    var fatTarget: Double {
+        (targetCalories * 0.30) / 9.0
+    }
+    
+    // Mock Data for consumed amounts
     let consumedCalories = 1420.0
-    let targetCalories = 2200.0
-    let protein = (current: 115.0, target: 165.0)
-    let carbs = (current: 140.0, target: 220.0)
-    let fat = (current: 50.0, target: 73.0)
+    var proteinCurrent: Double { 115.0 }
+    var carbsCurrent: Double { 140.0 }
+    var fatCurrent: Double { 50.0 }
     
     // Mock Meals
     let meals = [
@@ -32,7 +55,7 @@ struct NutritionSummaryView: View {
                                 .font(.largeTitle)
                                 .bold()
                                 .foregroundColor(.white)
-                            Text("Meal plan for your aesthetic body")
+                            Text("Meal plan based on AI target")
                                 .foregroundColor(AppTheme.secondaryText)
                         }
                         .padding(.horizontal)
@@ -54,19 +77,19 @@ struct NutritionSummaryView: View {
                                         .frame(height: 12)
                                     RoundedRectangle(cornerRadius: 6)
                                         .fill(Color.green)
-                                        .frame(width: geo.size.width * (consumedCalories / targetCalories), height: 12)
+                                        .frame(width: geo.size.width * min(1.0, consumedCalories / targetCalories), height: 12)
                                 }
                             }
                             .frame(height: 12)
                             
-                            Text("\(Int(targetCalories - consumedCalories)) kcal remaining")
+                            Text("\(max(0, Int(targetCalories - consumedCalories))) kcal remaining")
                                 .font(.subheadline)
                                 .foregroundColor(AppTheme.secondaryText)
                             
                             HStack(spacing: 20) {
-                                MacroTracker(name: "Protein", current: protein.current, target: protein.target, color: .red)
-                                MacroTracker(name: "Carbs", current: carbs.current, target: carbs.target, color: .yellow)
-                                MacroTracker(name: "Fat", current: fat.current, target: fat.target, color: .blue)
+                                MacroTracker(name: "Protein", current: proteinCurrent, target: proteinTarget, color: .red)
+                                MacroTracker(name: "Carbs", current: carbsCurrent, target: carbsTarget, color: .yellow)
+                                MacroTracker(name: "Fat", current: fatCurrent, target: fatTarget, color: .blue)
                             }
                             .padding(.top, 8)
                         }

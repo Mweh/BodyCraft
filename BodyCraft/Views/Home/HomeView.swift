@@ -24,6 +24,22 @@ struct HomeView: View {
     @State private var showingUpdateStats = false   // Update Progress button
     @State private var expandedDay: Int?  = nil     // Which day's exercises are expanded
 
+    @AppStorage("savedWorkoutPlanData") private var savedWorkoutPlanData: Data = Data()
+    
+    var aiWorkoutPlan: AIWorkoutResponse? {
+        if savedWorkoutPlanData.isEmpty { return nil }
+        let decoder = JSONDecoder()
+        return try? decoder.decode(AIWorkoutResponse.self, from: savedWorkoutPlanData)
+    }
+    
+    var dailyCalorieTarget: Int {
+        aiWorkoutPlan?.dailyCalories ?? 600
+    }
+    
+    var nextWorkoutFocus: String {
+        aiWorkoutPlan?.weeklyWorkoutPlan.first?.focus ?? "Create your personalized workout plan"
+    }
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -50,16 +66,40 @@ struct HomeView: View {
                                 .overlay(Text(profile.initials).foregroundColor(.white).bold())
                         }
                         .padding(.horizontal)
-
+                        
                         // ── Streak ────────────────────────────────────────
                         StreakCard(
                             todayDayNumber: todayDayNumber,
                             expandedDay:    $expandedDay,
                             streakStore:    streakStore
                         )
+                        
+                        // AI Workout Quick Link
+                        HStack {
+                            Image(systemName: "sparkles")
+                                .foregroundColor(.white)
+                                .padding(12)
+                                .background(AppTheme.primary)
+                                .clipShape(Circle())
+                            
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(aiWorkoutPlan != nil ? "Today: \(aiWorkoutPlan!.weeklyWorkoutPlan.first?.day ?? "Day 1")" : "AI Workout Plan")
+                                    .foregroundColor(.white)
+                                    .fontWeight(.semibold)
+                                Text(nextWorkoutFocus)
+                                    .foregroundColor(AppTheme.secondaryText)
+                                    .font(.caption)
+                            }
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(AppTheme.secondaryText)
+                        }
+                        .padding()
+                        .background(AppTheme.surface)
+                        .cornerRadius(16)
                         .padding(.horizontal)
-
-                        // ── Calories ──────────────────────────────────────
+                        
+                        // Calories Burned
                         VStack(alignment: .leading, spacing: 16) {
                             HStack {
                                 Image(systemName: "flame.fill").foregroundColor(.orange)
@@ -68,21 +108,30 @@ struct HomeView: View {
                                 Spacer()
                             }
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("Calories burned today").foregroundColor(AppTheme.secondaryText)
+                                Text("Calories intake target")
+                                    .foregroundColor(AppTheme.secondaryText)
                                 HStack(alignment: .lastTextBaseline, spacing: 4) {
-                                    Text("0").font(.system(size: 40, weight: .bold)).foregroundColor(.white)
-                                    Text("kcal").foregroundColor(AppTheme.secondaryText)
+                                    Text("\(dailyCalorieTarget)")
+                                        .font(.system(size: 40, weight: .bold))
+                                        .foregroundColor(.white)
+                                    Text("kcal by AI")
+                                        .foregroundColor(AppTheme.secondaryText)
                                 }
                             }
                             VStack(spacing: 8) {
                                 HStack {
-                                    Text("Daily goal"); Spacer(); Text("0 / 600 kcal")
+                                    Text("Daily goal calculated based on profile")
+                                    Spacer()
                                 }
                                 .font(.caption).foregroundColor(AppTheme.secondaryText)
                                 GeometryReader { geo in
                                     ZStack(alignment: .leading) {
-                                        RoundedRectangle(cornerRadius: 4).fill(AppTheme.background).frame(height: 8)
-                                        RoundedRectangle(cornerRadius: 4).fill(Color.green).frame(width: 0, height: 8)
+                                        RoundedRectangle(cornerRadius: 4)
+                                            .fill(AppTheme.background)
+                                            .frame(height: 8)
+                                        RoundedRectangle(cornerRadius: 4)
+                                            .fill(Color.green)
+                                            .frame(width: geo.size.width * (Double(dailyCalorieTarget) > 0 ? (486.0 / Double(dailyCalorieTarget)) : 0.8), height: 8)
                                     }
                                 }
                                 .frame(height: 8)

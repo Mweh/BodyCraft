@@ -28,10 +28,13 @@ struct WorkoutModel: Identifiable {
 
 struct WorkoutListView: View {
     @State private var selectedFilter = "All"
+    @State private var selectedWorkout: WorkoutModel? = nil
+    
+    @AppStorage("savedWorkoutPlanData") private var savedWorkoutPlanData: Data = Data()
 
     let filters = ["All", "Chest", "Back", "Shoulders", "Legs", "Arms"]
 
-    @State private var workouts: [WorkoutModel] = [
+    let defaultWorkouts: [WorkoutModel] = [
         WorkoutModel(
             title: "Push Day - Chest & Triceps",
             duration: "50 min", calories: "380 kcal", level: "Intermediate", exercises: 6,
@@ -89,6 +92,40 @@ struct WorkoutListView: View {
             ]
         )
     ]
+    
+    // Compute workouts based on AI or fallback to default
+    var workouts: [WorkoutModel] {
+        if !savedWorkoutPlanData.isEmpty,
+           let aiWorkoutPlan = try? JSONDecoder().decode(AIWorkoutResponse.self, from: savedWorkoutPlanData) {
+            
+            return aiWorkoutPlan.weeklyWorkoutPlan.map { aiDay in
+                // Convert AI Exercise to local UI ExerciseModel
+                let uiExercises = aiDay.exercises.map { aiEx in
+                    ExerciseModel(
+                        name: aiEx.name,
+                        muscleGroup: aiDay.focus,
+                        sets: aiEx.sets,
+                        reps: aiEx.reps,
+                        rest: aiEx.restSeconds,
+                        tip: "AI optimized intensity"
+                    )
+                }
+                
+                return WorkoutModel(
+                    title: "\(aiDay.day): \(aiDay.focus)",
+                    duration: "\(uiExercises.count * 8) min", // rough estimate
+                    calories: "AI Target",
+                    level: "Personalized", // Custom tag
+                    exercises: uiExercises.count,
+                    tagColor: .purple,
+                    imageURL: nil, // We'll fallback to the default gradient design
+                    exerciseList: uiExercises
+                )
+            }
+        }
+        
+        return defaultWorkouts
+    }
 
     var body: some View {
         NavigationStack {
@@ -102,7 +139,7 @@ struct WorkoutListView: View {
                             .font(.largeTitle)
                             .bold()
                             .foregroundColor(.white)
-                        Text("Training programs for your aesthetic body")
+                        Text("Training programs powered by AI")
                             .foregroundColor(AppTheme.secondaryText)
                     }
                     .padding()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F26C4E52F625C9A00F425ED /* FLEX in Frameworks */ = {isa = PBXBuildFile; productRef = 9F26C4E42F625C9A00F425ED /* FLEX */; };
 		9FBA117E2F60FAD000411B26 /* BodyCraft Watch App Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9FBA11742F60FACF00411B26 /* BodyCraft Watch App Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -35,7 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9F890AE22F5FA45500484454 /* BodyCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F890AE22F5FA45500484454 /* KoalaFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoalaFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBA11742F60FACF00411B26 /* BodyCraft Watch App Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BodyCraft Watch App Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F26C4E52F625C9A00F425ED /* FLEX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,11 +72,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F26C4DF2F62522E00F425ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9F890AD92F5FA45500484454 = {
 			isa = PBXGroup;
 			children = (
 				9F890AE42F5FA45500484454 /* BodyCraft */,
 				9FBA11752F60FACF00411B26 /* BodyCraft Watch App Watch App */,
+				9F26C4DF2F62522E00F425ED /* Frameworks */,
 				9F890AE32F5FA45500484454 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,7 +92,7 @@
 		9F890AE32F5FA45500484454 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9F890AE22F5FA45500484454 /* BodyCraft.app */,
+				9F890AE22F5FA45500484454 /* KoalaFit.app */,
 				9FBA11742F60FACF00411B26 /* BodyCraft Watch App Watch App.app */,
 			);
 			name = Products;
@@ -91,9 +101,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9F890AE12F5FA45500484454 /* BodyCraft */ = {
+		9F890AE12F5FA45500484454 /* KoalaFit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F890AED2F5FA45600484454 /* Build configuration list for PBXNativeTarget "BodyCraft" */;
+			buildConfigurationList = 9F890AED2F5FA45600484454 /* Build configuration list for PBXNativeTarget "KoalaFit" */;
 			buildPhases = (
 				9F890ADE2F5FA45500484454 /* Sources */,
 				9F890ADF2F5FA45500484454 /* Frameworks */,
@@ -108,11 +118,12 @@
 			fileSystemSynchronizedGroups = (
 				9F890AE42F5FA45500484454 /* BodyCraft */,
 			);
-			name = BodyCraft;
+			name = KoalaFit;
 			packageProductDependencies = (
+				9F26C4E42F625C9A00F425ED /* FLEX */,
 			);
 			productName = BodyCraft;
-			productReference = 9F890AE22F5FA45500484454 /* BodyCraft.app */;
+			productReference = 9F890AE22F5FA45500484454 /* KoalaFit.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9FBA11732F60FACF00411B26 /* BodyCraft Watch App Watch App */ = {
@@ -164,12 +175,15 @@
 			);
 			mainGroup = 9F890AD92F5FA45500484454;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9F26C4E32F625C9A00F425ED /* XCRemoteSwiftPackageReference "FLEX" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9F890AE32F5FA45500484454 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9F890AE12F5FA45500484454 /* BodyCraft */,
+				9F890AE12F5FA45500484454 /* KoalaFit */,
 				9FBA11732F60FACF00411B26 /* BodyCraft Watch App Watch App */,
 			);
 		};
@@ -499,7 +513,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F890AED2F5FA45600484454 /* Build configuration list for PBXNativeTarget "BodyCraft" */ = {
+		9F890AED2F5FA45600484454 /* Build configuration list for PBXNativeTarget "KoalaFit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9F890AEE2F5FA45600484454 /* Debug */,
@@ -518,6 +532,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9F26C4E32F625C9A00F425ED /* XCRemoteSwiftPackageReference "FLEX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FLEXTool/FLEX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.22.10;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9F26C4E42F625C9A00F425ED /* FLEX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F26C4E32F625C9A00F425ED /* XCRemoteSwiftPackageReference "FLEX" */;
+			productName = FLEX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9F890ADA2F5FA45500484454 /* Project object */;
 }
