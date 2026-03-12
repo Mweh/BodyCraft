@@ -23,6 +23,7 @@ struct SplashScreenView: View {
                     // Ikon Logo
                     Image("KoalaFit")
                         .resizable()
+                        .cornerRadius(16)
                         .scaledToFit()
                         .frame(width: 100, height: 100)
                     
