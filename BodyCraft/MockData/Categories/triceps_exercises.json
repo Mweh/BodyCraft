@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "data": [
+    {
+      "exerciseId": "exr_41n2hLA8xydD4dzE",
+      "name": "Triceps Press ",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/Ocsii6p15A.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hndkoGHD1ogh",
+      "name": "Triceps Dip",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/MDpZM9TtVE.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hadQgEEX8wDN",
+      "name": "Triceps Dip",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/MruSDlnk0M.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hHH9bNfi98YU",
+      "name": "Triceps Dips Floor",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/mc56eseHDh.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hmhxk35fbHbC",
+      "name": "Push-up on Forearms",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/n3c6WKyggU.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hUKc7JPrtJQj",
+      "name": "Dip on Floor with Chair",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/nuTgT7bqfw.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hoFGGwZDNFT1",
+      "name": "Bench dip on floor",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/6fVd7Ky8BX.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hPgRbN1KtJuD",
+      "name": "Close-grip Push-up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/bJE2dLg62R.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hRZ6fgsLyd77",
+      "name": "Diamond Push-up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/GQfzn89uwq.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hc2VrB8ofxrW",
+      "name": "Lying Double Legs Biceps Curl with Towel",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/sGKkXKxdYy.jpg"
+    }
+  ]
+}

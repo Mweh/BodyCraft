@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hbLX4XH8xgN7",
+    "name": "Dumbbell Single Leg Calf Raise",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/bAEQLWIqH4.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/XUiA39I6VS.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/bAEQLWIqH4.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/ZPm7iUXCmR.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/8WD1U297Oa.jpg"
+    },
+    "equipments": ["DUMBBELL"],
+    "bodyParts": ["CALVES"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["GASTROCNEMIUS"],
+    "secondaryMuscles": ["SOLEUS"],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/sN2BNq4/41n2hbLX4XH8xgN7__Dumbbell-Single-Leg-Calf-Raise_Calves.mp4",
+    "keywords": [
+      "Dumbbell Calf Raise Exercise",
+      "Single Leg Calf Workout with Dumbbell",
+      "Dumbbell Exercise for Strong Calves",
+      "Strengthen Calves with Dumbbell",
+      "One Leg Dumbbell Calf Raise",
+      "Dumbbell Workout for Calves",
+      "Single Leg Calf Raise with Weights",
+      "Dumbbell Single Leg Calf Strengthening",
+      "Calf Muscle Building with Dumbbell",
+      "Dumbbell Weighted Single Leg Calf Raise."
+    ],
+    "overview": "The Dumbbell Single Leg Calf Raise is a lower body exercise that primarily targets the calf muscles, helping to improve balance, strength, and muscular definition. This exercise is suitable for individuals at all fitness levels, from beginners to advanced athletes, as it can be easily modified to match one's ability. People would want to perform this exercise to enhance their lower body strength, improve athletic performance, and create well-defined, toned calves.",
+    "instructions": [
+      "Lift your left foot off the ground so you're balancing on your right foot.",
+      "Slowly raise your right heel off the ground as high as possible, keeping your core tight and your right knee slightly bent.",
+      "Pause at the top of the movement, then slowly lower your heel back down to the ground.",
+      "Repeat this motion for your desired number of reps, then switch to the left foot and repeat the process."
+    ],
+    "exerciseTips": [
+      "Controlled Movement: When lifting your heel off the ground, make sure to do it in a slow and controlled manner. Avoid rushing the movement as it can lead to injury and won't effectively target the calf muscles.",
+      "Full Range of Motion: Make sure to go through the full range of motion. This means lowering your heel below the level of the step at the bottom of the movement, and rising up on the balls of your feet as high as possible at the top of the movement.",
+      "Avoid Using Momentum: A common mistake is to use momentum to lift your body, which can reduce the effectiveness of the exercise and increase"
+    ],
+    "variations": [
+      "Double Leg Dumbbell Calf Raise: Instead of lifting one leg, this variation involves standing with both feet on the ground and raising both heels simultaneously.",
+      "Dumbbell Calf Raise on Step: This variation requires you to stand on a step or raised platform, allowing for a greater range of motion as you drop your heel below the step and then raise it.",
+      "Dumbbell Calf Raise with Resistance Band: In this variation, a resistance band is added to the dumbbell calf raise for extra tension and challenge.",
+      "Dumbbell Calf Raise with Jump: This advanced variation involves performing a calf raise with a dumbbell, then adding a small jump at the top of the movement to increase the intensity."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hQtaWxPLNFwX",
+      "exr_41n2hLqvEksmcu1b",
+      "exr_41n2hdWu3oaCGdWT",
+      "exr_41n2hJmzBvGxxdci",
+      "exr_41n2hdfUiA9ZE8rn",
+      "exr_41n2hbGeNbGk66eE",
+      "exr_41n2hf9T7AyHp1vo",
+      "exr_41n2hp1BDEDwni5t",
+      "exr_41n2hHFpZJ9V1r2v",
+      "exr_41n2hR3wbL7tyRrJ"
+    ]
+  }
+}

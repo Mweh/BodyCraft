@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hPgRbN1KtJuD",
+    "name": "Close-grip Push-up",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/bJE2dLg62R.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/FDeXGSP62h.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/bJE2dLg62R.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/En2Lep8BS5.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/w9ulGrGczq.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["TRICEPS", "UPPER ARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["TRICEPS BRACHII"],
+    "secondaryMuscles": [
+      "PECTORALIS MAJOR STERNAL HEAD",
+      "PECTORALIS MAJOR CLAVICULAR HEAD",
+      "ANTERIOR DELTOID"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/9CWI2Q6/41n2hPgRbN1KtJuD__Close-Grip-Push-up_Upper-Arms.mp4",
+    "keywords": [
+      "Close-grip Push-up workout",
+      "Bodyweight triceps exercise",
+      "Upper arm strengthening exercises",
+      "Bodyweight exercises for arms",
+      "Close-grip push-up technique",
+      "Home workout for triceps",
+      "Bodyweight upper arm workout",
+      "Triceps push-up exercise",
+      "Close-grip push-up form",
+      "Bodyweight push-up variations"
+    ],
+    "overview": "The Close-grip Push-up is an effective upper body exercise that primarily targets the triceps, chest, and shoulders, enhancing muscle strength and endurance. It's an excellent workout for both beginners and advanced fitness enthusiasts as it requires no equipment and can be modified to match any fitness level. Individuals may opt for this exercise to improve their upper body strength, promote better posture, and increase their functional fitness for everyday activities.",
+    "instructions": [
+      "Extend your legs behind you and balance on the balls of your feet, forming a straight line from your head to your heels.",
+      "Lower your body towards the floor by bending your elbows, keeping your body straight and your elbows close to your sides.",
+      "Push your body back up by extending your arms, keeping your body straight and your core engaged.",
+      "Repeat the exercise for the desired amount of repetitions, making sure to maintain the correct form throughout."
+    ],
+    "exerciseTips": [
+      "Maintain Proper Body Alignment: Keep your body in a straight line from your head to your heels. Avoid arching your back or sagging your hips, as this can lead to lower back injuries. Engage your core muscles to help maintain this alignment throughout the exercise.",
+      "Control Your Movement: Don't rush through the exercise. Lower your body in a controlled manner until your chest almost touches the floor, then push back up to the starting position. This not only maximizes muscle engagement but also reduces the risk of injury.",
+      "Elbow Position: Keep your elbows close to your body as you perform the exercise. Flaring your elbows out can put unnecessary stress on your shoulder joints and reduce the effectiveness of the exercise on your tr"
+    ],
+    "variations": [
+      "Spiderman Close-grip Push-up: In this version, as you lower your body, you bring one knee up to the elbow on the same side, providing an extra challenge to your core.",
+      "Close-grip Push-up with Feet Elevated: By placing your feet on a step or bench, you can increase the difficulty and engage more of your upper chest and shoulders.",
+      "Close-grip Medicine Ball Push-up: Performing close-grip push-ups with your hands on a medicine ball not only increases the difficulty, but also improves balance and stability.",
+      "Close-grip Push-up with Resistance Band: Adding a resistance band around your back and under your hands increases the resistance, making the push-up more challenging and effective for muscle building."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hRZ6fgsLyd77",
+      "exr_41n2hmhxk35fbHbC",
+      "exr_41n2hV5o459GYiiu",
+      "exr_41n2hf8YVXgHekGy",
+      "exr_41n2hZQ3pZv8WHcE",
+      "exr_41n2hgcuiQNZTt39",
+      "exr_41n2hiVNyes7YuiF",
+      "exr_41n2hgMeB8DurZ48",
+      "exr_41n2hK5G6RPthYRX",
+      "exr_41n2hbzZSVBLe2gp"
+    ]
+  }
+}

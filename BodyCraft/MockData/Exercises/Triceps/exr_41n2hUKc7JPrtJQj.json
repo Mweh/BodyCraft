@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hUKc7JPrtJQj",
+    "name": "Dip on Floor with Chair",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/nuTgT7bqfw.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/7uO0Z3RQR0.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/nuTgT7bqfw.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/KJrUWEHAz4.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/X3ViZXpHb6.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["TRICEPS", "UPPER ARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["TRICEPS BRACHII", "PECTORALIS MAJOR STERNAL HEAD"],
+    "secondaryMuscles": [
+      "LATISSIMUS DORSI",
+      "ANTERIOR DELTOID",
+      "LEVATOR SCAPULAE"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/VH7OsHy/41n2hUKc7JPrtJQj__Dip-on-Floor-with-Chair_Chest_.mp4",
+    "keywords": [
+      "Bodyweight triceps exercise",
+      "Chair dips workout",
+      "Upper arm toning exercises",
+      "Home workout for triceps",
+      "Chair dip exercise",
+      "Bodyweight workout for upper arms",
+      "Triceps strengthening exercises",
+      "No-equipment triceps workout",
+      "Dip on floor exercise",
+      "Home fitness routine for arm muscles"
+    ],
+    "overview": "The Dip on Floor with Chair exercise is a highly effective upper body workout that primarily targets the triceps, shoulders, and chest muscles. It's suitable for both beginners and advanced fitness enthusiasts as it can be modified based on individual strength levels. People would want to do this exercise because it not only enhances upper body strength but also improves muscle endurance and promotes better body posture.",
+    "instructions": [
+      "Bend your knees to sit down and place your hands on the edge of the chair, fingers pointing towards your body.",
+      "Push off your hands and slide your bottom off the chair, lowering your body towards the floor by bending your elbows until they are at about a 90-degree angle.",
+      "Push your body back up using your arms until they are fully extended, ensuring your hips are close to the chair and your chest is lifted.",
+      "Repeat this process for your desired number of repetitions, ensuring to maintain proper form throughout the exercise."
+    ],
+    "exerciseTips": [
+      "Correct Form: Start by sitting on the edge of the chair with your hands next to your hips. Move your hips forward, off the chair, and bend your elbows to lower your body towards the floor. Your elbows should be bent at a 90-degree angle. Keep your back close to the chair to avoid straining your shoulders, which is a common mistake.",
+      "Engage your Core: It's essential to keep your core engaged throughout the exercise to maintain balance and stability. This also helps to protect your lower back.",
+      "Controlled Movement: Avoid rushing through the dips. Instead, lower and lift your body in a slow, controlled manner. This is not only safer but also makes the exercise more effective as it engages your muscles throughout the movement.",
+      "Don't"
+    ],
+    "variations": [
+      "The Bench Dips: This variation involves using a workout bench instead of a chair, allowing for a deeper dip and increased difficulty.",
+      "The Single Leg Dips: This variation of the Dip on Floor with Chair involves lifting one leg off the ground during the exercise, adding an additional challenge to the core and quadriceps.",
+      "The Weighted Dips: This version of the Dip on Floor with Chair involves wearing a weight vest or holding a dumbbell between your legs to add resistance and increase the challenge.",
+      "The Incline Dips: This variation involves placing your hands on a chair or bench that is on an incline, which changes the angle of the exercise and targets different muscles."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hTzEBhiNd3Q3",
+      "exr_41n2hdm4hUKXFfmP",
+      "exr_41n2hkK8hGAcSnW7",
+      "exr_41n2hPzSsXwreE7i",
+      "exr_41n2hUzFPApY5zwb",
+      "exr_41n2hdLfF9dHBLHy",
+      "exr_41n2hqB4ZJMWpazz",
+      "exr_41n2hx5zVXJDShQ2",
+      "exr_41n2hUAZktoK1GLd",
+      "exr_41n2hGxB1ZfLNwLw"
+    ]
+  }
+}

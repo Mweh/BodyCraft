@@ -1,0 +1,75 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hdkBpqwoDmVq",
+    "name": "Suspended Row",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/bXwXW2WUCj.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/hBCqtCrrYQ.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/bXwXW2WUCj.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/iajRFiXOZt.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/8hcHqa1NfZ.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BACK"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "INFRASPINATUS",
+      "TRAPEZIUS UPPER FIBERS",
+      "TRAPEZIUS LOWER FIBERS",
+      "TERES MAJOR",
+      "TERES MINOR",
+      "LATISSIMUS DORSI",
+      "TRAPEZIUS MIDDLE FIBERS"
+    ],
+    "secondaryMuscles": [
+      "PECTORALIS MAJOR STERNAL HEAD",
+      "BRACHIORADIALIS",
+      "BRACHIALIS",
+      "POSTERIOR DELTOID",
+      "BICEPS BRACHII"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/im3VsRd/41n2hdkBpqwoDmVq__Suspended-Row_Back_.mp4",
+    "keywords": [
+      "Bodyweight back exercise",
+      "Suspended row workout",
+      "Suspension training for back",
+      "Bodyweight rowing exercise",
+      "Home workout for back muscles",
+      "Back strengthening with body weight",
+      "Suspension row exercise",
+      "Bodyweight exercises for back",
+      "Suspended row for back strength",
+      "Back muscle workout with suspension row"
+    ],
+    "overview": "The Suspended Row is a dynamic full-body exercise that primarily targets the muscles in your back, arms, and core, promoting muscle growth and endurance. It's a versatile workout suitable for both beginners and advanced fitness enthusiasts, as it can be easily modified to match individual strength levels. People would want to incorporate this exercise into their routine to improve upper body strength, promote better posture, and increase functional fitness.",
+    "instructions": [
+      "Stand facing the straps, grab the handles and lean back until your body is at a slight angle, keeping your feet shoulder-width apart.",
+      "Keeping your body straight and your core engaged, pull your chest up to the handles by bending your elbows and squeezing your shoulder blades together.",
+      "Pause at the top of the movement, then slowly lower your body back to the starting position, extending your arms fully.",
+      "Repeat this movement for the desired number of repetitions, maintaining control and proper form throughout each rep."
+    ],
+    "exerciseTips": [
+      "Engage Your Core: To get the most out of the Suspended Row, it's important to engage your core throughout the entire exercise. This not only helps to stabilize your body but also maximizes the strength you can gain from the exercise. A common mistake is to focus only on pulling with your arms, while ignoring your core.",
+      "Controlled Movement: Ensure that your movements are slow and controlled. Avoid the temptation to use momentum to pull yourself up, as this can lead to injury and makes the exercise less effective. Instead, focus on pulling yourself up using your"
+    ],
+    "variations": [
+      "Single Arm Suspended Row: This variation is performed by using only one arm at a time, which can help to improve balance and coordination.",
+      "Suspended Tuck Row: In this exercise, you pull your body up while simultaneously bringing your knees towards your chest, which engages your core muscles.",
+      "Wide Grip Suspended Row: This variation is performed with a wider than shoulder-width grip, which can help to target the muscles in your upper back and shoulders.",
+      "Suspended Row with Rotation: This variation involves twisting your body as you pull yourself up, which can help to improve rotational strength and flexibility."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hpfnw9dskeWu",
+      "exr_41n2hcMcMVtuahGV",
+      "exr_41n2hvS1T68k6DVD",
+      "exr_41n2hpF1DCVxEQ5m",
+      "exr_41n2hisuDmnQHqzf",
+      "exr_41n2hvqD6pJbg78R",
+      "exr_41n2htRw54y28bCK",
+      "exr_41n2hYsMKoVdsZ1K",
+      "exr_41n2hoYn3TAMxMn6",
+      "exr_41n2hP5j5aPAZAvx"
+    ]
+  }
+}

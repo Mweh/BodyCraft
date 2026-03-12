@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hHH9bNfi98YU",
+    "name": "Triceps Dips Floor",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/mc56eseHDh.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/HvLpzpKzge.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/mc56eseHDh.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/xd5WguEFBt.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/wFOslqfr7E.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["TRICEPS", "UPPER ARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["TRICEPS BRACHII"],
+    "secondaryMuscles": [
+      "LEVATOR SCAPULAE",
+      "ANTERIOR DELTOID",
+      "PECTORALIS MAJOR STERNAL HEAD",
+      "LATISSIMUS DORSI",
+      "PECTORALIS MAJOR CLAVICULAR HEAD"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/A0jMsUc/41n2hHH9bNfi98YU__Triceps-Dips-Floor_Upper-Arms.mp4",
+    "keywords": [
+      "Bodyweight tricep exercises",
+      "Tricep dips workout",
+      "Upper arm strengthening exercises",
+      "Home workouts for triceps",
+      "Bodyweight upper arm exercises",
+      "Tricep dips on floor",
+      "No equipment tricep workout",
+      "Triceps dips without weights",
+      "Floor exercises for upper arms",
+      "Bodyweight exercises for arm muscles"
+    ],
+    "overview": "Triceps Dips Floor is a bodyweight exercise that primarily targets the triceps, helping to build strength and muscle definition in the upper body. This exercise is suitable for individuals at all fitness levels, as it can be easily modified to match one's abilities and goals. People might choose to do Triceps Dips Floor because it requires no special equipment, can be performed anywhere, and effectively engages the upper body, improving overall functional fitness.",
+    "instructions": [
+      "Push your hips up by straightening your arms, keeping your hands and feet in place, and your body should be lifted off the ground.",
+      "Lower your body back down by bending your elbows until your buttocks almost touch the floor, but do not rest your body weight on the floor.",
+      "Push your body back up by straightening your arms again, returning to the starting position.",
+      "Repeat this movement for a set number of repetitions, ensuring you maintain control and proper form throughout the exercise."
+    ],
+    "exerciseTips": [
+      "Keep Elbows Close: A common mistake is flaring out the elbows, which can strain the shoulder joints. Instead, keep your elbows close to your body as you lower and raise your body. This will ensure that the focus of the exercise remains on your triceps.",
+      "Controlled Movements: Avoid rushing through the motions. Lower your body in a slow, controlled manner and then push back up. This will help you to engage your muscles more effectively and reduce the risk of injury.",
+      "Warm Up: Before doing any strength training exercise, it's important to warm up your muscles to prevent injury. You can do this by doing some light cardio, such as"
+    ],
+    "variations": [
+      "Weighted Dips: To increase the intensity, you can perform the triceps dips with a weight plate on your lap or a dumbbell between your legs.",
+      "Single-Leg Dips: This variation involves lifting one leg off the floor while performing the dip, which also engages the core and improves balance.",
+      "Elevated Feet Dips: In this variation, both hands and feet are elevated on separate surfaces (like two benches), increasing the difficulty level as more body weight is involved.",
+      "Triceps Dips with a Stability Ball: This variation involves placing your hands on a stability ball instead of the floor, which adds an element of instability and engages the core muscles more."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hndkoGHD1ogh",
+      "exr_41n2hoFGGwZDNFT1",
+      "exr_41n2hadQgEEX8wDN",
+      "exr_41n2hj9BnSmUu3Eo",
+      "exr_41n2hNJoa8pZ5XSy",
+      "exr_41n2hm6ArroHDETJ",
+      "exr_41n2hGVp2iKNQAda",
+      "exr_41n2hHPJc5GY5LBZ",
+      "exr_41n2hVcuaY9F3ukX",
+      "exr_41n2hHru39AiA5Dd"
+    ]
+  }
+}

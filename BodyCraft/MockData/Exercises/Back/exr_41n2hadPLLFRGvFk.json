@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hadPLLFRGvFk",
+    "name": "Sliding Floor Pulldown on Towel",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/9fW96RFqRZ.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/eW5p1RqlqX.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/9fW96RFqRZ.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/YFbvZ8xeqd.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/QMQOZVauzR.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BACK"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["LATISSIMUS DORSI"],
+    "secondaryMuscles": [
+      "POSTERIOR DELTOID",
+      "TRICEPS BRACHII",
+      "TERES MINOR",
+      "TRAPEZIUS LOWER FIBERS",
+      "TRAPEZIUS MIDDLE FIBERS",
+      "TERES MAJOR",
+      "INFRASPINATUS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/FOVy5de/41n2hadPLLFRGvFk__Sliding-Floor-Pulldown-on-Towel_Back.mp4",
+    "keywords": [
+      "Body weight back exercise",
+      "Sliding Floor Pulldown tutorial",
+      "Towel workout for back",
+      "Bodyweight back strengthening",
+      "Sliding Floor Pulldown technique",
+      "Back exercises with towel",
+      "No-equipment back workout",
+      "Sliding Floor Pulldown on Towel instructions",
+      "Home workout for back muscles",
+      "Body weight exercises for back strength"
+    ],
+    "overview": "The Sliding Floor Pulldown on Towel is a full-body exercise that primarily targets the upper body muscles, including the back, shoulders, and arms, while also engaging the core. This exercise is ideal for fitness enthusiasts of all levels, from beginners to advanced, due to its adjustable intensity. Individuals may want to perform this exercise to improve their upper body strength, promote better posture, and enhance overall body stability.",
+    "instructions": [
+      "Lie down flat on your back on the floor, with your legs extended and your feet shoulder-width apart, holding onto the towel with both hands above your head.",
+      "Slowly slide your hands along the towel, pulling it towards your body while raising your torso slightly off the ground, keeping your core engaged throughout the movement.",
+      "Hold this position for a few seconds, then slowly lower your torso back to the starting position, sliding your hands back up the towel.",
+      "Repeat this exercise for the desired number of repetitions, ensuring to keep your movements controlled and your core engaged throughout."
+    ],
+    "exerciseTips": [
+      "Maintain Good Posture: It's crucial to keep your back straight and your core engaged throughout the exercise. Slouching or hunching can cause strain on your back and neck and reduce the effectiveness of the exercise.",
+      "Controlled Movements: When pulling the towel down, ensure your movements are slow and controlled. Avoid jerking or using momentum to pull the towel down, as this can lead to muscle strain and doesn't effectively engage your muscles.",
+      "Breathing: Remember to breathe during the exercise. Inhale as you raise the towel above your head, and exhale as you pull it down. Holding"
+    ],
+    "variations": [
+      "Sliding Floor Pulldown with Resistance Bands: This variation incorporates resistance bands, which are attached to a stable object and held while performing the sliding motion, adding an extra level of resistance to the exercise.",
+      "Sliding Floor Pulldown with Stability Ball: In this variation, a stability ball is used in place of a towel, engaging core muscles more intensely to maintain balance.",
+      "Single Arm Sliding Floor Pulldown: This variation involves performing the exercise using one arm at a time, which can help to isolate and strengthen each side of the body individually.",
+      "Sliding Floor Pulldown with Weighted Vest: This variation includes wearing a weighted vest while performing the exercise, increasing the difficulty and intensity of the workout."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hsF3TK9cXNiM",
+      "exr_41n2hVqCaNmk5L4N",
+      "exr_41n2habtysPfV3M5",
+      "exr_41n2hcdSyWeKNx8t",
+      "exr_41n2hQfMe8RwnprM",
+      "exr_41n2hVTvJhMumPYQ",
+      "exr_41n2hhHwv8JJUfi4",
+      "exr_41n2heVhgH55SnWn",
+      "exr_41n2hxf1cobGpRP9",
+      "exr_41n2hiED1AKsUVp8"
+    ]
+  }
+}
