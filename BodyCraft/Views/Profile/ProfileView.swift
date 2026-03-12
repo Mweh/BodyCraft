@@ -57,25 +57,12 @@ struct ProfileView: View {
                                             .font(.title2)
                                             .bold()
                                             .foregroundColor(.white)
-                                        Image(systemName: "pencil")
-                                            .font(.caption)
-                                            .foregroundColor(AppTheme.secondaryText)
                                     }
                                 }
 
                                 Text(profile.goal.isEmpty ? "Aesthetic Body Journey" : profile.goal)
                                     .font(.subheadline)
                                     .foregroundColor(AppTheme.secondaryText)
-
-                                HStack(spacing: 4) {
-                                    Image(systemName: "star.fill")
-                                        .foregroundColor(.yellow)
-                                        .font(.caption)
-                                    Text("Level 1 · \(profile.fitnessLevel.isEmpty ? "Beginner" : profile.fitnessLevel)")
-                                        .font(.caption)
-                                        .foregroundColor(.yellow)
-                                        .bold()
-                                }
                             }
                             Spacer()
                         }

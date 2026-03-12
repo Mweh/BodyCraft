@@ -19,15 +19,16 @@ struct SplashScreenView: View {
                 backgroundColor
                     .ignoresSafeArea()
                 
-                VStack(spacing: 20) {
+                VStack(spacing: 8) {
                     // Ikon Logo
-                    Image(systemName: "figure.run.circle.fill")
-                        .font(.system(size: 100))
-                        .foregroundColor(primaryBlue)
+                    Image("KoalaFit")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
                     
                     // Nama Aplikasi
-                    Text("BodyCraft")
-                        .font(.system(size: 42, weight: .bold, design: .rounded))
+                    Text("KoalaFit")
+                        .font(.system(size: 36, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
                 }
                 .scaleEffect(scale)
