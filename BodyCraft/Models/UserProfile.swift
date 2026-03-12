@@ -1,5 +1,14 @@
 import Foundation
 
+// MARK: - Daily Nutrition Goals
+
+struct DailyNutritionGoals {
+    let calories: Double
+    let protein:  Double   // grams
+    let carbs:    Double   // grams
+    let fat:      Double   // grams
+}
+
 struct UserProfile: Codable {
     var name: String = ""
     var age: String = ""
@@ -118,5 +127,75 @@ struct UserProfile: Codable {
 
     var overallGoalProgress: Double {
         (bodyFatProgress + weightProgress + bmiProgress) / 3.0
+    }
+
+    // ── Computed: daily nutrition targets ─────────────────────────────────
+    // Uses Mifflin-St Jeor BMR → TDEE via activity multiplier → goal-adjusted calories
+    // and distributes into protein/carbs/fat based on the user's goal.
+    var dailyNutritionGoals: DailyNutritionGoals {
+        guard let w = Double(weight), let h = Double(height), let a = Double(age), w > 0, h > 0, a > 0
+        else { return DailyNutritionGoals(calories: 2000, protein: 150, carbs: 220, fat: 65) }
+
+        let isFemale = gender.lowercased() == "female"
+
+        // Mifflin-St Jeor BMR
+        let bmr: Double
+        if isFemale {
+            bmr = 10 * w + 6.25 * h - 5 * a - 161
+        } else {
+            bmr = 10 * w + 6.25 * h - 5 * a + 5
+        }
+
+        // Activity multiplier
+        let activityMultiplier: Double
+        switch activityLevel {
+        case "Lightly Active":    activityMultiplier = 1.375
+        case "Moderately Active": activityMultiplier = 1.55
+        case "Very Active":       activityMultiplier = 1.725
+        case "Extremely Active":  activityMultiplier = 1.9
+        default:                  activityMultiplier = 1.2  // Sedentary
+        }
+
+        var tdee = bmr * activityMultiplier
+
+        // Goal-based calorie adjustment
+        switch goal {
+        case "Lose Weight", "Cutting":
+            tdee -= 400
+        case "Build Muscle", "Bulking":
+            tdee += 300
+        default:
+            break  // Maintain
+        }
+
+        let calories = max(tdee, 1200)
+
+        // Macro split
+        let proteinG: Double
+        let fatG:     Double
+        let carbsG:   Double
+
+        switch goal {
+        case "Lose Weight", "Cutting":
+            // Higher protein to preserve muscle
+            proteinG = w * 2.0
+            fatG     = calories * 0.25 / 9
+            carbsG   = (calories - proteinG * 4 - fatG * 9) / 4
+        case "Build Muscle", "Bulking":
+            proteinG = w * 2.2
+            fatG     = calories * 0.30 / 9
+            carbsG   = (calories - proteinG * 4 - fatG * 9) / 4
+        default:
+            proteinG = w * 1.8
+            fatG     = calories * 0.28 / 9
+            carbsG   = (calories - proteinG * 4 - fatG * 9) / 4
+        }
+
+        return DailyNutritionGoals(
+            calories: calories.rounded(),
+            protein:  max(proteinG, 50).rounded(),
+            carbs:    max(carbsG,   50).rounded(),
+            fat:      max(fatG,     20).rounded()
+        )
     }
 }
