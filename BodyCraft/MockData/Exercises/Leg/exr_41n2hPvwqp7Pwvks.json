@@ -1,0 +1,61 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hPvwqp7Pwvks",
+    "name": "Seated Single Leg Hamstring Stretch",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/YdXpEDZsr4.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/w36tTOPAFY.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/YdXpEDZsr4.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/HykqJN1pHw.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/KqzebP7Nv3.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["HAMSTRINGS", "THIGHS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["HAMSTRINGS"],
+    "secondaryMuscles": [],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/6V28M7e/41n2hPvwqp7Pwvks__Seated-Single-Leg-Hamstring-Stretch_Thighs-(female).mp4",
+    "keywords": [
+      "Single Leg Hamstring Stretch",
+      "Bodyweight Hamstring Exercises",
+      "Seated Hamstring Stretch",
+      "Thigh Stretching Exercises",
+      "Bodyweight Leg Stretches",
+      "Seated Single Leg Stretch",
+      "Hamstring Stretching Techniques",
+      "Single Leg Thigh Stretch",
+      "Bodyweight Hamstring Stretch",
+      "Seated Hamstring and Thigh Stretch."
+    ],
+    "overview": "The Seated Single Leg Hamstring Stretch is a simple yet effective exercise that primarily targets the hamstring muscles, promoting flexibility and relieving muscle tightness. It's an ideal exercise for athletes, fitness enthusiasts, and individuals who are rehabilitating from leg injuries or suffer from chronic lower back pain. By incorporating this stretch into their routine, individuals can enhance their sports performance, improve their range of motion, and reduce the risk of injuries associated with tight hamstrings.",
+    "instructions": [
+      "Keep your back straight and slowly lean forward from your hips towards the foot of your extended leg, aiming to grasp it with your hand.",
+      "Hold the stretch for about 20 to 30 seconds, making sure to breathe deeply and relax into the stretch.",
+      "Release the stretch and sit up straight again.",
+      "Repeat the process with the other leg."
+    ],
+    "exerciseTips": [
+      "Gradual Stretch: Avoid bouncing or using sudden movements to try to stretch further. This can cause strains or even injuries. Instead, gradually lean forward from your hips, not your waist, towards your extended leg. Reach towards your foot with both hands, but don't worry if you can't reach it. The goal is to feel a gentle stretch down the back of your leg, not to touch your toes.",
+      "Breathing: Don't hold your breath during the stretch. Breathe deeply and slowly, exhaling as you lean forward to deepen the stretch."
+    ],
+    "variations": [
+      "Seated Single Leg Hamstring Stretch with Yoga Strap: Similar to the towel stretch, you use a yoga strap or band around your foot, pulling gently to deepen the stretch while maintaining good posture.",
+      "Seated Hamstring Stretch with Resistance Band: This variation involves a resistance band looped around your foot. You pull the band towards you while keeping your leg straight, increasing the stretch on your hamstring.",
+      "Seated Single Leg Hamstring Stretch on Exercise Ball: In this version, you sit on an exercise ball with one leg extended in front of you. You lean forward to stretch your hamstring, using the instability of the ball to engage your core.",
+      "Seated Single Leg Hamstring Stretch with Foam Roller: This variation involves placing a"
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hfQrSSobnyEE",
+      "exr_41n2haefJRGXF6ef",
+      "exr_41n2hwaSiSvthE1N",
+      "exr_41n2hzC5aPzh5Buy",
+      "exr_41n2hyzjv3LWrQRq",
+      "exr_41n2hyXCKHgkrshA",
+      "exr_41n2hy1nFEB5XsyX",
+      "exr_41n2hoLipvSrmWZA",
+      "exr_41n2hTA1zar5iPZE",
+      "exr_41n2hWoc9z2mL39H"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hrHSqBnVWRRB",
+    "name": "Bodyweight Single Leg Deadlift",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/VeFtV3UOHd.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/rlUByP5FBY.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/VeFtV3UOHd.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/ElBYoU57Gr.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/dGKG03PNL7.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["THIGHS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["GLUTEUS MAXIMUS"],
+    "secondaryMuscles": [
+      "SOLEUS",
+      "ADDUCTOR MAGNUS",
+      "ERECTOR SPINAE",
+      "HAMSTRINGS",
+      "QUADRICEPS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/xdO6Mmu/41n2hrHSqBnVWRRB__Bodyweight-Single-Leg-Deadlift_Thighs.mp4",
+    "keywords": [
+      "Single Leg Deadlift workout",
+      "Bodyweight thigh exercises",
+      "Bodyweight Single Leg Deadlift routine",
+      "Thigh strengthening exercises",
+      "No-equipment thigh workouts",
+      "Single leg bodyweight exercises",
+      "Bodyweight workouts for thighs",
+      "Single leg deadlift without weights",
+      "Bodyweight exercises for leg strength",
+      "Unilateral lower body exercises"
+    ],
+    "overview": "The Bodyweight Single Leg Deadlift is a versatile exercise that primarily targets the hamstrings, glutes, lower back, and core, enhancing overall body strength and stability. It's an excellent choice for individuals at any fitness level, particularly those seeking to improve balance, coordination, and unilateral strength. By incorporating this exercise into their routine, individuals can reap the benefits of better posture, injury prevention, and enhanced athletic performance.",
+    "instructions": [
+      "Slowly bend forward at the hips, keeping your back straight and extending your free leg behind you for balance.",
+      "Continue to bend forward until your torso is parallel to the floor, or as far as your flexibility allows, making sure to keep your standing leg slightly bent.",
+      "Pause for a moment at the bottom of the movement, then slowly return to the starting position, maintaining balance and control throughout the movement.",
+      "Repeat the exercise for your desired number of repetitions, then switch legs and perform the same number of repetitions with the other leg."
+    ],
+    "exerciseTips": [
+      "Keep Your Focus: Balance is key in this exercise. To help maintain balance, find a fixed point in front of you and keep your gaze on it throughout the movement. This will help you stay steady and ensure you are performing the exercise correctly.",
+      "Use Your Hips: The single leg deadlift is a hip hinge movement, meaning the action should come from your hips, not your knees. Push your hips back as you lower your body and drive them forward as you return to the standing position.",
+      "Avoid Rushing: Many people rush through the exercise, which can lead to a loss of balance and poor form. Take your time with each repetition"
+    ],
+    "variations": [
+      "BOSU Ball Single Leg Deadlift: This variation is performed on a BOSU ball to improve balance and stability.",
+      "Single Leg Deadlift with Knee Drive: This variation adds a knee drive at the end of the movement to engage the core and hip flexors.",
+      "Single Leg Deadlift with Resistance Band: This variation uses a resistance band to add tension and increase the difficulty of the exercise.",
+      "Single Leg Deadlift with Jump: This variation adds a jump at the end of the movement to increase cardiovascular intensity and engage the calf muscles."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hjCiqXL2akUy",
+      "exr_41n2hHK3NVr6vKap",
+      "exr_41n2ht9WKDFQhfU3",
+      "exr_41n2hwDBRXUz4TbC",
+      "exr_41n2hhgGuzrfT54s",
+      "exr_41n2hKnBXgBN3rD3",
+      "exr_41n2hpB92SjPqVeM",
+      "exr_41n2huiWrun35Vo2",
+      "exr_41n2hzmoz2cs6zE3",
+      "exr_41n2hXvPyEyMBgNR"
+    ]
+  }
+}

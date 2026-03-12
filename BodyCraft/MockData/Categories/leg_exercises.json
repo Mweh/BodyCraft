@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "data": [
+    {
+      "exerciseId": "exr_41n2hsSnmS946i2k",
+      "name": "Single Leg Squat with Support",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/cxJSiiWh9N.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hu5r8WMaLUkH",
+      "name": "Seated Straight Leg Calf Stretch",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/lnyRErycIc.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hrHSqBnVWRRB",
+      "name": "Bodyweight Single Leg Deadlift",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/VeFtV3UOHd.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hqfZb8UHBvB9",
+      "name": "Alternate Lying Floor Leg Raise ",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/F13NYUkmzS.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hq3Wm6ANkgUz",
+      "name": "Lying Leg Raise and Hold",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/URFCnmUsli.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hcw2FN534HcA",
+      "name": "Dumbbell Stiff Leg Deadlift",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/1aHXOCzatq.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hQp1pR7heQq9",
+      "name": "Dumbbell Stiff Leg Deadlift ",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/4TFtrlbBxS.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hd78zujKUEWK",
+      "name": "Single Leg Squat ",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/MosYINt7dV.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hbLX4XH8xgN7",
+      "name": "Dumbbell Single Leg Calf Raise",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/bAEQLWIqH4.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hPvwqp7Pwvks",
+      "name": "Seated Single Leg Hamstring Stretch",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/YdXpEDZsr4.jpg"
+    }
+  ]
+}

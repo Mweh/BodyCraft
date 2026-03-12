@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hndkoGHD1ogh",
+    "name": "Triceps Dip",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/MDpZM9TtVE.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/As8UrKflK2.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/MDpZM9TtVE.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/YBtQbgRYtU.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/asayazb2jX.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["TRICEPS", "UPPER ARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["TRICEPS BRACHII"],
+    "secondaryMuscles": [
+      "ANTERIOR DELTOID",
+      "PECTORALIS MAJOR STERNAL HEAD",
+      "LATISSIMUS DORSI",
+      "LEVATOR SCAPULAE",
+      "PECTORALIS MAJOR CLAVICULAR HEAD"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/9MRTKkd/41n2hndkoGHD1ogh__Triceps-Dip_Upper-Arms_.mp4",
+    "keywords": [
+      "Bodyweight triceps workout",
+      "Triceps dip exercise",
+      "Upper arm workouts",
+      "Bodyweight exercises for arms",
+      "Strength training for triceps",
+      "Home workout for upper arms",
+      "Triceps dip technique",
+      "Improving arm strength with dips",
+      "Triceps muscle workout",
+      "Bodyweight exercise for arm toning"
+    ],
+    "overview": "The Triceps Dip is a powerful exercise that targets and strengthens your triceps, shoulders, and chest, enhancing overall upper body strength. It is ideal for individuals at all fitness levels, from beginners to advanced athletes, as it can be easily modified to match one's ability. People would want to do this exercise not only to build muscle and improve upper body strength, but also to increase stability, functional fitness, and promote better posture.",
+    "instructions": [
+      "Place your hands shoulder-width apart on the bench or chair, extend your legs out in front of you, and move your body forward so that your back is just in front of the bench.",
+      "Slowly lower your body by bending your elbows until they form a 90-degree angle, ensuring your back is close to the bench.",
+      "Once you reach the bottom of the movement, push your body back up using your triceps to bring your body back to the starting position.",
+      "Repeat this movement for your desired number of repetitions, ensuring to maintain proper form throughout the exercise."
+    ],
+    "exerciseTips": [
+      "Lowering Your Body: Bend your elbows to slowly lower your body towards the floor until your elbows are at a 90-degree angle. Ensure your back is close to the bench throughout this movement.    Common Mistake: Some people tend to move their body too far away from the bench, which puts unnecessary strain on the shoulders.",
+      "Maintaining Form: Keep your core engaged and your shoulders down and back during the exercise. This helps to maintain proper form and targets the triceps more effectively."
+    ],
+    "variations": [
+      "Straight Bar Dips: This is done using a straight bar, where you lower your body until your arms are at a 90-degree angle, then push back up.",
+      "Ring Dips: This variation is performed on gymnastic rings, which adds an element of instability and requires more strength and balance.",
+      "Weighted Dips: In this variation, additional weights are used to increase resistance and make the exercise more challenging.",
+      "Single Leg Dips: This variation involves lifting one leg off the ground while performing the dip, which makes the exercise more challenging and also engages the core."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hHH9bNfi98YU",
+      "exr_41n2hoFGGwZDNFT1",
+      "exr_41n2hadQgEEX8wDN",
+      "exr_41n2hj9BnSmUu3Eo",
+      "exr_41n2hNJoa8pZ5XSy",
+      "exr_41n2hm6ArroHDETJ",
+      "exr_41n2hGVp2iKNQAda",
+      "exr_41n2hHPJc5GY5LBZ",
+      "exr_41n2hVcuaY9F3ukX",
+      "exr_41n2hHru39AiA5Dd"
+    ]
+  }
+}

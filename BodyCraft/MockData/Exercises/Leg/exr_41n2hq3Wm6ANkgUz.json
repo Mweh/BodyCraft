@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hq3Wm6ANkgUz",
+    "name": "Lying Leg Raise and Hold",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/URFCnmUsli.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/9fKqxwZ2xi.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/URFCnmUsli.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/aifUiMvdPg.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/w3CsOpfACC.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["HIPS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["ILIOPSOAS"],
+    "secondaryMuscles": ["RECTUS ABDOMINIS", "QUADRICEPS"],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/xm1Zyp9/41n2hq3Wm6ANkgUz__Lying-Leg-Raise-and-Hold_Hips.mp4",
+    "keywords": [
+      "Bodyweight hip exercise",
+      "Lying leg raise workout",
+      "Hip strengthening exercises",
+      "Bodyweight exercises for hips",
+      "Lying leg hold exercise",
+      "Leg raise and hold workout",
+      "Hip targeting bodyweight workout",
+      "Strengthening hips with leg raises",
+      "Bodyweight leg raise exercise",
+      "Home workout for hip strength"
+    ],
+    "overview": "The Lying Leg Raise and Hold is a lower body exercise that primarily strengthens the abdominal and hip flexor muscles, improving core stability and overall body balance. This exercise is suitable for individuals at all fitness levels, as it can be modified according to one's strength and endurance. People would want to incorporate this exercise into their routine to enhance their core strength, improve posture, and increase flexibility, which can contribute to better performance in various physical activities and sports.",
+    "instructions": [
+      "Slowly lift your legs off the ground, keeping them straight and together, until they form a 90-degree angle with your body.",
+      "Hold this position for a few seconds, keeping your core engaged and your lower back pressed into the floor to avoid straining.",
+      "Lower your legs back down in a controlled manner, making sure not to let your feet touch the ground.",
+      "Repeat this exercise for the desired number of repetitions, ensuring to maintain proper form throughout."
+    ],
+    "exerciseTips": [
+      "Controlled Movement: Raise your legs off the ground to a 90-degree angle. The key is to do this slowly and with control, rather than using momentum to swing your legs up. Using momentum can reduce the effectiveness of the exercise and potentially lead to injury.",
+      "Engage Your Core: Ensure that your lower back is pressed into the floor and your core is engaged throughout the exercise. This will help you avoid straining your back and will also maximize the effectiveness of the exercise.",
+      "Hold and Lower: At the top of the movement, hold the position for a few seconds before slowly lowering your legs back down. Do not let your legs touch the floor until the set is complete"
+    ],
+    "variations": [
+      "The Flutter Kicks variation involves alternating small, rapid leg lifts while lying flat, challenging your core stability and endurance.",
+      "The Scissor Kicks variation involves alternating vertical leg lifts, crossing one leg over the other, which not only targets your lower abs but also engages your inner and outer thighs.",
+      "The Double Leg Circles variation involves making clockwise and counter-clockwise circles with both legs together, providing a comprehensive workout for your entire core.",
+      "The Bicycle Crunch variation combines the traditional crunch with a leg raise and hold, bringing your elbow to the opposite knee to also target the obliques."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2htEeupsp4kA6",
+      "exr_41n2hyJErdgLFKWg",
+      "exr_41n2hdFEGF1jVcrT",
+      "exr_41n2hZJRaL5EzscW",
+      "exr_41n2hWgHxxgn49Ga",
+      "exr_41n2hs7tzNtophXm",
+      "exr_41n2hNAAoYAby3Xv",
+      "exr_41n2hx5LJZEHS6Nn",
+      "exr_41n2hyz7s3dVLUus",
+      "exr_41n2hKHY7i9V1VHp"
+    ]
+  }
+}
