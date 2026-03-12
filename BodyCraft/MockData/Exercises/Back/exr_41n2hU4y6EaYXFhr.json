@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hU4y6EaYXFhr",
+    "name": "Pull up",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/gNdMNPVxAj.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/pDrHubBVFC.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/gNdMNPVxAj.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/gabz8w0y4q.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/IUQGpbJa9L.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BACK"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["LATISSIMUS DORSI"],
+    "secondaryMuscles": [
+      "TERES MAJOR",
+      "BRACHIALIS",
+      "BRACHIORADIALIS",
+      "TRAPEZIUS LOWER FIBERS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/LoQH8Ur/41n2hU4y6EaYXFhr__Pull-up-(wide-grip)_Back_.mp4",
+    "keywords": [
+      "Bodyweight back exercise",
+      "Pull up workout",
+      "Strength training for back",
+      "Home back exercises",
+      "Back muscle development",
+      "Upper body workout",
+      "Bodyweight pull ups",
+      "Back strengthening exercises",
+      "Pull up training guide",
+      "Fitness routine for back muscles"
+    ],
+    "overview": "The pull-up is a comprehensive upper body exercise that primarily targets the muscles in your back, arms, and shoulders, promoting strength, endurance, and muscle growth. This exercise is suitable for individuals at all fitness levels, with modifications available for beginners and challenges for advanced athletes. People would want to do pull-ups as they are highly effective in improving upper body strength, enhancing body composition, and contributing to better overall physical health.",
+    "instructions": [
+      "With a firm grip on the bar, pull your shoulder blades down and back, bend your legs at the knees if necessary, and cross your ankles.",
+      "Engage your core and pull your body up until your chin is above the bar while keeping your elbows close to your body.",
+      "Hold this position for a moment, ensuring your chest is close or touching the bar.",
+      "Slowly lower your body back down to the starting position, fully extending your arms and maintaining control throughout the movement."
+    ],
+    "exerciseTips": [
+      "Avoid Using Momentum: A common mistake is using momentum to pull yourself up. This can lead to injury and doesn't engage your muscles as effectively as a controlled, steady movement. Instead of swinging or kicking your legs, focus on using your upper body strength to lift yourself.",
+      "Engage Your Core: Engaging your core muscles is crucial for maintaining stability during the pull-up. This will also help prevent unnecessary swinging and will ensure your body rises in a controlled manner.",
+      "Full Range of Motion: To get the most out of the exercise, make sure you're using a full"
+    ],
+    "variations": [
+      "Wide-grip Pull-ups: In this variation, the hands are placed further apart than the shoulders to emphasize the back muscles.",
+      "Close-grip Pull-ups: This version requires the hands to be closer together, targeting the lower lats and biceps.",
+      "Commando Pull-ups: This involves gripping the bar with hands close together and alternating sides, which engages the core more.",
+      "Negative Pull-ups: This variation focuses on the lowering phase of the movement, helping to build strength when a full pull-up is too challenging."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hYwXfZf34JMf",
+      "exr_41n2hhnEWveejx3b",
+      "exr_41n2hnF8qNJRV7B8",
+      "exr_41n2hzGGi9N3wPSw",
+      "exr_41n2htwahDidrJoX",
+      "exr_41n2hzexwLLyurTC",
+      "exr_41n2hzSFzMY5Lhzf",
+      "exr_41n2hV7RiYHitWPv",
+      "exr_41n2hXszY7TgwKy4",
+      "exr_41n2hXpgUoUbUi7D"
+    ]
+  }
+}

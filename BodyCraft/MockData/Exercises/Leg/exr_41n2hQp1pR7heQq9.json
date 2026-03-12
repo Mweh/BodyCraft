@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hQp1pR7heQq9",
+    "name": "Dumbbell Stiff Leg Deadlift ",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/4TFtrlbBxS.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/TPli60qjue.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/4TFtrlbBxS.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/bTqOSLTZO7.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/oya3HWJWNW.jpg"
+    },
+    "equipments": ["DUMBBELL"],
+    "bodyParts": ["THIGHS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["GLUTEUS MAXIMUS", "ERECTOR SPINAE"],
+    "secondaryMuscles": ["HAMSTRINGS"],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/GCbG7KH/41n2hQp1pR7heQq9__Dumbbell-Stiff-Leg-Deadlift-(female)_Waist.mp4",
+    "keywords": [
+      "Dumbbell Stiff Leg Deadlift workout",
+      "Thigh strengthening exercises with dumbbells",
+      "Dumbbell exercises for thighs",
+      "Stiff Leg Deadlift using dumbbells",
+      "Dumbbell workout for thigh muscles",
+      "How to do Dumbbell Stiff Leg Deadlift",
+      "Thigh toning dumbbell exercises",
+      "Stiff Leg Deadlift for thigh strength",
+      "Dumbbell training for stronger thighs",
+      "Techniques for Dumbbell Stiff Leg Deadlift"
+    ],
+    "overview": "The Dumbbell Stiff Leg Deadlift is a strength-building exercise that primarily targets the hamstrings, glutes, and lower back, enhancing overall body strength and stability. This exercise is suitable for both beginners and advanced fitness enthusiasts as it can be adjusted according to individual strength levels and goals. People may choose to incorporate this into their workout routine for its benefits in improving posture, enhancing athletic performance, and promoting fat loss due to its high calorie-burning potential.",
+    "instructions": [
+      "Keeping your legs straight or with a slight bend in the knees, slowly bend at the hips, lowering the dumbbells towards the floor.",
+      "Lower the dumbbells until you feel a stretch in your hamstrings, ensuring that your back is straight and your chest is up.",
+      "Pause briefly at the bottom of the movement, then push your hips forward and slowly lift your torso back to the starting position.",
+      "Repeat the movement for the desired number of repetitions, ensuring to maintain proper form throughout the exercise."
+    ],
+    "exerciseTips": [
+      "Avoid Overextending: A common mistake is to lower the weights too far, which can strain the lower back. Aim to lower the weights to just below your knees or until you feel a stretch in the hamstrings, then return to the starting position.",
+      "Engage Your Core and Glutes: To get the most out of the exercise, it's important to engage your core and squeeze your glutes as you lift the weights back up. This will help to stabilize your body and increase the effectiveness of the exercise.",
+      "Don't Rush: Another mistake to avoid is rushing"
+    ],
+    "variations": [
+      "Dumbbell Romanian Deadlift: This variation involves a slight bend in the knees, which puts more emphasis on the glutes and less strain on the lower back.",
+      "Dumbbell Straight-Leg Deadlift: This variation is similar to the stiff leg deadlift, but the legs are completely straight, increasing the stretch and work on the hamstrings.",
+      "Dumbbell Sumo Deadlift: This variation involves a wider stance with toes pointed outwards, which targets the inner thighs and glutes in addition to the hamstrings.",
+      "Dumbbell Stiff-Leg Deadlift with Elevated Feet: This variation involves standing on a raised platform, which increases the range of motion and intensifies the workout on the hamstrings and glutes."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hxgH3HVDkTU5",
+      "exr_41n2hcnL9TLFKByx",
+      "exr_41n2hMusJR74ZQk3",
+      "exr_41n2hoGXYkrDiKvs",
+      "exr_41n2hcw2FN534HcA",
+      "exr_41n2hsuBGBt34oTQ",
+      "exr_41n2hvKEFqbScnBZ",
+      "exr_41n2hjiELSc1wUZt",
+      "exr_41n2hoz3sDtZtcPh",
+      "exr_41n2hZeTb9EwkFsr"
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hLA8xydD4dzE",
+    "name": "Triceps Press ",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/Ocsii6p15A.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/AfEZTWMrPL.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/Ocsii6p15A.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/ajAMVet5gn.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/kEKU4y7DlC.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["TRICEPS", "UPPER ARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["TRICEPS BRACHII"],
+    "secondaryMuscles": ["PECTORALIS MAJOR STERNAL HEAD"],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/Efw1JG7/41n2hLA8xydD4dzE__Triceps-Press-(Head-Below-Bench)_Upper-Arms.mp4",
+    "keywords": [
+      "Triceps Press workout",
+      "Body weight exercises for triceps",
+      "Upper arm strengthening exercises",
+      "Triceps Press technique",
+      "Body weight triceps workout",
+      "Triceps Press exercise guide",
+      "How to do Triceps Press",
+      "Exercises for upper arms",
+      "Triceps Press tutorial",
+      "Body weight training for upper arms"
+    ],
+    "overview": "The Triceps Press is a strength training exercise specifically targeting the triceps muscles, which are crucial for arm strength and definition. This exercise is perfect for individuals of all fitness levels, from beginners looking to tone their arms to advanced athletes seeking to build muscle mass. By incorporating the Triceps Press into your workout routine, you can improve upper body strength, enhance muscular endurance, and achieve a well-defined arm physique.",
+    "instructions": [
+      "Bend your elbows to lower the dumbbell behind your head, keeping your upper arms stationary and close to your head.",
+      "Make sure your elbows are at about a 90-degree angle at the bottom of the movement.",
+      "Push the dumbbell back up to the starting position using your triceps to lift the weight.",
+      "Repeat this exercise for the desired amount of repetitions, ensuring you maintain your form throughout."
+    ],
+    "exerciseTips": [],
+    "variations": [],
+    "relatedExerciseIds": [
+      "exr_41n2hMb7w3jeijqB",
+      "exr_41n2hvYqmtUJtTzt",
+      "exr_41n2hfwUVm8FtZ1h",
+      "exr_41n2hJYV7ZdViULQ",
+      "exr_41n2hZY3tLMA1EiN",
+      "exr_41n2hx6YNZgVZjqC",
+      "exr_41n2hvjqDrr4GLqE",
+      "exr_41n2hKfVawi5Kgi6",
+      "exr_41n2hskeb9dXgBoC",
+      "exr_41n2hiqSb4t66Pg8"
+    ]
+  }
+}

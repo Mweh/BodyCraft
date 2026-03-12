@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hmhxk35fbHbC",
+    "name": "Push-up on Forearms",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/n3c6WKyggU.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/JUkKCukVHb.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/n3c6WKyggU.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/kusPx5YE9O.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/Lui8K5jED2.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "TRICEPS",
+      "UPPER ARMS"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "TRICEPS BRACHII"
+    ],
+    "secondaryMuscles": [
+      "PECTORALIS MAJOR STERNAL HEAD",
+      "ANTERIOR DELTOID",
+      "PECTORALIS MAJOR CLAVICULAR HEAD"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/wKWYIV7/41n2hmhxk35fbHbC__Push-up-on-Forearms_Upper-Arms.mp4",
+    "keywords": [
+      "Forearm Push-up Workout",
+      "Body Weight Triceps Exercise",
+      "Upper Arm Strengthening Exercise",
+      "Bodyweight Push-up on Forearms",
+      "Triceps Toning with Push-ups",
+      "Upper Arm Bodyweight Exercise",
+      "Forearm Push-ups for Triceps",
+      "Bodyweight Upper Arm Workout",
+      "Triceps Workout with Body Weight",
+      "Strengthening Triceps with Forearm Push-ups"
+    ],
+    "overview": "The Push-up on Forearms exercise is a challenging upper body workout that strengthens the chest, shoulders, triceps, and core muscles, making it ideal for individuals seeking to enhance their overall body strength and stability. It is suitable for both beginners and advanced fitness enthusiasts as it can be modified according to individual strength and fitness levels. People may want to incorporate this exercise into their routine for its ability to promote better posture, improve functional strength, and contribute to a well-rounded fitness regimen.",
+    "instructions": [
+      "Keep your body straight and rigid from your head to your heels, forming a straight line. This is your starting position.",
+      "Lower your body towards the floor by bending your elbows, keeping your forearms in contact with the floor and your body straight.",
+      "Push through your forearms to lift your body back up to the starting position, while maintaining the straight line from your head to your heels.",
+      "Repeat these steps for your desired number of repetitions, ensuring to keep your body straight and your movements controlled throughout the exercise."
+    ],
+    "exerciseTips": [
+      "Maintain Body Alignment: One common mistake is sagging or piking the hips. To avoid this, engage your core muscles throughout the exercise. This will not only help maintain a straight body alignment but also strengthen your abdominal muscles.",
+      "Controlled Movement: Avoid rushing the exercise. Lower your body in a controlled manner until your chest is close to the floor. Then, push back up to the starting position. Quick, jerky movements can lead to improper form and potential injuries.",
+      "Breathing Technique: Breathe in as you lower your body and breathe out as you push back up"
+    ],
+    "variations": [
+      "Diamond Push-Up: This involves placing your hands close together under your chest to form a diamond shape, targeting your triceps more intensely.",
+      "Pike Push-Up: This push-up variation involves lifting your hips high, resembling a yoga pose, to target your shoulders and upper back.",
+      "Wide Push-Up: This involves placing your hands wider than shoulder-width apart to target your chest and back muscles more intensely.",
+      "Staggered Push-Up: This variation involves placing one hand forward and the other hand closer to your body, which increases the challenge for your upper body and core."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hV5o459GYiiu",
+      "exr_41n2hRZ6fgsLyd77",
+      "exr_41n2hPgRbN1KtJuD",
+      "exr_41n2hf8YVXgHekGy",
+      "exr_41n2hZQ3pZv8WHcE",
+      "exr_41n2hgcuiQNZTt39",
+      "exr_41n2hiVNyes7YuiF",
+      "exr_41n2hgMeB8DurZ48",
+      "exr_41n2hK5G6RPthYRX",
+      "exr_41n2hbzZSVBLe2gp"
+    ]
+  }
+}

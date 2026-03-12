@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hRZ6fgsLyd77",
+    "name": "Diamond Push-up",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/GQfzn89uwq.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/1TQ8mvQq8X.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/GQfzn89uwq.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/jRofyAo5vM.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/NuNHKpiuTq.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["TRICEPS", "UPPER ARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["TRICEPS BRACHII"],
+    "secondaryMuscles": [
+      "PECTORALIS MAJOR STERNAL HEAD",
+      "PECTORALIS MAJOR CLAVICULAR HEAD",
+      "ANTERIOR DELTOID"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/OltRdJo/41n2hRZ6fgsLyd77__Diamond-Push-up_Upper-Arms.mp4",
+    "keywords": [
+      "Diamond Push-up workout",
+      "Body weight exercises for triceps",
+      "Upper arm strengthening exercises",
+      "Diamond Push-up technique",
+      "Bodyweight workouts for upper arms",
+      "How to do Diamond Push-ups",
+      "Triceps workout with Diamond Push-ups",
+      "Bodyweight triceps exercises",
+      "Diamond Push-up benefits",
+      "Diamond Push-up tutorial"
+    ],
+    "overview": "The Diamond Push-up is a challenging upper body exercise that primarily targets the triceps, chest, and shoulders, offering an excellent way to build strength and muscle definition. It is suitable for both beginners and advanced fitness enthusiasts, as it can be modified to match individual fitness levels. Individuals might opt for this exercise because it not only enhances upper body strength but also improves core stability and promotes better body balance.",
+    "instructions": [
+      "Lower your body towards the ground, keeping your back straight and your core engaged, until your chest is just above the floor.",
+      "Press your body back up to the starting position, making sure to keep your elbows close to your body throughout the movement.",
+      "Ensure to inhale as you lower your body and exhale as you push back up.",
+      "Repeat this exercise for the desired number of repetitions, maintaining the diamond shape with your hands throughout."
+    ],
+    "exerciseTips": [
+      "Maintain Proper Body Alignment: Keep your body in a straight line from your head to your heels. Don't let your back sag or your buttocks stick up in the air. This is a common mistake that can lead to back or shoulder injuries. Engage your core to help maintain this alignment.",
+      "Controlled Movement: Avoid rushing the push-up. Lower your body slowly and push back up to the starting position in a controlled manner. This ensures you're using your muscles, not momentum, to perform the exercise. A common mistake is to drop down quickly"
+    ],
+    "variations": [
+      "Decline Push-up: For this variation, you place your feet on an elevated surface like a bench or step, which increases the difficulty and targets the upper chest and shoulders.",
+      "Spiderman Push-up: This involves bringing your knee to your elbow on each rep, which adds a core and hip flexor challenge to the standard diamond push-up.",
+      "One Arm Push-up: This advanced variation involves performing the push-up with only one arm, which significantly increases the difficulty and targets the triceps, chest, and core.",
+      "Pike Push-up: For this variation, you start in a pike position with your hips high in the air, which shifts the focus to your shoulders and upper chest."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hPgRbN1KtJuD",
+      "exr_41n2hmhxk35fbHbC",
+      "exr_41n2hV5o459GYiiu",
+      "exr_41n2hf8YVXgHekGy",
+      "exr_41n2hZQ3pZv8WHcE",
+      "exr_41n2hgcuiQNZTt39",
+      "exr_41n2hiVNyes7YuiF",
+      "exr_41n2hgMeB8DurZ48",
+      "exr_41n2hK5G6RPthYRX",
+      "exr_41n2hbzZSVBLe2gp"
+    ]
+  }
+}

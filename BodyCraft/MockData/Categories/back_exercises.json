@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "data": [
+    {
+      "exerciseId": "exr_41n2hQeNyCnt3uFh",
+      "name": "Back Pec Stretch",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/11TGBvhnYQ.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hKZmyYXB2UL4",
+      "name": "Elbows Back Stretch ",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/ZBbn7b0eVR.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hpJxS5VQKtBL",
+      "name": "Lying Lower Back Stretch ",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/4C6IftIpvy.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hfnnXz9shkBi",
+      "name": "Lying Lower Back Stretch ",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/9w9vjAYwal.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hRH4aTB379Tp",
+      "name": "45 degree hyperextension ",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/ZuggCImG8H.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hsBtDXapcADg",
+      "name": "Pull-up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/g0ZmaTcu2Q.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hd6SThQhAdnZ",
+      "name": "Chin-ups",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/TLX9vGr1dx.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hadPLLFRGvFk",
+      "name": "Sliding Floor Pulldown on Towel",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/9fW96RFqRZ.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hdkBpqwoDmVq",
+      "name": "Suspended Row",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/bXwXW2WUCj.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hU4y6EaYXFhr",
+      "name": "Pull up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/gNdMNPVxAj.jpg"
+    }
+  ]
+}

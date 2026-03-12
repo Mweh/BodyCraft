@@ -1,0 +1,61 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hd78zujKUEWK",
+    "name": "Single Leg Squat ",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/MosYINt7dV.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/KOXysNVLr5.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/MosYINt7dV.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/JmPQVOYFWC.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/FjSBxHiZDB.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["QUADRICEPS", "THIGHS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["GLUTEUS MAXIMUS", "QUADRICEPS"],
+    "secondaryMuscles": ["SOLEUS", "ADDUCTOR MAGNUS"],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/BtdDtSc/41n2hd78zujKUEWK__Single-Leg-Squat-(pistol)-male_Thighs.mp4",
+    "keywords": [
+      "Bodyweight exercise for thighs",
+      "Quadriceps strengthening exercises",
+      "Single Leg Squat workout",
+      "Thigh toning exercises",
+      "Bodyweight leg exercises",
+      "Single Leg Squat for quads",
+      "Home workout for thighs",
+      "Quadriceps bodyweight exercise",
+      "Single leg bodyweight squat",
+      "Thigh strengthening exercises"
+    ],
+    "overview": "The Single Leg Squat is a challenging exercise that targets the lower body, specifically the quadriceps, hamstrings, glutes, and core, while also improving balance and stability. It's an excellent choice for athletes and fitness enthusiasts of all levels, especially those seeking to enhance unilateral strength and coordination. By incorporating this exercise into your routine, you can address muscle imbalances, reduce risk of injury, and improve overall athletic performance.",
+    "instructions": [
+      "Extend your arms in front of you to help maintain balance, and shift your weight onto the standing leg.",
+      "Slowly lower your body by bending your standing leg at the knee, keeping your back straight and your knee over your foot.",
+      "Go as low as you can while maintaining balance, ideally until your thigh is parallel with the ground, and keep the other leg extended in front of you.",
+      "Push back up to the starting position, keeping your weight on the standing leg, then repeat the exercise with the other leg."
+    ],
+    "exerciseTips": [
+      "Balance: This exercise requires a good deal of balance. To help maintain balance, extend your arms in front of you as you lower your body. Also, keep your eyes focused on a fixed point in front of you. Avoid the mistake of looking down or closing your eyes, as this can throw off your balance.",
+      "Controlled Movement: The Single Leg Squat should be performed in a slow and controlled manner. Avoid the common mistake of rushing through the exercise"
+    ],
+    "variations": [
+      "Bulgarian Split Squat: In this variation, one foot is elevated behind you on a bench or box while you squat on the other leg.",
+      "Skater Squat: This involves reaching one leg backwards while squatting on the other, mimicking the motion of a speed skater.",
+      "Curtsy Squat: In this variation, you cross one leg behind the other and squat down, similar to a curtsy.",
+      "Single Leg Box Squat: This involves standing in front of a box or bench and squatting down on one leg until your glutes touch the box, then standing back up."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hvkiECv8grsi",
+      "exr_41n2hpLLs1uU5atr",
+      "exr_41n2hmGR8WuVfe1U",
+      "exr_41n2hQHmRSoUkk9F",
+      "exr_41n2hNjcmNgtPJ1H",
+      "exr_41n2hbdZww1thMKz",
+      "exr_41n2homrPqqs8coG",
+      "exr_41n2hvjrFJ2KjzGm",
+      "exr_41n2hHRszDHarrxK",
+      "exr_41n2hJsKtjS1phW4"
+    ]
+  }
+}
