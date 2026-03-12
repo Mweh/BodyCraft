@@ -26,7 +26,7 @@ struct HomeView: View {
     @State private var expandedDay: Int?  = nil     // Which day's exercises are expanded
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 AppTheme.background.ignoresSafeArea()
 
@@ -45,10 +45,20 @@ struct HomeView: View {
                                     .foregroundColor(.white)
                             }
                             Spacer()
-                            Circle()
-                                .fill(AppTheme.primary)
-                                .frame(width: 50, height: 50)
-                                .overlay(Text(profile.initials).foregroundColor(.white).bold())
+                            Group {
+                                if let data = profile.photoData, let uiImage = UIImage(data: data) {
+                                    Image(uiImage: uiImage)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 50, height: 50)
+                                        .clipShape(Circle())
+                                } else {
+                                    Circle()
+                                        .fill(AppTheme.primary)
+                                        .frame(width: 50, height: 50)
+                                        .overlay(Text(profile.initials).foregroundColor(.white).bold())
+                                }
+                            }
                         }
                         .padding(.horizontal)
                         

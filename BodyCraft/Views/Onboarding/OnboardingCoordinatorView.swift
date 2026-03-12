@@ -24,6 +24,8 @@ struct OnboardingCoordinatorView: View {
     @State private var isLoadingTarget = false
     @State private var errorMessage: String? = nil
     
+    @AppStorage("showOnboardingSkipButton") private var showOnboardingSkipButton: Bool = false
+    
     // We will store the AI result in AppStorage as JSON data to read entirely from HomeView.
     @AppStorage("savedWorkoutPlanData") private var savedWorkoutPlanData: Data = Data()
     
@@ -47,6 +49,17 @@ struct OnboardingCoordinatorView: View {
                             .font(.footnote)
 
                         Spacer()
+
+                        if showOnboardingSkipButton {
+                            Button("Skip") {
+                                hasCompletedOnboarding = true
+                            }
+                            .foregroundColor(AppTheme.secondaryText)
+                            .font(.footnote)
+                        } else {
+                            // Empty view to maintain spacing if needed, but Spacer() handles it mostly
+                            Spacer().frame(width: 30) // approximate width of Skip button
+                        }
                     }
                     .padding(.horizontal)
 
@@ -70,7 +83,7 @@ struct OnboardingCoordinatorView: View {
                             .bold()
                             .foregroundColor(.white)
                         
-                        Text("Our AI is creating a hyper-personalized workout and nutrition plan based on your profile.")
+                        Text("Our AI is creating a hyper-personalized workout based on your profile.")
                             .multilineTextAlignment(.center)
                             .foregroundColor(AppTheme.secondaryText)
                             .padding(.horizontal, 32)

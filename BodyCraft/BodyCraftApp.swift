@@ -49,6 +49,22 @@ class DebugMenuManager {
                 return alert
             }
         )
+
+        FLEXManager.shared.registerGlobalEntry(
+            withName: "🔥 Toggle Onboarding Skip Button",
+            viewControllerFutureBlock: {
+                let current = UserDefaults.standard.bool(forKey: "showOnboardingSkipButton")
+                UserDefaults.standard.set(!current, forKey: "showOnboardingSkipButton")
+                
+                let alert = UIAlertController(
+                    title: "Skip Button",
+                    message: "The onboarding skip button is now \(!current ? "Visible" : "Hidden").",
+                    preferredStyle: .alert
+                )
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                return alert
+            }
+        )
     }
 }
 #endif
