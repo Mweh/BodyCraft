@@ -192,6 +192,7 @@ struct CreateWorkoutView: View {
                     VStack {
                         Button(action: {
                             let chosenExercises = readyExercises.filter { selectedExercises.contains($0.id) }
+                            let detectedCategory = WorkoutListView.inferCategory(from: chosenExercises)
                             let newWorkout = WorkoutModel(
                                 title: programName,
                                 duration: "\(chosenExercises.count * 10) min", // Approximation
@@ -200,7 +201,8 @@ struct CreateWorkoutView: View {
                                 exercises: chosenExercises.count,
                                 tagColor: .green,
                                 imageURL: nil,
-                                exerciseList: chosenExercises
+                                exerciseList: chosenExercises,
+                                category: detectedCategory
                             )
                             workouts.insert(newWorkout, at: 0) // Insert at beginning of list
                             presentationMode.wrappedValue.dismiss()

@@ -22,6 +22,7 @@ struct WorkoutModel: Identifiable {
     let tagColor: Color
     var imageURL: String? = nil
     var exerciseList: [ExerciseModel] = []
+    var category: String = "All"
 }
 
 // MARK: - WorkoutListView
@@ -32,7 +33,7 @@ struct WorkoutListView: View {
     
     @AppStorage("savedWorkoutPlanData") private var savedWorkoutPlanData: Data = Data()
 
-    let filters = ["All", "Chest", "Back", "Shoulders", "Legs", "Arms"]
+    let filters = ["All", "Chest", "Back", "Shoulders", "Legs", "Arms", "Custom"]
 
     let defaultWorkouts: [WorkoutModel] = [
         WorkoutModel(
@@ -47,7 +48,8 @@ struct WorkoutListView: View {
                 ExerciseModel(name: "Overhead Tricep Extension", muscleGroup: "Triceps", sets: 3, reps: "10-12", rest: 60, tip: "Keep elbows pointing forward."),
                 ExerciseModel(name: "Tricep Pushdown", muscleGroup: "Triceps", sets: 3, reps: "12-15", rest: 45, tip: "Lock your elbows at your sides."),
                 ExerciseModel(name: "Chest Dips", muscleGroup: "Lower Chest", sets: 3, reps: "10-12", rest: 60, tip: "Lean forward to target chest more.")
-            ]
+            ],
+            category: "Chest"
         ),
         WorkoutModel(
             title: "Pull Day - Back & Biceps",
@@ -61,7 +63,8 @@ struct WorkoutListView: View {
                 ExerciseModel(name: "Face Pull", muscleGroup: "Rear Delt", sets: 3, reps: "15-20", rest: 45, tip: "External rotation at the end of the movement."),
                 ExerciseModel(name: "Barbell Curl", muscleGroup: "Biceps", sets: 3, reps: "10-12", rest: 60, tip: "Avoid swinging your body."),
                 ExerciseModel(name: "Hammer Curl", muscleGroup: "Biceps", sets: 3, reps: "12-15", rest: 45, tip: "Control the lowering phase.")
-            ]
+            ],
+            category: "Back"
         ),
         WorkoutModel(
             title: "Leg Day - Quads & Glutes",
@@ -75,7 +78,8 @@ struct WorkoutListView: View {
                 ExerciseModel(name: "Hip Thrust", muscleGroup: "Glutes", sets: 4, reps: "10-12", rest: 60, tip: "Squeeze glutes hard at the top."),
                 ExerciseModel(name: "Leg Extension", muscleGroup: "Quads", sets: 3, reps: "15-20", rest: 45, tip: "Slow and controlled movement."),
                 ExerciseModel(name: "Calf Raise", muscleGroup: "Calves", sets: 4, reps: "15-20", rest: 45, tip: "Full range of motion, pause at top.")
-            ]
+            ],
+            category: "Legs"
         ),
         WorkoutModel(
             title: "Shoulder & Arms Sculptor",
@@ -89,11 +93,39 @@ struct WorkoutListView: View {
                 ExerciseModel(name: "Dumbbell Curl", muscleGroup: "Biceps", sets: 3, reps: "12-15", rest: 45, tip: "Supinate at the top for full contraction."),
                 ExerciseModel(name: "Skull Crusher", muscleGroup: "Triceps", sets: 3, reps: "10-12", rest: 60, tip: "Keep upper arms perpendicular to floor."),
                 ExerciseModel(name: "Arnold Press", muscleGroup: "Shoulders", sets: 3, reps: "10-12", rest: 60, tip: "Rotate palms as you press up.")
-            ]
+            ],
+            category: "Shoulders"
         )
     ]
     
     @State private var workouts: [WorkoutModel] = []
+    
+    var filteredWorkouts: [WorkoutModel] {
+        if selectedFilter == "All" {
+            return workouts
+        }
+        return workouts.filter { $0.category == selectedFilter }
+    }
+    
+    /// Infer a filter category from a list of exercises.
+    /// - If all exercises share the same top-level category → return that category.
+    /// - Mixed / unrecognised → return "Custom".
+    static func inferCategory(from exercises: [ExerciseModel]) -> String {
+        let muscleToCategory: [String: String] = [
+            "Chest": "Chest", "Upper Chest": "Chest", "Lower Chest": "Chest",
+            "Back": "Back", "Lats": "Back", "Mid Back": "Back",
+            "Legs": "Legs", "Quads": "Legs", "Hamstrings": "Legs",
+            "Glutes": "Legs", "Calves": "Legs",
+            "Shoulders": "Shoulders", "Side Delt": "Shoulders",
+            "Front Delt": "Shoulders", "Rear Delt": "Shoulders",
+            "Biceps": "Arms", "Triceps": "Arms"
+        ]
+        let categories = Set(exercises.compactMap { muscleToCategory[$0.muscleGroup] })
+        if categories.count == 1, let single = categories.first {
+            return single
+        }
+        return "Custom"
+    }
     
     var body: some View {
         NavigationStack {
@@ -128,7 +160,7 @@ struct WorkoutListView: View {
                     .padding(.bottom, 20)
 
                     List {
-                        ForEach(workouts) { workout in
+                        ForEach(filteredWorkouts) { workout in
                             NavigationLink {
                                 WorkoutDetailSheet(workout: workout)
                             } label: {
