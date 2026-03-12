@@ -53,10 +53,11 @@ class AIWorkoutGeneratorService {
         
         CONSTRAINTS:
         1. You MUST return ONLY valid JSON matching the exact schema provided below. Do not include markdown formatting like ```json.
-        2. Workouts must be realistic for the user's experience level.
-        3. Caloric targets must be healthy (minimum 1,200 kcal for women, 1,500 kcal for men). If a user's goal requires unsafe targets, adjust to the nearest safe limit and set "safety_flag": true.
-        4. Rest periods must be specified in seconds.
-        5. Match the number of workout days to the user's available days.
+        2. Workouts must be realistic. STRENGTH limits: 3-5 sets, 6-15 reps. ENDURANCE limits: 3-5 sets, 12-20 reps. CARDIO limits: specify in duration matching the reps string format.
+        3. STRICT LIMIT: Never generate `sets` exceeding 6. Never generate `reps` exceeding 20 inside any string.
+        4. Caloric targets must be healthy (minimum 1,200 kcal for women, 1,500 kcal for men). If a user's goal requires unsafe targets, adjust to the nearest safe limit.
+        5. Rest periods must be specified in seconds.
+        6. Match the number of workout days to the user's available days.
         
         REQUIRED JSON SCHEMA:
         {

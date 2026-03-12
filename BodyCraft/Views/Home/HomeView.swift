@@ -69,55 +69,46 @@ struct HomeView: View {
                             streakStore:    streakStore
                         )
                         
-                        // ── Daily Nutrition & Burn ────────────────────────
+                        // ── Daily Burn ────────────────────────
                         VStack(alignment: .leading, spacing: 16) {
                             HStack {
                                 Image(systemName: "flame.fill").foregroundColor(.orange)
                                     .padding(8).background(AppTheme.surface)
                                     .clipShape(RoundedRectangle(cornerRadius: 8))
-                                Text("Nutrition & Activity")
+                                Text("Activity")
                                     .font(.headline).foregroundColor(.white)
                                 Spacer()
                             }
                             
-                            HStack(spacing: 20) {
+                            HStack {
                                 VStack(alignment: .leading, spacing: 4) {
-                                    Text("Daily Target")
-                                        .font(.caption).foregroundColor(AppTheme.secondaryText)
-                                    Text("\(dashboardVM.dailyCalorieTarget) kcal")
-                                        .font(.headline).foregroundColor(.white)
+                                    Text("Workout Burned")
+                                        .font(.subheadline)
+                                        .foregroundColor(AppTheme.secondaryText)
+                                    HStack(alignment: .bottom, spacing: 4) {
+                                        Text("\(dashboardVM.burnedCalories)")
+                                            .font(.title2).bold().foregroundColor(.orange)
+                                        Text("/ \(dashboardVM.totalWorkoutCalories) kcal")
+                                            .font(.subheadline).foregroundColor(AppTheme.secondaryText)
+                                            .padding(.bottom, 2)
+                                    }
                                 }
-                                
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("Workout Burn")
-                                        .font(.caption).foregroundColor(AppTheme.secondaryText)
-                                    Text("\(dashboardVM.workoutBurn) kcal")
-                                        .font(.headline).foregroundColor(.orange)
-                                }
-                                
                                 Spacer()
-                                
-                                VStack(alignment: .trailing, spacing: 4) {
-                                    Text("Net Target")
-                                        .font(.caption).foregroundColor(AppTheme.secondaryText)
-                                    Text("\(dashboardVM.netTarget)")
-                                        .font(.subheadline).bold().foregroundColor(.green)
-                                    + Text(" kcal").font(.caption).foregroundColor(.green)
-                                }
                             }
                             
                             GeometryReader { geo in
-                                let progressRatio = dashboardVM.dailyCalorieTarget > 0 ? min(1.0, CGFloat(dashboardVM.netTarget) / CGFloat(dashboardVM.dailyCalorieTarget)) : 0.0
+                                let progressRatio = dashboardVM.totalWorkoutCalories > 0 ? min(1.0, CGFloat(dashboardVM.burnedCalories) / CGFloat(dashboardVM.totalWorkoutCalories)) : 0.0
                                 ZStack(alignment: .leading) {
-                                    RoundedRectangle(cornerRadius: 4)
+                                    RoundedRectangle(cornerRadius: 6)
                                         .fill(AppTheme.background)
-                                        .frame(height: 8)
-                                    RoundedRectangle(cornerRadius: 4)
-                                        .fill(Color.green)
-                                        .frame(width: geo.size.width * progressRatio, height: 8)
+                                        .frame(height: 12)
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .fill(LinearGradient(colors: [.orange, .red], startPoint: .leading, endPoint: .trailing))
+                                        .frame(width: geo.size.width * progressRatio, height: 12)
+                                        .animation(.spring(), value: progressRatio)
                                 }
                             }
-                            .frame(height: 8)
+                            .frame(height: 12)
                         }
                         .padding().background(AppTheme.surface).cornerRadius(16).padding(.horizontal)
 
@@ -132,6 +123,11 @@ struct HomeView: View {
                         Spacer().frame(height: 100)
                     }
                     .padding(.top)
+                }
+                .onAppear {
+                    if expandedDay == nil {
+                        expandedDay = todayDayNumber
+                    }
                 }
             }
             .navigationBarHidden(true)

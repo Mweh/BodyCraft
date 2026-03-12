@@ -9,9 +9,8 @@ final class DashboardViewModel: ObservableObject {
         workoutRepo: WorkoutRepository.shared
     )
 
-    @Published var dailyCalorieTarget: Int = 0
-    @Published var workoutBurn: Int = 0
-    @Published var netTarget: Int = 0
+    @Published var totalWorkoutCalories: Int = 0
+    @Published var burnedCalories: Int = 0
     
     // Dependencies
     private var profileStore: UserProfileStore
@@ -54,72 +53,38 @@ final class DashboardViewModel: ObservableObject {
     func calculateTargets() {
         let profile = profileStore.profile
         let today = streakStore.currentDayNumber
+        let weight = Double(profile.weight) ?? 0.0
         
-        // 1. Calculate BMR
-        // Mifflin-St Jeor Equation
-        let weight = Double(profile.weight) ?? 0
-        let height = Double(profile.height) ?? 0
-        let age = Double(profile.age) ?? 25
-        let isMale = profile.gender.lowercased() == "male"
-        
-        // Needs weight and height to be meaningful
-        guard weight > 0, height > 0 else {
-            // Fallback to AI's simple target if profile is missing metrics
-            self.dailyCalorieTarget = workoutRepo.currentPlan?.dailyCalories ?? 600
-            self.workoutBurn = estimateBurn(for: today, weight: 70) // Fallback default weight
-            self.netTarget = self.dailyCalorieTarget - self.workoutBurn
-            return
-        }
-        
-        var bmr = (10.0 * weight) + (6.25 * height) - (5.0 * age)
-        bmr += isMale ? 5.0 : -161.0
-        
-        // 2. Activity Multiplier
-        let activityLevels: [String: Double] = [
-            "sedentary": 1.2,
-            "lightly active": 1.375,
-            "moderately active": 1.55,
-            "very active": 1.725,
-            "extra active": 1.9
-        ]
-        let multiplier = activityLevels[profile.activityLevel.lowercased()] ?? 1.55
-        let tdee = bmr * multiplier
-        
-        // 3. Goal Adjustment
-        var targetCals = tdee
-        let goal = profile.goal.lowercased()
-        if goal.contains("lose") {
-            targetCals -= 500
-        } else if goal.contains("muscle") || goal.contains("gain") {
-            targetCals += 300
-        }
-        
-        // 4. Calculate actual burn from today's completed exercises
-        self.workoutBurn = estimateBurn(for: today, weight: weight)
-        
-        // 5. Final assignments
-        self.dailyCalorieTarget = Int(round(targetCals))
-        self.netTarget = self.dailyCalorieTarget - self.workoutBurn
+        // Calculate actual burn purely from today's exercises
+        let burns = estimateBurns(for: today, weight: weight > 0 ? weight : 70.0)
+        self.totalWorkoutCalories = burns.total
+        self.burnedCalories = burns.completed
     }
     
-    private func estimateBurn(for day: Int, weight: Double) -> Int {
-        guard let todayWorkout = workout(for: day) else { return 0 }
+    private func estimateBurns(for day: Int, weight: Double) -> (total: Int, completed: Int) {
+        guard let todayWorkout = workout(for: day) else { return (0, 0) }
         
         var totalBurn = 0.0
+        var completedBurn = 0.0
+        
         for exercise in todayWorkout.exercises {
-            // Only count if completed
+            let repsDuration = Double(exercise.reps * 4) // seconds
+            let restDuration = 60.0 // seconds rest after a set
+            
+            let totalSecondsPerSet = repsDuration + restDuration
+            let totalDurationMinutes = (Double(exercise.sets) * totalSecondsPerSet) / 60.0
+            
+            let durationHours = totalDurationMinutes / 60.0
+            let metValue = 6.0
+            let calories = metValue * weight * durationHours
+            
+            totalBurn += calories
+            
             if streakStore.isExerciseCompleted(day: day, exerciseId: exercise.id) {
-                // Approximate: 1 MET = 1 kcal / kg / hour
-                // Let's assume average strength training is 6.0 METs
-                // Let's assume 1 set = ~1 minute (including rest)
-                let durationMinutes = Double(exercise.sets)
-                let durationHours = durationMinutes / 60.0
-                let metValue = 6.0
-                
-                let calories = metValue * weight * durationHours
-                totalBurn += calories
+                completedBurn += calories
             }
         }
-        return Int(totalBurn)
+        
+        return (Int(totalBurn), Int(completedBurn))
     }
 }

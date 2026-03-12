@@ -66,19 +66,25 @@ final class WorkoutRepository: ObservableObject {
             let seedString = "day\(day)_\(aiEx.name)"
             let uuid = uuidFromSeedString(seedString)
             
-            // Parse reps from string (e.g. "10-12" or "10")
-            let repsInt = parseInt(from: aiEx.reps)
+            // Parse reps from string safely (e.g. "8-12" or "10")
+            // Apply maximum safety caps: Set <= 6, Reps <= 20
+            let repsInt = min(20, parseInt(from: aiEx.reps))
+            let safeSets = min(6, aiEx.sets)
             
-            return Exercise(id: uuid, name: aiEx.name, sets: aiEx.sets, reps: repsInt)
+            return Exercise(id: uuid, name: aiEx.name, sets: safeSets, reps: repsInt)
         }
         
         return DayWorkout(id: day, title: aiDay.focus, exercises: exercises)
     }
     
     private func parseInt(from string: String) -> Int {
-        // Try to find the first sequence of digits
-        let digits = string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-        return Int(digits) ?? 0
+        // Find the first integer safely instead of squishing all digits.
+        // e.g. "8-12" -> "8"
+        // e.g. "3 sets of 10" -> "3"
+        
+        let components = string.components(separatedBy: CharacterSet.decimalDigits.inverted)
+        let firstValidNumberString = components.first(where: { !$0.isEmpty }) ?? "0"
+        return Int(firstValidNumberString) ?? 0
     }
     
     private func uuidFromSeedString(_ string: String) -> UUID {
