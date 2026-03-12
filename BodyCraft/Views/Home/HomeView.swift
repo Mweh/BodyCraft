@@ -3,7 +3,8 @@ import SwiftUI
 // MARK: - HomeView
 
 struct HomeView: View {
-    @EnvironmentObject var profileStore: UserProfileStore
+    @EnvironmentObject var profileStore:  UserProfileStore
+    @EnvironmentObject var streakStore:   WorkoutStreakStore
 
     private var profile: UserProfile { profileStore.profile }
 
@@ -16,13 +17,12 @@ struct HomeView: View {
         }
     }
 
-    let streakDays = [
-        ("Mon", true), ("Tue", true), ("Wed", true), ("Thu", true),
-        ("Fri", false), ("Sat", false), ("Sun", false)
-    ]
+    // The current day is now managed by workout streak store
+    private var todayDayNumber: Int { streakStore.currentDayNumber }
 
     @State private var showingGoalPreset  = false   // Edit button → preset modal
     @State private var showingUpdateStats = false   // Update Progress button
+    @State private var expandedDay: Int?  = nil     // Which day's exercises are expanded
 
     var body: some View {
         NavigationView {
@@ -51,48 +51,13 @@ struct HomeView: View {
                         }
                         .padding(.horizontal)
 
-                        // ── AI Workout Quick Link ─────────────────────────
-                        HStack {
-                            Image(systemName: "sparkles")
-                                .foregroundColor(.white).padding(12)
-                                .background(AppTheme.primary).clipShape(Circle())
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("AI Workout Plan").foregroundColor(.white).fontWeight(.semibold)
-                                Text("Create your personalized workout plan")
-                                    .foregroundColor(AppTheme.secondaryText).font(.caption)
-                            }
-                            Spacer()
-                            Image(systemName: "chevron.right").foregroundColor(AppTheme.secondaryText)
-                        }
-                        .padding().background(AppTheme.surface).cornerRadius(16).padding(.horizontal)
-
                         // ── Streak ────────────────────────────────────────
-                        VStack(alignment: .leading, spacing: 16) {
-                            HStack {
-                                Image(systemName: "bolt.fill").foregroundColor(.yellow)
-                                Text("4 Day Streak").fontWeight(.semibold).foregroundColor(.white)
-                                Spacer()
-                                Text("This Week").foregroundColor(AppTheme.secondaryText).font(.caption)
-                            }
-                            HStack(spacing: 12) {
-                                ForEach(streakDays, id: \.0) { day in
-                                    VStack(spacing: 8) {
-                                        Circle()
-                                            .fill(day.1 ? AppTheme.primary : AppTheme.surface)
-                                            .frame(width: 36, height: 36)
-                                            .overlay(
-                                                Image(systemName: "checkmark")
-                                                    .foregroundColor(.white).font(.caption)
-                                                    .opacity(day.1 ? 1 : 0)
-                                            )
-                                        Text(day.0).font(.caption)
-                                            .foregroundColor(day.1 ? .white : AppTheme.secondaryText)
-                                    }
-                                    .frame(maxWidth: .infinity)
-                                }
-                            }
-                        }
-                        .padding().background(AppTheme.surface).cornerRadius(16).padding(.horizontal)
+                        StreakCard(
+                            todayDayNumber: todayDayNumber,
+                            expandedDay:    $expandedDay,
+                            streakStore:    streakStore
+                        )
+                        .padding(.horizontal)
 
                         // ── Calories ──────────────────────────────────────
                         VStack(alignment: .leading, spacing: 16) {
@@ -615,8 +580,198 @@ struct GoalMetricCard: View {
     }
 }
 
+// MARK: - StreakCard
+
+struct StreakCard: View {
+    let todayDayNumber: Int
+    @Binding var expandedDay: Int?
+    @ObservedObject var streakStore: WorkoutStreakStore
+
+    private var streakCount: Int { streakStore.streakCount }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+
+            // ── Header ─────────────────────────────────────────────
+            HStack {
+                Image(systemName: "bolt.fill").foregroundColor(.yellow)
+                Text(streakCount == 0 ? "No Streak Yet" : "\(streakCount) Day Streak")
+                    .fontWeight(.semibold).foregroundColor(.white)
+                Spacer()
+                Text("Week Program").foregroundColor(AppTheme.secondaryText).font(.caption)
+            }
+
+            // ── Day Circles ──────────────────────────────────────
+            HStack(spacing: 8) {
+                ForEach(1...7, id: \.self) { day in
+                    let isToday     = day == todayDayNumber
+                    let isCompleted = streakStore.isDayCompleted(day: day)
+                    let isExpanded  = expandedDay == day
+
+                    Button(action: {
+                        withAnimation(.spring(response: 0.35, dampingFraction: 0.75)) {
+                            expandedDay = isExpanded ? nil : day
+                        }
+                    }) {
+                        StreakDayCircle(
+                            day: day,
+                            isToday: isToday,
+                            isCompleted: isCompleted,
+                            isExpanded: isExpanded
+                        )
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+
+            // ── Expanded Exercise List ──────────────────────────────
+            if let day = expandedDay,
+               let workout = WorkoutPlanData.workout(for: day) {
+
+                VStack(alignment: .leading, spacing: 0) {
+
+                    // Day title bar
+                    HStack {
+                        Text("Day \(day): \(workout.title)")
+                            .font(.subheadline).fontWeight(.bold).foregroundColor(.white)
+                        Spacer()
+                        let done  = workout.exercises.filter { streakStore.isExerciseCompleted(day: day, exerciseId: $0.id) }.count
+                        let total = workout.exercises.count
+                        Text("\(done)/\(total)")
+                            .font(.caption).fontWeight(.semibold)
+                            .foregroundColor(done == total ? .green : AppTheme.secondaryText)
+                    }
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 10)
+                    .background(AppTheme.primary.opacity(0.12))
+                    .cornerRadius(10)
+
+                    // Exercise rows
+                    let isFutureDay = day > todayDayNumber
+                    ForEach(workout.exercises) { exercise in
+                        HomeExerciseRow(
+                            exercise: exercise,
+                            isChecked: streakStore.isExerciseCompleted(day: day, exerciseId: exercise.id),
+                            isDisabled: isFutureDay,
+                            onToggle: { streakStore.toggle(day: day, exercise: exercise) }
+                        )
+                    }
+                }
+                .background(AppTheme.background.opacity(0.6))
+                .cornerRadius(12)
+                .transition(.opacity.combined(with: .move(edge: .top)))
+            }
+        }
+        .padding()
+        .background(AppTheme.surface)
+        .cornerRadius(16)
+    }
+}
+
+// MARK: - StreakDayCircle
+
+struct StreakDayCircle: View {
+    let day: Int
+    let isToday: Bool
+    let isCompleted: Bool
+    let isExpanded: Bool
+
+    var body: some View {
+        VStack(spacing: 6) {
+            ZStack {
+                // Background ring for today
+                if isToday {
+                    Circle()
+                        .stroke(AppTheme.primary, lineWidth: 2)
+                        .frame(width: 40, height: 40)
+                }
+
+                Circle()
+                    .fill(isCompleted ? AppTheme.primary : (isExpanded ? AppTheme.primary.opacity(0.25) : AppTheme.background))
+                    .frame(width: 36, height: 36)
+
+                if isCompleted {
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundColor(.white)
+                } else {
+                    Text("\(day)")
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundColor(isToday ? AppTheme.primary : AppTheme.secondaryText)
+                }
+            }
+
+            Text(isToday ? "Today" : "Day \(day)")
+                .font(.system(size: 9, weight: isToday ? .bold : .regular))
+                .foregroundColor(isToday ? AppTheme.primary : AppTheme.secondaryText)
+        }
+        .frame(maxWidth: .infinity)
+    }
+}
+
+// MARK: - HomeExerciseRow
+
+struct HomeExerciseRow: View {
+    let exercise: Exercise
+    let isChecked: Bool
+    let isDisabled: Bool
+    let onToggle: () -> Void
+
+    var body: some View {
+        Button(action: onToggle) {
+            HStack(spacing: 12) {
+                // Checkbox
+                ZStack {
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(isChecked ? AppTheme.primary : AppTheme.secondaryText.opacity(isDisabled ? 0.1 : 0.4), lineWidth: 1.5)
+                        .frame(width: 24, height: 24)
+                        .background(
+                            RoundedRectangle(cornerRadius: 6)
+                                .fill(isChecked ? AppTheme.primary : Color.clear)
+                        )
+                    if isChecked {
+                        Image(systemName: "checkmark")
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundColor(.white)
+                    }
+                }
+
+                // Exercise name
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(exercise.name)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(isChecked ? AppTheme.secondaryText : (isDisabled ? AppTheme.secondaryText.opacity(0.5) : .white))
+                        .strikethrough(isChecked)
+                    Text(exercise.detail)
+                        .font(.caption2)
+                        .foregroundColor(AppTheme.secondaryText.opacity(isDisabled ? 0.5 : 1.0))
+                }
+
+                Spacer()
+
+                // Sets badge
+                Text("\(exercise.sets)x\(exercise.reps)")
+                    .font(.caption2).fontWeight(.bold)
+                    .foregroundColor(isChecked ? .green : (isDisabled ? AppTheme.secondaryText.opacity(0.5) : AppTheme.primary))
+                    .padding(.horizontal, 8).padding(.vertical, 4)
+                    .background((isChecked ? Color.green : (isDisabled ? AppTheme.secondaryText : AppTheme.primary)).opacity(0.15))
+                    .clipShape(Capsule())
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 10)
+        }
+        .buttonStyle(.plain)
+        .disabled(isDisabled)
+        Divider().background(AppTheme.secondaryText.opacity(0.1)).padding(.leading, 50)
+    }
+}
+
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView().environmentObject(UserProfileStore())
+        HomeView()
+            .environmentObject(UserProfileStore())
+            .environmentObject(WorkoutStreakStore())
     }
 }
