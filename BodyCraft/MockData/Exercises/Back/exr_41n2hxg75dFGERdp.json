@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hxg75dFGERdp",
+    "name": "L-Pull-up",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/DMKexKmHFn.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/sPGg6cjmiG.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/DMKexKmHFn.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/lMFmcLszQ0.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/BnuRzOhgXs.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BACK", "WAIST"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["LATISSIMUS DORSI", "POSTERIOR DELTOID"],
+    "secondaryMuscles": [
+      "ERECTOR SPINAE",
+      "LEVATOR SCAPULAE",
+      "GLUTEUS MEDIUS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/XnI6Chh/41n2hxg75dFGERdp__L-Pull-Up_Back_Waist_.mp4",
+    "keywords": [
+      "L-Pull-up workout",
+      "Bodyweight back exercise",
+      "L-Pull-up for waist toning",
+      "Bodyweight exercise for back",
+      "L-Pull-up training",
+      "Waist strengthening with L-Pull-up",
+      "Back workout with body weight",
+      "L-Pull-up technique",
+      "L-Pull-up exercise guide",
+      "Bodyweight L-Pull-up routine"
+    ],
+    "overview": "The L-Pull-up is a challenging upper body exercise that enhances overall strength, agility, and endurance, targeting key muscle groups such as the back, arms, shoulders, and core. It's suitable for intermediate to advanced fitness enthusiasts who are looking to significantly boost their upper body strength and muscular definition. Individuals may want to incorporate L-Pull-ups into their routine to improve their pull-up performance, promote better posture, and achieve a more toned and powerful upper body.",
+    "instructions": [
+      "Next, raise your legs parallel to the ground into an L-shape, keeping your legs straight and together; this is your starting position.",
+      "Using your upper body strength, pull yourself up until your chin is above the bar, while maintaining the L-shape with your legs.",
+      "Hold this position for a moment, ensuring your core is engaged and your body is in a straight line.",
+      "Finally, lower yourself back down in a controlled manner to the starting position, keeping your legs in the L-shape throughout the exercise."
+    ],
+    "exerciseTips": [
+      "Engage Your Core: One common mistake is not engaging the core. The L-Pull-up not only targets your upper body, but also your core. Ensure your abs are tight and engaged throughout the exercise. This will help maintain the L shape and also provide stability.",
+      "Avoid Using Momentum: Swinging or using momentum to pull yourself up is a common mistake. This can lead to injury and also reduces the effectiveness of the exercise. Instead, focus on using your upper body strength to pull yourself up in a controlled"
+    ],
+    "variations": [
+      "The Close-Grip Pull-Up: This variation has you grip the bar with your hands closer than shoulder-width apart, which shifts the focus to your biceps and forearms.",
+      "The Weighted L-Pull-Up: This is a more advanced version where you wear a weight belt or hold a dumbbell between your feet to increase the resistance and challenge your muscles further.",
+      "The One-Arm L-Pull-Up: This is a highly challenging variation that involves pulling yourself up with just one arm while keeping your legs in the L-position.",
+      "The Mixed-Grip L-Pull-Up: In this variation, one hand grips the bar overhand and the other underhand. This can help to even out muscle imbalances and add a different challenge to"
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hwKSa89xgMjN",
+      "exr_41n2hyHJ5xqqc4qU",
+      "exr_41n2hgoatYMR3LFM",
+      "exr_41n2haPyXetJcL5E",
+      "exr_41n2hGu2acThJ2NB",
+      "exr_41n2hu9qvtvbM3tV",
+      "exr_41n2hHRJwEk592pK",
+      "exr_41n2hpnZ6oASM662",
+      "exr_41n2hKDcpPCUGAvU",
+      "exr_41n2hbXeV2KJ8j2f"
+    ]
+  }
+}

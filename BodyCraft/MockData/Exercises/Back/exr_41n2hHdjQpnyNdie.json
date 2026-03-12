@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hHdjQpnyNdie",
+    "name": "One Arm Bent-over Row",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/Ndd2gbg1ko.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/GxyxzMHSfy.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/Ndd2gbg1ko.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/As3dYeVJIs.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/rtPSrNeApF.jpg"
+    },
+    "equipments": ["DUMBBELL"],
+    "bodyParts": ["BACK"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "LATISSIMUS DORSI",
+      "TERES MAJOR",
+      "TRAPEZIUS MIDDLE FIBERS",
+      "INFRASPINATUS",
+      "TRAPEZIUS LOWER FIBERS",
+      "TERES MINOR"
+    ],
+    "secondaryMuscles": [
+      "PECTORALIS MAJOR STERNAL HEAD",
+      "BRACHIALIS",
+      "POSTERIOR DELTOID",
+      "BRACHIORADIALIS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/zjTR7xI/41n2hHdjQpnyNdie__Dumbbell-Bent-over-Row_Back_.mp4",
+    "keywords": [
+      "Dumbbell One Arm Row",
+      "Back Exercise with Dumbbell",
+      "Single Arm Dumbbell Row",
+      "Bent-over Dumbbell Back Workout",
+      "One Arm Dumbbell Back Exercise",
+      "Strength Training Back Exercise",
+      "One Arm Row Workout",
+      "Dumbbell Row for Back Muscles",
+      "Single Arm Bent-over Row",
+      "One Hand Dumbbell Back Workout"
+    ],
+    "overview": "The One Arm Bent-over Row is a strength-building exercise that primarily targets the muscles in the back, shoulders, and arms, while also engaging the core. This workout is suitable for individuals at all fitness levels, from beginners to advanced, who want to improve their upper body strength and posture. People may opt for this exercise as it can enhance muscular balance and symmetry, promote better body alignment, and aid in daily functional movements.",
+    "instructions": [
+      "Place your opposite knee and hand on the bench for support, keeping your back flat and parallel to the floor.",
+      "Let the arm holding the dumbbell hang down and a bit forward.",
+      "Pull the dumbbell upward to the side of your torso, keeping your upper arm close to your side and keeping the torso stationary.",
+      "Lower the dumbbell back down slowly to the starting position, completing one repetition. Repeat for the desired number of reps, then switch sides."
+    ],
+    "exerciseTips": [
+      "Controlled Movements: When you pull the weight up, do so in a controlled manner, ensuring that your elbow is close to your body. Similarly, lower the weight in a controlled manner. Avoid jerky or fast movements, as this can lead to muscle strain and doesn't effectively work the targeted muscles.",
+      "Focus on the Right Muscles: The One Arm Bent-over Row primarily targets the muscles in your back, so it's important to consciously engage these muscles during the exercise. Avoid the common mistake of using your b"
+    ],
+    "variations": [
+      "Incline Bench One Arm Row: For this variation, you use an incline bench to support your body, which can help isolate the muscles in your back and reduce strain on your lower back.",
+      "One Arm Bent-Over Cable Row: This version uses a cable machine, which can provide consistent resistance throughout the entire movement and may help improve your muscle control.",
+      "Resistance Band One Arm Bent-Over Row: By using a resistance band instead of weights, you can challenge your muscles in a different way and make the exercise more portable and versatile.",
+      "Kettlebell One Arm Bent-Over Row: This variation involves using a kettlebell, which can help improve your grip strength and challenge your stability due to the unique shape and weight distribution of the kettle"
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hY9EdwkdGz9a",
+      "exr_41n2hiLBKmrpdKsd",
+      "exr_41n2hsPQ1MvBiAeC",
+      "exr_41n2hixLEhS8MrPc",
+      "exr_41n2hwkEoVniykzD",
+      "exr_41n2hqFzDdN9RHxG",
+      "exr_41n2hTq9Bnm7XLMi",
+      "exr_41n2hcjbvkWFabod",
+      "exr_41n2hnVcMXti1xdH",
+      "exr_41n2hntoY9YiYGtV"
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hdsGcuzs4WrV",
+    "name": "Self Assisted Inverted Pullover",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/n4N7gfo3Ph.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/OSEG3kxw2z.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/n4N7gfo3Ph.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/IMpCI0xInY.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/pkuZOaYCMl.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BACK", "WAIST"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["RECTUS ABDOMINIS", "LATISSIMUS DORSI"],
+    "secondaryMuscles": [],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/Mj7IruE/41n2hdsGcuzs4WrV__Self-Assisted-Inverted-Pullover_Back.mp4",
+    "keywords": [
+      "Bodyweight back exercise",
+      "Inverted Pullover workout",
+      "Self Assisted exercise for back",
+      "Waist toning exercises",
+      "Bodyweight exercise for waist",
+      "Inverted Pullover technique",
+      "Back strengthening workouts",
+      "Bodyweight Pullover exercise",
+      "Self Assisted Inverted Pullover guide",
+      "Waist and back bodyweight exercises"
+    ],
+    "overview": "The Self Assisted Inverted Pullover is a dynamic exercise that primarily targets the muscles of your back, shoulders, and arms, helping to improve upper body strength and stability. This exercise is suitable for all fitness levels, as it allows for self-assistance, making it a great choice for beginners and those recovering from an injury. Individuals may want to incorporate this exercise into their routine to enhance muscle tone, boost functional strength and promote better posture.",
+    "instructions": [
+      "With your palms facing away from your body, reach up and grab the bar with a wide grip, keeping your arms fully extended.",
+      "Next, engage your core and lift your hips off the ground, pulling your body upwards towards the bar in an inverted position.",
+      "As you reach the top of the movement, use your arms to assist in pulling your body up and over the bar, while keeping your legs straight and together.",
+      "Slowly lower yourself back down to the starting position, maintaining control throughout the movement to ensure that you're using your muscles rather than momentum."
+    ],
+    "exerciseTips": [
+      "Correct Form and Technique: Ensure that you maintain the correct form throughout the exercise. Your body should be straight from head to toe, and your hands should be shoulder-width apart. Avoid bending your elbows and knees. Also, make sure to pull your body up using your lats and not your arms. A common mistake is using the arms to do the pulling, which can lead to strain or injury.",
+      "Controlled Movement: The movement should be slow and controlled, both when pulling up and lowering down. Avoid jerky or fast movements as they can lead to injury and won't engage your muscles effectively.",
+      "Breathing: Proper breathing is essential during this exercise. Inhale as you lower your body and exhale as you"
+    ],
+    "variations": [
+      "The Cable Pullover: This variation uses a cable machine, allowing for consistent resistance throughout the entire movement and providing a different type of challenge for the muscles.",
+      "The Stability Ball Pullover: This variation involves lying on a stability ball instead of a bench, which engages your core and improves balance and stability while performing the pullover.",
+      "The Single-Arm Pullover: This variation involves performing the exercise with one arm at a time, allowing you to focus on each side of your body individually and potentially identifying and correcting any imbalances.",
+      "The Straight-Arm Pullover: This variation involves keeping your arms straight instead of bending them, which places more emphasis on the lats and less on the triceps."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hK5HNkMjBybN",
+      "exr_41n2hoNFAgCyup4t",
+      "exr_41n2hMShowqi2pvv",
+      "exr_41n2hGKtHQFWKVSL",
+      "exr_41n2hjud21vJXgyF",
+      "exr_41n2hMWiigKK6yGP",
+      "exr_41n2hiFfBGEhjtNf",
+      "exr_41n2hocrDrfZfVTs",
+      "exr_41n2hxaM21jZxuYk",
+      "exr_41n2huoPG7M1NgeU"
+    ]
+  }
+}

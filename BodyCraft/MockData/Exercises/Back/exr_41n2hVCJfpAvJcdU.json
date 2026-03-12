@@ -1,0 +1,74 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hVCJfpAvJcdU",
+    "name": "Commando Pull-up",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/tczafQq5N0.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/mX4siBXLVf.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/tczafQq5N0.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/6m3iob3h9U.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/KXqFpU7JPo.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BACK", "WAIST"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "TRAPEZIUS LOWER FIBERS",
+      "TERES MAJOR",
+      "LATISSIMUS DORSI",
+      "INFRASPINATUS",
+      "TRAPEZIUS MIDDLE FIBERS",
+      "OBLIQUES",
+      "TERES MINOR"
+    ],
+    "secondaryMuscles": [
+      "BRACHIORADIALIS",
+      "POSTERIOR DELTOID",
+      "BICEPS BRACHII",
+      "BRACHIALIS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/BX8RqYM/41n2hVCJfpAvJcdU__Commando-Pull-up_Back_.mp4",
+    "keywords": [
+      "Commando Pull-up workout",
+      "Body weight exercises for back",
+      "Waist strengthening exercises",
+      "Commando Pull-up technique",
+      "Bodyweight back workout",
+      "Commando Pull-up for waist toning",
+      "Back and waist bodyweight exercises",
+      "Commando Pull-up form guide",
+      "How to do Commando Pull-ups",
+      "Bodyweight exercises for back and waist."
+    ],
+    "overview": "The Commando Pull-up is a dynamic exercise that primarily targets the muscles in your back, arms, and shoulders, offering a comprehensive upper body workout. It's suitable for fitness enthusiasts of all levels, from beginners to advanced, as it can be modified to match individual strength and fitness levels. People might choose this exercise for its efficiency in muscle building, its enhancement of grip strength, and the improvement it provides in overall body control and balance.",
+    "instructions": [
+      "Reach up and grip the bar with one hand closer to you and the other further away, in an overhand grip. Your hands should be shoulder-width apart, forming a line across your body.",
+      "Pull your body up towards the bar while twisting your torso towards the hand that is closer to you. Your aim is to touch your shoulder to the bar.",
+      "Lower your body back down to the starting position in a controlled manner, ensuring to keep your body straight and not to swing.",
+      "Repeat the exercise on the other side by switching your hand positions and twisting your torso in the opposite direction."
+    ],
+    "exerciseTips": [
+      "Warm Up: Before you start your commando pull-ups, make sure to warm up properly. This can include a light cardio session or dynamic stretches to get your muscles ready for the exercise. Jumping straight into commando pull-ups without a warm-up can strain your muscles and lead to injuries.",
+      "Grip Strength: Commando pull-ups require a good amount of grip strength. If you're struggling with the exercise, it might be because your grip strength needs improvement. Consider incorporating grip strengthening exercises"
+    ],
+    "variations": [
+      "Chin-Up: The chin-up is a variation where you grip the bar with your palms facing towards you, which works your biceps more intensively.",
+      "Neutral-Grip Pull-up: In this variation, the palms face each other using parallel bars or a specially designed pull-up bar, focusing more on the brachialis and brachioradialis muscles.",
+      "Weighted Pull-up: This advanced variation involves strapping additional weight to your body, increasing the challenge and the strength-building potential of the exercise.",
+      "L-Sit Pull-up: In the L-sit pull-up, you raise your legs parallel to the ground in an L shape while performing the pull-up, which works your core muscles in addition to your upper body."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hv2pS3wontEH",
+      "exr_41n2hpF1DCVxEQ5m",
+      "exr_41n2hisuDmnQHqzf",
+      "exr_41n2hvqD6pJbg78R",
+      "exr_41n2hvS1T68k6DVD",
+      "exr_41n2htRw54y28bCK",
+      "exr_41n2hYsMKoVdsZ1K",
+      "exr_41n2hoYn3TAMxMn6",
+      "exr_41n2hP5j5aPAZAvx",
+      "exr_41n2hvWsgnYJ9tiG"
+    ]
+  }
+}

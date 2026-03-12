@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hftBVLiXgtRQ",
+    "name": "Wide Grip Pull-Up",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/KTxTtuwOqD.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/fgKVa38itj.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/KTxTtuwOqD.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/WdfGoYToTq.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/XNsRWPXR9H.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BACK"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["LATISSIMUS DORSI"],
+    "secondaryMuscles": [
+      "TERES MAJOR",
+      "BRACHIORADIALIS",
+      "BRACHIALIS",
+      "TRAPEZIUS MIDDLE FIBERS",
+      "BICEPS BRACHII",
+      "TRAPEZIUS LOWER FIBERS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/Pz2nxBg/41n2hftBVLiXgtRQ__Wide-Grip-Pull-Up_Back.mp4",
+    "keywords": [
+      "Wide Grip Pull-Up workout",
+      "Bodyweight back exercise",
+      "Pull-Up variations",
+      "Wide grip back strengthening",
+      "Bodyweight training for back",
+      "Wide grip pull-up technique",
+      "Back muscle workout",
+      "No-equipment back exercise",
+      "Upper body strength training",
+      "Wide hand position pull-ups"
+    ],
+    "overview": "The Wide Grip Pull-Up is an upper-body exercise that primarily targets the latissimus dorsi, enhancing strength and improving muscle definition. It's suitable for individuals at an intermediate or advanced fitness level who aim to enhance their upper body strength, particularly in the back and arms. This exercise is desirable as it not only promotes better posture and reduces the risk of back injuries, but also contributes to improved performance in other workouts and daily activities.",
+    "instructions": [
+      "Pull your shoulder blades down and back, bend your legs at the knees if necessary, and cross your ankles behind you.",
+      "Engage your core and pull yourself up until your chin is above the bar, maintaining control and not using momentum to swing your body up.",
+      "Hold the position at the top for a moment, ensuring your chest is close to the bar and your shoulder blades are fully retracted.",
+      "Slowly lower yourself back down to the starting position, fully extending your arms while maintaining control of your movement."
+    ],
+    "exerciseTips": [
+      "Avoid Using Momentum: One common mistake is using body momentum to perform the pull-up. This not only reduces the effectiveness of the exercise but also increases the risk of injury. Instead, focus on using your back and arm muscles to pull yourself up and lower yourself down.",
+      "Engage Your Core: Engaging your core is essential for maintaining proper form during the exercise. It helps to stabilize your body, preventing unnecessary swinging and ensuring that your back and arm muscles are doing the work.",
+      "Don't Rush: Another common mistake is performing the exercise too quickly. Instead, try to perform the pull-up in a slow and controlled manner. This will"
+    ],
+    "variations": [
+      "Weighted Pull-Up: This version involves wearing a weighted vest or using a weight belt to increase resistance and make the exercise more challenging.",
+      "Commando Pull-Up: In this variation, you grip the bar with one hand facing forward and the other facing backward, as if you're climbing a rope.",
+      "Towel Pull-Up: This involves draping a towel over the bar and gripping the ends, which increases grip strength and engages the forearms more.",
+      "One-Arm Pull-Up: This is a more advanced variation where you pull yourself up using only one arm, significantly increasing the intensity and focus on individual muscle groups."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hcdAu4PJ1tSo",
+      "exr_41n2hYmrutNPbb4q",
+      "exr_41n2hhXEktwtDPt1",
+      "exr_41n2hQEqKxuAfV1D",
+      "exr_41n2hvgz1rpPCc2x",
+      "exr_41n2hjdYLoFty6Ke",
+      "exr_41n2hwJNEKUyBrfQ",
+      "exr_41n2hUev9wx5JzW6",
+      "exr_41n2hRzu4peVSo1M",
+      "exr_41n2hMzbcS5RxSy9"
+    ]
+  }
+}

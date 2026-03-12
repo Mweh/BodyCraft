@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hQEqKxuAfV1D",
+    "name": "Pull-up with Bent Knee between Chairs",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/FJuNSNoybI.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/Sqp7pCdNPh.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/FJuNSNoybI.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/ZI2kTZPRim.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/dRT5IXUnd5.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BACK"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["LATISSIMUS DORSI"],
+    "secondaryMuscles": [
+      "TRAPEZIUS LOWER FIBERS",
+      "TERES MINOR",
+      "BRACHIORADIALIS",
+      "TRAPEZIUS MIDDLE FIBERS",
+      "INFRASPINATUS",
+      "BRACHIALIS",
+      "BICEPS BRACHII",
+      "TERES MAJOR"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/nGSaMUr/41n2hQEqKxuAfV1D__Pull-up-with-Bent-Knee-between-Chairs_Back.mp4",
+    "keywords": [
+      "Bodyweight back exercise",
+      "Bent knee pull-ups",
+      "Chair pull-ups",
+      "Home workout for back",
+      "Pull-up variations",
+      "Back strengthening exercises",
+      "Bodyweight exercises for back",
+      "Chair exercises for upper body",
+      "Bent knee chair pull-ups",
+      "DIY pull-up exercises"
+    ],
+    "overview": "The Pull-up with Bent Knee between Chairs is a challenging bodyweight exercise that primarily targets the upper body muscles, including the back, arms, and shoulders. It is suitable for individuals at intermediate to advanced fitness levels who are looking for a way to strengthen their upper body without the need for gym equipment. The exercise not only improves muscle strength and endurance, but also enhances core stability and body coordination, making it an excellent option for those aiming for a comprehensive fitness routine.",
+    "instructions": [
+      "Stand between the chairs and grip the backs or the seats of the chairs with each hand, ensuring your grip is firm and secure.",
+      "Slowly lift your body off the ground by pulling up with your arms and shoulders, bending your knees at a 90-degree angle as you rise.",
+      "Hold this position for a few seconds, feeling the tension in your upper body and core muscles.",
+      "Gradually lower your body back down to the starting position, keeping your knees bent, then repeat the exercise for the desired number of repetitions."
+    ],
+    "exerciseTips": [
+      "Proper Form: Start by gripping the tops of the chairs with your palms facing away from you. Bend your knees at a 90-degree angle and cross your ankles. Use your upper body strength to pull yourself up until your chin is above the level of the chairs. Avoid using momentum or swinging your body to pull yourself up; this is a common mistake that can lead to injury and reduces the effectiveness of the exercise.",
+      "Controlled Movement: Lower yourself back down in a slow and controlled manner until your arms are fully extended. Avoid dropping down quickly, as this can strain your muscles and joints.",
+      "Breathing Technique: Breathe in as you lower yourself and breathe out as you pull yourself up. This helps maintain"
+    ],
+    "variations": [
+      "Inverted Row between Chairs: Instead of pulling yourself up, you position yourself underneath the chairs and pull your body up towards them, targeting different muscles.",
+      "One Arm Pull-up between Chairs: This variation involves performing the exercise using only one arm, significantly increasing the difficulty and focusing on unilateral strength.",
+      "L-Sit Pull-up between Chairs: In this variation, you hold your legs out in an L shape in front of you while pulling up, which adds an additional challenge for your core and hip flexors.",
+      "Wide Grip Pull-up between Chairs: By placing your hands wider apart on the chairs, you can target different muscles in your back and shoulders."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hftBVLiXgtRQ",
+      "exr_41n2hcdAu4PJ1tSo",
+      "exr_41n2hvgz1rpPCc2x",
+      "exr_41n2hYmrutNPbb4q",
+      "exr_41n2hhXEktwtDPt1",
+      "exr_41n2hUev9wx5JzW6",
+      "exr_41n2hjdYLoFty6Ke",
+      "exr_41n2hMzbcS5RxSy9",
+      "exr_41n2hj8LBGmaDiHT",
+      "exr_41n2hmpnhk73N2Sr"
+    ]
+  }
+}

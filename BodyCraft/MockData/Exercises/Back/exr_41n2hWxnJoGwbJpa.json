@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hWxnJoGwbJpa",
+    "name": "Superman Row with Towel",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/ixufDWekVb.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/k9grycjusQ.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/ixufDWekVb.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/QGDJcr7A8f.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/ynVv4glmw8.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BACK", "HIPS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["GLUTEUS MAXIMUS", "LATISSIMUS DORSI", "ERECTOR SPINAE"],
+    "secondaryMuscles": [
+      "BICEPS BRACHII",
+      "TERES MINOR",
+      "HAMSTRINGS",
+      "BRACHIORADIALIS",
+      "TERES MAJOR",
+      "INFRASPINATUS",
+      "BRACHIALIS",
+      "POSTERIOR DELTOID"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/ZaEtSOT/41n2hWxnJoGwbJpa__Superman-Row-with-Towel_Back.mp4",
+    "keywords": [
+      "Superman Row exercise",
+      "Bodyweight back exercises",
+      "Superman Towel Row",
+      "Home workouts for back",
+      "Exercises for hips",
+      "Superman Row technique",
+      "Bodyweight exercises for Hips",
+      "Strengthening back with body weight",
+      "Superman Row without equipment",
+      "Towel exercises for back and hips"
+    ],
+    "overview": "The Superman Row with Towel is a dynamic exercise that targets and strengthens your back, shoulders, and core muscles, providing a full-body workout. It's suitable for individuals at all fitness levels, especially those looking to improve their posture or enhance their upper body strength. People may want to incorporate this exercise into their routine as it not only boosts muscle endurance and flexibility, but also helps in improving body alignment and balance.",
+    "instructions": [
+      "Engage your core and lift your arms, chest, and legs off the ground, keeping your neck in a neutral position, this is your Superman pose.",
+      "While maintaining this pose, pull the towel towards your chest by bending your elbows and squeezing your shoulder blades together, this is your Row.",
+      "Extend your arms back out in front of you, still holding the towel, while maintaining your lifted position.",
+      "Lower your arms, chest, and legs back to the ground to complete one repetition, then repeat the sequence for your desired number of reps."
+    ],
+    "exerciseTips": [
+      "Avoid Straining Your Neck: A common mistake is straining the neck by looking up or tucking the chin into the chest. To avoid this, try to keep your neck in a neutral position by looking at the floor or slightly ahead.",
+      "Engage Your Core: Engaging your core is crucial for this exercise. It not only helps to keep your body stable but also protects your lower back. Avoid arching your back excessively as this can lead to lower back pain.",
+      "Controlled Movements: Perform the exercise"
+    ],
+    "variations": [
+      "Superman Row on Stability Ball: Perform the Superman Row while balancing your lower body on a stability ball, increasing the challenge to your core and balance.",
+      "Single Arm Superman Row: Instead of using both arms, perform the exercise one arm at a time to focus on isolating each side of your back.",
+      "Superman Row with Dumbbells: Replace the towel with dumbbells to add more resistance and increase the intensity of the exercise.",
+      "Superman Row with a Kettlebell: Swap the towel for a kettlebell, performing the row movement with the kettlebell in your hands to add a different type of resistance to the exercise."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hmXnk5q92CKu",
+      "exr_41n2hu3xFGNZo9i9",
+      "exr_41n2hh4BfHghrLAa",
+      "exr_41n2hfmsg2MmZHBT",
+      "exr_41n2hqPWJGeg7MNK",
+      "exr_41n2he8kpucz664S",
+      "exr_41n2hhumxqyAFuTb",
+      "exr_41n2hSGs9Q3NVGhs",
+      "exr_41n2hWbP5uF6PQpU",
+      "exr_41n2hcm5HH6H684G"
+    ]
+  }
+}

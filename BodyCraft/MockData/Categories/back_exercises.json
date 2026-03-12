@@ -2,44 +2,29 @@
   "success": true,
   "data": [
     {
-      "exerciseId": "exr_41n2hQeNyCnt3uFh",
-      "name": "Back Pec Stretch",
-      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/11TGBvhnYQ.jpg"
+      "exerciseId": "exr_41n2hU4y6EaYXFhr",
+      "name": "Pull up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/gNdMNPVxAj.jpg"
     },
     {
-      "exerciseId": "exr_41n2hKZmyYXB2UL4",
-      "name": "Elbows Back Stretch ",
-      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/ZBbn7b0eVR.jpg"
+      "exerciseId": "exr_41n2hxg75dFGERdp",
+      "name": "L-Pull-up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/DMKexKmHFn.jpg"
     },
     {
-      "exerciseId": "exr_41n2hpJxS5VQKtBL",
-      "name": "Lying Lower Back Stretch ",
-      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/4C6IftIpvy.jpg"
+      "exerciseId": "exr_41n2hVCJfpAvJcdU",
+      "name": "Commando Pull-up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/tczafQq5N0.jpg"
     },
     {
-      "exerciseId": "exr_41n2hfnnXz9shkBi",
-      "name": "Lying Lower Back Stretch ",
-      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/9w9vjAYwal.jpg"
+      "exerciseId": "exr_41n2hQEqKxuAfV1D",
+      "name": "Pull-up with Bent Knee between Chairs",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/FJuNSNoybI.jpg"
     },
     {
-      "exerciseId": "exr_41n2hRH4aTB379Tp",
-      "name": "45 degree hyperextension ",
-      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/ZuggCImG8H.jpg"
-    },
-    {
-      "exerciseId": "exr_41n2hsBtDXapcADg",
-      "name": "Pull-up",
-      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/g0ZmaTcu2Q.jpg"
-    },
-    {
-      "exerciseId": "exr_41n2hd6SThQhAdnZ",
-      "name": "Chin-ups",
-      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/TLX9vGr1dx.jpg"
-    },
-    {
-      "exerciseId": "exr_41n2hadPLLFRGvFk",
-      "name": "Sliding Floor Pulldown on Towel",
-      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/9fW96RFqRZ.jpg"
+      "exerciseId": "exr_41n2hftBVLiXgtRQ",
+      "name": "Wide Grip Pull-Up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/KTxTtuwOqD.jpg"
     },
     {
       "exerciseId": "exr_41n2hdkBpqwoDmVq",
@@ -47,9 +32,24 @@
       "imageUrl": "https://cdn.exercisedb.dev/media/w/images/bXwXW2WUCj.jpg"
     },
     {
-      "exerciseId": "exr_41n2hU4y6EaYXFhr",
-      "name": "Pull up",
-      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/gNdMNPVxAj.jpg"
+      "exerciseId": "exr_41n2hHdjQpnyNdie",
+      "name": "One Arm Bent-over Row",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/Ndd2gbg1ko.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hWxnJoGwbJpa",
+      "name": "Superman Row with Towel",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/ixufDWekVb.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hY9EdwkdGz9a",
+      "name": "Dumbbell One Arm Bent-over Row",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/yJd6FeW6VA.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hdsGcuzs4WrV",
+      "name": "Self Assisted Inverted Pullover",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/n4N7gfo3Ph.jpg"
     }
   ]
 }
