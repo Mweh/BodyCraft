@@ -7,39 +7,15 @@ struct ScanningHUDView: View {
     var body: some View {
         ZStack {
             // Dimmed background with cutout using HolePunchMask
-            HolePunchMask(cutoutRect: CGRect(x: 0, y: 0, width: 250, height: 250))
-                .fill(Color.black.opacity(0.6), style: FillStyle(eoFill: true, antialiased: true))
+            HolePunchMask(cutoutRect: CGRect(x: 0, y: 0, width: 270, height: 270))
+                .fill(Color.black.opacity(0.65), style: FillStyle(eoFill: true, antialiased: true))
                 .ignoresSafeArea()
-                .offset(y: -50) // Match the frame's bottom padding logic if needed, or center properly
             
-            // Frame and Brackets
-            VStack {
-                ZStack {
-                    // Central scanning square
-                    RoundedRectangle(cornerRadius: 30)
-                        .stroke(Color.white.opacity(0.3), lineWidth: 1)
-                        .frame(width: 250, height: 250)
-                    
-                    // Corner Brackets
-                    ScannerCorners()
-                        .stroke(Color.white, lineWidth: 4)
-                        .frame(width: 250, height: 250)
-                        .scaleEffect(pulseScale)
-                    
-                    // Animated Scanning Line
-                    Rectangle()
-                        .fill(
-                            LinearGradient(
-                                colors: [.clear, .green.opacity(0.5), .clear],
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                        )
-                        .frame(width: 230, height: 40)
-                        .offset(y: scanLineOffset)
-                }
-                .padding(.bottom, 50)
-            }
+            // Corner Brackets - Centered exactly with the cutout
+            ScannerCorners()
+                .stroke(Color.white, lineWidth: 4)
+                .frame(width: 270, height: 270)
+                .scaleEffect(pulseScale)
             
             // Guide text
             VStack {
@@ -48,15 +24,13 @@ struct ScanningHUDView: View {
                     .font(.subheadline)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .padding(.bottom, 150)
+                    .padding(.bottom, 160)
             }
         }
+        .ignoresSafeArea()
         .onAppear {
-            withAnimation(.linear(duration: 2.0).repeatForever(autoreverses: true)) {
-                scanLineOffset = 120
-            }
-            withAnimation(.easeInOut(duration: 1.0).repeatForever(autoreverses: true)) {
-                pulseScale = 1.05
+            withAnimation(.easeInOut(duration: 1.2).repeatForever(autoreverses: true)) {
+                pulseScale = 1.03
             }
         }
     }

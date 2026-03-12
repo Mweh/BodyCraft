@@ -87,6 +87,23 @@ final class CameraService: NSObject, ObservableObject {
         let settings = AVCapturePhotoSettings()
         output.capturePhoto(with: settings, delegate: self)
     }
+    
+    func toggleTorch(on: Bool) {
+        #if targetEnvironment(simulator)
+        return
+        #endif
+        
+        guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
+              device.hasTorch else { return }
+        
+        do {
+            try device.lockForConfiguration()
+            device.torchMode = on ? .on : .off
+            device.unlockForConfiguration()
+        } catch {
+            print("Torch error: \(error.localizedDescription)")
+        }
+    }
 }
 
 extension CameraService: AVCapturePhotoCaptureDelegate {

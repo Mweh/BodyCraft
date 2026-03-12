@@ -14,30 +14,33 @@ struct FoodScannerView: View {
     
     var body: some View {
         ZStack {
-            // Camera Background
-            if cameraService.permissionStatus == .authorized {
-                CameraPreview(session: cameraService.session)
-                    .ignoresSafeArea()
-            } else if cameraService.permissionStatus == .denied {
-                Color.black.ignoresSafeArea()
-                VStack(spacing: 16) {
-                    Image(systemName: "camera.slash.fill")
-                        .font(.largeTitle)
-                        .foregroundColor(.red)
-                    Text("Camera access denied")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                    Button("Open Settings") {
-                        if let url = URL(string: UIApplication.openSettingsURLString) {
-                            UIApplication.shared.open(url)
+            // Background Layer
+            AppTheme.background.ignoresSafeArea()
+            
+            // Camera Background (Only if idle and authorized)
+            if case .idle = viewModel.state {
+                if cameraService.permissionStatus == .authorized {
+                    CameraPreview(session: cameraService.session)
+                        .ignoresSafeArea()
+                } else if cameraService.permissionStatus == .denied {
+                    VStack(spacing: 16) {
+                        Image(systemName: "camera.slash.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.red)
+                        Text("Camera access denied")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                        Button("Open Settings") {
+                            if let url = URL(string: UIApplication.openSettingsURLString) {
+                                UIApplication.shared.open(url)
+                            }
                         }
+                        .buttonStyle(.borderedProminent)
                     }
-                    .buttonStyle(.borderedProminent)
+                } else {
+                    ProgressView()
+                        .tint(.white)
                 }
-            } else {
-                Color.black.ignoresSafeArea()
-                ProgressView()
-                    .tint(.white)
             }
             
             // UI Overlay
@@ -46,7 +49,7 @@ struct FoodScannerView: View {
                 scanningOverlay
             case .processingImage, .fetchingNutrition:
                 processingOverlay
-            case .analysisComplete:
+            case .analysisComplete(_):
                 // This state is now bypassed by the ViewModel's auto-confirm logic
                 ProgressView().tint(.white)
             case .resultCalculated(let nutritionInfo):
@@ -90,7 +93,9 @@ struct FoodScannerView: View {
     
     // MARK: - Scanning Overlay
     
-    private var scanningOverlay: some View {
+    // MARK: - Scanning Overlay
+    
+    var scanningOverlay: some View {
         ZStack {
             ScanningHUDView()
             
@@ -106,7 +111,10 @@ struct FoodScannerView: View {
                             .clipShape(Circle())
                     }
                     Spacer()
-                    Button(action: { /* Toggle Flash logic */ }) {
+                    Button(action: { 
+                        isFlashActive.toggle()
+                        cameraService.toggleTorch(on: isFlashActive)
+                    }) {
                         Image(systemName: isFlashActive ? "bolt.fill" : "bolt.slash.fill")
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.white)
@@ -154,7 +162,7 @@ struct FoodScannerView: View {
         }
     }
     
-    private var processingOverlay: some View {
+    var processingOverlay: some View {
         ZStack {
             Color.black.opacity(0.7).ignoresSafeArea()
             VStack(spacing: 20) {
@@ -168,7 +176,7 @@ struct FoodScannerView: View {
         }
     }
     
-    private func errorOverlay(_ message: String) -> some View {
+    func errorOverlay(_ message: String) -> some View {
         ZStack {
             Color.black.opacity(0.8).ignoresSafeArea()
             VStack(spacing: 20) {
@@ -186,7 +194,7 @@ struct FoodScannerView: View {
         }
     }
     
-    private func captureAction() {
+    func captureAction() {
         // Trigger haptic
         let impact = UIImpactFeedbackGenerator(style: .medium)
         impact.impactOccurred()

@@ -19,74 +19,95 @@ struct NutritionResultView: View {
     var calculatedFat: Double { nutritionInfo.fat * portionMultiplier }
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 24) {
-                if let image = capturedImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(height: 250)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .padding(.horizontal)
-                        .padding(.top, 20)
-                }
-                
-                Text(nutritionInfo.foodName)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                
-                // Portion Control
-                VStack(alignment: .leading, spacing: 12) {
-                    HStack {
-                        Text("Portion Size")
-                            .font(.headline)
-                        Spacer()
-                        Text("\(Int(portionGrams))g")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-                    
-                    Slider(value: $portionGrams, in: 10...500, step: 10) { _ in
-                        portionMultiplier = portionGrams / nutritionInfo.baseQuantityGrams
-                    }
-                }
-                .padding()
-                .background(Color.gray.opacity(0.1))
-                .cornerRadius(12)
-                .padding(.horizontal)
-                
-                // Macros Layout
-                VStack(spacing: 16) {
-                    MacroRow(title: "Calories", value: String(format: "%.0f kcal", calculatedCalories), color: .orange)
-                    MacroRow(title: "Protein", value: String(format: "%.1f g", calculatedProtein), color: .red)
-                    MacroRow(title: "Carbs", value: String(format: "%.1f g", calculatedCarbs), color: .blue)
-                    MacroRow(title: "Fat", value: String(format: "%.1f g", calculatedFat), color: .yellow)
-                }
-                .padding()
-                
-                VStack(spacing: 12) {
-                    Button(action: logMeal) {
-                        HStack {
-                            Image(systemName: "checkmark.circle.fill")
-                            Text("Log Meal")
+        ZStack {
+            AppTheme.background.ignoresSafeArea()
+            
+            ScrollView {
+                VStack(spacing: 28) {
+                    // Image Preview - constrained to ~25% height
+                    if let image = capturedImage {
+                        GeometryReader { geo in
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: geo.size.width, height: 240) // Fixed height for 25% feel
+                                .clipShape(RoundedRectangle(cornerRadius: 24))
                         }
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.green)
-                        .cornerRadius(12)
+                        .frame(height: 240)
+                        .padding(.horizontal)
+                        .padding(.top, 24)
                     }
                     
-                    Button(action: onReset) {
-                        Text("Scan Another")
+                    VStack(spacing: 8) {
+                        Text(nutritionInfo.foodName)
+                            .font(.system(size: 28, weight: .bold))
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                        
+                        Text("Nutrition Insight")
                             .font(.subheadline)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(AppTheme.secondaryText)
                     }
+                    .padding(.horizontal)
+                    
+                    // Portion Control Card
+                    VStack(alignment: .leading, spacing: 16) {
+                        HStack {
+                            Text("Portion Size")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                            Spacer()
+                            Text("\(Int(portionGrams))g")
+                                .font(.subheadline).bold()
+                                .foregroundColor(AppTheme.primary)
+                        }
+                        
+                        Slider(value: $portionGrams, in: 10...500, step: 10) { _ in
+                            portionMultiplier = portionGrams / nutritionInfo.baseQuantityGrams
+                        }
+                        .tint(AppTheme.primary)
+                    }
+                    .padding(20)
+                    .background(AppTheme.surface)
+                    .cornerRadius(20)
+                    .padding(.horizontal)
+                    
+                    // Macros Grid-like Layout
+                    VStack(spacing: 12) {
+                        MacroRow(title: "Calories", value: String(format: "%.0f kcal", calculatedCalories), color: .orange)
+                        MacroRow(title: "Protein", value: String(format: "%.1f g", calculatedProtein), color: .red)
+                        MacroRow(title: "Carbs", value: String(format: "%.1f g", calculatedCarbs), color: Color(red:1,green:0.8,blue:0.1))
+                        MacroRow(title: "Fat", value: String(format: "%.1f g", calculatedFat), color: .cyan)
+                    }
+                    .padding(20)
+                    .background(AppTheme.surface)
+                    .cornerRadius(20)
+                    .padding(.horizontal)
+                    
+                    VStack(spacing: 16) {
+                        Button(action: logMeal) {
+                            HStack {
+                                Image(systemName: "checkmark.circle.fill")
+                                Text("Log to Today")
+                            }
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 18)
+                            .background(AppTheme.primary)
+                            .cornerRadius(16)
+                            .shadow(color: AppTheme.primary.opacity(0.3), radius: 10, x: 0, y: 5)
+                        }
+                        
+                        Button(action: onReset) {
+                            Text("Retake Photo")
+                                .font(.subheadline).bold()
+                                .foregroundColor(AppTheme.secondaryText)
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.bottom, 40)
                 }
-                .padding(.horizontal)
-                .padding(.bottom, 30)
             }
         }
         .onAppear {
