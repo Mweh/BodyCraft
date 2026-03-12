@@ -39,9 +39,23 @@
 		9FBA11742F60FACF00411B26 /* BodyCraft Watch App Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BodyCraft Watch App Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E4A7A4332F626E3500328520 /* Exceptions for "BodyCraft" folder in "BodyCraft" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MockData/Exercises/Chest/exr_41n2hKZmyYXB2UL4.json,
+				MockData/Exercises/Chest/exr_41n2hQeNyCnt3uFh.json,
+			);
+			target = 9F890AE12F5FA45500484454 /* BodyCraft */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9F890AE42F5FA45500484454 /* BodyCraft */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E4A7A4332F626E3500328520 /* Exceptions for "BodyCraft" folder in "BodyCraft" target */,
+			);
 			path = BodyCraft;
 			sourceTree = "<group>";
 		};
