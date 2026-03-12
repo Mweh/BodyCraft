@@ -132,13 +132,6 @@ final class PhoneWatchBridge: NSObject, WCSessionDelegate, ObservableObject {
                 userInfo: dict
             )
         }
-        if let type = dict["type"] as? String, type == "checkboxSync" {
-            NotificationCenter.default.post(
-                name: .watchCheckboxSync,
-                object: nil,
-                userInfo: dict
-            )
-        }
     }
 
     // MARK: - WCSessionDelegate (iOS)

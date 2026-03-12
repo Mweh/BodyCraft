@@ -392,8 +392,10 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "KOALA needs camera access to scan and analyze your food's nutrition.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "KOALA needs Health access to read active calories and heart rate during your workouts.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "KOALA needs Health access to save your completed workouts and active calories back to Apple Health.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "KOALA needs gallery access for you to select food photos for analysis.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -439,8 +441,10 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "KOALA needs camera access to scan and analyze your food's nutrition.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "KOALA needs Health access to read active calories and heart rate during your workouts.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "KOALA needs Health access to save your completed workouts and active calories back to Apple Health.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "KOALA needs gallery access for you to select food photos for analysis.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

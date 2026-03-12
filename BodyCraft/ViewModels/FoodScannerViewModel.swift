@@ -15,12 +15,14 @@ enum AppState {
 class FoodScannerViewModel: ObservableObject {
     @Published var state: AppState = .idle
     @Published var selectedImage: UIImage? = nil
+    @Published var lastSelectionTime: Date? = nil
     
     private let recognitionService = FoodRecognitionService()
     private let nutritionClient = NutritionAPIClient()
     
     func processImage(_ image: UIImage) {
         self.selectedImage = image
+        self.lastSelectionTime = Date()
         self.state = .processingImage
         
         guard let cgImage = image.cgImage else {
@@ -33,10 +35,11 @@ class FoodScannerViewModel: ObservableObject {
             
             switch result {
             case .success(let foodResults):
-                if foodResults.isEmpty {
-                    self.state = .error("No food detected in the image.")
+                if let topPrediction = foodResults.first {
+                    // Auto-confirm the best match
+                    self.confirmFood(topPrediction)
                 } else {
-                    self.state = .analysisComplete(foodResults)
+                    self.state = .error("No food detected in the image.")
                 }
             case .failure(let error):
                 self.state = .error("Image analysis failed: \(error.localizedDescription)")

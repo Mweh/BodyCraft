@@ -4,6 +4,7 @@ import Combine
 
 // MARK: - Shared Models (Mirroring iPhone target)
 struct WatchWorkoutPayload: Codable {
+    let dayNumber: Int
     let title: String
     let totalExpectedCalories: Int
     let exercises: [WatchExercise]
@@ -14,6 +15,7 @@ struct WatchExercise: Codable, Identifiable {
     let name: String
     let sets: Int
     let reps: String
+    let category: String
 }
 
 struct WatchSummaryPayload: Codable {
@@ -140,5 +142,5 @@ final class WatchSyncService: NSObject, ObservableObject, WCSessionDelegate {
 }
 
 extension NSNotification.Name {
-    static let watchCheckboxSync = NSNotification.Name("watchCheckboxSync")
+    static let watchCheckboxSync = NSNotification.Name("WatchSyncCheckboxUpdated")
 }
