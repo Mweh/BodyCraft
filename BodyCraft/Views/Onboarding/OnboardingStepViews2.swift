@@ -88,7 +88,7 @@ struct AboutYouStepView: View {
     @Binding var gender: String
     var nextAction: () -> Void
     
-    let genders = ["Male", "Female", "Other"]
+    let genders = ["Male", "Female"]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {

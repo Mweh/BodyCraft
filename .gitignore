@@ -26,7 +26,6 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-
 # Xcode Schemes (only commit shared schemes)
 *.xcscheme
 

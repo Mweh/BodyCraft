@@ -74,31 +74,6 @@ struct HomeView: View {
                             streakStore:    streakStore
                         )
                         
-                        // AI Workout Quick Link
-                        HStack {
-                            Image(systemName: "sparkles")
-                                .foregroundColor(.white)
-                                .padding(12)
-                                .background(AppTheme.primary)
-                                .clipShape(Circle())
-                            
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(aiWorkoutPlan != nil ? "Today: \(aiWorkoutPlan!.weeklyWorkoutPlan.first?.day ?? "Day 1")" : "AI Workout Plan")
-                                    .foregroundColor(.white)
-                                    .fontWeight(.semibold)
-                                Text(nextWorkoutFocus)
-                                    .foregroundColor(AppTheme.secondaryText)
-                                    .font(.caption)
-                            }
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(AppTheme.secondaryText)
-                        }
-                        .padding()
-                        .background(AppTheme.surface)
-                        .cornerRadius(16)
-                        .padding(.horizontal)
-                        
                         // Calories Burned
                         VStack(alignment: .leading, spacing: 16) {
                             HStack {
