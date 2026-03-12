@@ -1,0 +1,63 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hoFGGwZDNFT1",
+    "name": "Bench dip on floor",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/6fVd7Ky8BX.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/P6uQgmtAPi.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/6fVd7Ky8BX.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/VWcPXW2CxU.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/HGX0VfjIiK.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["TRICEPS", "UPPER ARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["TRICEPS BRACHII"],
+    "secondaryMuscles": [
+      "LEVATOR SCAPULAE",
+      "PECTORALIS MAJOR STERNAL HEAD",
+      "ANTERIOR DELTOID",
+      "PECTORALIS MAJOR CLAVICULAR HEAD",
+      "LATISSIMUS DORSI"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/mu2EQCA/41n2hoFGGwZDNFT1__Bench-dip-on-floor_Upper-Arms.mp4",
+    "keywords": [
+      "Bodyweight Bench Dip",
+      "Triceps Workout at Home",
+      "Upper Arm Exercise",
+      "Bodyweight Triceps Exercise",
+      "Bench Dip No Equipment",
+      "Strength Training for Arms",
+      "Arm Toning Exercises",
+      "Bodyweight Upper Body Workout",
+      "Triceps Bench Dip on Floor",
+      "No-Equipment Triceps Workout"
+    ],
+    "overview": "The Bench Dip on Floor exercise is a strength training workout that primarily targets the triceps, shoulders, and chest, enhancing upper body strength and endurance. It's ideal for individuals at all fitness levels, from beginners to advanced, as it can be easily modified to match one's ability. People would want to perform this exercise to improve their upper body strength, tone their arms, and enhance their overall body stability and balance.",
+    "instructions": [
+      "Push up through your hands to lift your hips off the floor, keeping your chest up and your back straight.",
+      "Slowly lower your body by bending your elbows until they are at about a 90-degree angle, then push your body back up to the starting position.",
+      "Make sure to keep your hips close to your hands during the movement to target the triceps effectively.",
+      "Repeat this motion for the desired number of repetitions, ensuring to maintain proper form throughout the exercise."
+    ],
+    "exerciseTips": [
+      "Engage Your Core: As you lower your body by bending your elbows, maintain a tight core. This helps to stabilize your body and protect your spine. A common mistake is to let the core go loose, which can cause strain on your back and shoulder muscles.",
+      "Proper Elbow Alignment: While lowering your body, ensure your elbows are bent at a 90-degree angle and pointing back, not flaring out to the sides. This is crucial for targeting the triceps effectively and avoiding unnecessary strain on the shoulders.",
+      "Controlled Movement: Avoid rushing through the movement. Lower your body in a slow, controlled manner and push back up to the starting position. This ensures"
+    ],
+    "variations": [],
+    "relatedExerciseIds": [
+      "exr_41n2hadQgEEX8wDN",
+      "exr_41n2hndkoGHD1ogh",
+      "exr_41n2hHH9bNfi98YU",
+      "exr_41n2hj9BnSmUu3Eo",
+      "exr_41n2hNJoa8pZ5XSy",
+      "exr_41n2hm6ArroHDETJ",
+      "exr_41n2hGVp2iKNQAda",
+      "exr_41n2hHPJc5GY5LBZ",
+      "exr_41n2hVcuaY9F3ukX",
+      "exr_41n2hHru39AiA5Dd"
+    ]
+  }
+}

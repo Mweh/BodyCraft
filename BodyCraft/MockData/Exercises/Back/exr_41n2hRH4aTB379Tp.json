@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hRH4aTB379Tp",
+    "name": "45 degree hyperextension ",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/ZuggCImG8H.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/fqB9EIG5N6.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/ZuggCImG8H.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/SHdqa0fira.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/1iWy1Rw3Fa.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["BACK"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["ERECTOR SPINAE", "GLUTEUS MAXIMUS"],
+    "secondaryMuscles": ["HAMSTRINGS"],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/Jebowqo/41n2hRH4aTB379Tp__45-degree-hyperextension-(arms-in-front-of-chest)_Back.mp4",
+    "keywords": [
+      "45 degree back exercise",
+      "Bodyweight hyperextension workout",
+      "Back strengthening exercises",
+      "45 degree bodyweight back workout",
+      "Hyperextension back exercise",
+      "Bodyweight back hyperextension",
+      "45 degree hyperextension training",
+      "Body weight back strengthening",
+      "45 degree back hyperextension workout",
+      "Back training with body weight"
+    ],
+    "overview": "The 45 degree hyperextension exercise is a strength training activity that primarily targets the lower back, hamstrings, and glutes, offering improved posture, enhanced core stability, and better overall body strength. It is suitable for both beginners and advanced fitness enthusiasts, as the intensity can be easily adjusted by adding or removing weights. People would want to do this exercise to build lower body strength, prevent back pain, and improve athletic performance.",
+    "instructions": [
+      "Keep your body straight and bend at your waist while keeping your back flat, continue to lower your torso until you feel a mild stretch on the hamstrings.",
+      "Begin to raise your torso by extending through the hips with your back still kept straight, continue this movement until your body is in line with your legs.",
+      "Hold this position for a few seconds, focusing on squeezing your glutes and hamstrings at the top of the movement.",
+      "Slowly lower your body back to the starting position, repeating the movement for the desired amount of repetitions."
+    ],
+    "exerciseTips": [
+      "Controlled Movements: Avoid rushing through the exercise or using momentum to swing your body up and down. This can lead to lower back strain or injury. Instead, focus on slow, controlled movements. Lower your upper body towards the ground, then use your lower back and glute muscles to lift your torso back to the starting position.",
+      "Engage Your Core: Another common mistake is not engaging the core during the exercise. Always remember to keep your core engaged throughout the movement. This helps to protect your lower back and ensures that the right muscles are being targeted.",
+      "Maintain a Neutral Spine: To avoid straining your neck or"
+    ],
+    "variations": [
+      "The weighted 45-degree hyperextension is another variation where you hold a weight plate or dumbbell for added resistance.",
+      "The one-legged 45-degree hyperextension is a challenging variation that works one side of the body at a time for improved balance and coordination.",
+      "The banded 45-degree hyperextension involves using a resistance band, which helps to increase the intensity of the exercise and engage the glute muscles more effectively.",
+      "The 45-degree hyperextension with a twist is a variation that incorporates a twisting motion to engage the obliques and other core muscles."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hZ3jkTempTsp",
+      "exr_41n2hsMLoLyCfZYA",
+      "exr_41n2hveUAcUYotLm",
+      "exr_41n2hPS22iNkCPxk",
+      "exr_41n2hotsZBjerTjT",
+      "exr_41n2hZmmGdP9aPxi",
+      "exr_41n2hUugphN9GCZ1",
+      "exr_41n2hrbgchqWRWbX",
+      "exr_41n2hbT8shLJoTce",
+      "exr_41n2hNcQ7mMyhurg"
+    ]
+  }
+}

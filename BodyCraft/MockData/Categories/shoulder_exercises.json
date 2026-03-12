@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "data": [
+    {
+      "exerciseId": "exr_41n2hZqkvM55qJve",
+      "name": "Shoulder Stretch Behind the Back",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/wlBqBIBrCS.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hJ5Harig7K7F",
+      "name": "Seated Shoulder Flexor Depresor Retractor Stretch",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/FIQG6bbnXn.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hs6camM22yBG",
+      "name": "Seated Shoulder Press",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/bQUAOjC7qA.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hw4iksLYXESz",
+      "name": "Seated Shoulder Flexor Depresor Retractor Stretch Bent Knee",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/DbYTA0rvWJ.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hWQVZanCB1d7",
+      "name": "Circles Arm",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/TrP6PnRn1m.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hMRXm49mM62z",
+      "name": "Arnold Press",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/L0IHjzfG7P.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hTkfLWpc57BQ",
+      "name": "Body-Up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/wOyxNsN3Px.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hnAGfMhp95LQ",
+      "name": "Shoulder Tap Push-up",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/yNystoPkKh.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hUBVSgXaKhau",
+      "name": "Standing Arms Circling ",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/2rCXHeJmIA.jpg"
+    },
+    {
+      "exerciseId": "exr_41n2hjuGpcex14w7",
+      "name": "Lateral Raise",
+      "imageUrl": "https://cdn.exercisedb.dev/media/w/images/qODXfaAVcz.jpg"
+    }
+  ]
+}

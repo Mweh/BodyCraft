@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hqfZb8UHBvB9",
+    "name": "Alternate Lying Floor Leg Raise ",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/F13NYUkmzS.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/g7lQ1C6Ji0.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/F13NYUkmzS.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/gs5pKOiib4.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/NTQTdqg2eq.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["HIPS", "WAIST"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["RECTUS ABDOMINIS", "ILIOPSOAS"],
+    "secondaryMuscles": [
+      "SARTORIUS",
+      "ADDUCTOR BREVIS",
+      "ADDUCTOR MAGNUS",
+      "QUADRICEPS",
+      "TENSOR FASCIAE LATAE",
+      "PECTINEUS",
+      "OBLIQUES",
+      "ADDUCTOR LONGUS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/9mKjO63/41n2hqfZb8UHBvB9__Alternate-Lying-Floor-Leg-Raise-(male)_Waist.mp4",
+    "keywords": [
+      "Bodyweight leg raise exercise",
+      "Hips and waist workout",
+      "Alternate lying leg raise",
+      "Bodyweight exercise for hips",
+      "Home workout for waist",
+      "Leg raise for hip strength",
+      "Floor leg raise exercise",
+      "Strengthen waist with leg raise",
+      "Bodyweight workout for hips and waist",
+      "Alternate lying floor exercise for hips"
+    ],
+    "overview": "The Alternate Lying Floor Leg Raise is a beneficial exercise that primarily targets the lower abdominal muscles and hip flexors, helping to strengthen the core and improve balance. This exercise is suitable for both beginners and advanced fitness enthusiasts as it can be easily modified to match individual strength levels. Individuals may want to incorporate this exercise into their routine to enhance core stability, improve posture, and aid in daily movements or other athletic performances.",
+    "instructions": [
+      "Lift one leg off the ground, keeping it straight, until it forms a 90-degree angle with your body.",
+      "Hold this position for a few seconds, then slowly lower your leg back down to the floor.",
+      "Repeat the same movement with your other leg, keeping your lower back pressed against the floor throughout the exercise.",
+      "Continue alternating between both legs for the desired number of repetitions, ensuring your movements are controlled and deliberate."
+    ],
+    "exerciseTips": [
+      "Controlled Movement: When raising your leg, do so in a slow and controlled manner. Avoid the common mistake of using momentum to lift your leg, as this can lead to lower back strain and reduces the effectiveness of the exercise on your abdominal muscles.",
+      "Keep Your Lower Back Pressed Down: A common mistake is arching the lower back off the floor, which can cause back pain and injury. To avoid this, keep your lower back pressed firmly against the floor during the entire movement. You can achieve this by engaging your core and imagining you're trying to press your belly button down to the floor.",
+      "Full Range of Motion: Ensure that you're using a full range of motion by lowering your leg as far"
+    ],
+    "variations": [
+      "Double Leg Floor Raise: Instead of alternating legs, you raise both legs simultaneously, which increases the challenge to your core muscles.",
+      "Weighted Leg Floor Raise: In this variation, you wear ankle weights or hold a dumbbell between your feet, adding resistance to make the exercise more challenging.",
+      "Bent-Knee Floor Raise: Instead of keeping your legs straight, you bend your knees as you raise your legs. This can be easier on your lower back.",
+      "Elevated Lying Floor Leg Raise: This variation involves doing the exercise on an incline bench or with your hips elevated on a block or step, which increases the range of motion and the challenge to your core muscles."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2htH3Th9VjnCS",
+      "exr_41n2hkB3FeGM3DEL",
+      "exr_41n2hc4gTtrPRRpm",
+      "exr_41n2hfhWpzMi7tUj",
+      "exr_41n2hkHNZ15gRLmf",
+      "exr_41n2hUZz3h5rmhcX",
+      "exr_41n2hpkrKu12CTHM",
+      "exr_41n2hpDWoTxocW8G",
+      "exr_41n2haz32UoCRUP9",
+      "exr_41n2hsQb6QRUmi3Q"
+    ]
+  }
+}

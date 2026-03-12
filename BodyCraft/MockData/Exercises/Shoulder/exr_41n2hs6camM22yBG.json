@@ -1,0 +1,74 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hs6camM22yBG",
+    "name": "Seated Shoulder Press",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/bQUAOjC7qA.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/JjByB2dvG5.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/bQUAOjC7qA.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/nccdcePHHZ.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/BkHOAHTiSi.jpg"
+    },
+    "equipments": [
+      "DUMBBELL"
+    ],
+    "bodyParts": [
+      "SHOULDERS"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "ANTERIOR DELTOID"
+    ],
+    "secondaryMuscles": [
+      "PECTORALIS MAJOR CLAVICULAR HEAD",
+      "TRICEPS BRACHII",
+      "SERRATUS ANTERIOR",
+      "LATERAL DELTOID"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/fe5R356/41n2hs6camM22yBG__Dumbbell-Seated-Shoulder-Press_Shoulders_.mp4",
+    "keywords": [
+      "Dumbbell Shoulder Press Exercise",
+      "Seated Dumbbell Press Workout",
+      "Shoulder Strengthening Exercises",
+      "Dumbbell Exercises for Shoulders",
+      "Seated Shoulder Press Routine",
+      "Workout for Strong Shoulders",
+      "Upper Body Dumbbell Exercise",
+      "Seated Dumbbell Shoulder Press",
+      "Shoulder Muscle Building Exercise",
+      "Fitness Routine for Shoulder Press"
+    ],
+    "overview": "The Seated Shoulder Press is a highly effective upper body exercise that targets the deltoids, triceps, and upper pectoral muscles, promoting improved strength and muscle tone. It is suitable for individuals at all fitness levels, from beginners to advanced athletes, as the weight can be easily adjusted to match the user's capabilities. People would want to do this exercise to enhance their shoulder strength, improve upper body stability, and contribute to a well-rounded fitness routine.",
+    "instructions": [
+      "Keeping your back pressed firmly against the bench and your feet flat on the floor, push the dumbbells upward until your arms are fully extended, but do not lock your elbows.",
+      "Hold this position for a moment, making sure to keep your core engaged and your shoulders down to avoid straining your neck.",
+      "Slowly lower the dumbbells back to the starting position at shoulder level, ensuring that you control the movement rather than letting the weights drop.",
+      "Repeat this movement for your desired number of repetitions, maintaining proper form throughout."
+    ],
+    "exerciseTips": [
+      "Proper Hand Position: Your hands should be slightly wider than shoulder-width apart. Avoid gripping the bar too wide or too narrow, as this can strain the shoulders and limit the effectiveness of the exercise.",
+      "Controlled Movement: Lift and lower the weights in a slow, controlled manner. Avoid jerking the weights or using momentum to lift them, as this can lead to injury and reduces the effectiveness of the exercise.",
+      "Avoid Locking Elbows: When you press the weights up, avoid locking your elbows at the top of the movement. This can put unnecessary strain on the joints and lead to injury.",
+      "Breathing Technique: Breathe in as you lower the weights and breathe out as you lift"
+    ],
+    "variations": [
+      "The Arnold Press is another variation of the Seated Shoulder Press, named after Arnold Schwarzenegger, which involves a rotation of the wrists to engage different parts of the shoulder muscles.",
+      "The Behind the Neck Press is a variation where the barbell is lowered behind the head rather than in front, targeting the shoulders from a different angle.",
+      "The Seated Military Press is a variation where the back is not supported by the bench, requiring more core stability and engagement.",
+      "The Single-Arm Shoulder Press is a unilateral exercise where you press one dumbbell at a time, helping to address any strength imbalances between the two shoulders."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hg2EW2vqA49E",
+      "exr_41n2hrC1fibtBTWi",
+      "exr_41n2hJxaXp4eS2qe",
+      "exr_41n2hV1jpU9x2PdD",
+      "exr_41n2hqDDDF84tJnc",
+      "exr_41n2hxKdhu1D9YPn",
+      "exr_41n2hyDbgXP2TsbK",
+      "exr_41n2hUBYNkZvFUGh",
+      "exr_41n2hbBLUzniACWa",
+      "exr_41n2hef6moGG5gHa"
+    ]
+  }
+}

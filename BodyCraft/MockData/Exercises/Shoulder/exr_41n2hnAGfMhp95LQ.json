@@ -1,0 +1,77 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hnAGfMhp95LQ",
+    "name": "Shoulder Tap Push-up",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/yNystoPkKh.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/7jzITpactH.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/yNystoPkKh.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/TorHUAHtcN.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/nhH5w13Kd0.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "SHOULDERS",
+      "TRICEPS",
+      "CHEST",
+      "BICEPS"
+    ],
+    "exerciseType": "PLYOMETRICS",
+    "targetMuscles": [
+      "ANTERIOR DELTOID",
+      "RECTUS ABDOMINIS",
+      "SERRATUS ANTERIOR",
+      "STERNOCLEIDOMASTOID"
+    ],
+    "secondaryMuscles": [
+      "TENSOR FASCIAE LATAE",
+      "WRIST FLEXORS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/sJ2rRbJ/41n2hnAGfMhp95LQ__Shoulder-Tap-Push-up_Plyometrics.mp4",
+    "keywords": [
+      "Body weight exercises",
+      "Plyometric workouts",
+      "Shoulder Tap Push-up tutorial",
+      "How to do Shoulder Tap Push-ups",
+      "Exercises for upper body strength",
+      "Plyometric push-up variations",
+      "Bodyweight shoulder exercises",
+      "Shoulder Tap Push-up benefits",
+      "Advanced push-up techniques",
+      "No-equipment home workouts"
+    ],
+    "overview": "The Shoulder Tap Push-up is a dynamic exercise that strengthens the chest, arms, shoulders, and core, while also improving balance and coordination. It is ideal for individuals at an intermediate fitness level who are looking to add variety and challenge to their usual push-up routine. People may want to incorporate this exercise into their workout regimen to enhance upper body strength, boost core stability, and improve overall body control.",
+    "instructions": [
+      "Lower your body towards the floor in a controlled manner as if you are performing a regular push-up, keeping your body in a straight line from head to heels.",
+      "As you push your body back up to the plank position, lift your right hand off the ground and tap your left shoulder.",
+      "Place your right hand back on the ground and then lower your body again for another push-up.",
+      "After pushing back up, lift your left hand off the ground and tap your right shoulder, completing one repetition. Repeat these steps for your desired number of reps."
+    ],
+    "exerciseTips": [
+      "Controlled Movement: While performing the shoulder tap push-up, make sure to tap your shoulder gently with the opposite hand without twisting your hips. Many people make the mistake of rushing through the movement, but it's essential to maintain control throughout to engage the correct muscles and prevent injury.",
+      "Core Engagement: Engaging your core is key in this exercise. It helps stabilize your body and prevent your hips from swaying side to side. A common mistake is to neglect the core and focus only on the arm movement. This can lead to an ineffective workout and potential back injury.",
+      "Breathing Technique"
+    ],
+    "variations": [
+      "The Decline Shoulder Tap Push-up is another variation where your feet are placed on an elevated surface, increasing the difficulty and targeting your upper chest and shoulders more.",
+      "The Single-Leg Shoulder Tap Push-up is a variation that involves lifting one leg off the ground while performing the exercise, which increases core engagement and balance requirements.",
+      "The Wide-Grip Shoulder Tap Push-up is a variation where your hands are placed wider than shoulder-width apart, emphasizing your chest muscles more.",
+      "The Narrow-Grip Shoulder Tap Push-up is another variation where your hands are placed closer together, focusing more on your triceps and shoulders."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hUVNhvcS73Dt",
+      "exr_41n2hTX5A3W9iQQm",
+      "exr_41n2hPNkeJc2fRyh",
+      "exr_41n2hjBTx7RJ67zc",
+      "exr_41n2hUvsdby53nWr",
+      "exr_41n2hntzpVH3UTtS",
+      "exr_41n2hVAZdjT7FcXH",
+      "exr_41n2hhAq2w5fGN9U",
+      "exr_41n2hwio5ECAfLuS",
+      "exr_41n2heJSYEx8Lx7h"
+    ]
+  }
+}

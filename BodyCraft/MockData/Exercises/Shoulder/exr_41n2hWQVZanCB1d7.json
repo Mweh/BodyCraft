@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hw4iksLYXESz",
+    "name": "Seated Shoulder Flexor Depresor Retractor Stretch Bent Knee",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/DbYTA0rvWJ.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/0cExIsgvAl.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/DbYTA0rvWJ.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/IMzO7OmP7M.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/6Q7KB3Nlho.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "CHEST",
+      "SHOULDERS"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "PECTORALIS MAJOR CLAVICULAR HEAD",
+      "ANTERIOR DELTOID"
+    ],
+    "secondaryMuscles": [
+      "BICEPS BRACHII"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/rgy6mEx/41n2hw4iksLYXESz__Seated-Shoulder-Flexor-Depresor-Retractor-Stretch-Bent-Knee-(female)_Shoulders.mp4",
+    "keywords": [
+      "Body weight shoulder exercise",
+      "Chest and shoulder stretching",
+      "Bent knee shoulder stretch",
+      "Depresor retractor exercise",
+      "Flexor stretch workout",
+      "Body weight chest stretch",
+      "Seated shoulder exercise",
+      "Shoulder flexor workout",
+      "Bent knee chest exercise",
+      "Depresor retractor shoulder stretch."
+    ],
+    "overview": "The Seated Shoulder Flexor Depressor Retractor Stretch Bent Knee exercise is a beneficial fitness activity that primarily targets the shoulder and upper back muscles, improving flexibility and reducing muscle tension. It's ideal for individuals who engage in high-intensity workouts, office workers with sedentary jobs, or those who experience frequent shoulder and back discomfort. By incorporating this exercise into their routine, individuals can help correct their posture, alleviate muscle strain, and enhance overall upper body strength and mobility.",
+    "instructions": [
+      "Seated Shoulder Stretch: Sit up straight in a chair. Bring your left arm across your body and hold it with your right arm just above the elbow. Hold for 15-30 seconds, then switch sides.",
+      "Shoulder Depressor (Scapular Depression): Stand tall with your arms by your sides. Without bending your arms, try to lower your shoulders down towards the ground as far as possible, then raise them up as high as possible.",
+      "Shoulder Retraction: Stand or sit with your back straight. Pull your shoulders back as if you're trying to make your shoulder blades"
+    ],
+    "exerciseTips": [
+      "Controlled Movements: Avoid rushing through the movements. Performing the stretch slowly and with control will help to prevent injury and ensure that you are effectively targeting the shoulder muscles.",
+      "Range of Motion: One common mistake is not using the full range of motion. Aim to stretch your shoulder as far as comfortably possible to maximize the benefits of the exercise. However, avoid forcing the stretch to the point of pain.",
+      "Regular Breathing: Remember to breathe regularly throughout the exercise. Holding your breath can cause tension in your muscles, which may hinder the effectiveness of the stretch.",
+      "Frequency: This stretch should be performed regularly for the"
+    ],
+    "variations": [
+      "The Seated Shoulder Extensor Elevator Protractor Stretch Bent Knee: This variation involves changing the direction of the shoulder movement, focusing on the extensors, elevators, and protractors instead of the flexors, depressors, and retractors.",
+      "The Seated Shoulder Flexor Depressor Retractor Stretch Straight Knee: This version involves keeping your knee straight instead of bent, which can intensify the stretch and engage different muscles in your legs.",
+      "The Lying Down Shoulder Flexor Depressor Retractor Stretch Bent Knee: In this variation, you perform the stretch while lying down, which can make it easier for some people and reduce strain on the lower back.",
+      "The Seated Shoulder Flexor Depressor Retractor Stretch Bent Knee"
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2huXeEFSaqo4G",
+      "exr_41n2hUBVSgXaKhau",
+      "exr_41n2hSq88Ni3KCny",
+      "exr_41n2hynD9srC1kY7",
+      "exr_41n2hTYChGwN78Ah",
+      "exr_41n2hUhKDUkxTh4E",
+      "exr_41n2hVnfNMgATize",
+      "exr_41n2hnVUkTqJLuPx",
+      "exr_41n2hrUhCsCRC2yN",
+      "exr_41n2hV79fHH3H9ML"
+    ]
+  }
+}

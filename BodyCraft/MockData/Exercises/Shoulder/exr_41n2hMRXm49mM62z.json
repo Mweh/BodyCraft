@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hMRXm49mM62z",
+    "name": "Arnold Press",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/L0IHjzfG7P.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/4FV9Sfw8CY.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/L0IHjzfG7P.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/khhzZF6U34.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/vgRQK52Tnw.jpg"
+    },
+    "equipments": [
+      "DUMBBELL"
+    ],
+    "bodyParts": [
+      "SHOULDERS"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "ANTERIOR DELTOID"
+    ],
+    "secondaryMuscles": [
+      "TRICEPS BRACHII",
+      "LATERAL DELTOID",
+      "SERRATUS ANTERIOR"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/08ys3e3/41n2hMRXm49mM62z__Dumbbell-Arnold-Press-II_Shoulders.mp4",
+    "keywords": [
+      "Arnold Dumbbell Press",
+      "Shoulder Strengthening Exercises",
+      "Arnold Press Workout",
+      "Dumbbell Exercises for Shoulders",
+      "Arnold Shoulder Press",
+      "Bodybuilding Shoulder Workouts",
+      "Arnold Schwarzenegger Shoulder Exercise",
+      "How to do Arnold Press",
+      "Dumbbell Arnold Press Technique",
+      "Fitness Routine for Shoulder Muscles"
+    ],
+    "overview": "The Arnold Press is a versatile shoulder exercise that targets multiple muscles, promoting upper body strength and improved shoulder mobility. It's suitable for anyone from beginners to advanced fitness enthusiasts, offering modifications to cater to all fitness levels. People would want to perform this exercise not only to enhance their physical aesthetics, but also to improve their functional fitness, aiding in everyday activities and preventing shoulder injuries.",
+    "instructions": [
+      "Raise the dumbbells to shoulder height, then rotate your palms so they are facing forward.",
+      "Push the dumbbells upward until your arms are fully extended above your head.",
+      "Slowly lower the dumbbells back to shoulder height while rotating your palms to face your body again.",
+      "This completes one rep; repeat the process for your desired number of repetitions."
+    ],
+    "exerciseTips": [
+      "Controlled Movements: Avoid rushing through the movements. The Arnold Press should be performed slowly and controlled, both when lifting and lowering the weights. This not only ensures the targeted muscles are fully engaged, but also reduces the risk of injury.",
+      "Right Weight: Select a weight that is challenging but manageable. Using weights that are too heavy can lead to improper form and increase the risk of injury. On the other hand, weights that are too light might not provide enough resistance to effectively work the muscles.",
+      "Breathing Technique: Remember to breathe correctly. Inhale as you lower the weights"
+    ],
+    "variations": [
+      "Single-Arm Arnold Press: This variation is done by lifting one arm at a time, which helps to isolate and focus on each shoulder independently.",
+      "Standing Arnold Press: In this variation, the exercise is performed while standing, which requires more balance and engages the core muscles.",
+      "Alternating Arnold Press: This variation involves alternating between lifting the right and left dumbbells, which can help to improve coordination and balance.",
+      "Incline Arnold Press: This variation is performed on an incline bench, which targets the shoulder muscles from a different angle and can help to increase the range of motion."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hqBuTxvTWdaR",
+      "exr_41n2hHvaoaxzofoC",
+      "exr_41n2hzHyacL21TgE",
+      "exr_41n2hrbvL2DyjNkU",
+      "exr_41n2hHg8saAfvZSn",
+      "exr_41n2hgwk2tTmMCiB",
+      "exr_41n2hrC68sfKX8jC",
+      "exr_41n2hrF9tpS3TzMk",
+      "exr_41n2hnJphf3J99Vn",
+      "exr_41n2hGoCsXngMeQC"
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hXXpvbykPY3q",
+    "name": "Incline Push-up",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/CnQLzYUncF.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/KBwo3Xb0VW.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/CnQLzYUncF.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/NpOXHamL56.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/0e78D5xZAs.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "CHEST"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "PECTORALIS MAJOR STERNAL HEAD"
+    ],
+    "secondaryMuscles": [
+      "ANTERIOR DELTOID",
+      "PECTORALIS MAJOR CLAVICULAR HEAD",
+      "TRICEPS BRACHII"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/nQSzfrK/41n2hXXpvbykPY3q__Incline-Push-up_Chest.mp4",
+    "keywords": [
+      "Bodyweight chest exercise",
+      "Incline push-up workout",
+      "Upper chest bodyweight exercise",
+      "Incline push-up technique",
+      "Chest strengthening exercises",
+      "Home workout for chest",
+      "No-equipment chest workout",
+      "Incline push-up form",
+      "Bodyweight exercise for upper chest",
+      "Incline push-up benefits"
+    ],
+    "overview": "The Incline Push-up is a strength-building exercise that primarily targets the chest, shoulders, and triceps, while also engaging the core and lower body. It's an ideal workout for beginners or those with limited upper body strength, as the incline position reduces the amount of body weight one has to lift. People would want to incorporate this exercise into their routine to build upper body strength, improve posture, and enhance overall body stability.",
+    "instructions": [
+      "Step back and extend your legs so your body forms a straight line from your head to your heels, this is your starting position.",
+      "Lower your body towards the bench by bending your elbows, keeping your body straight and your elbows close to your body.",
+      "Push your body back up to the starting position by straightening your arms, ensuring that you maintain a straight body line.",
+      "Repeat this motion for your desired number of repetitions, making sure to keep your core engaged and your body straight throughout the exercise."
+    ],
+    "exerciseTips": [
+      "Maintain Body Alignment: One common mistake is sagging of the hips or hiking them up too high. Your body should form a straight line from your head to your heels throughout the entire movement. Engage your core and squeeze your glutes to help maintain this alignment.",
+      "Controlled Movement: Lower your chest towards the bench by bending your elbows. Keep your elbows close to your body for more triceps engagement, or flare them out to target your chest more. Avoid dropping down too quickly; the lowering phase should be slow and controlled.",
+      "Full Range of Motion: Push your body away from the bench until your arms are fully extended,"
+    ],
+    "variations": [
+      "The Close Grip Incline Push-Up is another variation where the hands are placed closer together, focusing more on the triceps and inner chest muscles.",
+      "The Single Leg Incline Push-Up adds a balance challenge to the exercise by lifting one leg off the ground during the push-up.",
+      "The Incline Plyometric Push-Up involves pushing up explosively from the elevated surface so that your hands leave the surface, adding a cardio and power element to the workout.",
+      "The Incline Spiderman Push-Up is a more advanced variation where you bring one knee to the elbow on the same side while performing the push-up, engaging the core and obliques."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hqap5cDijntQ",
+      "exr_41n2hWgAAtQeA3Lh",
+      "exr_41n2hxyrhMyqxuQd",
+      "exr_41n2hNXJadYcfjnd",
+      "exr_41n2hxzbkoomfKi7",
+      "exr_41n2hZhRR2KnBSyJ",
+      "exr_41n2hKRhDs61Yc6i",
+      "exr_41n2hupUV49WrM5J",
+      "exr_41n2hd5CNeDNYVyN",
+      "exr_41n2hpqATXAghbPT"
+    ]
+  }
+}

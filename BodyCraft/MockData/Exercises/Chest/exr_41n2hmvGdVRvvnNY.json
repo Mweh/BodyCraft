@@ -1,0 +1,74 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hmvGdVRvvnNY",
+    "name": "Pike Push up ",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/NPtWT9FuRZ.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/G9oHSQmo6c.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/NPtWT9FuRZ.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/QLpQtt6343.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/5ee8opd7tD.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "CHEST"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "PECTORALIS MAJOR CLAVICULAR HEAD",
+      "PECTORALIS MAJOR STERNAL HEAD"
+    ],
+    "secondaryMuscles": [
+      "LATERAL DELTOID",
+      "SERRATUS ANTERIOR",
+      "ANTERIOR DELTOID",
+      "TRICEPS BRACHII"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/db52igZ/41n2hmvGdVRvvnNY__Pike-Push-up-(on-Bench)-(VERSION-2)_Chest.mp4",
+    "keywords": [
+      "Pike Push Up Workout",
+      "Bodyweight Chest Exercise",
+      "Pike Push Up Tutorial",
+      "Home Chest Workout",
+      "No Equipment Chest Exercise",
+      "Pike Push Up Benefits",
+      "How to do Pike Push Ups",
+      "Bodyweight Fitness Routine",
+      "Chest Strengthening Exercises",
+      "Advanced Bodyweight Exercise"
+    ],
+    "overview": "The Pike Push Up is an upper body exercise that primarily targets the shoulders, chest, and upper back, offering a higher intensity workout than regular push ups. It's suitable for individuals at an intermediate fitness level who are looking to enhance their strength, flexibility, and muscle definition. Someone would want to do it because it not only improves physical strength but also enhances core stability and balance, without requiring any gym equipment.",
+    "instructions": [
+      "Lift your hips and push your body back into a downward dog yoga position, where your body forms an inverted V shape, with your head between your shoulders.",
+      "Lower your upper body towards the ground by bending your elbows, keeping your head down and your hips high, until your head nearly touches the floor.",
+      "Push your body back up to the starting position, extending your elbows and using your shoulders and upper body strength.",
+      "Repeat the exercise for your desired number of repetitions, ensuring to maintain the correct form throughout."
+    ],
+    "exerciseTips": [
+      "Avoid Hyperextension: A common mistake is to hyperextend the elbows when pushing back up. This can lead to strain or injury. Make sure to keep a slight bend in your elbows even at the top of the movement.",
+      "Head Position: Make sure your head is in a neutral position during the exercise. Avoid straining your neck by looking forward or tucking your chin into your chest. Instead, focus your gaze slightly ahead of your hands on the floor.",
+      "Controlled Movement: It's essential to perform each rep with control, lowering"
+    ],
+    "variations": [
+      "One-Leg Pike Push-Up: This variation requires you to lift one leg off the ground while performing the push-up, challenging your balance and core strength.",
+      "Wide-Hand Pike Push-Up: In this variation, your hands are placed wider than shoulder-width apart, which targets your chest and shoulders to a greater extent.",
+      "Close-Hand Pike Push-Up: This variation involves placing your hands closer together, which increases the focus on your triceps and shoulders.",
+      "Pike Push-Up with Sliders: For this variation, you'll need a pair of sliders or towels. Place your feet on the sliders and slide back and forth as you perform the push-up, increasing the challenge to your core and upper body."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hYqXyCN2J8bo",
+      "exr_41n2hGUso7JFmuYR",
+      "exr_41n2hgpsLEy9h2cM",
+      "exr_41n2hVVjksUqMkeS",
+      "exr_41n2hKNAJK7irMJY",
+      "exr_41n2hZQ1yPVGNnWW",
+      "exr_41n2hgKXPDR2U3u9",
+      "exr_41n2hYZ6LrFfUzLw",
+      "exr_41n2hkDh1eLdSnRD",
+      "exr_41n2hodp8w3N4wZK"
+    ]
+  }
+}

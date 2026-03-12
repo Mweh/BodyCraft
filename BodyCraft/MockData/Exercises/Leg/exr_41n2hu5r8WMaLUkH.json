@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hu5r8WMaLUkH",
+    "name": "Seated Straight Leg Calf Stretch",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/lnyRErycIc.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/y63EHZS8om.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/lnyRErycIc.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/E2TiygxnDI.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/3gmIqIgRVl.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "CALVES"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "GASTROCNEMIUS"
+    ],
+    "secondaryMuscles": [
+      "SOLEUS",
+      "HAMSTRINGS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/lsVjiZm/41n2hu5r8WMaLUkH__Seated-Straight-Leg-Calf-Stretch-(female)_Calves_.mp4",
+    "keywords": [
+      "Bodyweight calf exercise",
+      "Seated calf stretch",
+      "Straight leg calf workout",
+      "Bodyweight leg stretch",
+      "Seated leg exercises",
+      "Calves workout at home",
+      "No-equipment calf exercise",
+      "Seated straight leg stretch",
+      "Bodyweight exercises for calves",
+      "Straight leg calf stretch routine"
+    ],
+    "overview": "The Seated Straight Leg Calf Stretch is an effective exercise that primarily targets the muscles in your lower legs, improving flexibility and reducing the risk of injuries. It is suitable for individuals of all fitness levels, including athletes, seniors, and those recovering from lower leg or foot injuries. By incorporating this exercise into their routine, individuals can enhance their athletic performance, promote muscle balance, and improve daily functional movements, such as walking or climbing stairs.",
+    "instructions": [
+      "Reach out with your hands and try to touch your toes, keeping your legs straight.",
+      "If you can't reach your toes, use a towel or resistance band by placing it around the balls of your feet and holding each end.",
+      "Pull gently on the towel or band, drawing your toes towards your body, until you feel a stretch in your calves.",
+      "Hold this position for about 30 seconds, then release and repeat for several rounds."
+    ],
+    "exerciseTips": [
+      "Flex Your Feet: Point your toes towards your body to intensify the stretch. This is where many people make a mistake. They either point their toes away or don't engage their feet at all. Flexing your feet is what stretches the calf muscles.",
+      "Use a Towel or Resistance Band: If you can't reach your toes with your hands, use a towel or resistance band. Loop it around the ball of your foot and gently pull it towards you. This will help to deepen the stretch without straining your back or neck.",
+      "Don't Bounce: Avoid the temptation to bounce or jerk your foot towards you in an attempt to deepen the stretch. This can lead to muscle strain or injury. Instead, maintain a"
+    ],
+    "variations": [
+      "Downward Dog Calf Stretch: This yoga pose involves placing your hands and feet on the ground with your hips raised, and then pressing one heel down at a time to stretch each calf.",
+      "Stair Calf Stretch: This involves standing on a step with your heels hanging off the edge, and then lowering your heels to stretch your calves.",
+      "Seated Calf Stretch with a Resistance Band: In this variation, you sit with your legs extended, wrap a resistance band around your foot, and gently pull the band towards you to stretch your calf.",
+      "Foam Roller Calf Stretch: This involves sitting on the floor with a foam roller under your lower leg and gently rolling back and forth to stretch your calf muscles."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hkbmFVRYEF17",
+      "exr_41n2hZs85h7MQxXJ",
+      "exr_41n2hzcPQts6oxsk",
+      "exr_41n2hrUeedrMjx1T",
+      "exr_41n2hJsKP4vLt3jv",
+      "exr_41n2hwKsmpo2mHYj",
+      "exr_41n2hRH4aTB379Tp",
+      "exr_41n2hbLex1GXPm3T",
+      "exr_41n2hPhoKgLfBtmR",
+      "exr_41n2hGyNEn2Gv3PE"
+    ]
+  }
+}

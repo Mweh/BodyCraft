@@ -1,0 +1,77 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hZqkvM55qJve",
+    "name": "Shoulder Stretch Behind the Back",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/wlBqBIBrCS.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/fuIS6KugZq.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/wlBqBIBrCS.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/YC3ItXYQuU.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/wvunqGwM55.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "SHOULDERS"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "POSTERIOR DELTOID"
+    ],
+    "secondaryMuscles": [
+      "TRAPEZIUS LOWER FIBERS",
+      "TERES MAJOR",
+      "LATISSIMUS DORSI",
+      "TRICEPS BRACHII",
+      "INFRASPINATUS",
+      "TERES MINOR",
+      "TRAPEZIUS MIDDLE FIBERS"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/M5oc4Uj/41n2hZqkvM55qJve__Shoulder-Stretch-Behind-the-Back_Shoulders.mp4",
+    "keywords": [
+      "Body weight shoulder stretch",
+      "Behind the back shoulder exercise",
+      "Shoulder stretching workout",
+      "Bodyweight exercise for shoulders",
+      "Shoulder flexibility exercise",
+      "Home workout for shoulder stretch",
+      "No equipment shoulder exercise",
+      "Shoulder stretch without weights",
+      "Improving shoulder mobility",
+      "Exercise for tight shoulders"
+    ],
+    "overview": "The Shoulder Stretch Behind the Back is a simple yet effective exercise that aids in improving flexibility and range of motion in the shoulders, while also reducing tension and stress in the upper body. It is suitable for individuals of all fitness levels, especially those who often experience shoulder or upper back discomfort due to prolonged sitting or poor posture. By incorporating this stretch into their routine, individuals can enhance their overall shoulder health, improve their posture, and reduce the risk of shoulder-related injuries.",
+    "instructions": [
+      "Extend one arm out straight, then bend it at the elbow and reach it behind your head and down your back as far as you can.",
+      "With your other arm, reach behind your back and try to grab the fingers of your extended arm.",
+      "Once you've clasped your fingers, gently pull the top arm downwards to deepen the stretch, holding for 15-30 seconds.",
+      "Release the stretch, switch arms, and repeat the process."
+    ],
+    "exerciseTips": [
+      "Don't Force the Stretch: Avoid pulling or forcing your arm further than it can comfortably go. This can lead to muscle strain or injury. Instead, gently increase the stretch until you feel a mild tension, and hold it there. Over time, your flexibility will improve naturally.",
+      "Keep Your Shoulders Down: Another common mistake is raising the shoulders towards the ears during the stretch. Ensure your shoulders are relaxed and down to avoid unnecessary strain on your neck.",
+      "Control Your Breathing: Proper breathing is crucial for any stretching exercise. Breathe in deeply and exhale as you deepen the stretch. This helps to relax the muscles and further increase your range of motion.",
+      "Symmetry is Important: Make"
+    ],
+    "variations": [
+      "The Seated Shoulder Stretch: In this variation, you sit on a chair with your back straight and perform the stretch, which can help to stabilize your core and focus the stretch on your shoulders.",
+      "The Lying Down Shoulder Stretch: This variation is done lying flat on your back, which can provide a deeper stretch and help to align your spine.",
+      "The Wall Shoulder Stretch: This involves standing against a wall and moving your arms up and down in a 'snow angel' motion while keeping your hands in contact with the wall, which can help to increase the range of motion in your shoulders.",
+      "The Towel Shoulder Stretch: For this variation, you hold a towel between your hands behind your back, which can provide a deeper stretch and help those with limited flexibility"
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hpFf828QCKMn",
+      "exr_41n2hRNoQajQw6k6",
+      "exr_41n2hZYDSorE8LWJ",
+      "exr_41n2hWHVUDVV6Q1Z",
+      "exr_41n2hnzPWWhoALKc",
+      "exr_41n2hYvUD5PXmHTY",
+      "exr_41n2hoT98xzGkqyV",
+      "exr_41n2hxnTiPSBFNmm",
+      "exr_41n2hikgVe3QaZfK",
+      "exr_41n2hvQzahztqdLA"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hadQgEEX8wDN",
+    "name": "Triceps Dip",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/MruSDlnk0M.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/Y8HHblPWRu.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/MruSDlnk0M.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/j7hJQXOSXN.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/XXIfjNLhcq.jpg"
+    },
+    "equipments": ["BODY WEIGHT"],
+    "bodyParts": ["TRICEPS", "UPPER ARMS"],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": ["TRICEPS BRACHII"],
+    "secondaryMuscles": [
+      "PECTORALIS MAJOR STERNAL HEAD",
+      "PECTORALIS MAJOR CLAVICULAR HEAD",
+      "ANTERIOR DELTOID",
+      "LATISSIMUS DORSI",
+      "LEVATOR SCAPULAE"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/gGHzijt/41n2hadQgEEX8wDN__Triceps-Dip_Upper-Arms_.mp4",
+    "keywords": [
+      "Triceps Dip Workout",
+      "Bodyweight Tricep Exercises",
+      "Upper Arm Toning Exercises",
+      "Bodyweight Dips",
+      "Triceps Strengthening",
+      "Arm Muscle Workout",
+      "Upper Body Bodyweight Exercise",
+      "Tricep Dip Training",
+      "Home Triceps Workout",
+      "Arm Toning Bodyweight Exercises"
+    ],
+    "overview": "The Triceps Dip is a bodyweight exercise that primarily strengthens the triceps muscles, while also engaging the shoulders, chest, and upper back. It is suitable for individuals at all fitness levels, including beginners, due to its adjustable intensity. People would want to do this exercise as it improves upper body strength, enhances muscle tone, and can be done anywhere with minimal equipment.",
+    "instructions": [
+      "Slowly lower your body by bending your elbows while keeping them close to your body until your upper arms are parallel to the ground.",
+      "Hold this position for a moment, ensuring your back is close to the bar and your shoulders are down.",
+      "Push your body back up to the starting position by extending your arms, but don't lock your elbows.",
+      "Repeat these steps for the desired number of repetitions, maintaining the proper form throughout."
+    ],
+    "exerciseTips": [
+      "Controlled Movement: As you lower your body, your elbows should be bent at a 90-degree angle. Avoid going too low as this can strain your shoulders. It's a common mistake to rush the exercise, but it's important to maintain a controlled, steady pace to maximize muscle engagement and prevent injury.",
+      "Keep Your Body Close: Your body should remain close to the bench or chair throughout the exercise. A common mistake is to move too far away, which can put unnecessary strain on your shoulders.",
+      "Engage Your Core: Keep your abdominal muscles tight during the exercise. This will help to stabilize your body and reduce the risk of back injury. Many people forget to engage their"
+    ],
+    "variations": [
+      "Straight Leg Dips: This version of the triceps dip involves keeping your legs straight out in front of you while performing the dip, increasing the difficulty and intensity of the exercise.",
+      "Weighted Dips: In this variation, you add extra weight to your body using a weight belt or a weighted vest, increasing the resistance and making the exercise more challenging.",
+      "Ring Dips: This is a more advanced variation where you use gymnastic rings or suspension straps instead of a stable surface, requiring more balance and core strength.",
+      "Single Leg Dips: This variation involves lifting one leg off the ground while performing the dip, challenging your balance and engaging your core muscles."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hoFGGwZDNFT1",
+      "exr_41n2hndkoGHD1ogh",
+      "exr_41n2hHH9bNfi98YU",
+      "exr_41n2hj9BnSmUu3Eo",
+      "exr_41n2hNJoa8pZ5XSy",
+      "exr_41n2hm6ArroHDETJ",
+      "exr_41n2hGVp2iKNQAda",
+      "exr_41n2hHPJc5GY5LBZ",
+      "exr_41n2hVcuaY9F3ukX",
+      "exr_41n2hHru39AiA5Dd"
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "data": {
+    "exerciseId": "exr_41n2hsSnmS946i2k",
+    "name": "Single Leg Squat with Support",
+    "imageUrl": "https://cdn.exercisedb.dev/media/w/images/cxJSiiWh9N.jpg",
+    "imageUrls": {
+      "360p": "https://cdn.exercisedb.dev/media/w/images/yQtv83ACEM.jpg",
+      "480p": "https://cdn.exercisedb.dev/media/w/images/cxJSiiWh9N.jpg",
+      "720p": "https://cdn.exercisedb.dev/media/w/images/cxwCFwUbgf.jpg",
+      "1080p": "https://cdn.exercisedb.dev/media/w/images/1W1kYQn09D.jpg"
+    },
+    "equipments": [
+      "BODY WEIGHT"
+    ],
+    "bodyParts": [
+      "THIGHS"
+    ],
+    "exerciseType": "STRENGTH",
+    "targetMuscles": [
+      "QUADRICEPS"
+    ],
+    "secondaryMuscles": [
+      "INFRASPINATUS",
+      "TENSOR FASCIAE LATAE",
+      "STERNOCLEIDOMASTOID"
+    ],
+    "videoUrl": "https://cdn.exercisedb.dev/w/videos/PrUuT18/41n2hsSnmS946i2k__Single-Leg-Squat-with-Support-(pistol)_Thighs_.mp4",
+    "keywords": [
+      "Body weight thigh exercises",
+      "Single leg squat variations",
+      "Supported one leg squat",
+      "Thigh strengthening workouts",
+      "Bodyweight exercises for thighs",
+      "Single leg squat with support tutorial",
+      "How to do supported single leg squats",
+      "Body weight exercises for leg toning",
+      "Single leg balance and squat exercises",
+      "Thigh targeted body weight workouts"
+    ],
+    "overview": "The Single Leg Squat with Support is a lower body exercise that targets the quadriceps, glutes, and hamstrings, while also improving balance and stability. This exercise is ideal for both beginners and advanced athletes, as it can be modified to suit different fitness levels. Individuals would want to incorporate this exercise into their routine to enhance leg strength, promote better body symmetry, and reduce the risk of injury in daily activities or sports.",
+    "instructions": [
+      "Shift your weight onto your left leg, and raise your right leg off the floor, extending it forward slightly.",
+      "Slowly bend your left knee, lowering your body as far as you can without losing balance, ensure your knee doesn't go past your toes.",
+      "Pause for a moment at the bottom of the squat, then push through your left foot to straighten your leg and return to the starting position.",
+      "Repeat this movement for the desired number of reps, then switch legs and do the same on the other side."
+    ],
+    "exerciseTips": [
+      "Controlled Movements: One common mistake is rushing through the exercise. Make sure to perform the movement slowly and with control, lowering yourself as far as you can comfortably go, then pushing back up to the starting position. This enhances muscle engagement and reduces the risk of injury.",
+      "Keep Core Engaged: Your core should be tight throughout the exercise. This will help you maintain balance and stability, especially since you're performing the exercise on a single leg. Avoid letting your torso lean too far forward or sideways as this can lead to an incorrect form and potential injury.",
+      ""
+    ],
+    "variations": [
+      "Bulgarian Split Squat: This variation involves placing the foot of your non-working leg on an elevated surface behind you and squatting down on your working leg.",
+      "Curtsy Squat: In this variation, you cross your non-working leg behind your working leg and squat down, mimicking the movement of a curtsy.",
+      "Box Squat: This involves squatting down on one leg onto a box or bench, then standing back up, providing support and helping to maintain form.",
+      "Skater Squat: This variation involves balancing on one leg and bending at the knee to lower your body, while extending your non-working leg behind you, mimicking the movement of a speed skater."
+    ],
+    "relatedExerciseIds": [
+      "exr_41n2hSMjcavNjk3c",
+      "exr_41n2hwGxwUWdwo6N",
+      "exr_41n2hGkh5nMq5T5t",
+      "exr_41n2hmKvBpAQCMaA",
+      "exr_41n2hWm9Vx8vu55K",
+      "exr_41n2ho1eE1adJAqD",
+      "exr_41n2hriJtXxi1fxo",
+      "exr_41n2hWckbDQVj2Td",
+      "exr_41n2hh5uEby4iRjw",
+      "exr_41n2hkLD9FjhJLJj"
+    ]
+  }
+}
