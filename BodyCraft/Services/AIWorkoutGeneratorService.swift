@@ -169,11 +169,21 @@ class AIWorkoutGeneratorService {
                 
                 for exercise in day.exercises {
                     var mutableEx = exercise
-                    // Search for the exercise in ExerciseDB
+                    
+                    // 1. Try ExerciseDB Search
                     if let match = try? await ExerciseDBService.shared.searchExercise(query: exercise.name) {
                         mutableEx.exerciseId = match.exerciseId
                         mutableEx.imageUrl = match.imageUrl
                     }
+                    
+                    // 2. Local Fallback if API fails or returns no image
+                    if (mutableEx.imageUrl == nil || mutableEx.imageUrl?.isEmpty == true) {
+                        if let localMatch = ExerciseDBService.shared.findLocalMatch(for: exercise.name, focus: day.focus) {
+                            mutableEx.exerciseId = localMatch.exerciseId
+                            mutableEx.imageUrl = localMatch.imageUrl
+                        }
+                    }
+                    
                     enrichedExercises.append(mutableEx)
                 }
                 

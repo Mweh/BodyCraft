@@ -10,8 +10,10 @@ struct ExerciseModel: Identifiable {
     let reps: String
     let rest: Int
     var tip: String? = nil
+    var imageURL: String? = nil
+    var exerciseId: String? = nil
 
-    init(id: UUID = UUID(), name: String, muscleGroup: String, sets: Int, reps: String, rest: Int, tip: String? = nil) {
+    init(id: UUID = UUID(), name: String, muscleGroup: String, sets: Int, reps: String, rest: Int, tip: String? = nil, imageURL: String? = nil, exerciseId: String? = nil) {
         self.id = id
         self.name = name
         self.muscleGroup = muscleGroup
@@ -19,9 +21,9 @@ struct ExerciseModel: Identifiable {
         self.reps = reps
         self.rest = rest
         self.tip = tip
+        self.imageURL = imageURL
+        self.exerciseId = exerciseId
     }
-    var imageURL: String? = nil
-    var exerciseId: String? = nil
 }
 
 struct WorkoutModel: Identifiable {
@@ -180,7 +182,18 @@ struct WorkoutListView: View {
             
             workouts = aiWorkoutPlan.weeklyWorkoutPlan.map { aiDay in
                 let uiExercises = aiDay.exercises.map { aiEx in
-                    ExerciseModel(
+                    // Repair logic: if data is missing, try local match
+                    var finalImg = aiEx.imageUrl
+                    var finalId = aiEx.exerciseId
+                    
+                    if (finalImg == nil || finalImg?.isEmpty == true) {
+                        if let localMatch = ExerciseDBService.shared.findLocalMatch(for: aiEx.name, focus: aiDay.focus) {
+                            finalImg = localMatch.imageUrl
+                            finalId = localMatch.exerciseId
+                        }
+                    }
+
+                    return ExerciseModel(
                         id: aiEx.id,
                         name: aiEx.name,
                         muscleGroup: aiDay.focus,
@@ -188,13 +201,13 @@ struct WorkoutListView: View {
                         reps: aiEx.reps,
                         rest: aiEx.restSeconds,
                         tip: "Technique verified by ExerciseDB",
-                        imageURL: aiEx.imageUrl,
-                        exerciseId: aiEx.exerciseId
+                        imageURL: finalImg,
+                        exerciseId: finalId
                     )
                 }
                 
                 // Use the first exercise's image as the workout thumbnail if available
-                let thumbnailURL = aiDay.exercises.first(where: { $0.imageUrl != nil })?.imageUrl
+                let thumbnailURL = uiExercises.first(where: { $0.imageURL != nil && !($0.imageURL?.isEmpty ?? true) })?.imageURL
                 
                 return WorkoutModel(
                     title: "\(aiDay.day): \(aiDay.focus)",

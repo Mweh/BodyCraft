@@ -65,6 +65,9 @@ struct ExerciseAI: Codable, Identifiable {
         self.sets = try container.decode(Int.self, forKey: .sets)
         self.reps = try container.decode(String.self, forKey: .reps)
         self.restSeconds = try container.decode(Int.self, forKey: .restSeconds)
+        self.exerciseId = try? container.decode(String.self, forKey: .exerciseId)
+        self.imageUrl = try? container.decode(String.self, forKey: .imageUrl)
+
         // If no ID in JSON, generate stable one from name, sets, reps
         if let decodedId = try? container.decode(UUID.self, forKey: .id) {
             self.id = decodedId
