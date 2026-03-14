@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9F26C4E52F625C9A00F425ED /* FLEX in Frameworks */ = {isa = PBXBuildFile; productRef = 9F26C4E42F625C9A00F425ED /* FLEX */; };
+		9F48066C2F652FD000F95AC6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 9F48066B2F652FD000F95AC6 /* Lottie */; };
+		9F4806762F65327500F95AC6 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 9F4806752F65327500F95AC6 /* netfox */; };
 		9FBA117E2F60FAD000411B26 /* BodyCraft Watch App Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9FBA11742F60FACF00411B26 /* BodyCraft Watch App Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F26C4E52F625C9A00F425ED /* FLEX in Frameworks */,
+				9F48066C2F652FD000F95AC6 /* Lottie in Frameworks */,
+				9F4806762F65327500F95AC6 /* netfox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +160,8 @@
 			name = KoalaFit;
 			packageProductDependencies = (
 				9F26C4E42F625C9A00F425ED /* FLEX */,
+				9F48066B2F652FD000F95AC6 /* Lottie */,
+				9F4806752F65327500F95AC6 /* netfox */,
 			);
 			productName = BodyCraft;
 			productReference = 9F890AE22F5FA45500484454 /* KoalaFit.app */;
@@ -210,6 +216,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				9F26C4E32F625C9A00F425ED /* XCRemoteSwiftPackageReference "FLEX" */,
+				9F48066A2F652FD000F95AC6 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				9F4806742F65327500F95AC6 /* XCRemoteSwiftPackageReference "netfox" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9F890AE32F5FA45500484454 /* Products */;
@@ -589,6 +597,22 @@
 				minimumVersion = 5.22.10;
 			};
 		};
+		9F48066A2F652FD000F95AC6 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.6.0;
+			};
+		};
+		9F4806742F65327500F95AC6 /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.21.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -596,6 +620,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9F26C4E32F625C9A00F425ED /* XCRemoteSwiftPackageReference "FLEX" */;
 			productName = FLEX;
+		};
+		9F48066B2F652FD000F95AC6 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F48066A2F652FD000F95AC6 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+		9F4806752F65327500F95AC6 /* netfox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F4806742F65327500F95AC6 /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

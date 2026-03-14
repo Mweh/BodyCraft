@@ -10,6 +10,7 @@ import SwiftUI
 
 #if DEBUG
 import FLEX
+import netfox
 #endif
 
 // MARK: - AppDelegate for Debug Tools
@@ -23,6 +24,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             FLEXManager.shared.showExplorer()
             DebugMenuManager.registerResetOnboardingAction()
+            NFX.sharedInstance().start()
         }
         #endif
 

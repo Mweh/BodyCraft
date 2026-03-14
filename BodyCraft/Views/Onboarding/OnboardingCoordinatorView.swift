@@ -73,28 +73,7 @@ struct OnboardingCoordinatorView: View {
                 Spacer()
                 
                 if isLoadingTarget {
-                    VStack(spacing: 24) {
-                        ProgressView()
-                            .scaleEffect(2)
-                            .tint(AppTheme.primary)
-                        
-                        Text("Designing Your Program...")
-                            .font(.title2)
-                            .bold()
-                            .foregroundColor(.white)
-                        
-                        Text("Our AI is creating a hyper-personalized workout based on your profile.")
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(AppTheme.secondaryText)
-                            .padding(.horizontal, 32)
-                        
-                        if let errorMessage = errorMessage {
-                            Text(errorMessage)
-                                .foregroundColor(.red)
-                                .font(.footnote)
-                                .padding(.top)
-                        }
-                    }
+                    AILoadingView(errorMessage: errorMessage)
                 } else {
                     switch currentStep {
                     case 0:
