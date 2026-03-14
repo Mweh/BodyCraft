@@ -20,7 +20,7 @@ struct WorkoutDay: Codable, Identifiable {
     var id: UUID = UUID()
     let day: String
     let focus: String
-    let exercises: [ExerciseAI]
+    var exercises: [ExerciseAI]
     
     enum CodingKeys: String, CodingKey {
         case id, day, focus, exercises
@@ -48,9 +48,15 @@ struct ExerciseAI: Codable, Identifiable {
     let reps: String
     let restSeconds: Int
     
+    // API Data
+    var exerciseId: String?
+    var imageUrl: String?
+    
     enum CodingKeys: String, CodingKey {
         case id, name, sets, reps
         case restSeconds = "rest_seconds"
+        case exerciseId = "exercise_id"
+        case imageUrl = "image_url"
     }
 
     init(from decoder: Decoder) throws {

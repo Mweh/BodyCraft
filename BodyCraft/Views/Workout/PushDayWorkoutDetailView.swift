@@ -5,7 +5,7 @@ struct PushDayWorkoutDetailView: View {
     @Environment(\.dismiss) private var dismiss
     var onDismiss: (() -> Void)? = nil
     @StateObject private var vm = ChestExerciseListViewModel()
-    @State private var selectedExercise: ExerciseSearchItem?
+    @State private var selectedExercise: LocalExerciseSearchItem?
     
     // Using the same image URL as the banner
     let imageURL = "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjB3ZWlnaHQlMjB0cmFpbmluZyUyMHdvcmtvdXR8ZW58MXx8fHwxNzcyODU5MDIzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
@@ -22,46 +22,45 @@ struct PushDayWorkoutDetailView: View {
                                 image
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(height: 220)
+                                    .frame(height: 300)
                                     .clipped()
                             } else {
                                 Rectangle()
                                     .fill(AppTheme.surface)
-                                    .frame(height: 220)
+                                    .frame(height: 300)
                             }
                         }
 
                         LinearGradient(
-                            colors: [Color.black.opacity(0.05), Color.black.opacity(0.75), AppTheme.background],
-                            startPoint: .top,
+                            colors: [.clear, .black.opacity(0.95)],
+                            startPoint: .center,
                             endPoint: .bottom
                         )
-                        .frame(height: 220)
+                        .frame(height: 300)
 
-                        VStack(alignment: .leading, spacing: 8) {
+                        VStack(alignment: .leading, spacing: 10) {
                             Text("Push Day - Chest & Triceps")
-                                .font(.title3)
-                                .fontWeight(.bold)
+                                .font(.system(size: 32, weight: .bold, design: .rounded))
                                 .foregroundColor(.white)
+                                .shadow(color: .black.opacity(0.5), radius: 10, x: 0, y: 5)
 
                             HStack(spacing: 14) {
-                                Label("50 min", systemImage: "timer")
-                                Label("380 kcal", systemImage: "flame")
+                                Label("50 min", systemImage: "clock.fill")
+                                Label("380 kcal", systemImage: "flame.fill")
                                 Text("Intermediate")
-                                    .font(.caption)
-                                    .fontWeight(.medium)
+                                    .font(.system(size: 10, weight: .bold, design: .rounded))
                                     .padding(.horizontal, 10)
                                     .padding(.vertical, 4)
                                     .background(Color.blue)
+                                    .foregroundColor(.white)
                                     .clipShape(Capsule())
                             }
-                            .font(.caption)
-                            .foregroundColor(AppTheme.secondaryText)
+                            .font(.system(.caption, design: .rounded))
+                            .foregroundColor(.white.opacity(0.9))
                         }
-                        .padding(16)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .frame(height: 220)
+                        .padding(24)
                     }
+                    .frame(height: 300)
 
                     ChestExerciseListView(vm: vm) { exercise in
                         selectedExercise = exercise
@@ -147,7 +146,7 @@ struct ExerciseRowView: View {
 
 @MainActor
 final class ChestExerciseListViewModel: ObservableObject {
-    @Published var items: [ExerciseSearchItem] = []
+    @Published var items: [LocalExerciseSearchItem] = []
 
     init() {
         loadFromBundle()
@@ -161,7 +160,7 @@ final class ChestExerciseListViewModel: ObservableObject {
 
         do {
             let data = try Data(contentsOf: url)
-            let decoded = try JSONDecoder().decode(ExerciseSearchResponse.self, from: data)
+            let decoded = try JSONDecoder().decode(LocalExerciseSearchResponse.self, from: data)
             items = decoded.data
         } catch {
             items = []
@@ -171,7 +170,7 @@ final class ChestExerciseListViewModel: ObservableObject {
 
 struct ChestExerciseListView: View {
     @ObservedObject var vm: ChestExerciseListViewModel
-    let onSelect: (ExerciseSearchItem) -> Void
+    let onSelect: (LocalExerciseSearchItem) -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -210,13 +209,12 @@ struct ChestExerciseListView: View {
 }
 
 struct ChestExerciseRow: View {
-    let item: ExerciseSearchItem
+    let item: LocalExerciseSearchItem
 
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: 16) {
             ZStack {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .fill(Color.white.opacity(0.06))
+                Color.white.opacity(0.04)
 
                 if let url = item.imageUrl {
                     AsyncImage(url: url) { phase in
@@ -225,34 +223,48 @@ struct ChestExerciseRow: View {
                                 .resizable()
                                 .scaledToFill()
                         } else {
-                            Image(systemName: "dumbbell")
-                                .foregroundColor(AppTheme.secondaryText.opacity(0.7))
+                            Image(systemName: "dumbbell.fill")
+                                .foregroundColor(AppTheme.secondaryText.opacity(0.3))
                         }
                     }
-                    .clipped()
                 } else {
-                    Image(systemName: "dumbbell")
-                        .foregroundColor(AppTheme.secondaryText.opacity(0.7))
+                    Image(systemName: "dumbbell.fill")
+                        .foregroundColor(AppTheme.secondaryText.opacity(0.3))
                 }
             }
-            .frame(width: 56, height: 56)
+            .frame(width: 64, height: 64)
+            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .stroke(Color.white.opacity(0.1), lineWidth: 1)
+            )
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(item.name.trimmingCharacters(in: .whitespacesAndNewlines))
-                    .font(.headline)
+                    .font(.system(.headline, design: .rounded))
                     .foregroundColor(.white)
                     .lineLimit(2)
 
                 Text("Chest")
-                    .font(.caption)
+                    .font(.system(.caption, design: .rounded))
                     .foregroundColor(AppTheme.secondaryText)
             }
 
             Spacer()
+            
+            Image(systemName: "chevron.right")
+                .font(.system(size: 12, weight: .bold))
+                .foregroundColor(AppTheme.secondaryText.opacity(0.5))
         }
         .padding(14)
-        .background(AppTheme.surface)
-        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .fill(AppTheme.surface.opacity(0.6))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(Color.white.opacity(0.05), lineWidth: 1)
+        )
     }
 }
 
@@ -264,19 +276,19 @@ struct PushDayWorkoutDetailView_Previews: PreviewProvider {
 
 import Foundation
 
-struct ExerciseSearchResponse: Decodable {
+struct LocalExerciseSearchResponse: Decodable {
     let success: Bool
-    let data: [ExerciseSearchItem]
+    let data: [LocalExerciseSearchItem]
 }
 
-struct ExerciseDBError: LocalizedError, Equatable {
+struct LocalExerciseDBError: LocalizedError, Equatable {
     let statusCode: Int
     let message: String
 
     var errorDescription: String? { message }
 }
 
-struct ExerciseSearchItem: Identifiable, Decodable, Hashable {
+struct LocalExerciseSearchItem: Identifiable, Decodable, Hashable {
     let exerciseId: String
     let name: String
     let imageUrl: URL?
@@ -285,7 +297,7 @@ struct ExerciseSearchItem: Identifiable, Decodable, Hashable {
 }
 
 enum ExerciseDBClient {
-    static func searchExercises(query: String) async throws -> [ExerciseSearchItem] {
+    static func searchExercises(query: String) async throws -> [LocalExerciseSearchItem] {
         var components = URLComponents(string: "https://exercisedbv2.ascendapi.com/api/v1/exercises/search")!
         components.queryItems = [
             URLQueryItem(name: "search", value: query)
@@ -293,7 +305,7 @@ enum ExerciseDBClient {
         let url = components.url!
 
         return try await send(request: URLRequest(url: url)) { data in
-            let decoded = try JSONDecoder().decode(ExerciseSearchResponse.self, from: data)
+            let decoded = try JSONDecoder().decode(LocalExerciseSearchResponse.self, from: data)
             return decoded.data
         }
     }
@@ -325,14 +337,14 @@ enum ExerciseDBClient {
                 return try decode(data2)
             }
 
-            throw ExerciseDBError(
+            throw LocalExerciseDBError(
                 statusCode: http2.statusCode,
                 message: errorMessage(statusCode: http2.statusCode, data: data2) ?? "Request failed (\(http2.statusCode))."
             )
         }
 
         guard (200...299).contains(http.statusCode) else {
-            throw ExerciseDBError(
+            throw LocalExerciseDBError(
                 statusCode: http.statusCode,
                 message: errorMessage(statusCode: http.statusCode, data: data) ?? "Request failed (\(http.statusCode))."
             )

@@ -5,7 +5,7 @@ struct ShoulderWorkoutDetailView: View {
     @Environment(\.dismiss) private var dismiss
     var onDismiss: (() -> Void)? = nil
     @StateObject private var vm = ShoulderExerciseListViewModel()
-    @State private var selectedExercise: ExerciseSearchItem?
+    @State private var selectedExercise: LocalExerciseSearchItem?
     
     // Using the same image URL as the banner for Shoulder & Arms Sculptor
     let imageURL = "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
@@ -22,46 +22,45 @@ struct ShoulderWorkoutDetailView: View {
                                 image
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(height: 220)
+                                    .frame(height: 300)
                                     .clipped()
                             } else {
                                 Rectangle()
                                     .fill(AppTheme.surface)
-                                    .frame(height: 220)
+                                    .frame(height: 300)
                             }
                         }
-                        
+
                         LinearGradient(
-                            colors: [Color.black.opacity(0.05), Color.black.opacity(0.75), AppTheme.background],
-                            startPoint: .top,
+                            colors: [.clear, .black.opacity(0.95)],
+                            startPoint: .center,
                             endPoint: .bottom
                         )
-                        .frame(height: 220)
-                        
-                        VStack(alignment: .leading, spacing: 8) {
+                        .frame(height: 300)
+
+                        VStack(alignment: .leading, spacing: 10) {
                             Text("Shoulder & Arms Sculptor")
-                                .font(.title3)
-                                .fontWeight(.bold)
+                                .font(.system(size: 32, weight: .bold, design: .rounded))
                                 .foregroundColor(.white)
-                            
+                                .shadow(color: .black.opacity(0.5), radius: 10, x: 0, y: 5)
+
                             HStack(spacing: 14) {
-                                Label("45 min", systemImage: "timer")
-                                Label("320 kcal", systemImage: "flame")
+                                Label("45 min", systemImage: "clock.fill")
+                                Label("320 kcal", systemImage: "flame.fill")
                                 Text("Beginner")
-                                    .font(.caption)
-                                    .fontWeight(.medium)
+                                    .font(.system(size: 10, weight: .bold, design: .rounded))
                                     .padding(.horizontal, 10)
                                     .padding(.vertical, 4)
                                     .background(Color.orange)
+                                    .foregroundColor(.white)
                                     .clipShape(Capsule())
                             }
-                            .font(.caption)
-                            .foregroundColor(AppTheme.secondaryText)
+                            .font(.system(.caption, design: .rounded))
+                            .foregroundColor(.white.opacity(0.9))
                         }
-                        .padding(16)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .frame(height: 220)
+                        .padding(24)
                     }
+                    .frame(height: 300)
                     
                     ShoulderExerciseListView(vm: vm) { exercise in
                         selectedExercise = exercise
@@ -99,7 +98,7 @@ struct ShoulderWorkoutDetailView: View {
 
 @MainActor
 final class ShoulderExerciseListViewModel: ObservableObject {
-    @Published var items: [ExerciseSearchItem] = []
+    @Published var items: [LocalExerciseSearchItem] = []
     
     init() {
         loadFromBundle()
@@ -113,7 +112,7 @@ final class ShoulderExerciseListViewModel: ObservableObject {
         
         do {
             let data = try Data(contentsOf: url)
-            let decoded = try JSONDecoder().decode(ExerciseSearchResponse.self, from: data)
+            let decoded = try JSONDecoder().decode(LocalExerciseSearchResponse.self, from: data)
             items = decoded.data
         } catch {
             print("Failed reading shoulder mock data: \(error)")
@@ -124,7 +123,7 @@ final class ShoulderExerciseListViewModel: ObservableObject {
 
 struct ShoulderExerciseListView: View {
     @ObservedObject var vm: ShoulderExerciseListViewModel
-    let onSelect: (ExerciseSearchItem) -> Void
+    let onSelect: (LocalExerciseSearchItem) -> Void
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -163,13 +162,12 @@ struct ShoulderExerciseListView: View {
 }
 
 struct ShoulderExerciseRow: View {
-    let item: ExerciseSearchItem
+    let item: LocalExerciseSearchItem
     
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: 16) {
             ZStack {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .fill(Color.white.opacity(0.06))
+                Color.white.opacity(0.04)
                 
                 if let url = item.imageUrl {
                     AsyncImage(url: url) { phase in
@@ -178,34 +176,48 @@ struct ShoulderExerciseRow: View {
                                 .resizable()
                                 .scaledToFill()
                         } else {
-                            Image(systemName: "dumbbell")
-                                .foregroundColor(AppTheme.secondaryText.opacity(0.7))
+                            Image(systemName: "dumbbell.fill")
+                                .foregroundColor(AppTheme.secondaryText.opacity(0.3))
                         }
                     }
-                    .clipped()
                 } else {
-                    Image(systemName: "dumbbell")
-                        .foregroundColor(AppTheme.secondaryText.opacity(0.7))
+                    Image(systemName: "dumbbell.fill")
+                        .foregroundColor(AppTheme.secondaryText.opacity(0.3))
                 }
             }
-            .frame(width: 56, height: 56)
+            .frame(width: 64, height: 64)
+            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .stroke(Color.white.opacity(0.1), lineWidth: 1)
+            )
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(item.name.trimmingCharacters(in: .whitespacesAndNewlines))
-                    .font(.headline)
+                    .font(.system(.headline, design: .rounded))
                     .foregroundColor(.white)
                     .lineLimit(2)
                 
                 Text("Shoulder")
-                    .font(.caption)
+                    .font(.system(.caption, design: .rounded))
                     .foregroundColor(AppTheme.secondaryText)
             }
             
             Spacer()
+            
+            Image(systemName: "chevron.right")
+                .font(.system(size: 12, weight: .bold))
+                .foregroundColor(AppTheme.secondaryText.opacity(0.5))
         }
         .padding(14)
-        .background(AppTheme.surface)
-        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .fill(AppTheme.surface.opacity(0.6))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(Color.white.opacity(0.05), lineWidth: 1)
+        )
     }
 }
 

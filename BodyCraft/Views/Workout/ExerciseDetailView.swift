@@ -1,211 +1,263 @@
 import SwiftUI
 import AVKit
 
-// MARK: - Models
-
-struct ExerciseDetailImageUrls: Decodable {
-    let p360: String?
-    let p480: String?
-    let p720: String?
-    let p1080: String?
-
-    enum CodingKeys: String, CodingKey {
-        case p360 = "360p"
-        case p480 = "480p"
-        case p720 = "720p"
-        case p1080 = "1080p"
-    }
-}
-
-struct ExerciseDetailData: Decodable {
-    let exerciseId: String
-    let name: String
-    let imageUrl: String
-    let imageUrls: ExerciseDetailImageUrls
-    let equipments: [String]
-    let bodyParts: [String]
-    let exerciseType: String
-    let targetMuscles: [String]
-    let secondaryMuscles: [String]
-    let videoUrl: String
-    let keywords: [String]
-    let overview: String
-    let instructions: [String]
-    let exerciseTips: [String]
-    let variations: [String]
-    let relatedExerciseIds: [String]
-}
-
-struct ExerciseDetailResponse: Decodable {
-    let success: Bool
-    let data: ExerciseDetailData
-}
-
-enum LocalExerciseDetailClient {
-    static func loadDetail(exerciseId: String) throws -> ExerciseDetailData {
-        guard let url = Bundle.main.url(forResource: exerciseId, withExtension: "json") else {
-            throw NSError(domain: "ExerciseDetail", code: 1, userInfo: [NSLocalizedDescriptionKey: "Detail file not found for \(exerciseId)."])
-        }
-        let data = try Data(contentsOf: url)
-        let decoded = try JSONDecoder().decode(ExerciseDetailResponse.self, from: data)
-        return decoded.data
-    }
-}
-
 // MARK: - Detail View
 
 struct ExerciseDetailView: View {
     let exerciseId: String
 
-    @State private var detail: ExerciseDetailData?
+    @State private var detail: ExerciseDetail?
     @State private var errorMessage: String?
+    @State private var isLoading = false
 
     var body: some View {
         Group {
             if let detail {
-                    ScrollView {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+                        // Video or Image Header
+                        headerMediaView(detail: detail)
+
                         VStack(alignment: .leading, spacing: 16) {
-                            if !detail.videoUrl.isEmpty, let videoUrl = URL(string: detail.videoUrl) {
-                                LoopingVideoPlayer(url: videoUrl)
-                                    .frame(height: 220)
-                                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                            } else {
-                                ZStack {
-                                    if let url = URL(string: detail.imageUrl) {
-                                        AsyncImage(url: url) { phase in
-                                            if let image = phase.image {
-                                                image
-                                                    .resizable()
-                                                    .scaledToFill()
-                                            } else {
-                                                ZStack {
-                                                    AppTheme.surface
-                                                    Image(systemName: "dumbbell")
-                                                        .foregroundColor(AppTheme.secondaryText)
-                                                }
-                                            }
-                                        }
-                                        .frame(height: 220)
-                                        .clipped()
-                                    }
-                                }
-                                .frame(height: 220)
-                                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                            }
-
-                            VStack(alignment: .leading, spacing: 8) {
+                            // Title and Tags
+                            VStack(alignment: .leading, spacing: 12) {
                                 Text(detail.name)
-                                    .font(.title2)
-                                    .fontWeight(.bold)
+                                    .font(.system(size: 28, weight: .bold, design: .rounded))
                                     .foregroundColor(.white)
-
-                                HStack(spacing: 8) {
-                                    ForEach(detail.bodyParts, id: \.self) { part in
-                                        Text(part.capitalized)
-                                            .font(.caption)
-                                            .padding(.horizontal, 10)
-                                            .padding(.vertical, 4)
-                                            .background(Color.white.opacity(0.08))
-                                            .foregroundColor(AppTheme.secondaryText)
-                                            .clipShape(Capsule())
-                                    }
-                                }
-
-                                Text(detail.overview)
-                                    .font(.subheadline)
-                                    .foregroundColor(AppTheme.secondaryText)
                                     .fixedSize(horizontal: false, vertical: true)
-                            }
 
-                            if !detail.instructions.isEmpty {
-                                section(title: "Instructions") {
-                                    VStack(alignment: .leading, spacing: 8) {
-                                        ForEach(Array(detail.instructions.enumerated()), id: \.offset) { index, step in
-                                            HStack(alignment: .top, spacing: 8) {
-                                                Text("\(index + 1).")
-                                                    .font(.subheadline.bold())
-                                                    .foregroundColor(AppTheme.secondaryText)
-                                                Text(step)
-                                                    .font(.subheadline)
-                                                    .foregroundColor(AppTheme.secondaryText)
+                                VStack(alignment: .leading, spacing: 12) {
+                                    // Body Parts & Targets wrapping tags
+                                    FlowLayout(spacing: 8) {
+                                        if let bodyParts = detail.bodyParts {
+                                            ForEach(bodyParts, id: \.self) { part in
+                                                BadgeView(text: part, color: .blue)
+                                            }
+                                        }
+                                        
+                                        if let targetMuscles = detail.targetMuscles {
+                                            ForEach(targetMuscles, id: \.self) { muscle in
+                                                BadgeView(text: muscle, color: AppTheme.primary)
                                             }
                                         }
                                     }
-                                }
-                            }
-
-                            if !detail.exerciseTips.isEmpty {
-                                section(title: "Tips") {
-                                    VStack(alignment: .leading, spacing: 8) {
-                                        ForEach(detail.exerciseTips, id: \.self) { tip in
-                                            Text("• \(tip)")
-                                                .font(.subheadline)
+                                    
+                                    // Equipment sub-info
+                                    if let equipments = detail.equipments, !equipments.isEmpty {
+                                        HStack(alignment: .top, spacing: 6) {
+                                            Image(systemName: "dumbbell.fill")
+                                                .font(.system(size: 14, weight: .semibold))
+                                                .foregroundColor(AppTheme.secondaryText)
+                                            Text(equipments.joined(separator: ", ").capitalized)
+                                                .font(.system(.caption, design: .rounded))
                                                 .foregroundColor(AppTheme.secondaryText)
                                         }
+                                        .padding(.leading, 2)
                                     }
                                 }
                             }
 
-                            if !detail.variations.isEmpty {
-                                section(title: "Variations") {
-                                    VStack(alignment: .leading, spacing: 8) {
-                                        ForEach(detail.variations, id: \.self) { variation in
-                                            Text("• \(variation)")
-                                                .font(.subheadline)
-                                                .foregroundColor(AppTheme.secondaryText)
+                            // Instructions Section
+                            if let instructions = detail.instructions, !instructions.isEmpty {
+                                section(title: "Instructions") {
+                                    VStack(alignment: .leading, spacing: 16) {
+                                        ForEach(Array(instructions.enumerated()), id: \.offset) { index, step in
+                                            HStack(alignment: .top, spacing: 16) {
+                                                Text("\(index + 1)")
+                                                    .font(.system(.subheadline, design: .monospaced).bold())
+                                                    .foregroundColor(.white)
+                                                    .frame(width: 28, height: 28)
+                                                    .background(AppTheme.primary)
+                                                    .clipShape(Circle())
+                                                    .shadow(color: AppTheme.primary.opacity(0.3), radius: 4, x: 0, y: 2)
+                                                
+                                                Text(step)
+                                                    .font(.system(.subheadline, design: .rounded))
+                                                    .foregroundColor(.white.opacity(0.8))
+                                                    .lineSpacing(4)
+                                                    .padding(.top, 4)
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
-                        .padding(16)
+                        .padding(.horizontal, 20)
                     }
-                    .background(AppTheme.background.ignoresSafeArea())
-                } else if let errorMessage {
-                    VStack(spacing: 12) {
-                        Text("Failed to load detail")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                        Text(errorMessage)
-                            .font(.subheadline)
-                            .foregroundColor(AppTheme.secondaryText)
+                    .padding(.vertical, 20)
+                }
+                .background(AppTheme.background.ignoresSafeArea())
+            } else if let errorMessage {
+                errorView(message: errorMessage)
+            } else {
+                ProgressView()
+                    .tint(AppTheme.primary)
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text(detail?.name ?? "Exercise Detail")
+                    .font(.system(.headline, design: .rounded))
+                    .foregroundColor(.white)
+            }
+        }
+        .task {
+            await loadDetail()
+        }
+    }
+
+    // MARK: - Subviews
+
+    @ViewBuilder
+    private func headerMediaView(detail: ExerciseDetail) -> some View {
+        Group {
+            if let videoString = detail.videoUrl, !videoString.isEmpty, let videoUrl = URL(string: videoString) {
+                LoopingVideoPlayer(url: videoUrl)
+                    .frame(height: 240)
+                    .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+                    .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
+            } else {
+                ZStack {
+                    if let urlString = detail.imageUrl, let url = URL(string: urlString) {
+                        AsyncImage(url: url) { phase in
+                            if let image = phase.image {
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                            } else {
+                                ZStack {
+                                    AppTheme.surface
+                                    Image(systemName: "dumbbell")
+                                        .font(.largeTitle)
+                                        .foregroundColor(AppTheme.secondaryText)
+                                }
+                            }
+                        }
+                        .frame(height: 240)
+                        .clipped()
                     }
-                    .padding()
-                } else {
-                    ProgressView()
-                        .tint(AppTheme.primary)
                 }
+                .frame(height: 240)
+                .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+                .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text(detail?.name ?? "Exercise Detail")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                }
+        }
+        .padding(.horizontal, 20)
+    }
+
+    @ViewBuilder
+    private func errorView(message: String) -> some View {
+        VStack(spacing: 16) {
+            Image(systemName: "exclamationmark.triangle.fill")
+                .font(.system(size: 40))
+                .foregroundColor(AppTheme.warning)
+            
+            Text("Something went wrong")
+                .font(.system(.headline, design: .rounded))
+                .foregroundColor(.white)
+            
+            Text(message)
+                .font(.system(.subheadline, design: .rounded))
+                .foregroundColor(AppTheme.secondaryText)
+                .multilineTextAlignment(.center)
+            
+            Button(action: { Task { await loadDetail() } }) {
+                Text("Try Again")
+                    .font(.system(.subheadline, design: .rounded).bold())
+                    .padding(.horizontal, 30)
+                    .padding(.vertical, 12)
+                    .background(AppTheme.primary)
+                    .foregroundColor(.white)
+                    .clipShape(Capsule())
             }
-            .task {
-                await loadDetailIfNeeded()
-            }
+            .padding(.top, 8)
+        }
+        .padding(40)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(AppTheme.background.ignoresSafeArea())
     }
 
     private func section<Content: View>(title: String, @ViewBuilder content: () -> Content) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 14) {
             Text(title)
-                .font(.headline)
+                .font(.system(size: 20, weight: .bold, design: .rounded))
                 .foregroundColor(.white)
             content()
         }
+        .padding(.top, 12)
     }
 
     @MainActor
-    private func loadDetailIfNeeded() async {
-        guard detail == nil, errorMessage == nil else { return }
+    private func loadDetail() async {
+        guard !isLoading else { return }
+        isLoading = true
+        errorMessage = nil
+        
         do {
-            detail = try LocalExerciseDetailClient.loadDetail(exerciseId: exerciseId)
+            detail = try await ExerciseDBService.shared.getExerciseDetail(id: exerciseId)
         } catch {
-            errorMessage = error.localizedDescription
+            if let localData = try? loadLocalFallback(id: exerciseId) {
+                detail = localData
+            } else {
+                errorMessage = "Gagal memuat detail latihan. Silakan periksa koneksi internet Anda."
+            }
         }
+        isLoading = false
+    }
+    
+    private func loadLocalFallback(id: String) throws -> ExerciseDetail {
+        guard let url = Bundle.main.url(forResource: id, withExtension: "json") else {
+            throw NSError(domain: "LocalFallback", code: 404)
+        }
+        let data = try Data(contentsOf: url)
+        struct LegacyResponse: Decodable {
+            struct LegacyData: Decodable {
+                let exerciseId: String
+                let name: String
+                let imageUrl: String
+                let videoUrl: String?
+                let instructions: [String]
+                let bodyParts: [String]
+                let targetMuscles: [String]
+                let equipments: [String]
+            }
+            let success: Bool
+            let data: LegacyData
+        }
+        
+        let legacy = try JSONDecoder().decode(LegacyResponse.self, from: data)
+        return ExerciseDetail(
+            exerciseId: legacy.data.exerciseId,
+            name: legacy.data.name,
+            imageUrl: legacy.data.imageUrl,
+            videoUrl: legacy.data.videoUrl,
+            instructions: legacy.data.instructions,
+            bodyParts: legacy.data.bodyParts,
+            targetMuscles: legacy.data.targetMuscles,
+            equipments: legacy.data.equipments
+        )
+    }
+}
+
+// MARK: - Components
+
+struct BadgeView: View {
+    let text: String
+    let color: Color
+    
+    var body: some View {
+        Text(text.capitalized)
+            .font(.system(size: 13, weight: .semibold, design: .rounded))
+            .padding(.horizontal, 14)
+            .padding(.vertical, 8)
+            .background(color.opacity(0.12))
+            .foregroundColor(color)
+            .overlay(
+                Capsule()
+                    .stroke(color.opacity(0.35), lineWidth: 1)
+            )
+            .clipShape(Capsule())
     }
 }
 
@@ -213,14 +265,8 @@ struct ExerciseDetailView: View {
 
 struct LoopingVideoPlayer: UIViewRepresentable {
     let url: URL
-
-    func makeUIView(context: Context) -> UIView {
-        return PlayerUIView(url: url)
-    }
-
-    func updateUIView(_ uiView: UIView, context: Context) {
-        // Handle URL changes if needed, but for our usecase the URL is static once loaded
-    }
+    func makeUIView(context: Context) -> UIView { PlayerUIView(url: url) }
+    func updateUIView(_ uiView: UIView, context: Context) {}
 }
 
 class PlayerUIView: UIView {
@@ -235,21 +281,14 @@ class PlayerUIView: UIView {
         self.playerLayer.player = queuePlayer
         self.playerLayer.videoGravity = .resizeAspectFill
         layer.addSublayer(playerLayer)
-        
-        // Setup Looper
         if let player = queuePlayer {
             playerLooper = AVPlayerLooper(player: player, templateItem: playerItem)
             player.play()
         }
     }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
+    required init?(coder: NSCoder) { fatalError() }
     override func layoutSubviews() {
         super.layoutSubviews()
         playerLayer.frame = bounds
     }
 }
-

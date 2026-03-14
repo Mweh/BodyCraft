@@ -159,8 +159,39 @@ class AIWorkoutGeneratorService {
         
         do {
             let decoder = JSONDecoder()
-            let aiWorkout = try decoder.decode(AIWorkoutResponse.self, from: payloadData)
-            return aiWorkout
+            var aiWorkout = try decoder.decode(AIWorkoutResponse.self, from: payloadData)
+            
+            // 5. Enrich with real ExerciseDB data
+            var enrichedPlan: [WorkoutDay] = []
+            
+            for day in aiWorkout.weeklyWorkoutPlan {
+                var enrichedExercises: [ExerciseAI] = []
+                
+                for exercise in day.exercises {
+                    var mutableEx = exercise
+                    // Search for the exercise in ExerciseDB
+                    if let match = try? await ExerciseDBService.shared.searchExercise(query: exercise.name) {
+                        mutableEx.exerciseId = match.exerciseId
+                        mutableEx.imageUrl = match.imageUrl
+                    }
+                    enrichedExercises.append(mutableEx)
+                }
+                
+                var enrichedDay = day
+                enrichedDay.exercises = enrichedExercises
+                enrichedPlan.append(enrichedDay)
+            }
+            
+            // Re-create the response with enriched exercises
+            let finalResponse = AIWorkoutResponse(
+                dailyCalories: aiWorkout.dailyCalories,
+                goal: aiWorkout.goal,
+                weeklyWorkoutPlan: enrichedPlan,
+                safetyFlag: aiWorkout.safetyFlag,
+                rationale: aiWorkout.rationale
+            )
+            
+            return finalResponse
         } catch {
             print("Failed to decode inner JSON: \(error)")
             throw AIError.decodingError(error)
