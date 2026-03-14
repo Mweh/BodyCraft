@@ -8,7 +8,7 @@ struct WorkoutDetailSheet: View {
     @State private var selectedExerciseId: String? = nil
 
     var body: some View {
-        ZStack(alignment: .topTrailing) {
+        ZStack(alignment: .topLeading) {
             AppTheme.background.ignoresSafeArea()
 
             ScrollView(showsIndicators: false) {
@@ -22,7 +22,7 @@ struct WorkoutDetailSheet: View {
                                     image
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(height: 300)
+                                        .frame(height: 350) // Increased height for better immersion
                                         .clipped()
                                 } else {
                                     Rectangle()
@@ -30,7 +30,7 @@ struct WorkoutDetailSheet: View {
                                             colors: [workout.tagColor.opacity(0.4), AppTheme.background],
                                             startPoint: .top, endPoint: .bottom
                                         ))
-                                        .frame(height: 300)
+                                        .frame(height: 350)
                                 }
                             }
                         } else {
@@ -39,7 +39,7 @@ struct WorkoutDetailSheet: View {
                                     colors: [workout.tagColor.opacity(0.4), AppTheme.background],
                                     startPoint: .top, endPoint: .bottom
                                 ))
-                                .frame(height: 300)
+                                .frame(height: 350)
                         }
 
                         // Immersive Gradient Overlay
@@ -48,7 +48,7 @@ struct WorkoutDetailSheet: View {
                             startPoint: .center,
                             endPoint: .bottom
                         )
-                        .frame(height: 300)
+                        .frame(height: 350)
 
                         // Title + meta
                         VStack(alignment: .leading, spacing: 8) {
@@ -73,7 +73,8 @@ struct WorkoutDetailSheet: View {
                         }
                         .padding(24)
                     }
-                    .frame(height: 300)
+                    .frame(height: 350)
+                    .ignoresSafeArea(edges: .top)
 
                     // ── Exercise List ─────────────────────────────────────
                     if workout.title == "Push Day - Chest & Triceps" {
@@ -112,6 +113,23 @@ struct WorkoutDetailSheet: View {
                     }
                 }
             }
+            .ignoresSafeArea(edges: .top)
+
+            // Back Button Overlay
+            Button {
+                dismiss()
+            } label: {
+                ZStack {
+                    Circle()
+                        .fill(.black.opacity(0.3))
+                        .frame(width: 40, height: 40)
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.white)
+                }
+                .padding(.leading, 20)
+                .padding(.top, 56) // Account for notch/dynamic island
+            }
         }
         .navigationDestination(item: $selectedExercise) { exercise in
             ExerciseDetailView(exerciseId: exercise.exerciseId)
@@ -124,6 +142,8 @@ struct WorkoutDetailSheet: View {
                 ExerciseDetailView(exerciseId: id)
             }
         }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
