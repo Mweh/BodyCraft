@@ -2,6 +2,7 @@ import SwiftUI
 import CoreImage
 import Combine
 import AVFoundation
+import Lottie
 
 struct FoodScannerView: View {
     @Environment(\.dismiss) private var dismiss
@@ -82,6 +83,7 @@ struct FoodScannerView: View {
         .onChange(of: cameraService.lastCaptureTime) { _ in
             if let photo = cameraService.photo {
                 viewModel.processImage(photo)
+                cameraService.stop()
             }
         }
         .sheet(isPresented: $showingPhotoPicker) {
@@ -164,13 +166,15 @@ struct FoodScannerView: View {
     
     var processingOverlay: some View {
         ZStack {
-            Color.black.opacity(0.7).ignoresSafeArea()
+            Color.black.opacity(0.85).ignoresSafeArea()
+            
             VStack(spacing: 20) {
-                ProgressView()
-                    .scaleEffect(1.5)
-                    .tint(.white)
+                // Lottie Animation
+                LottieView(name: "AI twinkle loading", loopMode: .loop)
+                    .frame(width: 200, height: 200)
+                
                 Text("Analyzing Food...")
-                    .font(.headline)
+                    .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .foregroundColor(.white)
             }
         }
@@ -207,8 +211,5 @@ struct FoodScannerView: View {
         
         // Perform capture
         cameraService.capturePhoto()
-        
-        // Freeze camera to create the "captured" vibe
-        cameraService.stop()
     }
 }
