@@ -13,10 +13,11 @@ class AIWorkoutGeneratorService {
     static let shared = AIWorkoutGeneratorService()
     
     // In a real app, securely inject this via a backend or secure vault.
-    var apiKey: String? = "AIzaSyDKi_sE1L1s0Resix5X8ri8rIFNYb7l7oc"
+    var apiKey: String? = "AIzaSyDKi_sE1L1s0Resix5X8ri8rIFNYb7l7oc" // punya bang fahmi
+    var currentApiKey: String? = "AIzaSyDGmAJ2tiL1uOFjbujglcrwxwJfPA1pk2I"
     
     // Using Gemini 1.5 Flash as it's fast and supports JSON response formats.
-    private let endpoint = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent"
+    private let endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent"
 
     func generateWorkoutPlan(
         age: Int,
@@ -30,11 +31,11 @@ class AIWorkoutGeneratorService {
         equipment: String
     ) async throws -> AIWorkoutResponse {
         
-        guard let apiKey = apiKey, !apiKey.isEmpty else {
+        guard let apiKey = currentApiKey, !apiKey.isEmpty else {
             throw AIError.missingAPIKey
         }
         
-        guard let url = URL(string: "\(endpoint)?key=\(apiKey)") else {
+        guard let url = URL(string: endpoint) else {
             throw AIError.invalidURL
         }
         
@@ -102,6 +103,7 @@ class AIWorkoutGeneratorService {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(apiKey, forHTTPHeaderField: "X-goog-api-key")
         request.httpBody = try JSONSerialization.data(withJSONObject: requestBody)
         
         let (data, response) = try await URLSession.shared.data(for: request)
