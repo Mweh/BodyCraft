@@ -9,43 +9,31 @@ struct MainTabView: View {
             OnboardingCoordinatorView(hasCompletedOnboarding: $hasCompletedOnboarding)
         } else {
             TabView(selection: $selectedTab) {
-                // We'll replace these placeholders as we build them.
                 HomeView()
                     .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
+                        Label("Home", image: selectedTab == 0 ? "house-fill" : "house")
                     }
                     .tag(0)
                 
                 WorkoutListView()
                     .tabItem {
-                        Image(systemName: "figure.walk")
-                        Text("Workout")
+                        Label("Workout", image: selectedTab == 1 ? "barbell-fill" : "workout")
                     }
                     .tag(1)
                 
-//                ProgressDashboardView()
-//                    .tabItem {
-//                        Image(systemName: "chart.line.uptrend.xyaxis")
-//                        Text("Progress")
-//                    }
-//                    .tag(2)
-                
                 NutritionSummaryView()
                     .tabItem {
-                        Image(systemName: "fork.knife")
-                        Text("Nutrition")
+                        Label("Nutrition", image: selectedTab == 3 ? "orange-fill" : "orange")
                     }
                     .tag(3)
                 
                 ProfileView()
                     .tabItem {
-                        Image(systemName: "person")
-                        Text("Profile")
+                        Label("Setting", image: selectedTab == 4 ? "gear-fill" : "gear")
                     }
                     .tag(4)
             }
-            .accentColor(AppTheme.primary)
+            .tint(AppTheme.primary)
             .preferredColorScheme(.dark)
         }
     }
