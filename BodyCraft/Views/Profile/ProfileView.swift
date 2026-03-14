@@ -68,14 +68,6 @@ struct ProfileView: View {
                         }
                         .padding(.horizontal)
 
-                        // ── Lifetime Stats ────────────────────────────────
-                        HStack(spacing: 12) {
-                            StatBox(icon: "calendar", value: "0", label: "Days", iconColor: AppTheme.primary)
-                            StatBox(icon: "figure.run", value: "0", label: "Workouts", iconColor: .cyan)
-                            StatBox(icon: "flame", value: "0", label: "Calories", iconColor: .orange)
-                        }
-                        .padding(.horizontal)
-
                         // ── Body Stats ────────────────────────────────────
                         VStack(alignment: .leading, spacing: 16) {
                             Text("Body Stats")
