@@ -17,6 +17,13 @@ struct BodyCraft_Watch_App_Watch_AppApp: App {
             ContentView()
                 .environmentObject(sync)
                 .environmentObject(health)
+                .onAppear {
+                    // Request HealthKit authorization at launch so the workout
+                    // session can activate real heart rate and calorie sensors.
+                    // Without this, isHealthKitAvailable stays false and all
+                    // sensor data silently remains 0 during workouts.
+                    health.requestAuthorization()
+                }
         }
     }
 }

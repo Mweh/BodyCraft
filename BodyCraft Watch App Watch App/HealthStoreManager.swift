@@ -29,6 +29,12 @@ final class HealthStoreManager: NSObject, ObservableObject, HKWorkoutSessionDele
 
     override private init() {
         super.init()
+        // Request authorization eagerly at singleton creation.
+        // This is a safety net — the primary call happens in the app entry point.
+        // Both calls are needed because the singleton is created before onAppear fires.
+        if HKHealthStore.isHealthDataAvailable() {
+            requestAuthorization()
+        }
     }
 
     // MARK: - Authorization
@@ -57,10 +63,14 @@ final class HealthStoreManager: NSObject, ObservableObject, HKWorkoutSessionDele
         workoutDuration = 0
         startDate = Date()
 
-        if isHealthKitAvailable {
+        // Always attempt a real HK session if the hardware supports HealthKit.
+        // Do NOT gate on isHealthKitAvailable — the flag may not have resolved
+        // yet when the user taps Start. The session itself will fail gracefully
+        // if permission was denied, and we fall back only in that case.
+        if HKHealthStore.isHealthDataAvailable() {
             startHKSession()
         } else {
-            // Safe mode: timer only
+            // Hardware doesn't support HealthKit (e.g. simulator without entitlement)
             DispatchQueue.main.async {
                 self.workoutState = .running
                 self.startTimer()

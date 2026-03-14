@@ -73,7 +73,7 @@ final class PhoneWatchBridge: NSObject, WCSessionDelegate, ObservableObject {
         try? WCSession.default.updateApplicationContext(dict)
     }
 
-    // Problem 3: Push iPhone toggle to Watch
+    // iPhone → Watch checkbox: real-time with transferUserInfo fallback
     func sendCheckboxUpdate(exerciseId: UUID, isChecked: Bool) {
         let dict: [String: Any] = [
             "type": "checkboxSync",
@@ -82,7 +82,13 @@ final class PhoneWatchBridge: NSObject, WCSessionDelegate, ObservableObject {
         ]
         let session = WCSession.default
         if session.isReachable {
-            session.sendMessage(dict, replyHandler: nil, errorHandler: nil)
+            session.sendMessage(dict, replyHandler: nil, errorHandler: { err in
+                print("[PhoneBridge] checkbox sendMessage failed, queuing: \(err)")
+                try? session.updateApplicationContext(dict)
+            })
+        } else {
+            // Persist in application context so Watch picks it up on next activation
+            try? session.updateApplicationContext(dict)
         }
     }
 
@@ -99,10 +105,11 @@ final class PhoneWatchBridge: NSObject, WCSessionDelegate, ObservableObject {
         if let data = dict["workoutSummary"] as? Data,
            let summary = try? JSONDecoder().decode(WatchSummaryPayload.self, from: data) {
             DispatchQueue.main.async {
-                // Update Dashboard for immediate visual feedback
-                DashboardViewModel.shared.burnedCalories = Int(summary.caloriesBurned)
+                // Bug #2 Fix: use applyWatchBurn so the value is protected
+                // from being reverted by calculateTargets()
+                DashboardViewModel.shared.applyWatchBurn(summary.caloriesBurned)
                 
-                // Update StreakStore to persist the progress
+                // Update StreakStore to persist exercise completion
                 let day = WorkoutStreakStore.shared.currentDayNumber
                 for idStr in summary.completedExerciseIds {
                     if let id = UUID(uuidString: idStr) {
@@ -110,18 +117,18 @@ final class PhoneWatchBridge: NSObject, WCSessionDelegate, ObservableObject {
                     }
                 }
                 
-                print("Watch workout synced — burned \(summary.caloriesBurned) kcal")
+                print("[PhoneBridge] Watch workout synced — burned \(summary.caloriesBurned) kcal")
             }
             return
         }
 
-        // Live calorie/duration streaming (Problem 1)
+        // Live calorie/duration streaming
         if let type = dict["type"] as? String, type == "calorieUpdate" {
             let calories = dict["calories"] as? Double ?? 0
             DispatchQueue.main.async {
-                // Real-time update to the shared dashboard singleton
-                DashboardViewModel.shared.burnedCalories = Int(calories)
-                print("Live metric received: \(Int(calories)) kcal")
+                // Bug #2 Fix: use applyWatchBurn so the value is not reverted
+                DashboardViewModel.shared.applyWatchBurn(calories)
+                print("[PhoneBridge] Live calorie update: \(Int(calories)) kcal")
             }
             return
         }

@@ -82,7 +82,7 @@ final class WatchSyncService: NSObject, ObservableObject, WCSessionDelegate {
         }
     }
 
-    // Problem 3: Checkbox Sync
+    // Checkbox Sync — real-time when reachable, queued via transferUserInfo when not.
     func sendCheckboxUpdate(exerciseId: UUID, setIndex: Int, isChecked: Bool) {
         let msg: [String: Any] = [
             "type": "checkboxSync",
@@ -91,17 +91,35 @@ final class WatchSyncService: NSObject, ObservableObject, WCSessionDelegate {
             "isChecked": isChecked
         ]
         if wcSession?.isReachable == true {
-            wcSession?.sendMessage(msg, replyHandler: nil, errorHandler: nil)
+            wcSession?.sendMessage(msg, replyHandler: nil, errorHandler: { [weak self] err in
+                print("[WatchSync] checkbox sendMessage failed, queuing: \(err)")
+                self?.wcSession?.transferUserInfo(msg)
+            })
+        } else {
+            // Background queue — guaranteed delivery when iPhone returns to range
+            wcSession?.transferUserInfo(msg)
         }
     }
 
-    // Post-Workout Summary
+    // Post-Workout Summary — uses transferUserInfo for guaranteed delivery
+    // even when iPhone is not reachable (queued and delivered when in range).
     func sendWorkoutSummary(_ summary: WatchSummaryPayload) {
-        do {
-            let data = try JSONEncoder().encode(summary)
-            try wcSession?.updateApplicationContext(["workoutSummary": data])
-        } catch {
-            print("Failed to encode summary: \(error)")
+        guard let data = try? JSONEncoder().encode(summary) else {
+            print("[WatchSync] Failed to encode workout summary")
+            return
+        }
+        let userInfo: [String: Any] = ["workoutSummary": data]
+        
+        if wcSession?.isReachable == true {
+            // Realtime path: immediate delivery
+            wcSession?.sendMessage(userInfo, replyHandler: nil, errorHandler: { [weak self] err in
+                // Fallback on error: queue for background delivery
+                print("[WatchSync] sendMessage failed, queuing via transferUserInfo: \(err)")
+                self?.wcSession?.transferUserInfo(userInfo)
+            })
+        } else {
+            // Background path: guaranteed delivery when iPhone comes online
+            wcSession?.transferUserInfo(userInfo)
         }
     }
 

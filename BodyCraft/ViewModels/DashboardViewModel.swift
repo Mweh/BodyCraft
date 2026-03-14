@@ -12,6 +12,13 @@ final class DashboardViewModel: ObservableObject {
     @Published var totalWorkoutCalories: Int = 0
     @Published var burnedCalories: Int = 0
     
+    /// When the Watch sends real HealthKit calorie data, this override takes
+    /// priority over the locally-estimated burnedCalories. It is persisted so
+    /// it survives app restarts and is cleared at the start of a new workout day.
+    @Published private(set) var watchBurnOverride: Int? = nil
+    private let watchBurnKey = "watchBurnOverride"
+    private let watchBurnDayKey = "watchBurnOverrideDay"
+    
     // Dependencies
     private var profileStore: UserProfileStore
     private var streakStore: WorkoutStreakStore
@@ -25,6 +32,40 @@ final class DashboardViewModel: ObservableObject {
         self.workoutRepo = workoutRepo
         
         setupBindings()
+        restoreWatchBurnOverride()
+    }
+    
+    // MARK: - Watch Calorie Override
+    
+    /// Called by PhoneWatchBridge when real HealthKit calorie data arrives from Watch.
+    /// Sets a persistent override so calculateTargets() doesn't revert the value.
+    func applyWatchBurn(_ calories: Double) {
+        let kcal = Int(calories)
+        let today = streakStore.currentDayNumber
+        watchBurnOverride = kcal
+        burnedCalories = kcal
+        UserDefaults.standard.set(kcal, forKey: watchBurnKey)
+        UserDefaults.standard.set(today, forKey: watchBurnDayKey)
+        print("[Dashboard] Watch burn override applied: \(kcal) kcal")
+    }
+    
+    /// Clear the override (e.g. when a new day starts).
+    func clearWatchBurnOverride() {
+        watchBurnOverride = nil
+        UserDefaults.standard.removeObject(forKey: watchBurnKey)
+        UserDefaults.standard.removeObject(forKey: watchBurnDayKey)
+    }
+    
+    private func restoreWatchBurnOverride() {
+        let today = streakStore.currentDayNumber
+        let savedDay = UserDefaults.standard.integer(forKey: watchBurnDayKey)
+        // Only restore if the override is from today
+        if savedDay == today, let saved = UserDefaults.standard.object(forKey: watchBurnKey) as? Int {
+            watchBurnOverride = saved
+        } else if savedDay != today {
+            // Stale override from a previous day — clear it
+            clearWatchBurnOverride()
+        }
     }
     
     private func setupBindings() {
@@ -55,10 +96,17 @@ final class DashboardViewModel: ObservableObject {
         let today = streakStore.currentDayNumber
         let weight = Double(profile.weight) ?? 0.0
         
-        // Calculate actual burn purely from today's exercises
         let burns = estimateBurns(for: today, weight: weight > 0 ? weight : 70.0)
         self.totalWorkoutCalories = burns.total
-        self.burnedCalories = burns.completed
+        
+        // Bug #2 Fix: Only update burnedCalories from local estimate if the Watch
+        // hasn't provided real HealthKit data. The override takes priority.
+        if let override = watchBurnOverride {
+            // Keep the real Watch value; only recalculate if Watch gave us more
+            self.burnedCalories = max(override, burns.completed)
+        } else {
+            self.burnedCalories = burns.completed
+        }
     }
     
     private func estimateBurns(for day: Int, weight: Double) -> (total: Int, completed: Int) {
