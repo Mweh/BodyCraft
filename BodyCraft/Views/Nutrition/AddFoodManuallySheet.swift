@@ -104,50 +104,7 @@ struct AddFoodManuallySheet: View {
                         }
 
                         // ── Food Photo (optional) ─────────────────
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("Food Photo (optional)")
-                                .formLabel()
 
-                            PhotosPicker(selection: $selectedPhoto, matching: .images) {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 14)
-                                        .fill(AppTheme.surface)
-                                        .frame(height: 120)
-                                        .overlay(
-                                            RoundedRectangle(cornerRadius: 14)
-                                                .strokeBorder(
-                                                    style: StrokeStyle(lineWidth: 1.5, dash: [6])
-                                                )
-                                                .foregroundColor(AppTheme.secondaryText.opacity(0.4))
-                                        )
-
-                                    if let photoImage {
-                                        photoImage
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(height: 120)
-                                            .clipShape(RoundedRectangle(cornerRadius: 14))
-                                    } else {
-                                        VStack(spacing: 8) {
-                                            Image(systemName: "photo.badge.plus")
-                                                .font(.system(size: 28))
-                                                .foregroundColor(AppTheme.primary)
-                                            Text("Tap to add photo")
-                                                .font(.subheadline)
-                                                .foregroundColor(AppTheme.secondaryText)
-                                        }
-                                    }
-                                }
-                            }
-                            .onChange(of: selectedPhoto) { _, newItem in
-                                Task {
-                                    if let data = try? await newItem?.loadTransferable(type: Data.self),
-                                       let uiImage = UIImage(data: data) {
-                                        photoImage = Image(uiImage: uiImage)
-                                    }
-                                }
-                            }
-                        }
 
                         // ── Food Icon ─────────────────────────────
                         VStack(alignment: .leading, spacing: 10) {
