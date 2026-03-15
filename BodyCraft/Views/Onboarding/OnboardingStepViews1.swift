@@ -17,6 +17,7 @@ struct WelcomeStepView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
+                .padding(.horizontal, 16)
             
             Text("Tell us about yourself so we can build the perfect training program for your goals.")
                 .foregroundColor(AppTheme.secondaryText)
