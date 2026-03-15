@@ -98,20 +98,6 @@ struct WorkoutListView: View {
                     }
                     .padding()
 
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 12) {
-                            ForEach(filters, id: \.self) { filter in
-                                FilterChip(
-                                    title: filter,
-                                    isSelected: selectedFilter == filter,
-                                    action: { selectedFilter = filter }
-                                )
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
-                    .padding(.bottom, 20)
-
                     List {
                         ForEach(filteredWorkouts) { workout in
                             NavigationLink {

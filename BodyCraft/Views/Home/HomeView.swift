@@ -625,7 +625,7 @@ struct StreakCard: View {
                 Text(streakCount == 0 ? "No Streak Yet" : "\(streakCount) Day Streak")
                     .fontWeight(.semibold).foregroundColor(.white)
                 Spacer()
-                Text("Week Program").foregroundColor(AppTheme.secondaryText).font(.caption)
+                Text("Week Program recommended by AI").foregroundColor(AppTheme.secondaryText).font(.caption)
             }
 
             // ── Day Circles ──────────────────────────────────────

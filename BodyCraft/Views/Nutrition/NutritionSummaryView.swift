@@ -150,12 +150,6 @@ struct NutritionSummaryView: View {
                     .foregroundColor(.white)
                     .font(.subheadline).fontWeight(.medium)
                 Spacer()
-                Text("\(Int(kcalLeft)) kcal left")
-                    .font(.caption).fontWeight(.semibold)
-                    .foregroundColor(AppTheme.primary)
-                    .padding(.horizontal, 10).padding(.vertical, 4)
-                    .background(AppTheme.primary.opacity(0.15))
-                    .clipShape(Capsule())
             }
 
             HStack(alignment: .lastTextBaseline, spacing: 6) {

@@ -112,20 +112,6 @@ struct WorkoutDetailSheet: View {
                     }
                 }
             }
-
-            // ── Close Button ──────────────────────────────────────────────
-            Button {
-                dismiss()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundColor(.white)
-                    .padding(10)
-                    .background(Color.white.opacity(0.2))
-                    .clipShape(Circle())
-            }
-            .padding(.top, 16)
-            .padding(.trailing, 16)
         }
         .navigationDestination(item: $selectedExercise) { exercise in
             ExerciseDetailView(exerciseId: exercise.exerciseId)

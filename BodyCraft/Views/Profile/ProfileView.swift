@@ -113,10 +113,6 @@ struct ProfileView: View {
                             VStack(spacing: 12) {
                                 HStack(spacing: 12) {
                                     StaticStatCard(
-                                        title: "Sessions / Week",
-                                        value: profile.sessionsPerWeek == 0 ? "—" : "\(profile.sessionsPerWeek)x"
-                                    )
-                                    StaticStatCard(
                                         title: "Duration",
                                         value: profile.durationPerSession.isEmpty ? "—" : profile.durationPerSession
                                     )
