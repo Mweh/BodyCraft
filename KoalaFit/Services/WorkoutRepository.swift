@@ -43,7 +43,7 @@ final class WorkoutRepository: ObservableObject {
         
         let generator = AIWorkoutGeneratorService.shared
         
-        if generator.apiKey == nil || generator.apiKey!.isEmpty {
+        if generator.currentApiKey?.isEmpty != false {
             plan = try await generator.mockWorkoutPlan()
         } else {
             plan = try await generator.generateWorkoutPlan(

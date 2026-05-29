@@ -12,9 +12,21 @@ enum AIError: Error {
 class AIWorkoutGeneratorService {
     static let shared = AIWorkoutGeneratorService()
     
-    // In a real app, securely inject this via a backend or secure vault.
-    var apiKey: String? = "AIzaSyDKi_sE1L1s0Resix5X8ri8rIFNYb7l7oc" // punya bang fahmi
-    var currentApiKey: String? = "AIzaSyDGmAJ2tiL1uOFjbujglcrwxwJfPA1pk2I"
+    private let apiKeyStorageKey = "geminiApiKey"
+    
+    var currentApiKey: String? {
+        get {
+            UserDefaults.standard.string(forKey: apiKeyStorageKey)
+        }
+        set {
+            let trimmedKey = newValue?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            if trimmedKey.isEmpty {
+                UserDefaults.standard.removeObject(forKey: apiKeyStorageKey)
+            } else {
+                UserDefaults.standard.set(trimmedKey, forKey: apiKeyStorageKey)
+            }
+        }
+    }
     
     // Using Gemini 1.5 Flash as it's fast and supports JSON response formats.
     private let endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent"

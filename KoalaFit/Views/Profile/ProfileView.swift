@@ -154,6 +154,7 @@ struct EditProfileSheet: View {
     @State private var sessionsPerWeek: Int = 3
     @State private var durationPerSession: String = "45 min"
     @State private var equipment: String = "Full Gym"
+    @State private var geminiApiKey: String = ""
     
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
@@ -276,6 +277,21 @@ struct EditProfileSheet: View {
                                 EditPicker(label: "Workout Duration", selection: $durationPerSession, options: durations)
                                 EditPicker(label: "Equipment", selection: $equipment, options: equipmentOptions)
                             }
+
+                            // Gemini API Key
+                            EditSection(title: "Gemini API") {
+                                SecureField("Enter Gemini API Key", text: $geminiApiKey)
+                                    .padding()
+                                    .background(AppTheme.background.opacity(0.5))
+                                    .cornerRadius(12)
+                                    .foregroundColor(.white)
+                                    .textInputAutocapitalization(.never)
+                                    .autocorrectionDisabled()
+
+                                Text("Used to generate your AI workout plan. Stored locally on this device.")
+                                    .font(.caption)
+                                    .foregroundColor(AppTheme.secondaryText)
+                            }
                         }
                         .padding(.horizontal)
                         
@@ -332,6 +348,7 @@ struct EditProfileSheet: View {
                 sessionsPerWeek = p.sessionsPerWeek
                 durationPerSession = p.durationPerSession
                 equipment = p.equipment
+                geminiApiKey = AIWorkoutGeneratorService.shared.currentApiKey ?? ""
             }
         }
     }
@@ -358,6 +375,7 @@ struct EditProfileSheet: View {
             p.equipment = equipment
             if let data = selectedImageData { p.photoData = data }
         }
+        AIWorkoutGeneratorService.shared.currentApiKey = geminiApiKey
         
         if criticalChanged {
             isSaving = true
