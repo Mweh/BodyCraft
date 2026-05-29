@@ -23,6 +23,6 @@
 	<key>WKApplication</key>
 	<true/>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.inianakios.com.BodyCraft</string>
+	<string>com.fahmi.koalafit.ada</string>
 </dict>
 </plist>
