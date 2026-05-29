@@ -10,7 +10,7 @@
 		9F26C4E52F625C9A00F425ED /* FLEX in Frameworks */ = {isa = PBXBuildFile; productRef = 9F26C4E42F625C9A00F425ED /* FLEX */; };
 		9F48066C2F652FD000F95AC6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 9F48066B2F652FD000F95AC6 /* Lottie */; };
 		9F4806762F65327500F95AC6 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 9F4806752F65327500F95AC6 /* netfox */; };
-		9FBA117E2F60FAD000411B26 /* BodyCraft Watch App Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9FBA11742F60FACF00411B26 /* BodyCraft Watch App Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9FBA117E2F60FAD000411B26 /* KoalaFit Watch App Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9FBA11742F60FACF00411B26 /* KoalaFit Watch App Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				9FBA117E2F60FAD000411B26 /* BodyCraft Watch App Watch App.app in Embed Watch Content */,
+				9FBA117E2F60FAD000411B26 /* KoalaFit Watch App Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,41 +41,41 @@
 		53C200CA48ADB0C6616E2141 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9F448E512F63322C00373508 /* KoalaFit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KoalaFit.entitlements; sourceTree = "<group>"; };
 		9F890AE22F5FA45500484454 /* KoalaFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoalaFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FBA11742F60FACF00411B26 /* BodyCraft Watch App Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BodyCraft Watch App Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FBA11742F60FACF00411B26 /* KoalaFit Watch App Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KoalaFit Watch App Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		59F38B1F2F62689A002B22D9 /* Exceptions for "BodyCraft" folder in "KoalaFit" target */ = {
+		59F38B1F2F62689A002B22D9 /* Exceptions for "KoalaFit" folder in "KoalaFit" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				MockData/Exercises/Back/exr_41n2hQeNyCnt3uFh.json,
 			);
 			target = 9F890AE12F5FA45500484454 /* KoalaFit */;
 		};
-		59F38B202F62689B002B22D9 /* Exceptions for "BodyCraft Watch App Watch App" folder in "BodyCraft Watch App Watch App" target */ = {
+		59F38B202F62689B002B22D9 /* Exceptions for "KoalaFit Watch App Watch App" folder in "KoalaFit Watch App Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 9FBA11732F60FACF00411B26 /* BodyCraft Watch App Watch App */;
+			target = 9FBA11732F60FACF00411B26 /* KoalaFit Watch App Watch App */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		9F890AE42F5FA45500484454 /* BodyCraft */ = {
+		9F890AE42F5FA45500484454 /* KoalaFit */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				59F38B1F2F62689A002B22D9 /* Exceptions for "BodyCraft" folder in "KoalaFit" target */,
+				59F38B1F2F62689A002B22D9 /* Exceptions for "KoalaFit" folder in "KoalaFit" target */,
 			);
-			path = BodyCraft;
+			path = KoalaFit;
 			sourceTree = "<group>";
 		};
-		9FBA11752F60FACF00411B26 /* BodyCraft Watch App Watch App */ = {
+		9FBA11752F60FACF00411B26 /* KoalaFit Watch App Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				59F38B202F62689B002B22D9 /* Exceptions for "BodyCraft Watch App Watch App" folder in "BodyCraft Watch App Watch App" target */,
+				59F38B202F62689B002B22D9 /* Exceptions for "KoalaFit Watch App Watch App" folder in "KoalaFit Watch App Watch App" target */,
 			);
-			path = "BodyCraft Watch App Watch App";
+			path = "KoalaFit Watch App Watch App";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -121,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				9F448E512F63322C00373508 /* KoalaFit.entitlements */,
-				9F890AE42F5FA45500484454 /* BodyCraft */,
-				9FBA11752F60FACF00411B26 /* BodyCraft Watch App Watch App */,
+				9F890AE42F5FA45500484454 /* KoalaFit */,
+				9FBA11752F60FACF00411B26 /* KoalaFit Watch App Watch App */,
 				9F26C4DF2F62522E00F425ED /* Frameworks */,
 				9F890AE32F5FA45500484454 /* Products */,
 			);
@@ -132,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				9F890AE22F5FA45500484454 /* KoalaFit.app */,
-				9FBA11742F60FACF00411B26 /* BodyCraft Watch App Watch App.app */,
+				9FBA11742F60FACF00411B26 /* KoalaFit Watch App Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,7 +155,7 @@
 				9FBA117D2F60FAD000411B26 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				9F890AE42F5FA45500484454 /* BodyCraft */,
+				9F890AE42F5FA45500484454 /* KoalaFit */,
 			);
 			name = KoalaFit;
 			packageProductDependencies = (
@@ -167,9 +167,9 @@
 			productReference = 9F890AE22F5FA45500484454 /* KoalaFit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9FBA11732F60FACF00411B26 /* BodyCraft Watch App Watch App */ = {
+		9FBA11732F60FACF00411B26 /* KoalaFit Watch App Watch App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9FBA11822F60FAD000411B26 /* Build configuration list for PBXNativeTarget "BodyCraft Watch App Watch App" */;
+			buildConfigurationList = 9FBA11822F60FAD000411B26 /* Build configuration list for PBXNativeTarget "KoalaFit Watch App Watch App" */;
 			buildPhases = (
 				9FBA11702F60FACF00411B26 /* Sources */,
 				9FBA11712F60FACF00411B26 /* Frameworks */,
@@ -180,11 +180,11 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				9FBA11752F60FACF00411B26 /* BodyCraft Watch App Watch App */,
+				9FBA11752F60FACF00411B26 /* KoalaFit Watch App Watch App */,
 			);
-			name = "BodyCraft Watch App Watch App";
+			name = "KoalaFit Watch App Watch App";
 			productName = "BodyCraft Watch App Watch App";
-			productReference = 9FBA11742F60FACF00411B26 /* BodyCraft Watch App Watch App.app */;
+			productReference = 9FBA11742F60FACF00411B26 /* KoalaFit Watch App Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -205,7 +205,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9F890ADD2F5FA45500484454 /* Build configuration list for PBXProject "BodyCraft" */;
+			buildConfigurationList = 9F890ADD2F5FA45500484454 /* Build configuration list for PBXProject "KoalaFit" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -225,7 +225,7 @@
 			projectRoot = "";
 			targets = (
 				9F890AE12F5FA45500484454 /* KoalaFit */,
-				9FBA11732F60FACF00411B26 /* BodyCraft Watch App Watch App */,
+				9FBA11732F60FACF00411B26 /* KoalaFit Watch App Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -267,7 +267,7 @@
 /* Begin PBXTargetDependency section */
 		9FBA117D2F60FAD000411B26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9FBA11732F60FACF00411B26 /* BodyCraft Watch App Watch App */;
+			target = 9FBA11732F60FACF00411B26 /* KoalaFit Watch App Watch App */;
 			targetProxy = 9FBA117C2F60FAD000411B26 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -490,14 +490,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "BodyCraft Watch App Watch App/BodyCraft Watch App Watch App.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "KoalaFit Watch App Watch App/KoalaFit Watch App Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N7RK5YTXSM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "BodyCraft Watch App Watch App/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "BodyCraft Watch App";
+				INFOPLIST_FILE = "KoalaFit Watch App Watch App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "KoalaFit Watch App Watch App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.inianakios.com.BodyCraft;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -525,14 +525,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "BodyCraft Watch App Watch App/BodyCraft Watch App Watch App.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "KoalaFit Watch App Watch App/KoalaFit Watch App Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N7RK5YTXSM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "BodyCraft Watch App Watch App/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "BodyCraft Watch App";
+				INFOPLIST_FILE = "KoalaFit Watch App Watch App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "KoalaFit Watch App Watch App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.inianakios.com.BodyCraft;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -559,7 +559,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9F890ADD2F5FA45500484454 /* Build configuration list for PBXProject "BodyCraft" */ = {
+		9F890ADD2F5FA45500484454 /* Build configuration list for PBXProject "KoalaFit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9F890AEB2F5FA45600484454 /* Debug */,
@@ -577,7 +577,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9FBA11822F60FAD000411B26 /* Build configuration list for PBXNativeTarget "BodyCraft Watch App Watch App" */ = {
+		9FBA11822F60FAD000411B26 /* Build configuration list for PBXNativeTarget "KoalaFit Watch App Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9FBA11802F60FAD000411B26 /* Debug */,
